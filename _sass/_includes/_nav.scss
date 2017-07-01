@@ -1,0 +1,39 @@
+#nav {
+	
+	a:nth-child(1):hover svg {
+
+		.a {
+			fill: color();
+		}
+
+		.c, .e, .f, .g, .i, .j {
+			fill:#9e2b9c
+		}
+	}
+
+   a:hover {
+       @extend %mainColor;
+	}
+	
+	&.show {
+		@include transform(translateY(calc(100% + 3px)));
+	}
+	
+	&.time {
+		@include transition(transform 0.4s);
+	}
+	
+	&.fixed {
+		@include box-shadow(0 1px 3px ts(0.3));
+		position: fixed;
+		top: -59px;
+
+		@include tabletPor {
+			top: -93px
+		}
+
+		@include desktopLG {
+			top: -153px
+		}
+	}
+}

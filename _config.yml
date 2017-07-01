@@ -1,0 +1,53 @@
+title: Daniel Blake
+author: Daniel Blake
+email: hello@danielblake.design
+phone: 1-971-801-0208
+github: dmbdesignpdx
+
+colors:
+  theme: "#f7f6f8"
+
+images:
+  main: "https://danielblake.design/img/daniel-og.jpg"
+  alt: Daniel Blake is a front end web designer
+
+baseurl: ""
+url: "https://danielblake.design"
+
+kramdown:
+   auto_ids: false
+
+sass:
+   style: compressed
+
+compress_html:
+   clippings: all
+   comments: ["<!-- "," -->"]
+   ignore:
+      envs: []
+
+port: 3000
+
+include:
+   - _pages
+
+exclude:
+   - .sass-cache
+   - .jekyll-metadata
+   - .eslint.yml
+   - .channel.yml
+   - _assets
+   - src
+   - node_modules
+   - yarn.lock
+   - package.json
+   - gulpfile.js
+   - README.md
+
+#Defaults
+defaults:
+   -
+      scope:
+         path: "_pages"
+      values:
+         layout: "page"

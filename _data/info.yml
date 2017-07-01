@@ -1,0 +1,49 @@
+thumbs:
+  -
+    image: leadshub
+    title: !!html LeadsHub &mdash; Mobile App
+    aria: Preview LeadsHub website
+    link: "https://dice.services"
+  -
+    image: turntable
+    title: !!html Turntable &mdash; SCSS Library
+    aria: Preview Turntable website
+    link: "https://turntablelib.com"
+  -
+    image: flexr
+    title: !!html Flexr &mdash; CSS Micro Framework
+    aria: Preview Flexr website
+    link: "https://flexrgrid.com"
+
+skills:
+   -
+      type: Design
+      text: 
+        - InDesign
+        - Illustrator
+        - XD
+        - Photoshop
+        - Premiere Pro
+        - After Effects
+   -
+      type: Development
+      text: 
+        - HTML5
+        - CSS3
+        - JavaScript (+ES2015)
+        - SCSS (+SassScript)
+        - Git
+        - CoffeeScript
+        - Markdown
+        - Jekyll
+        - XML
+        - YAML
+        - Node.js
+   -
+      type: Experience
+      text: 
+        - Responsive Web Design and Development, 
+        - GUI/UX Design
+        - Branding
+        - Art/Creative Direction
+        - BFA in Communication Design
