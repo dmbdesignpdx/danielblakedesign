@@ -3,7 +3,7 @@ permalink: /
 title: Daniel Blake - Front End Web Designer
 description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
 class: home
-date: August 29, 2018
+date: August 30, 2018
 ---
 
 <!-- Hero -->
@@ -28,21 +28,21 @@ date: August 29, 2018
 
 <!-- Work Section -->
 
-	<section id="work">
+	<section id="work" aria-labelledby="w1">
 
-		<h2 flexr-wrap>Work</h2>
+		<h2 id="w1" flexr-wrap>Work</h2>
 
 		{% for thumb in site.data.info.thumbs limit:3 %}
 
-		<section id="{{ thumb.image }}" flexr-grid>
+		<section id="{{ thumb.image }}" aria-label="Project {{ forloop.index }} of 3" flexr-grid>
 
 			<h3>{{ thumb.title }}</h3>
 
 			<div class="cta">
 				
-				<a class="primary" href="/{{ thumb.image }}/" aria-label="{{ thumb.aria }}">Preview</a>
+				<a class="primary" href="/{{ thumb.image }}/" aria-label="{{ thumb.aria-one }}">Preview</a>
 	
-				<a class="secondary" href="{{ thumb.link }}" target="_blank" aria-label="Go to {{ thumb.title }}">Visit</a>
+				<a class="secondary" href="{{ thumb.link }}" target="_blank" aria-label="{{ thumb.aria-two }}" rel="{{ thumb.rel }}">Visit</a>
 			
 			</div>
 			
@@ -61,15 +61,15 @@ date: August 29, 2018
 
 <!-- About Section -->
 
-	<section id="about" flexr-grid>
+	<section id="about" aria-labelledby="a1" flexr-grid>
 
-		<h2>About</h2>
+		<h2 id="a1">About</h2>
 
-		<p>Thanks for stopping by! I'm a front end web designer living in Portland,&nbsp;OR. I've always been inspired by and excited about web design and web development &mdash; both have been my passion for the past 10 years. I am currently the <em>Design Lead and Front End</em> at <a href="https://dice.services" target="_blank" rel="external noreferrer" aria-label="Go to Dice Services website">Dice&nbsp;Services</a>, in which I oversee all design (digital and non-digital) and maintain/develop our main and product&nbsp;websites.</p>
+		<p>Thanks for stopping by! I'm a front end web designer living in Portland,&nbsp;OR. I've always been inspired by and excited about web design and web development &mdash; both have been my passion for the past six years. I am currently the <em>Design Lead and Front End</em> at <a href="https://dice.services" target="_blank" rel="external nofollow noreferrer" aria-label="Go to the Dice Services website">Dice&nbsp;Services</a>, in which I oversee all design (digital and print) and maintain/develop our main and product&nbsp;websites.</p>
 
 		{% for skill in site.data.info.skills limit:3 %}
 
-		<section>
+		<section aria-label="Skills {{ forloop.index }} of 3">
 
 			<svg><use xlink:href="/img/icons.svg#{{ skill.type | downcase }}"/></svg>
 
@@ -99,7 +99,9 @@ date: August 29, 2018
 
 			<a href="mailto:{{ site.email }}"><svg role="img" aria-label="Email: "><use xlink:href="/img/icons.svg#email"/></svg>{{ site.email }}</a>
 
-			<a href="https://github.com/{{ site.github }}" target="_blank" rel="external" aria-label="View my code on Github"><svg><use xlink:href="/img/icons.svg#github"/></svg>{{ site.github }}</a>
+			<!-- <a href="{{ site.linkedin }}" target="_blank" rel="external" aria-label="Visit my LinkedIn profile"><svg><use xlink:href="/img/icons.svg#github"/></svg>danielblakepdx</a> -->
+			
+			<a href="{{ site.github }}" target="_blank" rel="external" aria-label="My code on Github"><svg><use xlink:href="/img/icons.svg#github"/></svg>dmbdesignpdx</a>
 		
 		</address>
 
