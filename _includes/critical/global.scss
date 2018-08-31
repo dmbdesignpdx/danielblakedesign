@@ -62,7 +62,7 @@ a {
 h1 {
 	text-rendering: geometricPrecision;
    letter-spacing: -0.04em;
-	word-spacing: 0.03em;
+	word-spacing: 0.05em;
 	padding-top: 26vh;
 	margin-bottom: 0.4em;
 
@@ -82,6 +82,7 @@ p {
 	letter-spacing: 0.02em;
 	hyphens: none;
 }
+
 
 // -- Common Rules -- //
 
@@ -237,15 +238,15 @@ body > header {
 		padding-top: 36vh
 	}
 
-	#nav a:last-child {
-		margin-left: 2em
-	}
-
 	#nav {
 		height: 90px;
 
 		a:first-child {
 			font-size: 1.1rem
+		}
+
+		a:last-child {
+			margin-left: 2em
 		}
 	}
 
@@ -261,13 +262,6 @@ body > header {
 
 // Tablet Landscape
 
-@media (min-width:1022px) {
-	
-	[flexr-grid], [flexr-wrap] {
-		width: 80%;
-	}
-
-}
 
 
 // Desktop
@@ -275,10 +269,10 @@ body > header {
 @media (min-width:1278px) {
 
 	[flexr-grid], [flexr-wrap] {
+		width: 80%;
 		max-width: 1436px;
 		padding-right: 30px;
-		padding-left: 30px;
-		grid-column-gap: 30px
+		padding-left: 30px
 	}
 
 	[flexr-grid] {
