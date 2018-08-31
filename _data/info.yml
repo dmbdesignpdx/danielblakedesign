@@ -1,21 +1,21 @@
 thumbs:
   -
     image: leadshub
-    title: !!html LeadsHub &mdash; Mobile App
+    title: LeadsHub &mdash; Mobile App
     aria-one: Preview the LeadsHub website
     aria-two: Go to the LeadsHub website
     link: "https://dice.services"
     rel: external nofollow noreferrer
   -
     image: turntable
-    title: !!html Turntable &mdash; SCSS Library
+    title: Turntable &mdash; SCSS Library
     aria-one: Preview the Turntable website
     aria-two: Go to the Turntable website
     link: "https://turntablelib.com"
     rel: external
   -
     image: flexr
-    title: !!html Flexr &mdash; CSS Micro Framework
+    title: Flexr &mdash; CSS Micro Framework
     aria-one: Preview the Flexr website
     aria-two: Go to the Flexr website
     link: "https://flexrgrid.com"
@@ -48,7 +48,7 @@ skills:
    -
       type: Experience
       text: 
-        - Responsive Web Design and Development, 
+        - Responsive Web Design and Development
         - GUI/UX Design
         - Branding
         - Art/Creative Direction
