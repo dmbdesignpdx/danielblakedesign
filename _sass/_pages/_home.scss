@@ -228,7 +228,6 @@ div.thumb {
 	a {
 		@include display(inline-flex);
 		@include align-items(center);
-		line-height: 1;
 		margin-bottom: 1em;
 		color: color(darkgray);
 

@@ -1,7 +1,6 @@
-// Grid
+// -- Grid -- //
 
 [flexr-grid], [flexr-wrap] {
-	width: 100%;
 	padding-right: 16px;
 	padding-left: 16px;
    margin: 0 auto
@@ -19,7 +18,7 @@
 
 
 
-// Global Styles and Resets
+// -- Global Styles and Resets -- //
 
 @-ms-viewport {
    width: device-width
@@ -30,8 +29,7 @@
 }
 
 html {
-	font: normal 18px Helvetica, sans-serif;
-   background: #f7f6f8
+	font: normal 18px Helvetica, sans-serif
 }
 
 body {
@@ -62,13 +60,11 @@ a {
 }
 
 h1 {
-	font: 900 2rem/1.1 Montserrat, sans-serif;
 	text-rendering: geometricPrecision;
-   color: #373546;
    letter-spacing: -0.04em;
 	word-spacing: 0.03em;
-	padding-top: 28vh;
-	margin-bottom: 0.5em;
+	padding-top: 26vh;
+	margin-bottom: 0.4em;
 
 	@at-root .sib h1 {
 		padding-top: 38vh
@@ -85,6 +81,35 @@ p {
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	hyphens: none;
+}
+
+// -- Common Rules -- //
+
+html, nav {
+	background: #f7f6f8
+}
+
+nav a:first-child, h1 {
+	font: 900 2rem/1.1 Montserrat, sans-serif
+}
+
+#nav div, #nav a:first-child {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center
+}
+
+[flexr-grid], [flexr-wrap], #nav {
+	width: 100%
+}
+
+#nav, body > header svg {
+	position: absolute
+}
+
+h1, #nav a {
+	color: #373546
 }
 
 
@@ -131,29 +156,34 @@ p {
 // -- Nav -- //
 
 #nav {
-	width: 100%;
    height: 56px;
-   position: absolute;
 	top: 0;
 	z-index: 999;
-	background: #f7f6f8;
 
 	div {
-		-webkit-display: flex;
-		display: flex;
-		-webkit-align-items: center;
-		align-items: center;
 		height: 100%
 	}
 
    a {
 		font-size: 0.8em;
-      letter-spacing: 0.03em;
-		color: #373546
+      letter-spacing: 0.03em
+	}
+
+	a:first-child {
+		letter-spacing: -0.02em;
+		font-size: 0.9rem;
+		margin-bottom: 1px;
+
+		& svg {
+			width: 2.6em;
+			height: 2.6em;
+			margin: 1px 0.4em auto 0
+		}
 	}
 	
 	a:not(:first-child) {
-		padding: 16px 0
+		padding: 16px 0;
+		
 	}
 
 	a:nth-child(2) {
@@ -161,12 +191,7 @@ p {
 	}
 
 	a:last-child {
-		margin-left: 2em
-	}
-	
-	svg {
-		width: 50px;
-		height: 50px;
+		margin-left: 1.6em
 	}
 }
 
@@ -179,7 +204,6 @@ body > header {
 	height: 100vh;
 
 	svg {
-		position: absolute;
 		bottom: 5vh;
 		width: 34px;
 		height: 34px;
@@ -196,10 +220,11 @@ body > header {
 
 // -- Media Queries -- //
 
-@media (min-width:768px) {
+// Tablet Portrait
+
+@media (min-width:766px) {
 
 	[flexr-grid], [flexr-wrap] {
-		width: 80%;
 		padding-right: 24px;
 		padding-left: 24px
 	}
@@ -209,7 +234,19 @@ body > header {
 	}
 
 	h1 {
-		padding-top: 38vh
+		padding-top: 36vh
+	}
+
+	#nav a:last-child {
+		margin-left: 2em
+	}
+
+	#nav {
+		height: 90px;
+
+		a:first-child {
+			font-size: 1.1rem
+		}
 	}
 
 	#hero {
@@ -221,7 +258,21 @@ body > header {
 
 }
 
-@media (min-width:1290px) {
+
+// Tablet Landscape
+
+@media (min-width:1022px) {
+	
+	[flexr-grid], [flexr-wrap] {
+		width: 80%;
+	}
+
+}
+
+
+// Desktop
+
+@media (min-width:1278px) {
 
 	[flexr-grid], [flexr-wrap] {
 		max-width: 1436px;
@@ -241,24 +292,11 @@ body > header {
 	h1 {
 		font-size: 2.5rem
 	}
-
-	#hero {
-	
-		p {
-			width: 39%
-		}
-	}
-
-	#nav {
-		height: 90px;
-
-		svg {
-			width: 60px;
-			height: 60px
-		}
-	}
    
 }
+
+
+// Large Desktop
 
 @media (min-width:1680px) {
 
