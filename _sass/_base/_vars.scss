@@ -32,19 +32,19 @@ $gutter: (
 }
 
 @mixin tabletPor {
-	@media (min-width:768px) {
+	@media (min-width:766px) {
 		@content;
 	}
 }
 
 @mixin tabletLan {
-	@media (min-width:1024px) {
+	@media (min-width:1022px) {
 		@content;
 	}
 }
 
 @mixin desktop {
-	@media (min-width:1290px) {
+	@media (min-width:1278px) {
 		@content;
 	}
 }
