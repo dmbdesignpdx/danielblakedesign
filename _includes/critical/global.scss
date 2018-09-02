@@ -61,26 +61,28 @@ a {
 
 h1 {
 	text-rendering: geometricPrecision;
-   letter-spacing: -0.04em;
-	word-spacing: 0.05em;
-	padding-top: 26vh;
-	margin-bottom: 0.4em;
+   letter-spacing: -0.03em;
+	word-spacing: 0.1em;
+	padding-top: 27vh;
+	margin-bottom: 0.3em;
+	font-size: 2.4rem;
+	color: #e82c64;
+
+	span {
+		color: #3c394c
+	}
 
 	@at-root .sib h1 {
 		padding-top: 38vh
-	}
-
-	span {
-		color: #E82C64
 	}
 }
 
 p {
 	text-rendering: optimizeSpeed;
-	color: #69657E;
+	color: #413d51;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
-	hyphens: none;
+	hyphens: none
 }
 
 
@@ -91,14 +93,17 @@ html, nav {
 }
 
 nav a:first-child, h1 {
-	font: 900 2rem/1.1 Montserrat, sans-serif
+	font-family: Montserrat, sans-serif;
+	font-weight: 900;
+	line-height: 1.1
 }
 
 #nav div, #nav a:first-child {
 	display: -webkit-flex;
 	display: flex;
 	-webkit-align-items: center;
-	align-items: center
+	align-items: center;
+	font-weight: 900
 }
 
 [flexr-grid], [flexr-wrap], #nav {
@@ -107,10 +112,6 @@ nav a:first-child, h1 {
 
 #nav, body > header svg {
 	position: absolute
-}
-
-h1, #nav a {
-	color: #373546
 }
 
 
@@ -167,12 +168,12 @@ h1, #nav a {
 
    a {
 		font-size: 0.8em;
-      letter-spacing: 0.03em
+		letter-spacing: 0.03em;
+		color: #373546
 	}
 
 	a:first-child {
 		letter-spacing: -0.02em;
-		font-size: 0.9rem;
 		margin-bottom: 1px;
 
 		& svg {
@@ -217,6 +218,16 @@ body > header {
 }
 
 
+@media (min-width:540px) {
+	
+	#hero {
+	
+		p, h1 {
+			width: 25rem
+		}
+	}
+
+}
 
 
 // -- Media Queries -- //
@@ -235,7 +246,8 @@ body > header {
 	}
 
 	h1 {
-		padding-top: 36vh
+		padding-top: 37vh;
+		font-size: 2.6rem
 	}
 
 	#nav {
@@ -247,13 +259,6 @@ body > header {
 
 		a:last-child {
 			margin-left: 2em
-		}
-	}
-
-	#hero {
-	
-		p {
-			width: 52%
 		}
 	}
 
@@ -281,10 +286,6 @@ body > header {
 
 	html {
 		font-size: 20px
-	}
-	
-	h1 {
-		font-size: 2.5rem
 	}
    
 }
