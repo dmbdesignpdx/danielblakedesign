@@ -2,10 +2,6 @@
    box-sizing: border-box
 }
 
-body {
-	scroll-behavior: smooth
-}
-
 ul, li, h2, h3, h4, h5 {
    padding: 0;
    margin: 0;
@@ -73,13 +69,14 @@ main {
 }
 
 
+
 // Links
 
 // In-Paragraph Links
 
 main p a {
 	line-height: 1.1;
-	border-bottom: 1px solid color(darkgray);
+	border-bottom: 1px solid color(darklight);
 
 	&:hover {
 		color: color();
@@ -111,17 +108,17 @@ main p a {
 
 // Preview
 .primary {
-	@include box-shadow(0 1px 2px rgba(0,0,30,0.3));
+	@include box-shadow(0 1px 2px rgba(0,0,30,0.35));
 	background: color();
 	color: color(offwhite);
 
 	&:focus, &:hover {
-		@include box-shadow(0 2px 5px rgba(0,0,30,0.3));
+		@include box-shadow(0 2px 5px rgba(0,0,30,0.35));
 		background: value(color(),5);
 	}
 
 	&:active {
-		@include box-shadow(0 1px 1px rgba(0,0,30,0.3));
+		@include box-shadow(0 1px 1px rgba(0,0,30,0.35));
 	}
 }
 

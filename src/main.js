@@ -4,7 +4,8 @@ const
 page = cls => cls === document.body.className,
 wh = () => window.innerHeight * 0.33,
 icon = document.querySelector("body > header svg"),
-nav = document.querySelector("#nav")
+nav = document.querySelector("#nav"),
+scroll = new SmoothScroll('a[href*="#"]')
 
 let
 check = 0,
@@ -31,7 +32,7 @@ function arrowFade() {
 
 // Nav Scroll Action
 
-function scroll() {
+function navScroll() {
 	const update = window.pageYOffset,
 	nh = parseInt(window.getComputedStyle(nav).height)
 
@@ -83,10 +84,11 @@ window.addEventListener("load", function ready() {
 	window.removeEventListener("load", ready)
 	window.addEventListener("resize", size)
 	window.addEventListener("scroll", () => {
-		scroll()
+		navScroll()
 		arrowFade()
 	})
 	
-	scroll()
+	navScroll()
 	size()
 })
+
