@@ -66,20 +66,43 @@ h1 {
 	padding-top: 27vh;
 	margin-bottom: 0.3em;
 	font-size: 2.4rem;
-	color: #e82c64;
-
+	color: hsl(250,14%,24%);
+	
 	span {
-		color: #3c394c
+		display: inline-block;
+		line-height: 1.1;
+
+		&::after {
+			content: "";
+			display: block;
+			width: 0;
+			height: 6px;
+			background: #e82c6a;
+			top: -.1em;
+			position: relative;
+			z-index: -1;
+			border-radius: 3px;
+			transition: 0.4s 0.5s;
+
+			@at-root h1 span:last-child::after {
+				transition: 0.4s 1s;
+			}
+
+			@at-root h1 span.underline::after {
+				width: 100%
+			}
+		}
 	}
 
 	@at-root .sib h1 {
-		padding-top: 38vh
+		padding-top: 38vh;
+		line-height: 1.2
 	}
 }
 
 p {
 	text-rendering: optimizeSpeed;
-	color: #413d51;
+	color: hsl(250,14%,38%);
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	hyphens: none

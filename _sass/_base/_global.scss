@@ -48,8 +48,26 @@ section {
 	position: relative
 }
 
+h2, h5 {
+	display: inline-block;
+	height: 1em;
+	width: auto;
+
+	&::after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 4px;
+		background: #e82c6a;
+		top: -.1em;
+		position: relative;
+		z-index: -1;
+		border-radius: 2px
+	}
+}
+
 h2 {
-	font-size: 2rem
+	font-size: 2rem;
 }
 
 a:focus, a:active {
@@ -70,19 +88,7 @@ main {
 
 
 
-// Links
 
-// In-Paragraph Links
-
-main p a {
-	line-height: 1.1;
-	border-bottom: 1px solid color(darklight);
-
-	&:hover {
-		color: color();
-		border-bottom-color: color();
-	}
-}
 
 // Link Buttons
 

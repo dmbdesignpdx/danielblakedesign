@@ -87,6 +87,11 @@ window.addEventListener("load", function ready() {
 		navScroll()
 		arrowFade()
 	})
+
+	// Hero underline animations
+	document.querySelectorAll("h1 span").forEach(item => {
+		item.classList.add("underline")
+	})
 	
 	navScroll()
 	size()

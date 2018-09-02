@@ -33,7 +33,12 @@ body > header {
 
 	// Title
 	h2 {
-		margin-bottom: 1em
+		width: auto;
+		margin-bottom: 1em;
+
+		@include desktop {
+			margin-left: 10%
+		}
 	}
 
 	// Preview sections
@@ -139,6 +144,7 @@ div.thumb {
 	// Title
 	h2 {
 		margin-bottom: 1em;
+		justify-self: start;
 
 		@include phoneLan {
 			grid-column: span 2;
@@ -212,6 +218,9 @@ div.thumb {
 // -- Contact -- //
 
 #contact {
+	@include display(flex);
+	@include flex-direction(column);
+	@include align-items(flex-start);
 	padding: 20vh 0 0;
 	
 	@include phoneLan {
