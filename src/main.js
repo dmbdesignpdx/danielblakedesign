@@ -1,8 +1,7 @@
 // -- Vars -- //
 
-const
-page = cls => cls === document.body.className,
-wh = () => window.innerHeight * 0.33,
+var
+wh = Math.round(window.innerHeight * 0.33),
 icon = document.querySelector("body > header svg"),
 nav = document.querySelector("#nav"),
 scroll = new SmoothScroll('a[href*="#"]')
@@ -16,6 +15,13 @@ bounce
 
 
 // -- Functions -- //
+
+// Page
+
+function page(cls) {
+	return cls === document.body.className
+}
+
 
 // Arrow Fade on Scroll
 
