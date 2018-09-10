@@ -1,7 +1,8 @@
+
+
 // -- Vars -- //
 
 var
-wh = Math.round(window.innerHeight * 0.33),
 icon = document.querySelector("body > header svg"),
 nav = document.querySelector("#nav"),
 scroll = new SmoothScroll('a[href*="#"]')
@@ -20,6 +21,10 @@ bounce
 
 function page(cls) {
 	return cls === document.body.className
+}
+
+function wh() {
+   return Math.round(window.innerHeight * 0.33)
 }
 
 
@@ -54,7 +59,7 @@ function navScroll() {
 			if (update > original && !bounce) {
 				nav.classList.remove("show")	
 				bounce = 1
-			} else if (original >= update) {
+			} else if (original > (update + 2)) {
 				nav.classList.add("show")
 				bounce = 0
 			}
@@ -100,6 +105,5 @@ window.addEventListener("load", function ready() {
 	})
 	
 	navScroll()
-	size()
+   size()
 })
-
