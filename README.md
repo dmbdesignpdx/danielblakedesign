@@ -12,21 +12,21 @@
 ### Development
 
 - HTML5
-- CSS3
-- JavaScript (+ES2015)
-- SCSS (+SassScript)
+- CSS3 / SCSS / SassScript
+- JavaScript / ES6+ / React.js
 - Git
 - CoffeeScript
-- Markdown
-- Jekyll
-- XML
-- YAML
-- Node.js
+- Gulp.js / Webpack.js
+- Jekyll / Liquid / YAML
+- SVG / XML / JSON
+- PHP / (Learning: MySQL)
+- Node.js / NPM
 
 ### Experience
 
+- Responsive Web Design and Development
+- Semantic Markup and Accessibility
+- UX/GUI Design
 - Branding
-- Responsive Web Design
-- UX/UI Design
-- Art Direction
-- Accessibility
+- Art/Creative Direction
+- BFA in Communication Design

@@ -2,22 +2,18 @@
  "name": "daniel-blake-design",
  "version": "1.0.0",
  "description": "Daniel Blake is a front end web designer living in Portland, OR.",
- "main": "dist/dbd.min.js",
  "homepage": "https://danielblake.design",
  "repository": "https://github.com/dmbdesignpdx/danielblakedesign.git",
  "author": "Daniel Blake <daniel@danielblake.design>",
  "license": "UNLICENSED",
+ "private": true,
  "devDependencies": {
-  "babel-core": "^6.26.0",
-  "babel-preset-env": "^1.6.1",
+  "@babel/core": "^7.0.0",
+  "@babel/preset-env": "^7.0.0",
+  "babel-loader": "^8.0.2",
   "browser-sync": "^2.23.6",
-  "gulp": "^4.0.0",
-  "gulp-babel": "^7.0.1",
-  "gulp-concat": "^2.6.1",
-  "gulp-iife": "^0.3.0",
-  "gulp-plumber": "^1.2.0",
-  "gulp-shell": "^0.6.5",
-  "gulp-uglify": "^3.0.0",
-  "turntable-kit": "^0.7.0"
+  "turntable-kit": "^0.7.0",
+  "webpack": "^4.17.2",
+  "webpack-cli": "^3.1.0"
  }
 }

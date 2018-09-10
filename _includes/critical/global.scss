@@ -66,7 +66,7 @@ h1 {
 	padding-top: 27vh;
 	margin-bottom: 0.3em;
 	font-size: 2.4rem;
-	color: hsl(250,14%,24%);
+	color: #373546;
 	
 	span {
 		display: inline-block;
@@ -102,7 +102,7 @@ h1 {
 
 p {
 	text-rendering: optimizeSpeed;
-	color: hsl(250,14%,38%);
+	color: #58536e;
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	hyphens: none
@@ -190,16 +190,20 @@ nav a:first-child, h1 {
 	}
 
    a {
-		font-size: 0.8em;
+		font-size: 0.8rem;
 		letter-spacing: 0.03em;
 		color: #373546
 	}
 
 	a:first-child {
-		letter-spacing: -0.02em;
 		margin-bottom: 1px;
+		letter-spacing: -0.02em;
 
-		& svg {
+		span {
+			display: none
+		}
+
+		svg {
 			width: 2.6em;
 			height: 2.6em;
 			margin: 1px 0.4em auto 0
@@ -241,8 +245,20 @@ body > header {
 }
 
 
-@media (min-width:540px) {
-	
+
+// -- Media Queries -- //
+
+// Phone Landscape
+
+@media (min-width: 540px) {
+
+	#nav {
+
+		a:first-child span {
+			display: block
+		}
+	}
+
 	#hero {
 	
 		p, h1 {
@@ -251,9 +267,6 @@ body > header {
 	}
 
 }
-
-
-// -- Media Queries -- //
 
 // Tablet Portrait
 

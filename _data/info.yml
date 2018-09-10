@@ -35,21 +35,21 @@ skills:
       type: Development
       text: 
         - HTML5
-        - CSS3
-        - JavaScript (+ES2015)
-        - SCSS (+SassScript)
+        - CSS3 / SCSS / SassScript
+        - JavaScript / ES6+ / React.js
         - Git
         - CoffeeScript
-        - Markdown
-        - Jekyll
-        - XML
-        - YAML
-        - Node.js
+        - Gulp.js / Webpack.js
+        - Jekyll / Liquid / YAML
+        - SVG / XML / JSON
+        - PHP
+        - Node.js / NPM
    -
       type: Experience
       text: 
         - Responsive Web Design and Development
-        - GUI/UX Design
+        - Semantic Markup and Accessibility
+        - UX/GUI Design
         - Branding
         - Art/Creative Direction
         - BFA in Communication Design
