@@ -7,6 +7,10 @@
  "author": "Daniel Blake <daniel@danielblake.design>",
  "license": "UNLICENSED",
  "private": true,
+ "scripts": {
+  "dev": "webpack --mode development --watch",
+  "build": "webpack --mode production"
+ },
  "devDependencies": {
   "@babel/core": "^7.0.0",
   "@babel/preset-env": "^7.0.0",

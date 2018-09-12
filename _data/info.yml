@@ -38,11 +38,11 @@ skills:
         - CSS3 / SCSS / SassScript
         - JavaScript / ES6+ / React.js
         - Git
-        - CoffeeScript
         - Gulp.js / Webpack.js
         - Jekyll / Liquid / YAML
+        - CoffeeScript
         - SVG / XML / JSON
-        - PHP
+        - PHP / MySQL
         - Node.js / NPM
    -
       type: Experience
