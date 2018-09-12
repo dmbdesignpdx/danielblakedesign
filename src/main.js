@@ -1,3 +1,4 @@
+var SmoothScroll = require("./smooth-scroll")
 
 
 // -- Vars -- //
@@ -5,11 +6,9 @@
 var
 icon = document.querySelector("body > header svg"),
 nav = document.querySelector("#nav"),
-scroll = new SmoothScroll('a[href*="#"]')
-
-let
-check = 0,
+scroll = SmoothScroll('a[href*="#"]'),
 original = window.pageYOffset,
+check = 0,
 max = 0,
 bounce
 
