@@ -36,7 +36,8 @@ skills:
       text: 
         - HTML5
         - CSS3 / SCSS / SassScript
-        - JavaScript / ES6+ / React.js
+        - JavaScript / ES6+
+        - React.js / Preact.js
         - Git
         - Gulp.js / Webpack.js
         - Jekyll / Liquid / YAML
