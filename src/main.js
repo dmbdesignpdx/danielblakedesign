@@ -1,13 +1,27 @@
 var SmoothScroll = require("./smooth-scroll")
 
+function $(el = "window") {
+   el = "window" === el ? [window] : "body" === el ? [document.body] : "html" === el ? [document.documentElement] : "head" === el ? [document.head] : [].slice.call(document.querySelectorAll(el))
+   return 1 < el.length ? el : el[0]
+}
+
+function addTo(el, evt, func, opt = null) {
+   !Array.isArray($(el)) && (el = [$(el)])
+   el.map(elm => {elm.addEventListener(evt, func, opt)})
+}
+
+function rmvFrom(el, evt, func, opt = null) {
+   !Array.isArray($(el)) && (el = [$(el)])
+   el.map(elm => {elm.removeEventListener(evt, func, opt)})
+}
 
 // -- Vars -- //
 
 var
-icon = document.querySelector("body > header svg"),
-nav = document.querySelector("#nav"),
+icon = $("body > header svg"),
+nav = $("#nav"),
 scroll = SmoothScroll('a[href*="#"]'),
-original = window.pageYOffset,
+original = $().pageYOffset,
 check = 0,
 max = 0,
 bounce
@@ -19,21 +33,21 @@ bounce
 // Page
 
 function page(cls) {
-	return cls === document.body.className
+	return cls === $("body").className
 }
 
 function wh() {
-   return Math.round(window.innerHeight * 0.33)
+   return Math.round($().innerHeight * 0.33)
 }
 
 
 // Arrow Fade on Scroll
 
 function arrowFade() {
-	if (window.scrollY > wh() && !check) {
+	if ($().scrollY > wh() && !check) {
 		icon.classList.add("fade")
 		check = 1
-	} else if (window.scrollY < wh() && check) {
+	} else if ($().scrollY < wh() && check) {
 		icon.classList.remove("fade")
 		check = 0
 	}
@@ -43,11 +57,11 @@ function arrowFade() {
 // Nav Scroll Action
 
 function navScroll() {
-	const update = window.pageYOffset,
-	nh = parseInt(window.getComputedStyle(nav).height)
+	const update = $().pageYOffset,
+	nh = parseInt($().getComputedStyle(nav).height)
 
 	// Check scroll position
-	if (window.pageYOffset > nh) {
+	if ($().pageYOffset > nh) {
 		nav.classList.add("fixed")
 		nav.classList.add("time")
 
@@ -66,7 +80,7 @@ function navScroll() {
 		}
 
 	// Reset
-	} else if (0 === window.pageYOffset) {
+	} else if (0 === $().pageYOffset) {
 		nav.classList.remove("fixed")
 		nav.classList.remove("show")	
 	} else {
@@ -81,8 +95,8 @@ function navScroll() {
 // Check Window Size
 
 function size() {
-	const full = document.documentElement.scrollHeight,
-	height = window.innerHeight
+	const full = $("html").scrollHeight,
+	height = $().innerHeight
 	max = full - height
 }
 
@@ -90,19 +104,23 @@ function size() {
 
 // -- Invoke -- //
 
-window.addEventListener("load", function ready() {
-	window.removeEventListener("load", ready)
-	window.addEventListener("resize", size)
-	window.addEventListener("scroll", () => {
+addTo("window", "load", function ready() {
+	addTo("window", "resize", size)
+	addTo("window", "scroll", () => {
 		navScroll()
 		arrowFade()
 	})
 
-	// Hero underline animations
-	document.querySelectorAll("h1 span").forEach(item => {
-		item.classList.add("underline")
-	})
+   // Hero underline animations
+   var span = $("h1 span")
+	if (Array.isArray(span)) {
+      span.map(item => {
+         item.classList.add("underline")
+      })
+   } else {
+      span.classList.add("underline")
+   }
 	
 	navScroll()
    size()
-})
+}, {once: true})
