@@ -46,6 +46,7 @@ date: August 30, 2018
 
 		{{< skills >}}
 
+
 <!-- Contact Section -->
 
 		<address id="contact">
@@ -54,7 +55,46 @@ date: August 30, 2018
 	
 			{{< contact >}}
 		
-		</address>
+      </address>
+
+
+<!-- Contact Form -->
+      
+      <form name="drop" action="POST" netlify>
+
+         <fieldset>
+
+            <legend>Or drop me a line!</legend>
+
+            <label>
+
+               <span id="c1" aria-hidden="true">Your Name</span>
+               
+               <input type="text" name="name" autocomplete="name" aria-autocomplete="both" aria-labelledby="c1" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c2" aria-hidden="true">Your Email</span>
+               
+               <input type="email" name="email" autocomplete="email" aria-autocomplete="both" aria-labelledby="c2" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c3" aria-hidden="true">Your Message</span>
+               
+               <textarea name="message" rows="10" aria-labelledby="c3" required aria-required="true"></textarea>
+            
+            </label>
+
+            <button type="submit" class="primary">Send</button>
+
+         </fieldset>
+
+      </form>
 
 	</section>
 

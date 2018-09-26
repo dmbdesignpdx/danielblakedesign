@@ -2,7 +2,7 @@
    box-sizing: border-box
 }
 
-ul, li, h2, h3, h4, h5 {
+ul, li, h2, h3, h4, h5, form, fieldset, label, legend, input, textarea, button {
    padding: 0;
    margin: 0;
    border: 0
@@ -35,7 +35,7 @@ abbr {
    color: inherit
 }
 
-h2, h3, h5 {
+h2, h3, h5, legend {
 	font-family: Montserrat, sans-serif;
 	font-weight: 900;
 	text-rendering: geometricPrecision;
@@ -74,7 +74,7 @@ a:focus, a:active {
    outline: 0
 }
 
-body a:hover {
+a:hover {
    cursor: pointer
 }
 
@@ -92,6 +92,10 @@ main {
 
 // Link Buttons
 
+button.primary {
+   @include appearance(none);
+}
+
 .primary, .secondary {
 	display: inline-block;
 	height: 50px;
@@ -101,7 +105,8 @@ main {
 	letter-spacing: 0.02em;
 	text-align: center;
 	font-size: 0.9em;
-	border-radius: 3px;
+   border-radius: 3px;
+   cursor: pointer;
 
 	@include target(firefox) {
 		line-height: 52px;
@@ -114,33 +119,33 @@ main {
 
 // Preview
 .primary {
-	@include box-shadow(0 1px 2px rgba(0,0,30,0.35));
+	@include box-shadow(0 1px 2px ts(0.35));
 	background: color();
 	color: hsl(250,12%,98%);
 
 	&:focus, &:hover {
-		@include box-shadow(0 2px 5px rgba(0,0,30,0.35));
+		@include box-shadow(0 2px 5px ts(0.35));
 		background: value(color(),5);
 	}
 
 	&:active {
-		@include box-shadow(0 1px 1px rgba(0,0,30,0.35));
+		@include box-shadow(0 1px 1px ts(0.35));
 	}
 }
 
 // Visit
 .secondary {
-	@include box-shadow(0 1px 2px rgba(0,0,30,0.2));
+	@include box-shadow(0 1px 2px ts(0.2));
 	background: color(darkwhite);
 	color: color(darkgray);
 	margin-left: 1em;
 
 	&:focus, &:hover {
-		@include box-shadow(0 2px 5px rgba(0,0,30,0.2));
+		@include box-shadow(0 2px 5px ts(0.2));
 		background: value(color(darkwhite),1);
 	}
 
 	&:active {
-		@include box-shadow(0 1px 1px rgba(0,0,30,0.2));
+		@include box-shadow(0 1px 1px ts(0.2));
 	}
 }
