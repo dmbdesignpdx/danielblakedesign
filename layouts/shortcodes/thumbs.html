@@ -1,0 +1,24 @@
+{{ range $i, $e := .Site.Data.info.thumbs }}
+{{ $n := add $i 1 }}
+
+<section id="{{ .image }}" aria-label="Project {{ $n }} of 3" flexr-grid>
+
+   <h3>{{ .title }}</h3>
+
+   <div class="cta">
+      
+      <a class="primary" href="/{{ .image }}/" aria-label="{{ .ariaOne }}">Preview</a>
+
+      <a class="secondary" href="{{ .link }}" target="_blank" aria-label="{{ .ariaTwo }}" rel="{{ .rel }}">Visit</a>
+   
+   </div>
+   
+   <div class="thumb">
+
+      <img src="/img/work-fl.jpg" alt="" srcset="/img/work-xs.jpg 768w, /img/work-sm.jpg 1080w, /img/work-md.jpg 1280w, /img/work-lg.jpg 1440w, /img/work-xl.jpg 1920w, /img/work-fl.jpg 2880w">
+
+   </div>
+
+</section>
+
+{{ end }}

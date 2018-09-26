@@ -1,8 +1,9 @@
 <div>
 
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
-	
-   <link rel="stylesheet" href="/css/master.css">
+   
+   {{ $master := resources.Get "css/master.scss" | toCSS | minify }}
+   <link rel="stylesheet" href="{{ $master.RelPermalink }}">
    
    <script defer src="/dist/main.bundle.js"></script>
 

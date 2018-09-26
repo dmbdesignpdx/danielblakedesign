@@ -2,22 +2,22 @@ thumbs:
   -
     image: leadshub
     title: LeadsHub &mdash; Mobile App
-    aria-one: Preview the LeadsHub website
-    aria-two: Go to the LeadsHub website
+    ariaOne: Preview the LeadsHub website
+    ariaTwo: Go to the LeadsHub website
     link: "https://dice.services"
     rel: external nofollow noreferrer noopener
   -
     image: turntable
     title: Turntable &mdash; SCSS Library
-    aria-one: Preview the Turntable website
-    aria-two: Go to the Turntable website
+    ariaOne: Preview the Turntable website
+    ariaTwo: Go to the Turntable website
     link: "https://turntablelib.com"
     rel: external noopener
   -
     image: flexr
     title: Flexr &mdash; CSS Micro Framework
-    aria-one: Preview the Flexr website
-    aria-two: Go to the Flexr website
+    ariaOne: Preview the Flexr website
+    ariaTwo: Go to the Flexr website
     link: "https://flexrgrid.com"
     rel: external noopener
 
