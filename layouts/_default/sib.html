@@ -1,0 +1,40 @@
+{{ define "SITE" }}
+
+<header flexr-wrap>
+
+   <h1><span>{{ .Params.one }}</span><br>{{ .Params.two }}</h1>
+
+   <svg viewBox="0 0 50 50"><path d='M4,25 25,46 46,25'/></svg>
+   
+</header>
+
+{{ partialCached "nav.html" . }}
+
+<main flexr-wrap>
+
+   <section>
+
+      {{ $proj := replace .URL "/" "" }}
+
+      {{ range $i, $s := (seq 3)}}
+               
+      <img src="/img/{{ $proj }}/{{ $proj }}-{{ $s }}-fl.jpg" alt="{{ $proj }}"
+            srcset="/img/{{ $proj }}/{{ $proj }}-{{ $s }}-xs.jpg 768w,
+                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-sm.jpg 1080w,
+                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-md.jpg 1280w,
+                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-lg.jpg 1440w,
+                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-xl.jpg 1920w,
+                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-fl.jpg 2880w,">
+
+      {{ end }}
+
+
+      <!-- Main Content -->
+
+      {{ .Content }}
+
+   </section>
+
+</main>
+
+{{ end }}

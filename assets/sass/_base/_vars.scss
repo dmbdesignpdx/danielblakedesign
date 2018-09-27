@@ -1,0 +1,83 @@
+$color: (
+	offwhite: hsl(250,12%,96%),
+	darkwhite: hsl(250,13%,94%),
+	slightgray: hsl(250,11%,76%),
+	lightgray: hsl(250,11%,43%),
+	darklight: hsl(250,14%,38%),
+	darkgray: hsl(250,14%,24%),
+	nearblack: hsl(250,14%,10%),
+	main: hsl(342,80%,54%),
+	two: hsl(300,60%,44%),
+	three: hsl(320,70%,47%)
+);
+
+@function color($arg:main) {
+	@return map-get($color, $arg);
+}
+
+$gutter: (
+	p: 18px,
+	t: 24px,
+   d: 30px
+);
+
+@function gutter($arg) {
+   @return map-get($gutter,$arg);
+}
+
+
+@mixin phoneLan {
+	@media (min-width:540px) {
+		@content;
+	}
+}
+
+@mixin tabletPor {
+	@media (min-width:766px) {
+		@content;
+	}
+}
+
+@mixin tabletLan {
+	@media (min-width:1022px) {
+		@content;
+	}
+}
+
+@mixin desktop {
+	@media (min-width:1278px) {
+		@content;
+	}
+}
+
+@mixin desktopLG {
+	@media (min-width:1680px) {
+		@content;
+	}
+}
+
+@mixin gutter($args...) {
+	@for $i from 1 through 3 {
+		@if $i == 1 {
+			@each $arg in $args {
+				#{$arg}: 16px
+			}
+		} @else if $i == 2 {
+			@include tabletPor {
+				@each $arg in $args {
+					#{$arg}: 24px
+				}
+			}
+		} @else {
+			@include desktop {
+				@each $arg in $args {
+					#{$arg}: 30px
+				}
+			}
+		}
+	}
+}
+
+%mainColor {
+   color: color()
+}

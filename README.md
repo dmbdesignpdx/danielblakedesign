@@ -8,18 +8,20 @@
 - Photoshop
 - After Effects
 - Premiere Pro
+- InVision
 
 ### Development
 
 - HTML5
 - CSS3 / SCSS / SassScript
-- JavaScript / ES6+ / React.js
+- JavaScript / ES6+
 - Git
-- CoffeeScript
 - Gulp.js / Webpack.js
-- Jekyll / Liquid / YAML
-- SVG / XML / JSON
-- PHP / (Learning: MySQL)
+- Vue.js / React.js / Preact.js
+- Nuxt.js / Hugo / Jekyll
+- XML / YAML / JSON
+- CoffeeScript
+- PHP / MySQL
 - Node.js / NPM
 
 ### Experience
