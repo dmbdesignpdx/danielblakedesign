@@ -1,0 +1,101 @@
+---
+title: Daniel Blake - Front End Web Designer
+description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
+class: home
+date: August 30, 2018
+---
+
+<!-- Hero -->
+
+<header id="hero" flexr-wrap>
+
+	<h1>I <span>design</span> and <span>develop</span> websites.</h1>
+
+	<p>Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.</p>
+
+	<svg viewBox="0 0 50 50"><path d='M4,25 25,46 46,25'/></svg>
+
+</header>
+
+
+<!-- Site Navigation -->
+
+{{< navigation >}}
+
+<main>
+
+
+<!-- Work Section -->
+
+	<section id="work" aria-labelledby="w1">
+
+		<h2 id="w1" flexr-wrap>Work</h2>
+
+      {{< thumbs >}}
+		
+	</section>
+
+
+<!-- About Section -->
+
+	<section id="about" aria-labelledby="a1" flexr-grid>
+
+		<h2 id="a1">About</h2>
+
+		<p>Thanks for stopping by! I'm a front end web designer living in Portland,&nbsp;OR. I've always been inspired by and excited about web design and web development &mdash; both have been my passion for the past six years. I am currently the <em>Design Lead and Front End</em> at <a href="https://dice.services" target="_blank" rel="external nofollow noreferrer" aria-label="Go to the Dice Services website">Dice&nbsp;Services</a>, in which I oversee all design (digital and print) and maintain/develop our main and product&nbsp;websites.</p>
+
+		{{< skills >}}
+
+
+<!-- Contact Section -->
+
+		<address id="contact">
+
+			<h5>Contact</h5>
+	
+			{{< contact >}}
+		
+      </address>
+
+
+<!-- Contact Form -->
+      
+      <form name="drop" action="POST" netlify>
+
+         <fieldset>
+
+            <legend>Or drop me a line!</legend>
+
+            <label>
+
+               <span id="c1" aria-hidden="true">Your Name</span>
+               
+               <input type="text" name="name" autocomplete="name" aria-autocomplete="both" aria-labelledby="c1" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c2" aria-hidden="true">Your Email</span>
+               
+               <input type="email" name="email" autocomplete="email" aria-autocomplete="both" aria-labelledby="c2" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c3" aria-hidden="true">Your Message</span>
+               
+               <textarea name="message" rows="10" aria-labelledby="c3" required aria-required="true"></textarea>
+            
+            </label>
+
+            <button name="send" type="submit" class="primary">Send</button>
+
+         </fieldset>
+
+      </form>
+
+	</section>
+
+</main>

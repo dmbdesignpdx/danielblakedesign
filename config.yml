@@ -1,0 +1,25 @@
+languageCode: "en-us"
+baseURL: "https://danielblake.design"
+title: Daniel Blake
+disableKinds:
+  - taxonomy
+  - taxonomyTerm
+  - RSS
+disableHugoGeneratorInject: true
+enableEmoji: true
+
+
+params:
+  author: Daniel Blake
+  title: Front End Web Designer
+  email: daniel@danielblake.design
+  phone: 1-971-801-0208
+  github: "https://github.com/dmbdesignpdx"
+  linkedin: "https://www.linkedin.com/in/danielblakepdx"
+  theme: "#f4f4f6"
+
+  images:
+    main: "https://danielblake.design/img/daniel-og.jpg"
+    alt: Daniel Blake is a front end web designer
+    type: "image/jpg"
+

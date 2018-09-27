@@ -1,6 +1,6 @@
 var SmoothScroll = require("./smooth-scroll")
 
-function $(el = "window") {
+function $(el) {
    el = "window" === el ? [window] : "body" === el ? [document.body] : "html" === el ? [document.documentElement] : "head" === el ? [document.head] : [].slice.call(document.querySelectorAll(el))
    return 1 < el.length ? el : el[0]
 }
@@ -21,7 +21,7 @@ var
 icon = $("body > header svg"),
 nav = $("#nav"),
 scroll = SmoothScroll('a[href*="#"]'),
-original = $().pageYOffset,
+original = window.pageYOffset,
 check = 0,
 max = 0,
 bounce
@@ -36,18 +36,18 @@ function page(cls) {
 	return cls === $("body").className
 }
 
-function wh() {
-   return Math.round($().innerHeight * 0.33)
-}
 
 
 // Arrow Fade on Scroll
 
 function arrowFade() {
-	if ($().scrollY > wh() && !check) {
+   var wh = Math.round(window.innerHeight * 0.33),
+   ws = window.scrollY
+
+	if (ws > wh && !check) {
 		icon.classList.add("fade")
 		check = 1
-	} else if ($().scrollY < wh() && check) {
+	} else if (ws < wh && check) {
 		icon.classList.remove("fade")
 		check = 0
 	}
@@ -57,11 +57,11 @@ function arrowFade() {
 // Nav Scroll Action
 
 function navScroll() {
-	const update = $().pageYOffset,
-	nh = parseInt($().getComputedStyle(nav).height)
+	var update = window.pageYOffset,
+	nh = parseInt(window.getComputedStyle(nav).height)
 
 	// Check scroll position
-	if ($().pageYOffset > nh) {
+	if (window.pageYOffset > nh) {
 		nav.classList.add("fixed")
 		nav.classList.add("time")
 
@@ -80,7 +80,7 @@ function navScroll() {
 		}
 
 	// Reset
-	} else if (0 === $().pageYOffset) {
+	} else if (0 === window.pageYOffset) {
 		nav.classList.remove("fixed")
 		nav.classList.remove("show")	
 	} else {
@@ -96,13 +96,23 @@ function navScroll() {
 
 function size() {
 	const full = $("html").scrollHeight,
-	height = $().innerHeight
+	height = window.innerHeight
 	max = full - height
 }
 
 
 
+function validate() {
+   document.drop.classList.add("sub")
+}
+
+
+
 // -- Invoke -- //
+
+if (page("home")) {
+   document.drop.send.addEventListener("click", validate)
+}
 
 addTo("window", "load", function ready() {
 	addTo("window", "resize", size)
