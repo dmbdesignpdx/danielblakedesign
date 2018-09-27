@@ -226,7 +226,7 @@ div.thumb {
 	@include flex-direction(column);
 	@include align-items(flex-start);
    padding: 20vh 0 0;
-   margin-bottom: 30px;
+   margin-bottom: 60px;
 	
 	@include phoneLan {
 		grid-column: 1 / span 3
@@ -280,34 +280,44 @@ div.thumb {
 
    legend {
       font-size: 1.2rem;
-      letter-spacing: -0.03em;
+      letter-spacing: -0.03em
    }
 
    label {
-      font-size: 70%;
       
       span {
          display: inline-block;
-         margin-bottom: 0.25em;
+         margin-bottom: 0.33em;
+         font-size: 80%;
          color: color(lightgray)
       }
-   }
 
-   input, textarea {
-      color: color(darkgray);
-      background: hsl(250,12%,99%)
+      &:focus-within span {
+         color: color(nearblack)
+      }
    }
 
    legend, input, textarea {
       width: 100%;
-      margin-bottom: 30px;
+      margin-bottom: 18px;
+
+      @include tabletPor {
+         margin-bottom: 24px
+      }
+
+      @include desktop {
+         margin-bottom: 30px
+      }
    }
 
    input, textarea {
-      padding: 16px;
+      padding: 12px;
       font-size: 1rem;
       box-shadow: 0 1px 2px ts(0.2);
-      border-radius: 3px
+      border-radius: 3px;
+      border: 1px solid #FEFEFF;
+      color: color(darkgray);
+      background: #FEFEFF
    }
 
    textarea {
@@ -316,6 +326,10 @@ div.thumb {
 
    input:hover, textarea:hover, input:focus, textarea:focus {
       outline: 0;
-      box-shadow: 0 3px 6px ts(0.15)
+      box-shadow: 0 3px 7px ts(0.15)
+   }
+
+   .sub input:invalid, .sub textarea:invalid {
+      border-color: #F30
    }
 }
