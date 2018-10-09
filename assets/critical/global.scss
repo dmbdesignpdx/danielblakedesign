@@ -1,15 +1,19 @@
+@import "../sass/_base/vars";
+
 // -- Grid -- //
 
 [flexr-grid], [flexr-wrap] {
-	padding-right: 16px;
-	padding-left: 16px;
+	padding-right: 18px;
+   padding-left: 18px;
+   padding-right: minmax(18px, safe-area-inset-right);
+	padding-left: minmax(18px, safe-area-inset-left);
    margin: 0 auto
 }
 
 [flexr-grid] {
 	display: grid;
 	grid: none / repeat(7, 1fr);
-	grid-column-gap: 16px
+	grid-column-gap: 18px
 }
 
 [flexr-grid] > * {
@@ -24,7 +28,7 @@
    width: device-width
 }
 
-*, *::before {
+* {
    box-sizing: border-box
 }
 
@@ -33,6 +37,7 @@ html {
 }
 
 body {
+   color: color(darkgray);
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	-ms-text-size-adjust: none;
@@ -66,7 +71,6 @@ h1 {
 	padding-top: 27vh;
 	margin-bottom: 0.3em;
 	font-size: 2.4rem;
-	color: #373546;
 	
 	span {
 		display: inline-block;
@@ -88,7 +92,7 @@ h1 {
 				transition: 0.4s 1s;
 			}
 
-			@at-root h1 span.underline::after {
+			@at-root h1 span.js-underline::after {
 				width: 100%
 			}
 		}
@@ -102,7 +106,7 @@ h1 {
 
 p {
 	text-rendering: optimizeSpeed;
-	color: #58536e;
+   color: color(darklight);
 	line-height: 1.5;
 	letter-spacing: 0.02em;
 	hyphens: none
@@ -112,7 +116,7 @@ p {
 // -- Common Rules -- //
 
 html, nav {
-	background: #f7f6f8
+	background: color(offwhite)
 }
 
 nav a:first-child, h1 {
@@ -191,8 +195,7 @@ nav a:first-child, h1 {
 
    a {
 		font-size: 0.8rem;
-		letter-spacing: 0.03em;
-		color: #373546
+		letter-spacing: 0.03em
 	}
 
 	a:first-child {

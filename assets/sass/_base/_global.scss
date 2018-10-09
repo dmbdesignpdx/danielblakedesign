@@ -1,4 +1,4 @@
-*::after {
+*::before, *::after {
    box-sizing: border-box
 }
 
@@ -13,8 +13,7 @@ main, img, footer {
 }
 
 img {
-	display: block;
-	height: auto
+	display: block
 }
 
 img, li::before {
@@ -27,7 +26,7 @@ ul {
 
 li::before {
 	display: block;
-	content: "\200C";
+	content: "\200C"
 }
 
 abbr {
@@ -35,11 +34,14 @@ abbr {
    color: inherit
 }
 
+button, textarea {
+   font: inherit
+}
+
 h2, h3, h5, legend {
 	font-family: Montserrat, sans-serif;
 	font-weight: 900;
 	text-rendering: geometricPrecision;
-	color: #373546;
    letter-spacing: -0.04em;
 	word-spacing: 0.03em
 }
@@ -137,7 +139,6 @@ button.primary {
 .secondary {
 	@include box-shadow(0 1px 2px ts(0.2));
 	background: color(darkwhite);
-	color: color(darkgray);
 	margin-left: 1em;
 
 	&:focus, &:hover {
