@@ -6,7 +6,6 @@
 var SmoothScroll = require("./plugins/smooth-scroll")
 
 // Ours
-import { $, addTo, rmvFrom } from "./plugins/select"
 import Nav from "./nav"
 
 
@@ -14,9 +13,9 @@ import Nav from "./nav"
 // === Vars === //
 
 var
-icon = $("body > header svg"),
-nav = $("#nav"),
-scroll = SmoothScroll('a[href*="#"]'),
+icon = document.querySelector("body > header svg"),
+nav = document.querySelector("#nav"),
+scroll = SmoothScroll("a[href*='#']"),
 check = 0
 
 
@@ -26,21 +25,18 @@ check = 0
 // -- Which Page
 
 function page(cls) {
-	return cls === $("body").className
+	return cls === document.body.className
 }
 
 
 // -- Hero Underline
 
 function underline() {
-   var span = $("h1 span")
-   if (Array.isArray(span)) {
-      span.map(function spanMap(item) {
-         item.classList.add("js-underline")
-      })
-   } else {
-      span.classList.add("js-underline")
-   }
+   var span = document.querySelectorAll("h1 span")
+   
+   span.forEach(item => {
+      item.classList.add("js-underline")
+   })
 }
 
 
@@ -70,8 +66,8 @@ function validate() {
 
 // === Invoke === //
 
-addTo("window", "load", function siteReady() {
-	addTo("window", "scroll", () => {
+window.addEventListener("load", () => {
+	window.addEventListener("scroll", () => {
 		arrowFade()
 	})
 
@@ -80,6 +76,6 @@ addTo("window", "load", function siteReady() {
    if (page("home")) {
       document.drop.send.addEventListener("click", validate)
    }
-}, {once: true})
+}, { once: true })
 
 Nav()

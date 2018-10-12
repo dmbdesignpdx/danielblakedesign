@@ -12,13 +12,6 @@ bounce = 0
 
 // === Functions === //
 
-// -- Touch Screen check
-
-function touch() {
-   return "ontouchstart" in window || navigator.MaxTouchPoints > 0
-}
-
-
 // -- Find available viewing height
 
 function availHeight() {
@@ -61,13 +54,7 @@ function pageScroll() {
 		if (original > -1 && viewMax > update) {
 
          // Show/Hide Nav
-         if (touch()) {
-            window.addEventListener("touchend", function touchDecide(){
-               decide(update)
-            })
-         } else {
-            decide(update)
-         }
+         decide(update)
 		}
 
 	// Or reset all at top
@@ -88,14 +75,12 @@ function pageScroll() {
 
 // === Export === //
 
-export default function navExport() {
-   window.addEventListener("load", function navReady(){
+export default function() {
+   window.addEventListener("load", () => {
       window.addEventListener("resize", availHeight)
-
-      if (touch()) window.addEventListener("touchstart", pageScroll)
-      else window.addEventListener("scroll", pageScroll)
+      window.addEventListener("scroll", pageScroll)
       
       pageScroll()
       availHeight()
-   }, {once: true})
+   }, { once: true })
 }
