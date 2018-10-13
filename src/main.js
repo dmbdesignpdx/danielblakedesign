@@ -1,4 +1,6 @@
-/* === Imports === */
+//
+// Imports
+//
 
 // Vendor
 const smoothScroll = require("./plugins/smooth-scroll")
@@ -8,7 +10,9 @@ import navScroll from "./nav"
 
 
 
-/* === Vars === */
+//
+// Variables
+//
 
 const icon = document.querySelector("body > header svg")
 
@@ -16,7 +20,9 @@ let check = 0
 
 
 
-/* === Functions === */
+//
+// Functions
+//
 
 /**
  * @name page
@@ -65,6 +71,7 @@ function arrowFade() {
 		icon.classList.remove("js-fade")
 		check = 0
 	}
+
 }
 
 
@@ -81,15 +88,13 @@ function validate() {
 
 
 
-/* === Invoke === */
+//
+// Invoke
+//
 
 window.addEventListener("load", () => {
 
-   window.addEventListener("scroll", () => {
-
-      arrowFade()
-
-   })
+   window.addEventListener("scroll", arrowFade)
 
    if (page("home")) {
       document.drop.send.addEventListener("click", validate)

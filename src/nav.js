@@ -1,4 +1,6 @@
-/* === Vars === */
+//
+// Variables
+//
 
 const nav = document.querySelector("#nav")
 
@@ -9,7 +11,9 @@ bounce = 0
 
 
 
-/* === Functions === */
+//
+// Functions
+//
 
 /**
  * @name availHeight
@@ -91,7 +95,9 @@ function pageScroll() {
 
 
 
-/* === Export === */
+//
+// Export
+//
 
 /**
  * @name Export

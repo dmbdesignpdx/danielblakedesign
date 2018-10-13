@@ -17,7 +17,7 @@ body > header {
 	svg {
 		@include transition(opacity 0.4s);
 
-		&.fade {
+		&.js-fade {
 			opacity: 0;
 		}
 	}
@@ -329,7 +329,7 @@ div.thumb {
       box-shadow: 0 3px 7px ts(0.15)
    }
 
-   .sub input:invalid, .sub textarea:invalid {
+   .js-sub input:invalid, .js-sub textarea:invalid {
       border-color: #F30
    }
 }
