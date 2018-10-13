@@ -1,15 +1,25 @@
 env:
   browser: true
   es6: true
-extends: 'eslint:recommended'
+  commonjs: true
+parserOptions:
+  sourceType: module
+extends:
+  - eslint:recommended
 rules:
-  accessor-pairs: 'off'
-  array-bracket-newline: error
+  accessor-pairs: off
+  array-bracket-newline:
+    - error
+    - minItems: 3
   array-bracket-spacing: error
   array-callback-return: error
-  array-element-newline: error
+  array-element-newline:
+    - error
+    - consistent
   arrow-body-style: error
-  arrow-parens: error
+  arrow-parens:
+    - error
+    - as-needed
   arrow-spacing: error
   block-scoped-var: error
   block-spacing:
@@ -42,25 +52,25 @@ rules:
   dot-notation: error
   eol-last: error
   eqeqeq: error
-  for-direction: error
   func-call-spacing: error
   func-name-matching: error
   func-names:
     - error
     - never
-  func-style: error
+  func-style:
+    - error
+    - declaration
   function-paren-newline: error
   generator-star-spacing: error
-  getter-return: error
   global-require: error
   guard-for-in: error
   handle-callback-err: error
   id-blacklist: error
-  id-length: 'off'
+  id-length: off
   id-match: error
   implicit-arrow-linebreak: error
-  indent: 'off'
-  indent-legacy: 'off'
+  indent: off
+  indent-legacy: off
   init-declarations: error
   jsx-quotes: error
   key-spacing: error
@@ -76,11 +86,16 @@ rules:
   lines-around-directive: error
   lines-between-class-members: error
   max-depth: error
-  max-len: error
+  max-len: 
+    - error
+    - ignoreTemplateLiterals: true
+      ignoreStrings: true
+      ignoreUrls: true
+      ignorePattern: "<.+"
   max-lines: error
   max-nested-callbacks: error
   max-params: error
-  max-statements: 'off'
+  max-statements: off
   max-statements-per-line: error
   multiline-comment-style: error
   multiline-ternary: error
@@ -120,15 +135,17 @@ rules:
   no-label-var: error
   no-labels: error
   no-lone-blocks: error
-  no-lonely-if: 'off'
+  no-lonely-if: off
   no-loop-func: error
-  no-magic-numbers: 'off'
+  no-magic-numbers: off
   no-mixed-operators: error
   no-mixed-requires: error
   no-multi-assign: error
   no-multi-spaces: error
   no-multi-str: error
-  no-multiple-empty-lines: error
+  no-multiple-empty-lines:
+    - error
+    - max: 3
   no-native-reassign: error
   no-negated-condition: error
   no-negated-in-lhs: error
@@ -160,9 +177,9 @@ rules:
   no-shadow-restricted-names: error
   no-spaced-func: error
   no-sync: error
-  no-tabs: 'off'
+  no-tabs: off
   no-template-curly-in-string: error
-  no-ternary: error
+  no-ternary: off
   no-throw-literal: error
   no-trailing-spaces: error
   no-undef-init: error
@@ -170,7 +187,7 @@ rules:
   no-underscore-dangle: error
   no-unmodified-loop-condition: error
   no-unneeded-ternary: error
-  no-unused-expressions: 'off'
+  no-unused-expressions: off
   no-use-before-define: error
   no-useless-call: error
   no-useless-computed-key: error
@@ -178,24 +195,31 @@ rules:
   no-useless-constructor: error
   no-useless-rename: error
   no-useless-return: error
-  no-var: error
+  no-var: off
   no-void: error
   no-warning-comments: error
   no-whitespace-before-property: error
   no-with: error
   nonblock-statement-body-position: error
-  object-curly-newline: error
-  object-curly-spacing: error
+  object-curly-newline:
+    - error
+    - minProperties: 3
+      consistent: true
+  object-curly-spacing:
+    - error
+    - always
   object-property-newline: error
   object-shorthand: error
-  one-var: error
+  one-var:
+    - error
+    - separateRequires: true
   one-var-declaration-per-line: error
   operator-assignment: error
   operator-linebreak: error
-  padded-blocks: 'off'
+  padded-blocks: off
   padding-line-between-statements: error
-  prefer-arrow-callback: 'off'
-  prefer-const: 'off'
+  prefer-arrow-callback: off
+  prefer-const: off
   prefer-destructuring: error
   prefer-numeric-literals: error
   prefer-promise-reject-errors: error
@@ -203,7 +227,7 @@ rules:
   prefer-rest-params: error
   prefer-spread: error
   prefer-template: error
-  quote-props: 'off'
+  quote-props: off
   quotes:
     - error
     - double
@@ -218,11 +242,14 @@ rules:
     - never
   semi-spacing: error
   semi-style: error
-  sort-imports: error
-  sort-keys: 'off'
-  sort-vars: 'off'
-  space-before-blocks: 'off'
-  space-before-function-paren: 'off'
+  sort-imports:
+    - error
+    - ignoreCase: true
+      ignoreMemberSort: true
+  sort-keys: off
+  sort-vars: off
+  space-before-blocks: off
+  space-before-function-paren: off
   space-in-parens:
     - error
     - never
@@ -243,7 +270,7 @@ rules:
     - never
   valid-jsdoc: error
   vars-on-top: error
-  wrap-iife: 'off'
+  wrap-iife: off
   wrap-regex: error
   yield-star-spacing: error
   yoda:

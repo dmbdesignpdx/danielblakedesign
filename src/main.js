@@ -1,81 +1,103 @@
-"use strict"
-
-// === Imports === //
+/* === Imports === */
 
 // Vendor
-var SmoothScroll = require("./plugins/smooth-scroll")
+const smoothScroll = require("./plugins/smooth-scroll")
 
 // Ours
-import Nav from "./nav"
+import navScroll from "./nav"
 
 
 
-// === Vars === //
+/* === Vars === */
 
-var
-icon = document.querySelector("body > header svg"),
-nav = document.querySelector("#nav"),
-scroll = SmoothScroll("a[href*='#']"),
-check = 0
+const icon = document.querySelector("body > header svg")
+
+let check = 0
 
 
 
-// === Functions === //
+/* === Functions === */
 
-// -- Which Page
-
+/**
+ * @name page
+ * @description Checks which page is being viewed
+ * @param {string} cls - class name to check
+ * @returns {boolean} Yea or Nay
+ */
 function page(cls) {
-	return cls === document.body.className
+
+   return cls === document.body.className
+
 }
 
 
-// -- Hero Underline
-
+/**
+ * @name underline
+ * @description Draws a line under the span(s) in the h1
+ * @returns {undefined} Adds the class "js-underline"
+ */
 function underline() {
-   var span = document.querySelectorAll("h1 span")
-   
+
+   const span = document.querySelectorAll("h1 span")
+
    span.forEach(item => {
       item.classList.add("js-underline")
    })
+
 }
 
 
-// -- Arrow Fade
-
+/**
+ * @name arrowFade
+ * @description Fades the arrow as the page scrolls down
+ * @returns {undefined} Adds or removes the "js-fade" class
+ */
 function arrowFade() {
-   var wh = Math.round(window.innerHeight * 0.33),
+
+   const
+   wh = Math.round(window.innerHeight * 0.33),
    ws = window.scrollY
 
 	if (ws > wh && !check) {
-		icon.classList.add("fade")
+		icon.classList.add("js-fade")
 		check = 1
 	} else if (ws < wh && check) {
-		icon.classList.remove("fade")
+		icon.classList.remove("js-fade")
 		check = 0
 	}
 }
 
 
-// -- Form Validation
-
+/**
+ * @name validate
+ * @description Validates the form
+ * @returns {undefined} Adds the "js-sub" class
+ */
 function validate() {
-   document.drop.classList.add("sub")
+
+   document.drop.classList.add("js-sub")
+
 }
 
 
 
-// === Invoke === //
+/* === Invoke === */
 
 window.addEventListener("load", () => {
-	window.addEventListener("scroll", () => {
-		arrowFade()
-	})
 
-   underline()
+   window.addEventListener("scroll", () => {
+
+      arrowFade()
+
+   })
 
    if (page("home")) {
       document.drop.send.addEventListener("click", validate)
    }
+
+   underline()
+
 }, { once: true })
 
-Nav()
+smoothScroll("a[href*='#']")
+navScroll()
