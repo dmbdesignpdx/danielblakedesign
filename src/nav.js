@@ -1,34 +1,43 @@
-"use strict"
-
-// === Vars === //
+/* === Vars === */
 
 const nav = document.querySelector("#nav")
-var
+
+let
 original = window.pageYOffset,
 viewMax = 0,
 bounce = 0
 
 
 
-// === Functions === //
+/* === Functions === */
 
-// -- Find available viewing height
-
+/**
+ * @name availHeight
+ * @description Finds the available view height
+ * @returns {undefined} viewMax gets updated
+ */
 function availHeight() {
-	const full = document.documentElement.scrollHeight,
+
+   const
+   full = document.documentElement.scrollHeight,
 	height = window.innerHeight
-	viewMax = full - height
+
+   viewMax = full - height
+
 }
 
 
-// -- Show/Hide Nav
+/**
+ * @name showHide
+ * @description Show or Hide Nav
+ * @param {number} update - Last scroll position
+ * @returns {undefined} Adds or removes "show" class
+ */
+function showHide(update) {
 
-function decide(update) {
-
-   // Scrolling down (Hide)
-   // And bottom bounce check
+   // Scrolling down (Hide) and bottom bounce check
    if (update > original && !bounce) {
-      nav.classList.remove("show")	
+      nav.classList.remove("show")
       bounce = 1
 
    // Or scrolling up (Show)
@@ -36,13 +45,19 @@ function decide(update) {
       nav.classList.add("show")
       bounce = 0
    }
+
 }
 
 
-// -- Page scroll update
-
+/**
+ * @name pageScroll
+ * @description Detects page scroll position
+ * @returns {undefined} Updates page scroll position
+ */
 function pageScroll() {
-	const update = window.pageYOffset,
+
+   const
+   update = window.pageYOffset,
    nh = nav.clientHeight
 
 	// Check scroll position
@@ -51,17 +66,19 @@ function pageScroll() {
 		nav.classList.add("time")
 
 		// Available scroll height check (top and bottom)
-		if (original > -1 && viewMax > update) {
+		if (-1 < original && viewMax > update) {
 
-         // Show/Hide Nav
-         decide(update)
+         /**
+          * @see showHide
+          */
+         showHide(update)
 		}
 
 	// Or reset all at top
 	} else if (0 === window.pageYOffset) {
 		nav.classList.remove("fixed")
       nav.classList.remove("show")
-   
+
    // Or remove transition in Nav height area
 	} else {
 		nav.classList.remove("time")
@@ -69,18 +86,28 @@ function pageScroll() {
 
 	// Update scroll position
 	original = update
+
 }
 
 
 
-// === Export === //
+/* === Export === */
 
+/**
+ * @name Export
+ * @description Exports nav.js
+ * @returns {undefined}
+ */
 export default function() {
+
    window.addEventListener("load", () => {
+
       window.addEventListener("resize", availHeight)
       window.addEventListener("scroll", pageScroll)
-      
+
       pageScroll()
       availHeight()
+
    }, { once: true })
+
 }
