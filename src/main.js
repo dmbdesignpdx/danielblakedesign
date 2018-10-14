@@ -1,6 +1,13 @@
+/**
+ * @file Main script for danielblake.design
+ */
+
+
+
 //
 // Imports
 //
+
 
 // Vendor
 const smoothScroll = require("./plugins/smooth-scroll")
@@ -14,6 +21,7 @@ import navScroll from "./nav"
 // Variables
 //
 
+
 const icon = document.querySelector("body > header svg")
 
 let check = 0
@@ -24,6 +32,7 @@ let check = 0
 // Functions
 //
 
+
 /**
  * @name page
  * @description Checks which page is being viewed
@@ -31,9 +40,7 @@ let check = 0
  * @returns {boolean} Yea or Nay
  */
 function page(cls) {
-
    return cls === document.body.className
-
 }
 
 
@@ -43,13 +50,11 @@ function page(cls) {
  * @returns {undefined} Adds the class "js-underline"
  */
 function underline() {
-
    const span = document.querySelectorAll("h1 span")
 
    span.forEach(item => {
       item.classList.add("js-underline")
    })
-
 }
 
 
@@ -59,7 +64,6 @@ function underline() {
  * @returns {undefined} Adds or removes the "js-fade" class
  */
 function arrowFade() {
-
    const
    wh = Math.round(window.innerHeight * 0.33),
    ws = window.scrollY
@@ -71,7 +75,6 @@ function arrowFade() {
 		icon.classList.remove("js-fade")
 		check = 0
 	}
-
 }
 
 
@@ -81,9 +84,7 @@ function arrowFade() {
  * @returns {undefined} Adds the "js-sub" class
  */
 function validate() {
-
    document.drop.classList.add("js-sub")
-
 }
 
 
@@ -92,16 +93,18 @@ function validate() {
 // Invoke
 //
 
-window.addEventListener("load", () => {
 
+window.addEventListener("load", () => {
+   // arrowFade
    window.addEventListener("scroll", arrowFade)
 
+   // validate
    if (page("home")) {
       document.drop.send.addEventListener("click", validate)
    }
 
+   // underline
    underline()
-
 }, { once: true })
 
 smoothScroll("a[href*='#']")
