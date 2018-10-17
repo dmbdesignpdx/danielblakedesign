@@ -105,18 +105,15 @@ function pageScroll() {
  * @description Exports this file
  * @returns {undefined}
  */
-export default function() {
-   window.addEventListener("load", () => {
+export default window.addEventListener("load", function() {
+   // listen: availHeight
+   window.addEventListener("resize", availHeight)
+   // listen: pageScroll
+   window.addEventListener("scroll", pageScroll)
 
-      // listen: availHeight
-      window.addEventListener("resize", availHeight)
-      // listen: pageScroll
-      window.addEventListener("scroll", pageScroll)
+   // call: pageScroll
+   pageScroll()
+   // call: availHeight
+   availHeight()
 
-      // call: pageScroll
-      pageScroll()
-      // call: availHeight
-      availHeight()
-
-   }, { once: true })
-}
+}, { once: true })

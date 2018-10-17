@@ -13,7 +13,7 @@
 const smoothScroll = require("./plugins/smooth-scroll")
 
 // Ours
-import navScroll from "./nav"
+import "./nav"
 
 
 
@@ -108,4 +108,3 @@ window.addEventListener("load", () => {
 }, { once: true })
 
 smoothScroll("a[href*='#']")
-navScroll()
