@@ -11,15 +11,15 @@
        @extend %mainColor;
 	}
 	
-	&.show {
+	&.js-show {
 		@include transform(translateY(calc(100% + 3px)));
 	}
 	
-	&.time {
+	&.js-time {
 		@include transition(transform 0.4s);
 	}
 	
-	&.fixed {
+	&.js-fixed {
 		@include box-shadow(0 1px 3px ts(0.3));
 		position: fixed;
 		top: -59px;
