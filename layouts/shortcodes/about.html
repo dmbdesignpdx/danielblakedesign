@@ -1,10 +1,11 @@
 <h2 id="a1">About</h2>
 
-<p>Thanks for stopping by! I'm a front end web designer living in Portland,&nbsp;OR. I've always been inspired by and excited about web design and web development &mdash; both have been my passion for the past six years. I was the <em>Design Lead and Front End</em> at <a href="https://dice.services" target="_blank" rel="external nofollow noreferrer" aria-label="Go to the Dice Services website">Dice&nbsp;Services</a>, in which I oversaw all design (digital and print) and maintained/developed the company and product&nbsp;websites.</p>
+<p>Thanks for stopping by! I'm a front end web designer living in Portland,&nbsp;OR. I've always been inspired by and excited about web design and web development &mdash; both have been my passion for the past six years. As the <em>Design Lead and Front End</em> at Dice Services, I maintained and developed the company and product websites while I oversaw and managed all design. Websites should be simple, accessible, responsive, and fast. That is the bar I set for&nbsp;myself.</p>
 
-{{ range $i, $e := .Site.Data.info.skills }}
+{{ range $i, $e := .Site.Data.skills }}
+{{ $n := add $i 1 }}
 
-<section aria-label="Skills {{ $i }} of 3">
+<section aria-label="Skills {{ $n }} of 3">
 
    <svg><use xlink:href="/img/icons.svg#{{ lower .type }}"/></svg>
 

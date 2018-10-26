@@ -27,7 +27,7 @@
 
 <meta name="description" content="{{ .Description }}">
 
-<meta name="author" content="{{ .Site.Params.author }}">
+<meta name="author" content="{{ .Site.Data.site.author }}">
 
 <link rel="canonical" href="{{ .Site.BaseURL }}">
 
@@ -39,9 +39,9 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta name="theme-color" content="{{ .Site.Params.theme }}">
+<meta name="theme-color" content="{{ .Site.Data.site.theme }}">
 
-<meta name="apple-mobile-web-app-status-bar-style" name="{{ .Site.Params.theme }}">
+<meta name="apple-mobile-web-app-status-bar-style" name="{{ .Site.Data.site.theme }}">
 
 
 <!-- Favicons -->
@@ -54,7 +54,7 @@
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
-<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Params.theme }}">
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Data.site.theme }}">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -67,9 +67,9 @@
 
 <meta name="twitter:description" content="{{ .Description }}">
 
-<meta name="twitter:image" content="{{ .Site.Params.images.main }}">
+<meta name="twitter:image" content="{{ .Site.Data.site.images.main }}">
 
-<meta name="twitter:image:alt" content="{{ .Site.Params.images.alt }}">
+<meta name="twitter:image:alt" content="{{ .Site.Data.site.images.alt }}">
 
 <meta name="twitter:url" content="{{ absURL .URL }}">
 
@@ -81,13 +81,13 @@
 
 <meta property="og:description" content="{{ .Description }}">
 
-<meta property="og:image" content="{{ .Site.Params.images.main }}">
+<meta property="og:image" content="{{ .Site.Data.site.images.main }}">
 
 <meta property="og:image:width" content="526">
 
 <meta property="og:image:height" content="275">
 
-<meta property="og:image:type" content="{{ .Site.Params.images.type }}">
+<meta property="og:image:type" content="{{ .Site.Data.site.images.type }}">
 
 <meta property="og:url" content="{{ absURL .URL }}">
 
@@ -111,14 +111,14 @@
    "name":"{{ .Title }}",
    "description":"{{ .Description }}",
    "url":"{{ .URL | absURL }}",
-	"image":"{{ .Site.Params.images.main }}",
+	"image":"{{ .Site.Data.site.images.main }}",
 	"creator":{
 		"@type": "Person",
-		"name": "{{ .Site.Params.author }}",
-		"description": "{{ .Site.Params.title }}",
+		"name": "{{ .Site.Data.site.author }}",
+		"description": "{{ .Site.Data.site.title }}",
 		"address": "Portland, Oregon",
-      "email":"{{ .Site.Params.email }}",
-      "telephone":"+{{ replace .Site.Params.phone "-" "" }}"
+      "email":"{{ .Site.Data.site.email }}",
+      "telephone":"+{{ replace .Site.Data.site.phone "-" "" }}"
 	},
 	"offers":{
 		"@type":"Offer",
@@ -127,8 +127,8 @@
 			"serviceType":"Website design and development"
 		}
 	},
-	"sameAs":"{{ .Site.Params.linkedin }}",
-	"sameAs":"{{ .Site.Params.github }}"
+	"sameAs":"{{ .Site.Data.site.linkedin }}",
+	"sameAs":"{{ .Site.Data.site.github }}"
 }
 </script>
 
