@@ -1,12 +1,16 @@
 @import
 
+// Vendors
 "../sass/_vendor/turntable",
 
+// Globals
 "../sass/_base/vars",
 "../sass/_base/global",
 
-"../sass/_includes/nav",
-"../sass/_includes/footer",
+// Partials
+"../sass/_partials/nav",
+"../sass/_partials/footer",
 
-"../sass/_pages/home",
-"../sass/_pages/sibling";
+// Content
+"../sass/_content/home",
+"../sass/_content/sibling";

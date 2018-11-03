@@ -1,6 +1,30 @@
+/* 
+ * Contents:
+ *
+ *  Imports
+ *  Grid
+ *  Global Styles and Resets
+ *  Common Rules
+ *  Logo
+ *  Nav
+ *  Hero
+ *  Media Queries
+ *
+ */
+
+
+
+//
+//  Imports
+//
+
 @import "../sass/_base/vars";
 
-// -- Grid -- //
+
+
+//
+//  Grid
+//
 
 [flexr-grid], [flexr-wrap] {
 	padding-right: 18px;
@@ -22,7 +46,9 @@
 
 
 
-// -- Global Styles and Resets -- //
+//
+//  Global Styles and Resets
+//
 
 @-ms-viewport {
    width: device-width
@@ -54,7 +80,7 @@ body, h1, p {
    border: 0
 }
 
-svg, nav a {
+svg, nav a, h1 span::after {
    display: block
 }
 
@@ -71,34 +97,41 @@ h1 {
 	padding-top: 27vh;
 	margin-bottom: 0.3em;
 	font-size: 2.4rem;
-	
+   
+   // Underlined words
 	span {
 		display: inline-block;
 		line-height: 1.1;
 
 		&::after {
 			content: "";
-			display: block;
 			width: 0;
 			height: 6px;
 			background: #e82c6a;
-			top: -.1em;
+			top: -0.1em;
 			position: relative;
 			z-index: -1;
 			border-radius: 3px;
-			transition: 0.4s 0.5s;
 
+         // Animation delay for second word
 			@at-root h1 span:last-child::after {
 				transition: 0.4s 1s;
 			}
 
+         // Animation delay override if no second word
+			@at-root h1 span:first-child::after {
+				transition: 0.4s 0.5s;
+         }
+         
+         // JS animation
 			@at-root h1 span.js-underline::after {
 				width: 100%
 			}
 		}
 	}
 
-	@at-root .sib h1 {
+   // Sibling h1
+	.sib & {
 		padding-top: 38vh;
 		line-height: 1.2
 	}
@@ -113,7 +146,10 @@ p {
 }
 
 
-// -- Common Rules -- //
+
+//
+//  Common Rules
+//
 
 html, nav {
 	background: color(offwhite)
@@ -143,7 +179,9 @@ nav a:first-child, h1 {
 
 
 
-// -- Logo -- //
+//
+//  Logo
+//
 
 #logo {
 	stroke:#17161d;
@@ -158,31 +196,40 @@ nav a:first-child, h1 {
 .c {
 	fill:#fafafa
 }
+
 .d {
 	fill:#17161d
 }
+
 .e {
 	fill:#e82c64
 }
+
 .f {
 	fill:#ef6b92
 }
+
 .g {
 	fill:#f395b1
 }
+
 .h {
 	fill:#9e2b9c
 }
+
 .i {
 	fill:#bb6aba
 }
+
 .j {
 	fill:#cf95cd
 }
 
 
 
-// -- Nav -- //
+//
+//  Nav
+//
 
 #nav {
    height: 56px;
@@ -214,8 +261,7 @@ nav a:first-child, h1 {
 	}
 	
 	a:not(:first-child) {
-		padding: 16px 0;
-		
+		padding: 16px 0
 	}
 
 	a:nth-child(2) {
@@ -229,8 +275,9 @@ nav a:first-child, h1 {
 
 
 
-
-// -- Hero -- //
+//
+//  Hero
+//
 
 body > header {
 	height: 100vh;
@@ -249,9 +296,14 @@ body > header {
 
 
 
-// -- Media Queries -- //
+//
+//  Media Queries
+//
 
-// Phone Landscape
+
+/**
+ *  Phone Landscape
+ */
 
 @media (min-width: 540px) {
 
@@ -271,7 +323,10 @@ body > header {
 
 }
 
-// Tablet Portrait
+
+/**
+ *  Tablet Portrait
+ */
 
 @media (min-width:766px) {
 
@@ -304,11 +359,9 @@ body > header {
 }
 
 
-// Tablet Landscape
-
-
-
-// Desktop
+/**
+ *  Desktop
+ */
 
 @media (min-width:1278px) {
 
@@ -330,7 +383,9 @@ body > header {
 }
 
 
-// Large Desktop
+/**
+ *  Desktop Large
+ */
 
 @media (min-width:1680px) {
 
