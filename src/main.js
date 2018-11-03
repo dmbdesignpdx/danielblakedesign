@@ -5,9 +5,8 @@
 
 
 //
-// Imports
+//  Imports
 //
-
 
 // Vendor
 const smoothScroll = require("./plugins/smooth-scroll")
@@ -18,9 +17,8 @@ import "./nav"
 
 
 //
-// Variables
+//  Variables
 //
-
 
 const icon = document.querySelector("body > header svg")
 
@@ -29,7 +27,7 @@ let check = 0
 
 
 //
-// Functions
+//  Functions
 //
 
 
@@ -90,11 +88,12 @@ function validate() {
 
 
 //
-// Invoke
+//  Invoke
 //
 
 
 window.addEventListener("load", () => {
+
    // arrowFade
    window.addEventListener("scroll", arrowFade)
 
