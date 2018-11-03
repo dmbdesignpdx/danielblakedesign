@@ -2,11 +2,10 @@ author: Daniel Blake
 title: Front End Web Designer
 email: daniel@danielblake.design
 phone: 1-971-801-0208
-github: "https://github.com/dmbdesignpdx"
-linkedin: "https://www.linkedin.com/in/danielblakepdx"
 theme: "#e82c64"
 
-images:
-  main: "https://danielblake.design/img/daniel-og.jpg"
-  alt: Daniel Blake is a front end web designer
-  type: "image/jpg"
+github: https://github.com/dmbdesignpdx
+linkedin: https://www.linkedin.com/in/danielblakepdx
+
+image: https://danielblake.design/img/daniel-og.jpg
+type: image/jpg

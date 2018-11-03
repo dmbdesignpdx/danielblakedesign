@@ -1,4 +1,4 @@
-#### Hello, I am a front-end web designer living in Portland, Oregon.
+#### Hello! 👋 I am a front-end web designer living in Portland, Oregon.
 
 ### Design
 
@@ -8,17 +8,18 @@
 - Photoshop
 - After Effects
 - Premiere Pro
-- InVision
+- InVision Studio
 
 ### Development
 
 - HTML5
 - CSS3 / SCSS / SassScript
 - JavaScript / ES6+
-- Git
-- Gulp.js / Webpack.js
 - Vue.js / React.js / Preact.js
+- Git
+- NativeScript
 - Nuxt.js / Hugo / Jekyll
+- Gulp.js / Webpack.js
 - XML / YAML / JSON
 - CoffeeScript
 - PHP / MySQL
