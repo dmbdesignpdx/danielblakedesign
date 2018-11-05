@@ -13,14 +13,14 @@
 #footer {
    padding-top: 60px;
    padding-bottom: 90px;
-	background: color(nearblack);
-	
-	address, p:nth-of-type(1) {
+   background: color(nearblack);
+   
+   address, p:nth-of-type(1) {
 
-		@include phoneLan {
-			grid-column: 1 / span 2
-		}
-	}
+      @include phoneLan {
+         grid-column: 1 / span 2
+      }
+   }
 
    p, small, address {
       font-size: 0.9rem;
@@ -30,34 +30,34 @@
    }
 
    address {
-		font-weight: normal;
-		line-height: 1.5;
+      font-weight: normal;
+      line-height: 1.5;
 
-		@include phoneLan {
-			grid-row: 1 / 1
-		}
-	}
-	
-	small {
-		color: color(slightgray);
-	}
+      @include phoneLan {
+         grid-row: 1 / 1
+      }
+   }
+   
+   small {
+      color: color(slightgray);
+   }
 
    p:nth-of-type(1) {
-		margin-top: 30px;
+      margin-top: 30px;
 
-		@include phoneLan {
-			grid-row: 2 / 2
-		}
-	}
-	
-	p:nth-of-type(2) {
-		margin-top: 30px;
+      @include phoneLan {
+         grid-row: 2 / 2
+      }
+   }
+   
+   p:nth-of-type(2) {
+      margin-top: 30px;
 
-		@include phoneLan {
-			margin-top: 0;
-			grid-column: 5 / span 3;
-			grid-row: 1 / 2;		
-		}
+      @include phoneLan {
+         margin-top: 0;
+         grid-column: 5 / span 3;
+         grid-row: 1 / 2;		
+      }
    }
 
    a {

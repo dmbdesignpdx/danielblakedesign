@@ -10,15 +10,15 @@
 // -- Hero -- //
 
 body > header {
+   
+   // Arrow
+   svg {
+      @include transition(opacity 0.4s);
 
-	// Arrow
-	svg {
-		@include transition(opacity 0.4s);
-
-		&.js-fade {
-			opacity: 0;
-		}
-	}
+      &.js-fade {
+         opacity: 0;
+      }
+   }
 }
 
 
@@ -26,104 +26,104 @@ body > header {
 // -- Work -- //
 
 #work {
-	padding-top: 10vh;
-	padding-bottom: 20vh;
+   padding-top: 10vh;
+   padding-bottom: 20vh;
 
-	// Title
-	h2 {
-		width: auto;
-		margin-bottom: 1em;
+   // Title
+   h2 {
+      width: auto;
+      margin-bottom: 1em;
 
-		@include desktop {
-			margin-left: 10%
-		}
-	}
+      @include desktop {
+         margin-left: 10%
+      }
+   }
 
-	// Preview sections
-	section {
-		margin-bottom: 60px
-	}
-	
-	// Preview titles
-	h3 {
-		margin-bottom: 0.8em;
-		font-size: 1.3rem;
-		grid-row: 2;
-		align-self: end;
-		line-height: 1;
-		color: color(darkgray);
-		
-		@include phoneLan {
-			grid-column: span 3;
-			grid-row: 1 / 2;
+   // Preview sections
+   section {
+      margin-bottom: 60px
+   }
+   
+   // Preview titles
+   h3 {
+      margin-bottom: 0.8em;
+      font-size: 1.3rem;
+      grid-row: 2;
+      align-self: end;
+      line-height: 1;
+      color: color(darkgray);
 
-			@at-root #turntable h3 {
-				text-align: right
-			}
-		}
-	}
+      @include phoneLan {
+         grid-column: span 3;
+         grid-row: 1 / 2;
 
-	// CTA group
-	.cta {
-		grid-row: 3;
-		align-self: start;
+         @at-root #turntable h3 {
+            text-align: right
+         }
+      }
+   }
 
-		@include phoneLan {
-			grid-column: span 3;
-			grid-row: 2 / 3;
+   // CTA group
+   .cta {
+      grid-row: 3;
+      align-self: start;
 
-			// Right align second section
-			@at-root #turntable .cta {
-				justify-self: end;
-			}
-		}
-	}
+      @include phoneLan {
+         grid-column: span 3;
+         grid-row: 2 / 3;
+
+         // Right align second section
+         @at-root #turntable .cta {
+            justify-self: end;
+         }
+      }
+   }
 }
 
 
 // Thumbs
 
 div.thumb {
-	margin-bottom: 18px;
-	grid-row: 1;
-	position: relative;
-	overflow: hidden;
-	border-radius: 4px;
-	border: 1px solid #{color(darkwhite)};
+   margin-bottom: 18px;
+   grid-row: 1;
+   position: relative;
+   overflow: hidden;
+   border-radius: 4px;
+   border: 1px solid #{color(darkwhite)};
 
-	@include phoneLan {
-		margin-bottom: 0;
-		grid-column-end: span 4;
-		grid-row: 1 / 3;
+   @include phoneLan {
+      margin-bottom: 0;
+      grid-column-end: span 4;
+      grid-row: 1 / 3;
 
-		// Second section
-		@at-root #turntable div.thumb {
-			grid-column-start: 4
-		}
-	}
+      // Second section
+      @at-root #turntable div.thumb {
+         grid-column-start: 4
+      }
+   }
 
-	// Mask
-	&::before {
-		display: block;
-		width: 100%;
-		padding-top: 62.4%;
-		content: ""
-	}
+   // Mask
+   &::before {
+      display: block;
+      width: 100%;
+      padding-top: 62.4%;
+      content: ""
+   }
 
-	// Sprite
-	img {
-		@include size(100% 300%);
-		@include xy(0);
-		position: absolute;
+   // Sprite
+   img {
+      @include size(100% 300%);
+      @include xy(0);
+      position: absolute;
 
-		@at-root #turntable img {
-			top: -100%
-		}
+      @at-root #turntable img {
+         top: -100%
+      }
 
-		@at-root #leadshub img {
-			top: -200%
-		}
-	}
+      @at-root #leadshub img {
+         top: -200%
+      }
+   }
 }
 
 
@@ -132,87 +132,87 @@ div.thumb {
 // -- About -- //
 
 #about {
-	padding-top: 10vh;
-	padding-bottom: 10vh;
+   padding-top: 10vh;
+   padding-bottom: 10vh;
 
-	h3, p, li {
+   h3, p, li {
       color: color(darklight);
-	}
-
-	// Title
-	h2 {
-		margin-bottom: 1em;
-		justify-self: start;
-
-		@include phoneLan {
-			grid-column: span 2;
-			grid-row: 1
-		}
-	}
-	
-	// About text
-	p {
-		margin-bottom: 120px;
-
-		@include phoneLan {
-			grid-column: span 4;
-			grid-row: 2
-		}
    }
-   
+
+   // Title
+   h2 {
+      margin-bottom: 1em;
+      justify-self: start;
+
+      @include phoneLan {
+         grid-column: span 2;
+         grid-row: 1
+      }
+   }
+
+   // About text
+   p {
+      margin-bottom: 120px;
+
+      @include phoneLan {
+         grid-column: span 4;
+         grid-row: 2
+      }
+   }
+
    a:hover {
       @extend %mainColor;
-  }
+   }
 
-	// Skills sections
-	section {
-		margin-bottom: 30px;
-		
-		@include phoneLan {
-			margin-bottom: 0;
-			grid-column: span 2;
-			grid-row: 3
-		}
-	}
+   // Skills sections
+   section {
+      margin-bottom: 30px;
 
-	// Skills Title
-	h4 {
-		font-weight: lighter;
-		font-size: 1.2rem;
-		margin-bottom: 0.8em;
-	}
+      @include phoneLan {
+         margin-bottom: 0;
+         grid-column: span 2;
+         grid-row: 3
+      }
+   }
 
-	// Icons
-	svg {
+   // Skills Title
+   h4 {
+      font-weight: lighter;
+      font-size: 1.2rem;
+      margin-bottom: 0.8em;
+   }
+
+   // Icons
+   svg {
       @include size(100px);
-		stroke-width: 1.6;
-		fill: none;
+      stroke-width: 1.6;
+      fill: none;
       stroke-linejoin: round;
       stroke-linecap: round;
-		stroke: color(darkgray);
-	}
-	
-	// List
-	li {
-		font-size: 0.9rem;
-		line-height: 1.3;
-		margin-bottom: 0.4em
-	}
+      stroke: color(darkgray);
+   }
+
+   // List
+   li {
+      font-size: 0.9rem;
+      line-height: 1.3;
+      margin-bottom: 0.4em
+   }
 }
 
 
 // Skills
 
 #design {
-	color: hsl(342,80%,48%)
+   color: hsl(342,80%,48%)
 }
 
 #development {
-	color: hsl(320,70%,41%)
+   color: hsl(320,70%,41%)
 }
 
 #experience {
-	color: hsl(300,60%,39%)
+   color: hsl(300,60%,39%)
 }
 
 
@@ -220,46 +220,46 @@ div.thumb {
 // -- Contact -- //
 
 #contact {
-	@include display(flex);
-	@include flex-direction(column);
-	@include align-items(flex-start);
+   @include display(flex);
+   @include flex-direction(column);
+   @include align-items(flex-start);
    padding: 20vh 0 0;
    margin-bottom: 60px;
-	
-	@include phoneLan {
-		grid-column: 1 / span 3
-	}
+   
+   @include phoneLan {
+      grid-column: 1 / span 3
+   }
 
-	// Title
-	h5 {
-		font-size: 2rem;
-		margin-bottom: 1em
-	}
+   // Title
+   h5 {
+      font-size: 2rem;
+      margin-bottom: 1em
+   }
 
-	// Links
-	a {
-		@include display(inline-flex);
-		@include align-items(center);
-		margin-bottom: 1em;
-		color: color(darkgray);
+   // Links
+   a {
+      @include display(inline-flex);
+      @include align-items(center);
+      margin-bottom: 1em;
+      color: color(darkgray);
 
-		&:hover {
-			color: color()
-		}
+      &:hover {
+         color: color()
+      }
 
-	}
+   }
 
-	// Icons
-	svg {
-		@include size(2em);
-		margin: auto 0.7em auto 0;
-		stroke: color(darkgray);
-		stroke-width: 2.6;
-		fill: none;
+   // Icons
+   svg {
+      @include size(2em);
+      margin: auto 0.7em auto 0;
+      stroke: color(darkgray);
+      stroke-width: 2.6;
+      fill: none;
 
-		@at-root #contact a:hover svg {
-			stroke: color();
-		}
+      @at-root #contact a:hover svg {
+         stroke: color();
+      }
    }
 }
 

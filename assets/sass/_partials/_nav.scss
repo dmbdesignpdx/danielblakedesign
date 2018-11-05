@@ -13,36 +13,36 @@
 #nav {
 
    // Logo
-	a:first-child:hover svg {
+   a:first-child:hover svg {
 
-		.a, .c, .e, .f, .g, .h, .i, .j {
-			fill: color();
-		}
-	}
+      .a, .c, .e, .f, .g, .h, .i, .j {
+         fill: color();
+      }
+   }
 
    a:hover {
        @extend %mainColor;
-	}
-	
-	&.js-show {
-		@include transform(translateY(calc(100% + 3px)));
-	}
-	
-	&.js-time {
-		@include transition(transform 0.4s);
-	}
-	
-	&.js-fixed {
-		@include box-shadow(0 1px 3px ts(0.3));
-		position: fixed;
-		top: -59px;
+   }
+   
+   &.js-show {
+      @include transform(translateY(calc(100% + 3px)));
+   }
+   
+   &.js-time {
+      @include transition(transform 0.4s);
+   }
+   
+   &.js-fixed {
+      @include box-shadow(0 1px 3px ts(0.3));
+      position: fixed;
+      top: -59px;
 
-		@include tabletPor {
-			top: -93px
-		}
+      @include tabletPor {
+         top: -93px
+      }
 
-		@include desktopLG {
-			top: -153px
-		}
-	}
+      @include desktopLG {
+         top: -153px
+      }
+   }
 }
