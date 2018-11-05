@@ -26,22 +26,22 @@
 //
 
 [flexr-grid], [flexr-wrap] {
-	padding-right: 18px;
+   padding-right: 18px;
    padding-left: 18px;
    padding-right: minmax(18px, safe-area-inset-right);
-	padding-left: minmax(18px, safe-area-inset-left);
+   padding-left: minmax(18px, safe-area-inset-left);
    margin: 0 auto
 }
 
 [flexr-grid] {
-	display: grid;
-	grid: none / repeat(7, 1fr);
+   display: grid;
+   grid: none / repeat(7, 1fr);
    grid-column-gap: 18px;
    column-gap: 18px
 }
 
 [flexr-grid] > * {
-	grid-column: 1 / -1
+   grid-column: 1 / -1
 }
 
 
@@ -59,19 +59,19 @@
 }
 
 html {
-	font: normal 18px Helvetica, sans-serif
+   font: normal 18px Helvetica, sans-serif
 }
 
 body {
    color: color(darkgray);
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-font-smoothing: antialiased;
-	-ms-text-size-adjust: none;
-	-moz-text-size-adjust: none;
-	-webkit-text-size-adjust: none;
-	text-size-adjust: none;
-	touch-action: manipulation;
-	-webkit-overflow-scrolling: touch
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+   -ms-text-size-adjust: none;
+   -moz-text-size-adjust: none;
+   -webkit-text-size-adjust: none;
+   text-size-adjust: none;
+   touch-action: manipulation;
+   -webkit-overflow-scrolling: touch
 }
 
 body, h1, p {
@@ -83,62 +83,62 @@ body, h1, p {
 a {
    text-decoration: none;
    color: inherit;
-	font-weight: bold
+   font-weight: bold
 }
 
 h1 {
-	text-rendering: geometricPrecision;
+   text-rendering: geometricPrecision;
    letter-spacing: -0.03em;
-	word-spacing: 0.1em;
-	padding-top: 27vh;
-	margin-bottom: 0.3em;
-	font-size: 2.4rem;
+   word-spacing: 0.1em;
+   padding-top: 27vh;
+   margin-bottom: 0.3em;
+   font-size: 2.4rem;
    
    // Underlined words
-	span {
-		display: inline-block;
-		line-height: 1.1;
-
-		&::after {
-			content: "";
-			width: 0;
-			height: 6px;
-			background: #e82c6a;
-			top: -0.1em;
-			position: relative;
-			z-index: -1;
-			border-radius: 3px;
-
+   span {
+      display: inline-block;
+      line-height: 1.1;
+      
+      &::after {
+         content: "";
+         width: 0;
+         height: 6px;
+         background: #e82c6a;
+         top: -0.1em;
+         position: relative;
+         z-index: -1;
+         border-radius: 3px;
+         
          // Animation delay for second word
-			@at-root h1 span:last-child::after {
-				transition: 0.4s 1s;
-			}
-
+         @at-root h1 span:last-child::after {
+            transition: 0.4s 1s;
+         }
+         
          // Animation delay override if no second word
-			@at-root h1 span:first-child::after {
-				transition: 0.4s 0.5s;
+         @at-root h1 span:first-child::after {
+            transition: 0.4s 0.5s;
          }
          
          // JS animation
-			@at-root h1 span.js-underline::after {
-				width: 100%
-			}
-		}
-	}
-
+         @at-root h1 span.js-underline::after {
+            width: 100%
+         }
+      }
+   }
+   
    // Sibling h1
-	.sib & {
-		padding-top: 38vh;
-		line-height: 1.2
-	}
+   .sib & {
+      padding-top: 38vh;
+      line-height: 1.2
+   }
 }
 
 p {
-	text-rendering: optimizeSpeed;
+   text-rendering: optimizeSpeed;
    color: color(darklight);
-	line-height: 1.5;
-	letter-spacing: 0.02em;
-	hyphens: none
+   line-height: 1.5;
+   letter-spacing: 0.02em;
+   hyphens: none
 }
 
 
@@ -152,29 +152,29 @@ svg, nav a, h1 span::after {
 }
 
 html, nav {
-	background: color(offwhite)
+   background: color(offwhite)
 }
 
 nav a:first-child, h1 {
-	font-family: Montserrat, sans-serif;
-	font-weight: 900;
-	line-height: 1.1
+   font-family: Montserrat, sans-serif;
+   font-weight: 900;
+   line-height: 1.1
 }
 
 #nav div, #nav a:first-child {
-	display: -webkit-flex;
-	display: flex;
-	-webkit-align-items: center;
-	align-items: center;
-	font-weight: 900
+   display: -webkit-flex;
+   display: flex;
+   -webkit-align-items: center;
+   align-items: center;
+   font-weight: 900
 }
 
 [flexr-grid], [flexr-wrap], #nav {
-	width: 100%
+   width: 100%
 }
 
 #nav, body > header svg {
-	position: absolute
+   position: absolute
 }
 
 
@@ -184,45 +184,45 @@ nav a:first-child, h1 {
 //
 
 #logo {
-	stroke:#17161d;
-	stroke-width: 11;
-	stroke-linecap: round
+   stroke:#17161d;
+   stroke-width: 11;
+   stroke-linecap: round
 }
 
 .a {
-	fill:#c8c8d2
+   fill:#c8c8d2
 }
 
 .c {
-	fill:#fafafa
+   fill:#fafafa
 }
 
 .d {
-	fill:#17161d
+   fill:#17161d
 }
 
 .e {
-	fill:#e82c64
+   fill:#e82c64
 }
 
 .f {
-	fill:#ef6b92
+   fill:#ef6b92
 }
 
 .g {
-	fill:#f395b1
+   fill:#f395b1
 }
 
 .h {
-	fill:#9e2b9c
+   fill:#9e2b9c
 }
 
 .i {
-	fill:#bb6aba
+   fill:#bb6aba
 }
 
 .j {
-	fill:#cf95cd
+   fill:#cf95cd
 }
 
 
@@ -233,44 +233,44 @@ nav a:first-child, h1 {
 
 #nav {
    height: 56px;
-	top: 0;
-	z-index: 999;
-
-	div {
-		height: 100%
-	}
-
+   top: 0;
+   z-index: 999;
+   
+   div {
+      height: 100%
+   }
+   
    a {
-		font-size: 0.8rem;
-		letter-spacing: 0.03em
-	}
-
-	a:first-child {
-		margin-bottom: 1px;
-		letter-spacing: -0.02em;
-
-		span {
-			display: none
-		}
-
-		svg {
-			width: 2.6em;
-			height: 2.6em;
-			margin: 1px 0.4em auto 0
-		}
-	}
-	
-	a:not(:first-child) {
-		padding: 16px 0
-	}
-
-	a:nth-child(2) {
-		margin-left: auto
-	}
-
-	a:last-child {
-		margin-left: 1.6em
-	}
+      font-size: 0.8rem;
+      letter-spacing: 0.03em
+   }
+   
+   a:first-child {
+      margin-bottom: 1px;
+      letter-spacing: -0.02em;
+      
+      span {
+         display: none
+      }
+      
+      svg {
+         width: 2.6em;
+         height: 2.6em;
+         margin: 1px 0.4em auto 0
+      }
+   }
+   
+   a:not(:first-child) {
+      padding: 16px 0
+   }
+   
+   a:nth-child(2) {
+      margin-left: auto
+   }
+   
+   a:last-child {
+      margin-left: 1.6em
+   }
 }
 
 
@@ -280,18 +280,18 @@ nav a:first-child, h1 {
 //
 
 body > header {
-	height: 100vh;
-
-	svg {
-		bottom: 5vh;
-		width: 34px;
-		height: 34px;
-		fill: none;
-		stroke: #BDBBC9;
-		stroke-width: 3;
-		stroke-linecap: round;
-		stroke-linejoin: round
-	}
+   height: 100vh;
+   
+   svg {
+      bottom: 5vh;
+      width: 34px;
+      height: 34px;
+      fill: none;
+      stroke: #BDBBC9;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round
+   }
 }
 
 
@@ -306,21 +306,21 @@ body > header {
  */
 
 @media (min-width: 540px) {
-
-	#nav {
-
-		a:first-child span {
-			display: block
-		}
-	}
-
-	#hero {
-	
-		p, h1 {
-			width: 25rem
-		}
-	}
-
+   
+   #nav {
+      
+      a:first-child span {
+         display: block
+      }
+   }
+   
+   #hero {
+      
+      p, h1 {
+         width: 25rem
+      }
+   }
+   
 }
 
 
@@ -329,34 +329,34 @@ body > header {
  */
 
 @media (min-width:766px) {
-
-	[flexr-grid], [flexr-wrap] {
-		padding-right: 24px;
-		padding-left: 24px
-	}
-
-	[flexr-grid] {
-		grid-column-gap: 24px;
-		column-gap: 24px
-	}
-
-	h1 {
-		padding-top: 37vh;
-		font-size: 2.6rem
-	}
-
-	#nav {
-		height: 90px;
-
-		a:first-child {
-			font-size: 1.1rem
-		}
-
-		a:last-child {
-			margin-left: 2em
-		}
-	}
-
+   
+   [flexr-grid], [flexr-wrap] {
+      padding-right: 24px;
+      padding-left: 24px
+   }
+   
+   [flexr-grid] {
+      grid-column-gap: 24px;
+      column-gap: 24px
+   }
+   
+   h1 {
+      padding-top: 37vh;
+      font-size: 2.6rem
+   }
+   
+   #nav {
+      height: 90px;
+      
+      a:first-child {
+         font-size: 1.1rem
+      }
+      
+      a:last-child {
+         margin-left: 2em
+      }
+   }
+   
 }
 
 
@@ -365,22 +365,22 @@ body > header {
  */
 
 @media (min-width:1278px) {
-
-	[flexr-grid], [flexr-wrap] {
-		width: 80%;
-		max-width: 1436px;
-		padding-right: 30px;
-		padding-left: 30px
-	}
-
-	[flexr-grid] {
-		grid-column-gap: 30px;
-		column-gap: 30px
-	}
-
-	html {
-		font-size: 20px
-	}
+   
+   [flexr-grid], [flexr-wrap] {
+      width: 80%;
+      max-width: 1436px;
+      padding-right: 30px;
+      padding-left: 30px
+   }
+   
+   [flexr-grid] {
+      grid-column-gap: 30px;
+      column-gap: 30px
+   }
+   
+   html {
+      font-size: 20px
+   }
    
 }
 
@@ -390,13 +390,13 @@ body > header {
  */
 
 @media (min-width:1680px) {
-
-	html {
-		font-size: 22px
-	}
-
-	#nav {
-		height: 150px
-	}
-
+   
+   html {
+      font-size: 22px
+   }
+   
+   #nav {
+      height: 150px
+   }
+   
 }

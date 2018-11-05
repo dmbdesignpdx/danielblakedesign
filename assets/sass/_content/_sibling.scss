@@ -12,47 +12,47 @@
 
 .sib {
 
-	img {
-		margin-bottom: 18px;
-		border-radius: 4px;
-		border: 1px solid #{color(darkwhite)};
+   img {
+      margin-bottom: 18px;
+      border-radius: 4px;
+      border: 1px solid #{color(darkwhite)};
 
-		@include tabletPor {
-			margin-bottom: 60px;
-		}
-	}
+      @include tabletPor {
+         margin-bottom: 60px;
+      }
+   }
 
-	li {
-		position: relative
-	}
+   li {
+      position: relative
+   }
 
-	section svg {
-		@include transition(0.3s);
-		@include size(30px);
-		position: absolute;
-		left: 18px;
-		bottom: 18px;
-		display: block;
-		border-radius: 50%;
-		stroke: white;
-		stroke-width: 2;
-		stroke-linecap: round;
-		stroke-linejoin: round;
-		fill: none;
-		background: #111;
+   section svg {
+      @include transition(0.3s);
+      @include size(30px);
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      display: block;
+      border-radius: 50%;
+      stroke: white;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+      background: #111;
 
-		@include desktop {
-			@include size(90px);
-			opacity: 0;
+      @include desktop {
+         @include size(90px);
+         opacity: 0;
 
-			@at-root .sib section a:hover svg {
-				opacity: 0.95
-			}
-		}
-	}
+         @at-root .sib section a:hover svg {
+            opacity: 0.95
+         }
+      }
+   }
 
-	main p {
-		padding-top: 60px;
-		padding-bottom: 30px
-	}
+   main p {
+      padding-top: 60px;
+      padding-bottom: 30px
+   }
 }
