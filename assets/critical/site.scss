@@ -1,5 +1,5 @@
-/* 
- * Contents:
+/**
+ *  Contents:
  *
  *  Imports
  *  Grid
@@ -9,7 +9,6 @@
  *  Nav
  *  Hero
  *  Media Queries
- *
  */
 
 
@@ -37,7 +36,8 @@
 [flexr-grid] {
 	display: grid;
 	grid: none / repeat(7, 1fr);
-	grid-column-gap: 18px
+   grid-column-gap: 18px;
+   column-gap: 18px
 }
 
 [flexr-grid] > * {
@@ -78,10 +78,6 @@ body, h1, p {
    padding: 0;
    margin: 0;
    border: 0
-}
-
-svg, nav a, h1 span::after {
-   display: block
 }
 
 a {
@@ -150,6 +146,10 @@ p {
 //
 //  Common Rules
 //
+
+svg, nav a, h1 span::after {
+   display: block
+}
 
 html, nav {
 	background: color(offwhite)
@@ -336,7 +336,8 @@ body > header {
 	}
 
 	[flexr-grid] {
-		grid-column-gap: 24px
+		grid-column-gap: 24px;
+		column-gap: 24px
 	}
 
 	h1 {
@@ -373,7 +374,8 @@ body > header {
 	}
 
 	[flexr-grid] {
-		grid-column-gap: 30px
+		grid-column-gap: 30px;
+		column-gap: 30px
 	}
 
 	html {
