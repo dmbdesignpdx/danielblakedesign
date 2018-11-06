@@ -15,7 +15,7 @@
    img {
       margin-bottom: 18px;
       border-radius: 4px;
-      border: 1px solid #{color(darkwhite)};
+      border: 1px solid #{brand(_darkwhite)};
 
       @include tabletPor {
          margin-bottom: 60px;

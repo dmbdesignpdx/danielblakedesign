@@ -54,7 +54,7 @@ h2, h5 {
       content: "";
       width: 100%;
       height: 4px;
-      background: color(main);
+      background: brand(_main);
       top: -0.1em;
       z-index: -1;
       border-radius: 2px
@@ -145,12 +145,12 @@ button.primary {
 
 .primary {
    @include box-shadow(0 1px 2px ts(0.35));
-   background: color();
+   background: brand();
    color: hsl(250,12%,98%);
 
    &:focus, &:hover {
       @include box-shadow(0 2px 5px ts(0.35));
-      background: value(color(),5);
+      background: value(brand(),5);
    }
 
    &:active {
@@ -165,12 +165,12 @@ button.primary {
 
 .secondary {
    @include box-shadow(0 1px 2px ts(0.2));
-   background: color(darkwhite);
+   background: brand(_darkwhite);
    margin-left: 1em;
    
    &:focus, &:hover {
       @include box-shadow(0 2px 5px ts(0.2));
-      background: value(color(darkwhite),1);
+      background: value(brand(_darkwhite),1);
    }
 
    &:active {
