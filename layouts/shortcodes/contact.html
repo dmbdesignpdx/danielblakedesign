@@ -1,7 +1,11 @@
 <h5>Contact</h5>
 
-<a href="tel:{{ .Site.Data.site.phone }}"><svg role="img" aria-label="Call: "><use xlink:href="/img/icons.svg#phone"/></svg>{{ substr .Site.Data.site.phone 2 }}</a>
+{{ with .Site.Data.info }}
 
-<a href="mailto:{{ .Site.Data.site.email }}"><svg role="img" aria-label="Email: "><use xlink:href="/img/icons.svg#email"/></svg>{{ .Site.Data.site.email }}</a>
+<a href="tel:{{ .phone }}"><svg role="img" aria-label="Call: "><use xlink:href="/img/icons.svg#phone"/></svg>{{ substr .phone 2 }}</a>
 
-<a href="{{ .Site.Data.site.github }}" target="_blank" rel="external noopener" aria-label="My code on Github"><svg><use xlink:href="/img/icons.svg#github"/></svg>{{ replace .Site.Data.site.github "https://github.com/" "" }}</a>
+<a href="mailto:{{ .email }}"><svg role="img" aria-label="Email: "><use xlink:href="/img/icons.svg#email"/></svg>{{ .email }}</a>
+
+<a href="{{ .github }}" target="_blank" rel="external noopener" aria-label="My code on Github"><svg><use xlink:href="/img/icons.svg#github"/></svg>{{ replace .github "https://github.com/" "" }}</a>
+
+{{ end }}

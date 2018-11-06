@@ -1,6 +1,10 @@
 languageCode: en-us
 baseURL: https://danielblake.design
 title: Daniel Blake
+author:
+  name: Daniel Blake
+copyright: 2018 Daniel Blake
+
 disableKinds:
   - taxonomy
   - taxonomyTerm

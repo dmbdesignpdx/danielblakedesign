@@ -1,3 +1,5 @@
+{{ $Info := .Site.Data.info }}
+
 <meta charset="utf-8">
 
 {{ if eq (getenv "HUGO_ENV") "production" }}
@@ -29,7 +31,7 @@
 
 <meta name="description" content="{{ .Description }}">
 
-<meta name="author" content="{{ .Site.Data.site.author }}">
+<meta name="author" content="{{ .Site.Author.name }}">
 
 <link rel="canonical" href="{{ .Site.BaseURL }}">
 
@@ -41,9 +43,9 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta name="theme-color" content="{{ .Site.Data.site.theme }}">
+<meta name="theme-color" content="{{ $Info.theme }}">
 
-<meta name="apple-mobile-web-app-status-bar-style" name="{{ .Site.Data.site.theme }}">
+<meta name="apple-mobile-web-app-status-bar-style" name="{{ $Info.theme }}">
 
 
 <!-- Favicons -->
@@ -56,7 +58,7 @@
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
-<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Data.site.theme }}">
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ $Info.theme }}">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -69,7 +71,7 @@
 
 <meta name="twitter:description" content="{{ .Description }}">
 
-<meta name="twitter:image" content="{{ .Site.Data.site.image }}">
+<meta name="twitter:image" content="{{ $Info.image }}">
 
 <meta name="twitter:image:alt" content="{{ .Description }}">
 
@@ -83,13 +85,13 @@
 
 <meta property="og:description" content="{{ .Description }}">
 
-<meta property="og:image" content="{{ .Site.Data.site.image }}">
+<meta property="og:image" content="{{ $Info.image }}">
 
 <meta property="og:image:width" content="526">
 
 <meta property="og:image:height" content="275">
 
-<meta property="og:image:type" content="{{ .Site.Data.site.type }}">
+<meta property="og:image:type" content="{{ $Info.type }}">
 
 <meta property="og:url" content="{{ absURL .URL }}">
 
@@ -113,14 +115,14 @@
    "name":"{{ .Title }}",
    "description":"{{ .Description }}",
    "url":"{{ .URL | absURL }}",
-	"image":"{{ .Site.Data.site.images.main }}",
+	"image":"{{ $Info.image }}",
 	"creator":{
 		"@type":"Person",
-		"name":"{{ .Site.Data.site.author }}",
-		"description":"{{ .Site.Data.site.title }}",
+		"name":"{{ $Info.author }}",
+		"description":"{{ $Info.title }}",
 		"address":"Portland, Oregon",
-      "email":"{{ .Site.Data.site.email }}",
-      "telephone":"+{{ replace .Site.Data.site.phone "-" "" }}"
+      "email":"{{ $Info.email }}",
+      "telephone":"+{{ replace $Info.phone "-" "" }}"
 	},
 	"offers":{
 		"@type":"Offer",
@@ -129,8 +131,8 @@
 			"serviceType":"Website design and development"
 		}
 	},
-	"sameAs":"{{ .Site.Data.site.linkedin }}",
-	"sameAs":"{{ .Site.Data.site.github }}"
+	"sameAs":"{{ $Info.linkedin }}",
+	"sameAs":"{{ $Info.github }}"
 }
 </script>
 

@@ -1,11 +1,17 @@
-author: Daniel Blake
+# For General Site Info
+
+# Contact
 title: Front End Web Designer
 email: daniel@danielblake.design
 phone: 1-971-801-0208
+
+# Theme
 theme: "#e82c64"
 
+# SameAs
 github: https://github.com/dmbdesignpdx
 linkedin: https://www.linkedin.com/in/danielblakepdx
 
+# Open Graph / Twitter
 image: https://danielblake.design/img/daniel-og.jpg
 type: image/jpg
