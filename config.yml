@@ -3,6 +3,12 @@ baseURL: https://danielblake.design
 title: Daniel Blake
 author:
   name: Daniel Blake
+  title: Front End Web Designer
+  email: daniel@danielblake.design
+  phone: 1-971-801-0208
+  city: Portland, Oregon
+  github: https://github.com/dmbdesignpdx
+  linkedin: https://www.linkedin.com/in/danielblakepdx
 copyright: 2018 Daniel Blake
 
 enableGitInfo: true

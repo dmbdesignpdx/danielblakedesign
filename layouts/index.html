@@ -1,5 +1,161 @@
 {{ define "SITE" }}
 
-{{ .Content }}
+
+<!-- Hero  -->
+
+<header id="hero" flexr-wrap>
+
+   <h1>I <span>design</span> and <span>develop</span> websites.</h1>
+
+   <p>Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.</p>
+
+   <svg viewBox="0 0 50 50"><path d="M4,25 25,46 46,25"/></svg>
+
+</header>
+
+
+<!-- Navigation -->
+
+{{ partialCached "nav.html" . }}
+
+
+<!-- Main Content -->
+
+<main>
+
+
+   <!-- Work Section -->
+
+   <section id="work" aria-labelledby="w1">
+
+      <h2 id="w1" flexr-wrap>Work</h2>
+
+
+      <!-- Thumbs Logic -->
+
+      {{ range $i, $e := .Site.Data.work }}
+      {{ $n := add $i 1 }}
+      
+      <section id="{{ .image }}" aria-label="Project {{ $n }} of 3" flexr-grid>
+      
+         <h3>{{ safeHTML .title }}</h3>
+      
+         <div class="cta">
+            
+            <a class="primary" href="/{{ .image }}/" aria-label="{{ .ariaOne }}">Preview</a>
+      
+            <a class="secondary" href="{{ .link }}" target="_blank" aria-label="{{ .ariaTwo }}" rel="{{ .rel }}">Visit</a>
+         
+         </div>
+         
+         <div class="thumb">
+      
+            <img src="/img/work-fl.jpg" alt="" srcset="/img/work-xs.jpg 768w, /img/work-sm.jpg 1080w, /img/work-md.jpg 1280w, /img/work-lg.jpg 1440w, /img/work-xl.jpg 1920w, /img/work-fl.jpg 2880w">
+      
+         </div>
+      
+      </section>
+      
+      {{ end }}
+      
+   </section>
+
+
+   <!-- About Section -->
+
+   <section id="about" aria-labelledby="a1" flexr-grid>
+
+      <h2 id="a1">About</h2>
+
+      {{ .Content }}
+
+
+      <!-- Skills Logic -->
+
+      {{ range $i, $e := .Site.Data.skills }}
+      {{ $n := add $i 1 }}
+      
+      <section aria-label="Skills {{ $n }} of 3">
+      
+         <svg><use xlink:href="/img/icons.svg#{{ lower .type }}"/></svg>
+      
+         <h4 id="{{ lower .type }}">{{ .type }}</h4>
+      
+         <ul aria-labelledby="{{ lower .type }}">
+      
+            {{ range .text }}
+            
+            <li>{{ . }}
+      
+            {{ end }}
+      
+         </ul>
+      
+      </section>
+      
+      {{ end }}
+   
+
+      <!-- Contact Info -->
+
+      <address id="contact">
+   
+         <h5>Contact</h5>
+
+         {{ with .Site.Author }}
+         
+         <a href="tel:{{ .phone }}"><svg role="img" aria-label="Call: "><use xlink:href="/img/icons.svg#phone"/></svg>{{ substr .phone 2 }}</a>
+         
+         <a href="mailto:{{ .email }}"><svg role="img" aria-label="Email: "><use xlink:href="/img/icons.svg#email"/></svg>{{ .email }}</a>
+         
+         <a href="{{ .github }}" target="_blank" rel="external noopener" aria-label="My code on Github"><svg><use xlink:href="/img/icons.svg#github"/></svg>{{ replace .github "https://github.com/" "" }}</a>
+         
+         {{ end }}
+      
+      </address>
+
+
+      <!-- Contact Form -->
+      
+      <form name="drop" action="POST" netlify>
+
+         <fieldset>
+
+            <legend>Or drop me a line!</legend>
+
+            <label>
+
+               <span id="c1" aria-hidden="true">Your Name</span>
+               
+               <input type="text" name="name" autocomplete="name" aria-autocomplete="both" aria-labelledby="c1" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c2" aria-hidden="true">Your Email</span>
+               
+               <input type="email" name="email" autocomplete="email" aria-autocomplete="both" aria-labelledby="c2" required aria-required="true"/>
+            
+            </label>
+
+            <label>
+
+               <span id="c3" aria-hidden="true">Your Message</span>
+               
+               <textarea name="message" rows="10" aria-labelledby="c3" required aria-required="true"></textarea>
+            
+            </label>
+
+            <button name="send" type="submit" class="primary">Send</button>
+
+         </fieldset>
+
+      </form>
+
+   </section>
+
+</main>
+
 
 {{ end }}

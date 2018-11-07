@@ -1,4 +1,4 @@
-{{ $Info := .Site.Data.info }}
+{{ $info := .Site.Data.info }}
 
 <meta charset="utf-8">
 
@@ -43,9 +43,9 @@
 
 <meta name="apple-mobile-web-app-capable" content="yes">
 
-<meta name="theme-color" content="{{ $Info.theme }}">
+<meta name="theme-color" content="{{ $info.theme }}">
 
-<meta name="apple-mobile-web-app-status-bar-style" name="{{ $Info.theme }}">
+<meta name="apple-mobile-web-app-status-bar-style" name="{{ $info.theme }}">
 
 
 <!-- Favicons -->
@@ -58,7 +58,7 @@
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
-<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ $Info.theme }}">
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ $info.theme }}">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -71,7 +71,7 @@
 
 <meta name="twitter:description" content="{{ .Description }}">
 
-<meta name="twitter:image" content="{{ $Info.image }}">
+<meta name="twitter:image" content="{{ $info.image }}">
 
 <meta name="twitter:image:alt" content="{{ .Description }}">
 
@@ -85,13 +85,13 @@
 
 <meta property="og:description" content="{{ .Description }}">
 
-<meta property="og:image" content="{{ $Info.image }}">
+<meta property="og:image" content="{{ $info.image }}">
 
 <meta property="og:image:width" content="526">
 
 <meta property="og:image:height" content="275">
 
-<meta property="og:image:type" content="{{ $Info.type }}">
+<meta property="og:image:type" content="{{ $info.type }}">
 
 <meta property="og:url" content="{{ absURL .URL }}">
 
@@ -115,14 +115,14 @@
    "name":"{{ .Title }}",
    "description":"{{ .Description }}",
    "url":"{{ .URL | absURL }}",
-	"image":"{{ $Info.image }}",
+	"image":"{{ $info.image }}",
 	"creator":{
 		"@type":"Person",
-		"name":"{{ $Info.author }}",
-		"description":"{{ $Info.title }}",
-		"address":"Portland, Oregon",
-      "email":"{{ $Info.email }}",
-      "telephone":"+{{ replace $Info.phone "-" "" }}"
+		"name":"{{ .Site.Author.name }}",
+		"description":"{{ .Site.Author.title }}",
+		"address":"{{ .Site.Author.city }}",
+      "email":"{{ .Site.Author.email }}",
+      "telephone":"+{{ replace .Site.Author.phone "-" "" }}"
 	},
 	"offers":{
 		"@type":"Offer",
@@ -131,8 +131,8 @@
 			"serviceType":"Website design and development"
 		}
 	},
-	"sameAs":"{{ $Info.linkedin }}",
-	"sameAs":"{{ $Info.github }}"
+	"sameAs":"{{ $info.linkedin }}",
+	"sameAs":"{{ $info.github }}"
 }
 </script>
 
