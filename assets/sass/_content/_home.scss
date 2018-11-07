@@ -51,7 +51,7 @@ body > header {
       grid-row: 2;
       align-self: end;
       line-height: 1;
-      color: color(darkgray);
+      color: brand(_darkgray);
 
       @include phoneLan {
          grid-column: span 3;
@@ -89,7 +89,7 @@ div.thumb {
    position: relative;
    overflow: hidden;
    border-radius: 4px;
-   border: 1px solid #{color(darkwhite)};
+   border: 1px solid #{brand(_darkwhite)};
 
    @include phoneLan {
       margin-bottom: 0;
@@ -136,7 +136,7 @@ div.thumb {
    padding-bottom: 10vh;
 
    h3, p, li {
-      color: color(darklight);
+      color: brand(_darklight);
    }
 
    // Title
@@ -189,7 +189,7 @@ div.thumb {
       fill: none;
       stroke-linejoin: round;
       stroke-linecap: round;
-      stroke: color(darkgray);
+      stroke: brand(_darkgray);
    }
 
    // List
@@ -241,10 +241,10 @@ div.thumb {
       @include display(inline-flex);
       @include align-items(center);
       margin-bottom: 1em;
-      color: color(darkgray);
+      color: brand(_darkgray);
 
       &:hover {
-         color: color()
+         color: brand()
       }
 
    }
@@ -253,12 +253,12 @@ div.thumb {
    svg {
       @include size(2em);
       margin: auto 0.7em auto 0;
-      stroke: color(darkgray);
+      stroke: brand(_darkgray);
       stroke-width: 2.6;
       fill: none;
 
       @at-root #contact a:hover svg {
-         stroke: color();
+         stroke: brand();
       }
    }
 }
@@ -287,11 +287,11 @@ div.thumb {
          display: inline-block;
          margin-bottom: 0.33em;
          font-size: 80%;
-         color: color(lightgray)
+         color: brand(_lightgray)
       }
 
       &:focus-within span {
-         color: color(nearblack)
+         color: brand(_nearblack)
       }
    }
 
@@ -314,7 +314,7 @@ div.thumb {
       box-shadow: 0 1px 2px ts(0.2);
       border-radius: 3px;
       border: 1px solid #FEFEFF;
-      color: color(darkgray);
+      color: brand(_darkgray);
       background: #FEFEFF
    }
 

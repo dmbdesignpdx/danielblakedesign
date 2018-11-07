@@ -13,7 +13,7 @@
 #footer {
    padding-top: 60px;
    padding-bottom: 90px;
-   background: color(nearblack);
+   background: brand(_nearblack);
    
    address, p:nth-of-type(1) {
 
@@ -24,7 +24,7 @@
 
    p, small, address {
       font-size: 0.9rem;
-      color: color(darkwhite);
+      color: brand(_darkwhite);
       text-align: left;
       letter-spacing: 0.2pt;
    }
@@ -39,7 +39,7 @@
    }
    
    small {
-      color: color(slightgray);
+      color: brand(_slightgray);
    }
 
    p:nth-of-type(1) {

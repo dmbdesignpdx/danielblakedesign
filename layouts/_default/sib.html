@@ -1,5 +1,8 @@
 {{ define "SITE" }}
 
+
+<!-- Hero -->
+
 <header flexr-wrap>
 
    <h1><span>{{ .Params.one }}</span><br>{{ .Params.two }}</h1>
@@ -8,33 +11,43 @@
    
 </header>
 
+
+<!-- Navigation -->
+
 {{ partialCached "nav.html" . }}
+
+
+<!-- Main Content -->
 
 <main flexr-wrap>
 
    <section>
 
-      {{ $proj := replace .URL "/" "" }}
 
-      {{ range $i, $s := (seq 3)}}
+      <!-- Thumbs Logic -->
+
+      {{ $project := replace .URL "/" "" }}
+      {{ range $i, $size := (seq 3) }}
+      {{ $n := add $i 1 }}
                
-      <img src="/img/{{ $proj }}/{{ $proj }}-{{ $s }}-fl.jpg" alt="{{ $proj }}"
-            srcset="/img/{{ $proj }}/{{ $proj }}-{{ $s }}-xs.jpg 768w,
-                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-sm.jpg 1080w,
-                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-md.jpg 1280w,
-                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-lg.jpg 1440w,
-                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-xl.jpg 1920w,
-                    /img/{{ $proj }}/{{ $proj }}-{{ $s }}-fl.jpg 2880w,">
+      <img src="/img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg"
+            alt="{{ $project }} project preview {{ $n }} of 3"
+            srcset="/img/{{ $project }}/{{ $project }}-{{ $size }}-xs.jpg 768w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-sm.jpg 1080w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-md.jpg 1280w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-lg.jpg 1440w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-xl.jpg 1920w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg 2880w,">
 
       {{ end }}
 
-
-      <!-- Main Content -->
-
       {{ .Content }}
+
+      <a class="primary" href="{{ .Params.link }}" target="_blank" aria-label="{{ .Params.alt }}" rel="{{ .Params.rel }}">View Website</a>
 
    </section>
 
 </main>
+
 
 {{ end }}

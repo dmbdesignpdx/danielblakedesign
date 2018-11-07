@@ -1,6 +1,6 @@
 <div>
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
    
    {{ $master := resources.Get "css/master.scss" | toCSS | minify }}
    <link rel="stylesheet" href="{{ $master.RelPermalink }}">

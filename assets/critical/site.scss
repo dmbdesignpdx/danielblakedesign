@@ -17,7 +17,7 @@
 //  Imports
 //
 
-@import "../sass/_base/vars";
+@import "../sass/_base/vars", "../sass/_vendor/turntable";
 
 
 
@@ -26,9 +26,10 @@
 //
 
 [flexr-grid], [flexr-wrap] {
+   @extend %width_100;
    padding-right: 18px;
-   padding-left: 18px;
    padding-right: minmax(18px, safe-area-inset-right);
+   padding-left: 18px;
    padding-left: minmax(18px, safe-area-inset-left);
    margin: 0 auto
 }
@@ -59,11 +60,12 @@
 }
 
 html {
+   @extend %background_offwhite;
    font: normal 18px Helvetica, sans-serif
 }
 
 body {
-   color: color(darkgray);
+   color: brand(_darkgray);
    -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
    -ms-text-size-adjust: none;
@@ -80,6 +82,10 @@ body, h1, p {
    border: 0
 }
 
+svg {
+   @extend %block;
+}
+
 a {
    text-decoration: none;
    color: inherit;
@@ -87,6 +93,7 @@ a {
 }
 
 h1 {
+   @extend %brand-font;
    text-rendering: geometricPrecision;
    letter-spacing: -0.03em;
    word-spacing: 0.1em;
@@ -100,10 +107,11 @@ h1 {
       line-height: 1.1;
       
       &::after {
+         @extend %block;
          content: "";
          width: 0;
          height: 6px;
-         background: #e82c6a;
+         background: brand();
          top: -0.1em;
          position: relative;
          z-index: -1;
@@ -135,7 +143,7 @@ h1 {
 
 p {
    text-rendering: optimizeSpeed;
-   color: color(darklight);
+   color: brand(_darklight);
    line-height: 1.5;
    letter-spacing: 0.02em;
    hyphens: none
@@ -147,34 +155,25 @@ p {
 //  Common Rules
 //
 
-svg, nav a, h1 span::after {
-   display: block
+%background_offwhite {
+   background: brand(_offwhite)
 }
 
-html, nav {
-   background: color(offwhite)
-}
-
-nav a:first-child, h1 {
+%brand-font {
    font-family: Montserrat, sans-serif;
    font-weight: 900;
    line-height: 1.1
 }
 
-#nav div, #nav a:first-child {
+%flex-center {
    display: -webkit-flex;
    display: flex;
    -webkit-align-items: center;
    align-items: center;
-   font-weight: 900
 }
 
-[flexr-grid], [flexr-wrap], #nav {
+%width_100 {
    width: 100%
-}
-
-#nav, body > header svg {
-   position: absolute
 }
 
 
@@ -228,24 +227,31 @@ nav a:first-child, h1 {
 
 
 //
-//  Nav
+//  Navigation
 //
 
 #nav {
+   @extend %width_100;
+   @extend %absolute;
+   @extend %background_offwhite;
    height: 56px;
    top: 0;
-   z-index: 999;
+   z-index: 99;
    
    div {
+      @extend %flex-center;
       height: 100%
    }
    
    a {
+      @extend %block;
       font-size: 0.8rem;
       letter-spacing: 0.03em
    }
    
    a:first-child {
+      @extend %flex-center;
+      @extend %brand-font;
       margin-bottom: 1px;
       letter-spacing: -0.02em;
       
@@ -283,11 +289,12 @@ body > header {
    height: 100vh;
    
    svg {
+      @extend %absolute;
       bottom: 5vh;
       width: 34px;
       height: 34px;
       fill: none;
-      stroke: #BDBBC9;
+      stroke: brand(_lightgray);
       stroke-width: 3;
       stroke-linecap: round;
       stroke-linejoin: round
@@ -332,9 +339,11 @@ body > header {
    
    [flexr-grid], [flexr-wrap] {
       padding-right: 24px;
-      padding-left: 24px
+      padding-right: minmax(24px, safe-area-inset-right);
+      padding-left: 24px;
+      padding-left: minmax(24px, safe-area-inset-left);
    }
-   
+
    [flexr-grid] {
       grid-column-gap: 24px;
       column-gap: 24px
@@ -370,7 +379,9 @@ body > header {
       width: 80%;
       max-width: 1436px;
       padding-right: 30px;
-      padding-left: 30px
+      padding-right: minmax(30px, safe-area-inset-right);
+      padding-left: 30px;
+      padding-left: minmax(30px, safe-area-inset-left);
    }
    
    [flexr-grid] {
