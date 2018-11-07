@@ -5,6 +5,7 @@ author:
   name: Daniel Blake
 copyright: 2018 Daniel Blake
 
+enableGitInfo: true
 disableKinds:
   - taxonomy
   - taxonomyTerm
