@@ -115,24 +115,24 @@
    "name":"{{ .Title }}",
    "description":"{{ .Description }}",
    "url":"{{ .URL | absURL }}",
-	"image":"{{ $info.image }}",
-	"creator":{
-		"@type":"Person",
-		"name":"{{ .Site.Author.name }}",
-		"description":"{{ .Site.Author.title }}",
-		"address":"{{ .Site.Author.city }}",
+   "image":"{{ $info.image }}",
+   "creator":{
+      "@type":"Person",
+      "name":"{{ .Site.Author.name }}",
+      "description":"{{ .Site.Author.title }}",
+      "address":"{{ .Site.Author.city }}",
       "email":"{{ .Site.Author.email }}",
       "telephone":"+{{ replace .Site.Author.phone "-" "" }}"
-	},
-	"offers":{
-		"@type":"Offer",
-		"itemOffered":{
-			"@type":"Service",
-			"serviceType":"Website design and development"
-		}
-	},
-	"sameAs":"{{ $info.linkedin }}",
-	"sameAs":"{{ $info.github }}"
+   },
+   "offers":{
+      "@type":"Offer",
+      "itemOffered":{
+         "@type":"Service",
+         "serviceType":"Website design and development"
+      }
+   },
+   "sameAs":"{{ $info.linkedin }}",
+   "sameAs":"{{ $info.github }}"
 }
 </script>
 
