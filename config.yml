@@ -16,5 +16,4 @@ disableKinds:
   - taxonomy
   - taxonomyTerm
   - RSS
-disableHugoGeneratorInject: true
 enableEmoji: true
