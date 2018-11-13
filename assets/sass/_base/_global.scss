@@ -26,6 +26,10 @@ img, li::before {
    font-size: 0
 }
 
+input, textarea, button {
+   @include appearance(none);
+}
+
 ul {
    list-style: none
 }
@@ -91,16 +95,16 @@ main, img, footer {
    width: 100%
 }
 
-img, h2::after, h5::after {
+img, source, picture, h2::after, h5::after {
    display: block
 }
 
 h2, h3, h5, legend {
    font-family: Montserrat, sans-serif;
    font-weight: 900;
-   text-rendering: geometricPrecision;
    letter-spacing: -0.04em;
-   word-spacing: 0.03em
+   word-spacing: 0.03em;
+   text-rendering: geometricPrecision
 }
 
 section, h2::after, h5::after {
@@ -113,11 +117,13 @@ section, h2::after, h5::after {
 //  Buttons
 //
 
-button.primary {
-   @include appearance(none);
-}
 
-.primary, .secondary {
+/**
+ *  Button Root Style
+ */
+
+.btn {
+   @include tap-highlight-color(transparent);
    display: inline-block;
    height: 50px;
    padding: 0 1.5em;
@@ -140,35 +146,37 @@ button.primary {
 
 
 /**
- *  Preview Button
+ *  Primary Buttons
  */
 
-.primary {
+.btn.primary {
    @include box-shadow(0 1px 2px ts(0.35));
    background: brand();
    color: hsl(250,12%,98%);
 
-   &:focus, &:hover {
+   &:focus {
       @include box-shadow(0 2px 5px ts(0.35));
-      background: value(brand(),5);
+      background: value(brand(), 5);
    }
 
    &:active {
       @include box-shadow(0 1px 1px ts(0.35));
    }
+
+   // &:hover //
 }
 
 
 /**
- *  Visit Button
+ *  Secondary Buttons
  */
 
-.secondary {
+.btn.secondary {
    @include box-shadow(0 1px 2px ts(0.2));
    background: brand(_darkwhite);
    margin-left: 1em;
    
-   &:focus, &:hover {
+   &:focus {
       @include box-shadow(0 2px 5px ts(0.2));
       background: value(brand(_darkwhite),1);
    }
@@ -176,4 +184,6 @@ button.primary {
    &:active {
       @include box-shadow(0 1px 1px ts(0.2));
    }
+
+   // &:hover //
 }

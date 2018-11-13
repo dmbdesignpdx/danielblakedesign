@@ -12,17 +12,23 @@
 
 #nav {
 
-   // Logo
-   a:first-child:hover svg {
+   a:first-child {
 
-      .a, .c, .e, .f, .g, .h, .i, .j {
-         fill: brand();
+      &:active svg {
+
+         .a, .c, .e, .f, .g, .h, .i, .j {
+            fill: brand();
+         }
       }
+
+      // &:hover //
    }
 
-   a:hover {
-       @extend %mainColor;
+   a:active, a:focus {
+      color: brand()
    }
+
+   // a:hover //
    
    &.js-show {
       @include transform(translateY(calc(100% + 3px)));
@@ -41,8 +47,6 @@
          top: -93px
       }
 
-      @include desktopLG {
-         top: -153px
-      }
+      // @include desktop //
    }
 }
