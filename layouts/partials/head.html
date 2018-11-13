@@ -14,11 +14,15 @@
 
 <!-- Prefetches and Preloads -->
 
-<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
 
 <link rel="dns-prefetch" href="https://www.googletagmanager.com/">
 
 <link rel="dns-prefetch" href="https://www.google-analytics.com/">
+
+<link rel="preload" href="/css/master.min.css" as="style" crossorigin>
+
+<link rel="preload" href="/dist/main.min.js" as="script" crossorigin>
 
 {{ end }}
 
@@ -100,7 +104,7 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/site.scss" | toCSS | minify | fingerprint }}
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify | fingerprint }}
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
