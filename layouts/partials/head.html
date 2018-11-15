@@ -1,6 +1,27 @@
+<!-- 
+   Contents:
+
+   - Initial
+   - HTTP Headers
+   - Prebrowsing Hints
+   - General
+   - Favicons
+   - Summary Cards
+   - Critical CSS
+   - Structured Data
+   - Google Analytics
+   - Generator
+ -->
+
 {{ $info := .Site.Data.info }}
 
+
+<!-- Initial -->
+
 <meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
 
 {{ if eq (getenv "HUGO_ENV") "production" }}
 
@@ -12,7 +33,7 @@
 <meta http-equiv="cache-control" content="public,max-age=5256000">
 
 
-<!-- Prefetches and Preloads -->
+<!-- Prebrowsing Hints -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
 
@@ -28,8 +49,6 @@
 
 
 <!-- General -->
-
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
 <title>{{ .Title }}</title>
 
@@ -49,16 +68,16 @@
 
 <meta name="theme-color" content="{{ $info.theme }}">
 
-<meta name="apple-mobile-web-app-status-bar-style" name="{{ $info.theme }}">
+<meta name="apple-mobile-web-app-status-bar-style" name="black-translucent">
 
 
 <!-- Favicons -->
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<link rel="icon" type="image/png" href="/img/favicon-32x32.png" sizes="32x32">
-
 <link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96">
+
+<link rel="icon" type="image/png" href="/img/favicon-192x192.png" sizes="192x192">
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
@@ -66,8 +85,10 @@
 
 <link rel="manifest" href="/manifest.json">
 
+<meta name="msapplication-config" content="/browserconfig.xml">
 
-<!-- Open Graph and Summary Cards -->
+
+<!-- Summary Cards -->
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -145,3 +166,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1');</script>
 
 {{ end }}
+
+
+<!-- Generator -->
+
+<meta name="generator" content="HUGO">
