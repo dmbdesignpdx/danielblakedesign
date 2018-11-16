@@ -12,8 +12,10 @@ author:
 copyright: 2018 Daniel Blake
 
 enableGitInfo: true
+disableHugoGeneratorInject: true
 disableKinds:
   - taxonomy
   - taxonomyTerm
   - RSS
+  - robotsTXT
 enableEmoji: true
