@@ -1,10 +1,24 @@
 <div>
 
+   <!-- Google Fonts -->
+
    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900">
+   
+
+   <!-- Master CSS -->
    
    {{ $master := resources.Get "css/master.scss" | toCSS | minify }}
    <link rel="stylesheet" href="{{ $master.RelPermalink }}">
+
+
+   <!-- Desktop CSS -->
+
+   {{ $desktop := resources.Get "css/desktop.scss" | toCSS | minify }}
+   <link media="(min-width:1278px)" rel="stylesheet" href="{{ $desktop.RelPermalink }}">
    
+
+   <!-- Main Scripts -->
+
    <script defer src="/dist/main.min.js"></script>
 
 </div>

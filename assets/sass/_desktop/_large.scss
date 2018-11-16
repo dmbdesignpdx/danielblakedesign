@@ -1,0 +1,158 @@
+/**
+ *  Contents:
+ *
+ *  Navigation
+ *  Buttons
+ */
+
+//
+//  Navigation
+//
+
+#nav {
+
+   // Logo
+   a:first-child {
+
+      &:hover svg {
+
+         @include desktop {
+            .a, .c, .e, .f, .g, .h, .i, .j {
+               fill: brand();
+            }
+         }
+      }
+   }
+
+  
+
+   a:hover {
+      
+      @include desktop {
+         color: brand()
+      }
+   }
+   
+   &.js-fixed {
+
+      @include desktopLG {
+         top: -153px
+      }
+   }
+}
+
+
+
+//
+//  Buttons
+//
+
+/**
+ *  Primary Buttons
+ */
+
+ .btn.primary {
+
+   @include desktop {
+    
+      &:hover {
+         @include box-shadow(0 2px 5px ts(0.35));
+         background: value(brand(), 5);
+      }
+   }
+}
+
+
+/**
+ *  Secondary Buttons
+ */
+
+.btn.secondary {
+
+   @include desktop {
+
+      &:hover {
+         @include box-shadow(0 2px 5px ts(0.2));
+         background: value(brand(_darkwhite),1);
+      }
+   }
+}
+
+
+
+//
+//  Home
+//
+
+#work {
+
+   h2 {
+
+      @include desktop {
+         margin-left: 10%
+      }
+   }
+}
+
+
+#contact {
+
+   a {
+
+      @include desktop {
+
+         &:hover {
+            color: brand()
+         }
+      }
+
+   }
+
+   svg {
+
+      @at-root #contact a:hover svg {
+         
+         @include desktop {
+            stroke: brand();
+         }
+      }
+   }
+}
+
+form[name=drop] {
+
+   @include desktop {
+      grid-column: 1 / span 3
+   }
+
+   input:hover, textarea:hover {
+      
+      @include desktop {
+         outline: 0;
+         box-shadow: 0 3px 8px ts(0.15)
+      }
+   }
+
+   legend, input, textarea {
+
+      @include desktop {
+         margin-bottom: 30px
+      }
+   }
+}
+
+
+.sib {
+
+   section svg {
+
+      @include desktop {
+         @include size(90px);
+         opacity: 0;
+
+         @at-root .sib section a:hover svg {
+            opacity: 0.95
+         }
+      }
+   }
+}

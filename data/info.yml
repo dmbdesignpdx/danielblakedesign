@@ -1,12 +1,12 @@
 # For General Site Info
 
 # Theme
-theme: "#e82c64"
+theme: "#E82C61"
 
 # SameAs
 github: https://github.com/dmbdesignpdx
 linkedin: https://www.linkedin.com/in/danielblakepdx
 
 # Open Graph / Twitter
-image: https://danielblake.design/img/daniel-og.jpg
-type: image/jpg
+image: https://danielblake.design/img/daniel-og.png
+type: image/png

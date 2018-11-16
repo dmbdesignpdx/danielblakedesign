@@ -182,11 +182,21 @@ p {
 //  Logo
 //
 
+
+/**
+ *  Whole
+ */
+
 #logo {
    stroke:#17161d;
    stroke-width: 11;
    stroke-linecap: round
 }
+
+
+/**
+ *  Parts
+ */
 
 .a {
    fill:#c8c8d2
@@ -245,6 +255,7 @@ p {
    
    a {
       @extend %block;
+      @include tap-highlight-color(transparent);
       font-size: 0.8rem;
       letter-spacing: 0.03em
    }
@@ -285,20 +296,20 @@ p {
 //  Hero
 //
 
-body > header {
-   height: 100vh;
-   
-   svg {
-      @extend %absolute;
-      bottom: 5vh;
-      width: 34px;
-      height: 34px;
-      fill: none;
-      stroke: brand(_lightgray);
-      stroke-width: 3;
-      stroke-linecap: round;
-      stroke-linejoin: round
-   }
+#hero {
+   height: 100vh
+}
+
+#arrow {
+   @extend %absolute;
+   bottom: 5vh;
+   width: 34px;
+   height: 34px;
+   fill: none;
+   stroke: brand(_lightgray);
+   stroke-width: 3;
+   stroke-linecap: round;
+   stroke-linejoin: round
 }
 
 

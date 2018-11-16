@@ -3,11 +3,19 @@
 
 <!-- Hero -->
 
-<header flexr-wrap>
+<header
+   id="hero"
+   flexr-wrap>
 
    <h1><span>{{ .Params.one }}</span><br>{{ .Params.two }}</h1>
 
-   <svg viewBox="0 0 50 50"><path d='M4,25 25,46 46,25'/></svg>
+   <svg
+      id="arrow"
+      viewBox="0 0 50 50">
+      
+      <path d='M4,25 25,46 46,25'/>
+   
+   </svg>
    
 </header>
 
@@ -29,21 +37,47 @@
       {{ $project := replace .URL "/" "" }}
       {{ range $i, $size := (seq 3) }}
       {{ $n := add $i 1 }}
-               
-      <img src="/img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg"
+
+      <picture>
+
+         <source
+            type="image/webp"
+            srcset="/img/{{ $project }}/{{ $project }}-{{ $size }}-xs.webp 768w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-sm.webp 1080w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-md.webp 1280w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-lg.webp 1440w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-xl.webp 1920w,
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-fl.webp 2880w"
+         />
+
+         <img 
+            src="/img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg"
             alt="{{ $project }} project preview {{ $n }} of 3"
             srcset="/img/{{ $project }}/{{ $project }}-{{ $size }}-xs.jpg 768w,
                     /img/{{ $project }}/{{ $project }}-{{ $size }}-sm.jpg 1080w,
                     /img/{{ $project }}/{{ $project }}-{{ $size }}-md.jpg 1280w,
                     /img/{{ $project }}/{{ $project }}-{{ $size }}-lg.jpg 1440w,
                     /img/{{ $project }}/{{ $project }}-{{ $size }}-xl.jpg 1920w,
-                    /img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg 2880w,">
+                    /img/{{ $project }}/{{ $project }}-{{ $size }}-fl.jpg 2880w"
+         />
+
+      </picture>
 
       {{ end }}
 
+
       {{ .Content }}
 
-      <a class="primary" href="{{ .Params.link }}" target="_blank" aria-label="{{ .Params.alt }}" rel="{{ .Params.rel }}">View Website</a>
+      <a
+         class="btn primary"
+         href="{{ .Params.link }}"
+         target="_blank"
+         aria-label="{{ .Params.alt }}"
+         rel="{{ .Params.rel }}">
+         
+         View Website
+      
+      </a>
 
    </section>
 

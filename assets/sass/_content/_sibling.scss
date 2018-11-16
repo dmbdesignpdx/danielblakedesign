@@ -12,14 +12,17 @@
 
 .sib {
 
-   img {
+   picture {
       margin-bottom: 18px;
-      border-radius: 4px;
-      border: 1px solid #{brand(_darkwhite)};
 
       @include tabletPor {
          margin-bottom: 60px;
       }
+   }
+
+   img {
+      border-radius: 4px;
+      border: 1px solid #{brand(_darkwhite)};
    }
 
    li {
@@ -41,14 +44,7 @@
       fill: none;
       background: #111;
 
-      @include desktop {
-         @include size(90px);
-         opacity: 0;
-
-         @at-root .sib section a:hover svg {
-            opacity: 0.95
-         }
-      }
+      // @include desktop //
    }
 
    main p {
