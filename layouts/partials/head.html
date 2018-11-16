@@ -10,6 +10,11 @@
    - Critical CSS
    - Structured Data
    - Google Analytics
+   - Google Font
+   - Master CSS
+   - Desktop CSS
+   - loadCSS
+   - Main Script
    - Generator
  -->
 
@@ -41,10 +46,6 @@
 
 <link rel="dns-prefetch" href="https://www.google-analytics.com/">
 
-<link rel="preload" href="/css/master.min.css" as="style" crossorigin>
-
-<link rel="preload" href="/dist/main.min.js" as="script" crossorigin>
-
 {{ end }}
 
 
@@ -62,13 +63,7 @@
 
 <meta name="format-detection" content="email=no">
 
-<meta name="mobile-web-app-capable" content="yes">
-
-<meta name="apple-mobile-web-app-capable" content="yes">
-
 <meta name="theme-color" content="{{ $info.theme }}">
-
-<meta name="apple-mobile-web-app-status-bar-style" name="black-translucent">
 
 
 <!-- Favicons -->
@@ -163,9 +158,39 @@
 <!-- Google Analytics -->
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124883259-1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1')</script>
 
 {{ end }}
+
+
+<!-- Google Font -->
+
+<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:900" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900"></noscript>
+
+
+<!-- Master CSS -->
+
+{{ $master := resources.Get "css/master.scss" | toCSS | minify }}
+<link rel="preload" href="{{ $master.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{{ $master.RelPermalink }}"></noscript>
+
+
+<!-- Desktop CSS -->
+
+{{ $desktop := resources.Get "css/desktop.scss" | toCSS | minify }}
+<link rel="preload" media="(min-width:1278px)" href="{{ $desktop.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" media="(min-width:1278px)" href="{{ $desktop.RelPermalink }}"></noscript>
+
+
+<!-- loadCSS -->
+
+<script>!function(t){t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this)</script>
+
+
+<!-- Main Script -->
+
+<script async src="/dist/main.min.js"></script>
 
 
 <!-- Generator -->
