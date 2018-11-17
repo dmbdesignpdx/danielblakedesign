@@ -56,7 +56,7 @@ rules:
   func-name-matching: error
   func-names:
     - error
-    - never
+    - always
   func-style:
     - error
     - declaration
