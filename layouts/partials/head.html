@@ -165,22 +165,19 @@
 
 <!-- Google Font -->
 
-<link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:900" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:900"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat:900" onload="this.onload=null;this.rel='stylesheet'">
 
 
 <!-- Master CSS -->
 
 {{ $master := resources.Get "css/master.scss" | toCSS | minify }}
-<link rel="preload" href="{{ $master.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="{{ $master.RelPermalink }}"></noscript>
+<link rel="preload" as="style" href="{{ $master.RelPermalink }}" onload="this.onload=null;this.rel='stylesheet'">
 
 
 <!-- Desktop CSS -->
 
 {{ $desktop := resources.Get "css/desktop.scss" | toCSS | minify }}
-<link rel="preload" media="(min-width:1278px)" href="{{ $desktop.RelPermalink }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" media="(min-width:1278px)" href="{{ $desktop.RelPermalink }}"></noscript>
+<link rel="preload" as="style" media="(min-width:1278px)" href="{{ $desktop.RelPermalink }}" onload="this.onload=null;this.rel='stylesheet'">
 
 
 <!-- loadCSS -->
