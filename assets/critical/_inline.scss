@@ -25,24 +25,13 @@
 //  Grid
 //
 
-[flexr-grid], [flexr-wrap] {
+[flexr-wrap] {
    @extend %width_100;
    padding-right: 18px;
    padding-right: minmax(18px, safe-area-inset-right);
    padding-left: 18px;
    padding-left: minmax(18px, safe-area-inset-left);
    margin: 0 auto
-}
-
-[flexr-grid] {
-   display: grid;
-   grid: none / repeat(7, 1fr);
-   grid-column-gap: 18px;
-   column-gap: 18px
-}
-
-[flexr-grid] > * {
-   grid-column: 1 / -1
 }
 
 
@@ -68,10 +57,10 @@ body {
    color: brand(_darkgray);
    -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
-   -ms-text-size-adjust: none;
-   -moz-text-size-adjust: none;
-   -webkit-text-size-adjust: none;
-   text-size-adjust: none;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   text-size-adjust: 100%;
    touch-action: manipulation;
    -webkit-overflow-scrolling: touch
 }

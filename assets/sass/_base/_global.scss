@@ -1,11 +1,37 @@
 /**
  *  Contents:
  *
+ *  Grid
  *  Global Styles and Resets
  *  Common Rules
  *  Buttons
  */
 
+
+
+//
+//  Grid
+//
+
+[flexr-grid] {
+   width: 100%;
+   padding-right: 18px;
+   padding-right: minmax(18px, safe-area-inset-right);
+   padding-left: 18px;
+   padding-left: minmax(18px, safe-area-inset-left);
+   margin: 0 auto
+}
+
+[flexr-grid] {
+   display: grid;
+   grid: none / repeat(7, 1fr);
+   grid-column-gap: 18px;
+   column-gap: 18px
+}
+
+[flexr-grid] > * {
+   grid-column: 1 / -1
+}
 
 
 //
