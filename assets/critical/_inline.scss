@@ -104,7 +104,6 @@ h1 {
    // Underlined words
    span {
       display: inline-block;
-      line-height: 1.1;
       
       &::after {
          @extend %block;
@@ -112,19 +111,19 @@ h1 {
          width: 0;
          height: 6px;
          background: brand();
-         top: -0.1em;
          position: relative;
+         margin-top: -0.14em;
          z-index: -1;
          border-radius: 3px;
          
          // Animation delay for second word
          @at-root h1 span:last-child::after {
-            transition: 0.4s 1s;
+            transition: width 0.4s 1s;
          }
          
          // Animation delay override if no second word
          @at-root h1 span:first-child::after {
-            transition: 0.4s 0.5s;
+            transition: width 0.4s 0.5s;
          }
          
          // JS animation
@@ -162,7 +161,7 @@ p {
 %brand-font {
    font-family: Montserrat, sans-serif;
    font-weight: 900;
-   line-height: 1.1
+   line-height: 1.2
 }
 
 %flex-center {
