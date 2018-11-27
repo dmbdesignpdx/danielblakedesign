@@ -1,6 +1,6 @@
 /**
  *  @file Main
- *  @description Root script for danielblake.design
+ *  @desc Root script for danielblake.design
  */
 
 
@@ -23,78 +23,59 @@ import navScroll from "./nav"
 
 
 //
-//  Variables
-//
-
-const icon = document.querySelector("body > header svg")
-
-let check
-
-
-
-//
-//  Functions
+//  Global Functions
 //
 
 
 /**
- *  @name page
- *  @description Checks which page is being viewed
+ *  @name pageIs
+ *  @global
+ *  @desc Checks which page is being viewed
  *  @param {string} cls - class name
- *  @returns {boolean}
+ *  @returns {boolean} Yay or nay
  *
  */
-function page(cls) {
+function pageIs(cls) {
    return cls === document.body.className
 }
 
 
 /**
- *  @name underline
- *  @description Adds the class "js-underline" to the h1 span
+ *  @name fontLoad
+ *  @global
+ *  @desc Listens for fonts to finish loading for intro
  *  @returns {undefined}
  *
  */
-function underline() {
-   const span = document.querySelectorAll("h1 span")
-
-   span.forEach(item => {
-      item.classList.add("js-underline")
-   })
-}
+(function fontLoad() {
 
 
-/**
- *  @name arrowFade
- *  @description Adds or removes the "js-fade" class
- *  @returns {undefined}
- *
- */
-function arrowFade() {
-   const
-   wh = Math.round(window.innerHeight * 0.33),
-   ws = window.scrollY
+   /**
+    *  @name animateIntro
+    *  @memberof fontLoad
+    *  @desc Removes and adds classes to utilize CSS transition
+    *  @returns {undefined}
+    *
+    */
+   function animateIntro() {
+      const spans = document.querySelectorAll("h1 span")
 
-	if (ws > wh && !check) {
-      icon.classList.add("js-fade")
-      check = true
+      document.querySelector("body > header").classList.remove("js-intro")
 
-	} else if (ws < wh && check) {
-      icon.classList.remove("js-fade")
-		check = false
+      spans.forEach(span => {
+         span.classList.add("js-underline")
+      })
    }
-}
 
+   // Tries fonts.ready first
+   try {
+      document.fonts.ready.then(animateIntro)
 
-/**
- *  @name validate
- *  @description Adds the "js-sub" class
- *  @returns {undefined}
- *
- */
-function validate() {
-   document.drop.classList.add("js-sub")
-}
+   // Else wait for DOM to load
+   } catch (err) {
+      window.addEventListener("DOMContentLoaded", animateIntro, { once: true })
+   }
+})()
 
 
 
@@ -105,31 +86,64 @@ function validate() {
 
 /**
  *  @name pageLoad
- *  @description Listens for page to finish loading
- *  @returns {undefined} Runs several tasks when page fully loads
+ *  @global
+ *  @desc Listens for page to finish to loading to invoke local functions
+ *  @returns {undefined}
  *
  */
 window.addEventListener("load", function pageLoad() {
 
-   // Listen: arrowFade
-   window.addEventListener("scroll", arrowFade)
+   if (pageIs("home")) {
 
-   // Listen: validate
-   if (page("home")) {
-      document.drop.send.addEventListener("click", validate)
+
+      /**
+       *  @name validate
+       *  @memberof pageLoad
+       *  @desc Adds the "js-sub" class
+       *  @returns {undefined}
+       *
+       */
+      document.drop.send.addEventListener("click", function validate() {
+         document.drop.classList.add("js-sub")
+      })
    }
 
-   // Call: navScroll
-   navScroll()
 
-   // Call: underline
-   underline()
+   /**
+    *  @name arrowFade
+    *  @memberof pageLoad
+    *  @desc Adds or removes the "js-fade" class
+    *  @returns {undefined}
+    *
+    */
+   window.addEventListener("scroll", function arrowFade() {
+      const
+      icon = document.querySelector("#arrow"),
+      windowHeight = Math.round(window.innerHeight * 0.33),
+      windowScroll = window.scrollY
+
+      let iconFaded = icon.classList.contains("js-fade")
+
+      if (windowScroll > windowHeight) {
+
+         if (!iconFaded) {
+            icon.classList.add("js-fade")
+         }
+
+      } else {
+
+         if (iconFaded) {
+            icon.classList.remove("js-fade")
+         }
+      }
+   })
+
+   /** @external */
+   navScroll()
+   smoothScroll("a[href*='#']")
 
    // Mark and Measure
    window.performance.mark("page_loaded")
    window.performance.measure("script_loaded", "initial", "page_loaded")
 
 }, { once: true })
-
-// Call: smoothScroll
-smoothScroll("a[href*='#']")

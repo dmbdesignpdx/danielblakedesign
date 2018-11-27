@@ -1,118 +1,78 @@
 /**
  *  @file Nav
  *  @module
- *  @description Script for navigation behavior
+ *  @desc Script for navigation behavior
+ *  @exports navScroll()
  */
 
-
-
-//
-// Variables
-//
-
-const nav = document.querySelector("#nav")
-
-let
-original = window.pageYOffset,
-bounce
-
-
-
-//
-// Functions
-//
-
-
-/**
- *  @name availHeight
- *  @description Finds the available view height
- *  @returns {number}
- *
- */
-function availHeight() {
-   return (
-      document.documentElement.scrollHeight - window.innerHeight
-   )
-}
-
-
-/**
- *  @name showHide
- *  @description Adds or removes "js-show" class
- *  @param {number} update - Last scroll position
- *  @returns {undefined}
- *
- */
-function showHide(update) {
-
-   // Scrolling down (Hide) and bottom bounce check
-   if (update > original && !bounce) {
-      nav.classList.remove("js-show")
-      bounce = true
-
-   // Or scrolling up (Show)
-   } else if (original > update) {
-      nav.classList.add("js-show")
-      bounce = false
-   }
-}
-
-
-/**
- *  @name pageScroll
- *  @description Detects page scroll position
- *  @returns {undefined}
- *
- */
-function pageScroll() {
-   const
-   update = window.pageYOffset,
-   nh = nav.clientHeight
-
-	// Check scroll position
-	if (window.pageYOffset > nh) {
-      nav.classList.add("js-fixed")
-		nav.classList.add("js-time")
-
-		// Available scroll height check (top and bottom)
-		if (-1 < original && availHeight() > update) {
-
-         // Call: showHide
-         showHide(update)
-      }
-
-	// Or reset all at top
-	} else if (0 === window.pageYOffset) {
-      nav.classList.remove("js-fixed")
-      nav.classList.remove("js-show")
-
-   // Or remove transition in Nav height area
-	} else {
-      nav.classList.remove("js-time")
-   }
-
-	// Update scroll position
-	original = update
-}
-
-
-
-//
-// Exports
-//
 
 
 /**
  *  @name navScroll
- *  @description Controls the
+ *  @global
+ *  @desc Controls when the Nav is visibile or hidden on scroll
  *  @returns {undefined}
  *
  */
 export default function navScroll() {
+   const nav = document.querySelector("#nav")
 
-   // Listen: pageScroll
-   window.addEventListener("scroll", pageScroll)
+   let original = window.pageYOffset
 
-   // Call: pageScroll
-   pageScroll()
+
+   /**
+    *  @name pageScroll
+    *  @memberof navScroll
+    *  @desc Detects page scroll position
+    *  @returns {undefined}
+    *
+    */
+   window.addEventListener("scroll", function pageScroll() {
+      const
+      update = window.pageYOffset,
+      navHeight = nav.clientHeight
+
+      let
+      availHeight = document.documentElement.scrollHeight - window.innerHeight,
+      navShowing = nav.classList.contains("js-show")
+
+      // 1.a. Check scroll position
+      if (window.pageYOffset > navHeight) {
+         nav.classList.add("js-fixed")
+         nav.classList.add("js-time")
+
+         // 2. Check Available scroll height (top and bottom)
+         if (-1 < original && availHeight > update) {
+
+            // 3. Decide nav visibility
+            
+            // Scrolling down (Hide)
+            if (update > original) {
+
+               if (navShowing) {
+                  nav.classList.remove("js-show")
+               }
+
+            // Or scrolling up (Show)
+            } else {
+
+               if (!navShowing) {
+                  nav.classList.add("js-show")
+               }
+            }
+         }
+
+      // 1.b. Or reset all at top
+      } else if (0 === window.pageYOffset) {
+         nav.classList.remove("js-fixed")
+         nav.classList.remove("js-show")
+
+      // 1.c. Or remove transition in Nav height area
+      } else {
+         nav.classList.remove("js-time")
+      }
+
+      // Update scroll position
+      original = update
+   })
 }
