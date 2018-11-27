@@ -1,6 +1,7 @@
 /**
  *  Contents:
  *
+ *  Font
  *  Imports
  *  Grid
  *  Global Styles and Resets
@@ -11,6 +12,21 @@
  *  Media Queries
  */
 
+
+
+//
+//  Font
+//
+
+@font-face {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 900;
+   font-display: block;
+   src: local('Montserrat Black'), local('Montserrat-Black'),
+        url('../fonts/montserrat-900.woff') format('woff')
+ }
+ 
 
 
 //
@@ -50,7 +66,7 @@
 
 html {
    @extend %background_offwhite;
-   font: normal 18px Helvetica, sans-serif
+   font: normal 18px system-ui, sans-serif
 }
 
 body {
@@ -107,12 +123,12 @@ h1 {
          
          // Animation delay for second word
          @at-root h1 span:last-child::after {
-            transition: width 0.4s 1s;
+            transition: width 0.4s 1.2s;
          }
          
          // Animation delay override if no second word
          @at-root h1 span:first-child::after {
-            transition: width 0.4s 0.5s;
+            transition: width 0.4s 0.8s;
          }
          
          // JS animation
@@ -137,6 +153,13 @@ p {
    hyphens: none
 }
 
+#hero.js-intro {
+
+   h1, p {
+      transform: translateX(-50%);
+      opacity: 0;
+   }
+}
 
 
 //
@@ -162,6 +185,17 @@ p {
 
 %width_100 {
    width: 100%
+}
+
+#hero h1, #hero p {
+   transform: translateX(0);
+   opacity: 1;
+   transition: transform 0.4s 0s, opacity 0.4s 0s;
+   transform-style: preserve-3d;
+}
+
+#hero p {
+   transition: transform 0.4s 0.4s, opacity 0.4s 0.4s;
 }
 
 
@@ -302,6 +336,7 @@ p {
 
 
 
+
 //
 //  Media Queries
 //
@@ -336,16 +371,11 @@ p {
 
 @media (min-width:766px) {
    
-   [flexr-grid], [flexr-wrap] {
+   [flexr-wrap] {
       padding-right: 24px;
       padding-right: minmax(24px, safe-area-inset-right);
       padding-left: 24px;
       padding-left: minmax(24px, safe-area-inset-left);
-   }
-
-   [flexr-grid] {
-      grid-column-gap: 24px;
-      column-gap: 24px
    }
    
    h1 {
@@ -374,18 +404,13 @@ p {
 
 @media (min-width:1278px) {
    
-   [flexr-grid], [flexr-wrap] {
-      width: 80%;
+   [flexr-wrap] {
+      width: 84%;
       max-width: 1436px;
       padding-right: 30px;
       padding-right: minmax(30px, safe-area-inset-right);
       padding-left: 30px;
       padding-left: minmax(30px, safe-area-inset-left);
-   }
-   
-   [flexr-grid] {
-      grid-column-gap: 30px;
-      column-gap: 30px
    }
    
    html {

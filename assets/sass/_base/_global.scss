@@ -19,14 +19,40 @@
    padding-right: minmax(18px, safe-area-inset-right);
    padding-left: 18px;
    padding-left: minmax(18px, safe-area-inset-left);
-   margin: 0 auto
+   margin: 0 auto;
+
+   @include tabletPor {
+      padding-right: 24px;
+      padding-right: minmax(24px, safe-area-inset-right);
+      padding-left: 24px;
+      padding-left: minmax(24px, safe-area-inset-left);
+   }
+
+   @include desktop {
+      width: 82%;
+      max-width: 1436px;
+      padding-right: 30px;
+      padding-right: minmax(30px, safe-area-inset-right);
+      padding-left: 30px;
+      padding-left: minmax(30px, safe-area-inset-left);
+   }
 }
 
 [flexr-grid] {
    display: grid;
    grid: none / repeat(7, 1fr);
    grid-column-gap: 18px;
-   column-gap: 18px
+   column-gap: 18px;
+
+   @include tabletPor {
+      grid-column-gap: 24px;
+      column-gap: 24px;      
+   }
+
+   @include desktop {
+      grid-column-gap: 30px;
+      column-gap: 30px;
+   }
 }
 
 [flexr-grid] > * {
