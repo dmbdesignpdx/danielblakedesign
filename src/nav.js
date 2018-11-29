@@ -17,7 +17,20 @@
 export default function navScroll() {
    const nav = document.querySelector("#nav")
 
-   let original = window.pageYOffset
+   let
+   original = window.pageYOffset,
+   availHeight = 0
+
+
+   /**
+    *  @name findHeight
+    *  @desc Upates availHeight by subtracting viewport height from html height
+    *  @returns {undefined}
+    *
+    */
+   function findHeight() {
+      availHeight = document.documentElement.scrollHeight - window.innerHeight
+   }
 
 
    /**
@@ -27,14 +40,10 @@ export default function navScroll() {
     *  @returns {undefined}
     *
     */
-   window.addEventListener("scroll", function pageScroll() {
+   addEventListener("scroll", function pageScroll() {
       const
       update = window.pageYOffset,
       navHeight = nav.clientHeight
-
-      let
-      availHeight = document.documentElement.scrollHeight - window.innerHeight,
-      navShowing = nav.classList.contains("js-show")
 
       // 1.a. Check scroll position
       if (window.pageYOffset > navHeight) {
@@ -49,14 +58,14 @@ export default function navScroll() {
             // Scrolling down (Hide)
             if (update > original) {
 
-               if (navShowing) {
+               if (nav.classList.contains("js-show")) {
                   nav.classList.remove("js-show")
                }
 
             // Or scrolling up (Show)
             } else {
 
-               if (!navShowing) {
+               if (!nav.classList.contains("js-show")) {
                   nav.classList.add("js-show")
                }
             }
@@ -75,4 +84,7 @@ export default function navScroll() {
       // Update scroll position
       original = update
    })
+
+   findHeight()
+   addEventListener("resize", findHeight)
 }

@@ -6,7 +6,7 @@
 
 
 // Mark
-window.performance.mark("initial")
+performance.mark("initial")
 
 
 
@@ -68,12 +68,12 @@ function pageIs(cls) {
    }
 
    // Tries fonts.ready first
-   try {
+   if ("fonts" in document) {
       document.fonts.ready.then(animateIntro)
 
    // Else wait for DOM to load
-   } catch (err) {
-      window.addEventListener("DOMContentLoaded", animateIntro, { once: true })
+   } else {
+      addEventListener("DOMContentLoaded", animateIntro, { once: true })
    }
 })()
 
@@ -91,7 +91,10 @@ function pageIs(cls) {
  *  @returns {undefined}
  *
  */
-window.addEventListener("load", function pageLoad() {
+addEventListener("load", function pageLoad() {
+   const icon = document.querySelector("#arrow")
+
+   let windowHeight = 0
 
    if (pageIs("home")) {
 
@@ -110,40 +113,47 @@ window.addEventListener("load", function pageLoad() {
 
 
    /**
+    *  @name thirdWindow
+    *
+    */
+   function thirdWindow() {
+      windowHeight = Math.round(window.innerHeight * 0.33)
+   }
+
+
+   /**
     *  @name arrowFade
     *  @memberof pageLoad
     *  @desc Adds or removes the "js-fade" class
     *  @returns {undefined}
     *
     */
-   window.addEventListener("scroll", function arrowFade() {
-      const
-      icon = document.querySelector("#arrow"),
-      windowHeight = Math.round(window.innerHeight * 0.33),
-      windowScroll = window.scrollY
-
-      let iconFaded = icon.classList.contains("js-fade")
+   addEventListener("scroll", function arrowFade() {
+      const windowScroll = window.scrollY
 
       if (windowScroll > windowHeight) {
 
-         if (!iconFaded) {
+         if (!icon.classList.contains("js-fade")) {
             icon.classList.add("js-fade")
          }
 
       } else {
 
-         if (iconFaded) {
+         if (icon.classList.contains("js-fade")) {
             icon.classList.remove("js-fade")
          }
       }
    })
+
+   thirdWindow()
+   addEventListener("resize", thirdWindow)
 
    /** @external */
    navScroll()
    smoothScroll("a[href*='#']")
 
    // Mark and Measure
-   window.performance.mark("page_loaded")
-   window.performance.measure("script_loaded", "initial", "page_loaded")
+   performance.mark("page_loaded")
+   performance.measure("script_loaded", "initial", "page_loaded")
 
 }, { once: true })
