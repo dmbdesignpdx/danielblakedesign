@@ -8,10 +8,21 @@
  "license": "UNLICENSED",
  "private": true,
  "scripts": {
-  "comp": "webpack --mode development",
+  "clean:webpack": "rm -r static/dist",
+  "clean:hugo": "rm -r public",
+
+  "prehugo": "yarn clean:hugo",
+  "hugo": "hugo",
+  "publish": "env HUGO_ENV=production hugo --minify",
+
+  "precompile": "yarn clean:webpack",
+  "compile": "webpack --mode development",
+
   "webpack:dev": "webpack --mode development --watch",
   "hugo:dev": "hugo serve -p 3000",
-  "dev": "npm-run-all --parallel webpack:dev hugo:dev",
+  "dev": "npm-run-all -s clean:hugo clean:webpack -p webpack:dev hugo:dev",
+
+  "prebuild": "yarn clean:webpack",
   "build": "webpack --mode production",
   "lint": "eslint src/*.js"
  },
