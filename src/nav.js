@@ -15,11 +15,15 @@
  *
  */
 export default function navScroll() {
-   const nav = document.querySelector("#nav")
+   const
+   nav = document.querySelector("#nav"),
+   navHeight = nav.clientHeight
 
    let
    original = window.pageYOffset,
-   availHeight = 0
+   availHeight = 0,
+   isShowing = nav.classList.contains("js-show"),
+   scrolling = false
 
 
    /**
@@ -34,16 +38,13 @@ export default function navScroll() {
 
 
    /**
-    *  @name pageScroll
-    *  @memberof navScroll
-    *  @desc Detects page scroll position
+    *  @name toggleNav
+    *  @desc Determines whether to show or hide the Nav based on scroll
     *  @returns {undefined}
     *
     */
-   addEventListener("scroll", function pageScroll() {
-      const
-      update = window.pageYOffset,
-      navHeight = nav.clientHeight
+   function toggleNav() {
+      const update = window.pageYOffset
 
       // 1.a. Check scroll position
       if (window.pageYOffset > navHeight) {
@@ -54,20 +55,16 @@ export default function navScroll() {
          if (-1 < original && availHeight > update) {
 
             // 3. Decide nav visibility
-            
-            // Scrolling down (Hide)
-            if (update > original) {
 
-               if (nav.classList.contains("js-show")) {
-                  nav.classList.remove("js-show")
-               }
+            // Scrolling down and is visible (Hide)
+            if (update > original && isShowing) {
+               nav.classList.remove("js-show")
+               isShowing = false
 
-            // Or scrolling up (Show)
-            } else {
-
-               if (!nav.classList.contains("js-show")) {
-                  nav.classList.add("js-show")
-               }
+            // Or scrolling up and is not visible (Show)
+            } else if (update < original && !isShowing) {
+               nav.classList.add("js-show")
+               isShowing = true
             }
          }
 
@@ -83,6 +80,22 @@ export default function navScroll() {
 
       // Update scroll position
       original = update
+
+      // Reset scroll
+      scrolling = false
+   }
+
+
+   /**
+    *  @name onScroll
+    *  @memberof navScroll
+    *  @desc Detects page scroll position
+    *  @returns {undefined}
+    *
+    */
+   addEventListener("scroll", function onScroll() {
+      if (!scrolling) requestAnimationFrame(toggleNav)
+      scrolling = true
    })
 
    findHeight()

@@ -14,6 +14,7 @@ performance.mark("initial")
 //  Imports
 //
 
+
 // Vendor
 const smoothScroll = require("./plugins/smooth-scroll")
 
@@ -40,44 +41,6 @@ function pageIs(cls) {
 }
 
 
-/**
- *  @name fontLoad
- *  @global
- *  @desc Listens for fonts to finish loading for intro
- *  @returns {undefined}
- *
- */
-(function fontLoad() {
-
-
-   /**
-    *  @name animateIntro
-    *  @memberof fontLoad
-    *  @desc Removes and adds classes to utilize CSS transition
-    *  @returns {undefined}
-    *
-    */
-   function animateIntro() {
-      const spans = document.querySelectorAll("h1 span")
-
-      document.querySelector("body > header").classList.remove("js-intro")
-
-      spans.forEach(span => {
-         span.classList.add("js-underline")
-      })
-   }
-
-   // Tries fonts.ready first
-   if ("fonts" in document) {
-      document.fonts.ready.then(animateIntro)
-
-   // Else wait for DOM to load
-   } else {
-      addEventListener("DOMContentLoaded", animateIntro, { once: true })
-   }
-})()
-
-
 
 //
 //  Invoke
@@ -94,7 +57,7 @@ function pageIs(cls) {
 addEventListener("load", function pageLoad() {
    const icon = document.querySelector("#arrow")
 
-   let windowHeight = 0
+   let breakPoint = 0
 
    if (pageIs("home")) {
 
@@ -113,14 +76,22 @@ addEventListener("load", function pageLoad() {
 
 
    /**
-    *  @name thirdWindow
+    *  @name thirdOfWindow
+    *  @memberof pageLoad
+    *  @desc Updates breakpoint to a third of the window's height
+    *  @returns {undefined}
     *
     */
-   function thirdWindow() {
-      windowHeight = Math.round(window.innerHeight * 0.33)
-   }
-
-
+   !function thirdOfWindow() {
+      
+      // Add a listener for itself just once
+      if (0 === breakPoint) addEventListener("resize", thirdOfWindow)
+      
+      // Update
+      breakPoint = Math.round(window.innerHeight * 0.33)
+   }()
+   
+   
    /**
     *  @name arrowFade
     *  @memberof pageLoad
@@ -131,7 +102,7 @@ addEventListener("load", function pageLoad() {
    addEventListener("scroll", function arrowFade() {
       const windowScroll = window.scrollY
 
-      if (windowScroll > windowHeight) {
+      if (windowScroll > breakPoint) {
 
          if (!icon.classList.contains("js-fade")) {
             icon.classList.add("js-fade")
@@ -144,9 +115,7 @@ addEventListener("load", function pageLoad() {
          }
       }
    })
-
-   thirdWindow()
-   addEventListener("resize", thirdWindow)
+   
 
    /** @external */
    navScroll()
