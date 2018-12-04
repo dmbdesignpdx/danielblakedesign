@@ -12,6 +12,27 @@
 
 .sib {
 
+   h1 {
+
+      span {
+         
+         &::after {
+            
+            // Animation delay override for Siblings
+            @at-root .sib h1 span:first-child::after {
+               transition: width 0.4s 0.4s;
+            }
+
+         }
+      }
+      
+      // Sibling h1
+      .sib & {
+         padding-top: 38vh;
+         line-height: 1.2
+      }
+   }
+
    picture {
       margin-bottom: 18px;
 

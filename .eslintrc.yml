@@ -56,7 +56,7 @@ rules:
   func-name-matching: error
   func-names:
     - error
-    - never
+    - always
   func-style:
     - error
     - declaration
@@ -71,7 +71,7 @@ rules:
   implicit-arrow-linebreak: error
   indent: off
   indent-legacy: off
-  init-declarations: error
+  init-declarations: off
   jsx-quotes: error
   key-spacing: error
   keyword-spacing:

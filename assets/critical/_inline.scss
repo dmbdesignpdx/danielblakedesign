@@ -1,6 +1,7 @@
 /**
  *  Contents:
  *
+ *  Font
  *  Imports
  *  Grid
  *  Global Styles and Resets
@@ -11,6 +12,21 @@
  *  Media Queries
  */
 
+
+
+//
+//  Font
+//
+
+@font-face {
+   font-family: 'Montserrat';
+   font-style: normal;
+   font-weight: 900;
+   font-display: block;
+   src: local('Montserrat Black'), local('Montserrat-Black'),
+        url('../fonts/montserrat-900.woff') format('woff')
+ }
+ 
 
 
 //
@@ -25,24 +41,13 @@
 //  Grid
 //
 
-[flexr-grid], [flexr-wrap] {
+[flexr-wrap] {
    @extend %width_100;
    padding-right: 18px;
    padding-right: minmax(18px, safe-area-inset-right);
    padding-left: 18px;
    padding-left: minmax(18px, safe-area-inset-left);
    margin: 0 auto
-}
-
-[flexr-grid] {
-   display: grid;
-   grid: none / repeat(7, 1fr);
-   grid-column-gap: 18px;
-   column-gap: 18px
-}
-
-[flexr-grid] > * {
-   grid-column: 1 / -1
 }
 
 
@@ -61,17 +66,17 @@
 
 html {
    @extend %background_offwhite;
-   font: normal 18px Helvetica, sans-serif
+   font: normal 18px system-ui, sans-serif
 }
 
 body {
    color: brand(_darkgray);
    -moz-osx-font-smoothing: grayscale;
    -webkit-font-smoothing: antialiased;
-   -ms-text-size-adjust: none;
-   -moz-text-size-adjust: none;
-   -webkit-text-size-adjust: none;
-   text-size-adjust: none;
+   -ms-text-size-adjust: 100%;
+   -moz-text-size-adjust: 100%;
+   -webkit-text-size-adjust: 100%;
+   text-size-adjust: 100%;
    touch-action: manipulation;
    -webkit-overflow-scrolling: touch
 }
@@ -104,7 +109,6 @@ h1 {
    // Underlined words
    span {
       display: inline-block;
-      line-height: 1.1;
       
       &::after {
          @extend %block;
@@ -112,19 +116,19 @@ h1 {
          width: 0;
          height: 6px;
          background: brand();
-         top: -0.1em;
          position: relative;
+         margin-top: -0.14em;
          z-index: -1;
          border-radius: 3px;
          
          // Animation delay for second word
          @at-root h1 span:last-child::after {
-            transition: 0.4s 1s;
+            transition: width 0.4s 1.2s;
          }
          
          // Animation delay override if no second word
          @at-root h1 span:first-child::after {
-            transition: 0.4s 0.5s;
+            transition: width 0.4s 0.8s;
          }
          
          // JS animation
@@ -149,6 +153,13 @@ p {
    hyphens: none
 }
 
+#hero.js-intro {
+
+   h1, p {
+      transform: translateX(-50%);
+      opacity: 0;
+   }
+}
 
 
 //
@@ -162,7 +173,7 @@ p {
 %brand-font {
    font-family: Montserrat, sans-serif;
    font-weight: 900;
-   line-height: 1.1
+   line-height: 1.2
 }
 
 %flex-center {
@@ -174,6 +185,17 @@ p {
 
 %width_100 {
    width: 100%
+}
+
+#hero h1, #hero p {
+   transform: translateX(0);
+   opacity: 1;
+   transition: transform 0.4s 0s, opacity 0.4s 0s;
+   transform-style: preserve-3d;
+}
+
+#hero p {
+   transition: transform 0.4s 0.4s, opacity 0.4s 0.4s;
 }
 
 
@@ -314,6 +336,7 @@ p {
 
 
 
+
 //
 //  Media Queries
 //
@@ -348,16 +371,11 @@ p {
 
 @media (min-width:766px) {
    
-   [flexr-grid], [flexr-wrap] {
+   [flexr-wrap] {
       padding-right: 24px;
       padding-right: minmax(24px, safe-area-inset-right);
       padding-left: 24px;
       padding-left: minmax(24px, safe-area-inset-left);
-   }
-
-   [flexr-grid] {
-      grid-column-gap: 24px;
-      column-gap: 24px
    }
    
    h1 {
@@ -386,18 +404,13 @@ p {
 
 @media (min-width:1278px) {
    
-   [flexr-grid], [flexr-wrap] {
-      width: 80%;
+   [flexr-wrap] {
+      width: 84%;
       max-width: 1436px;
       padding-right: 30px;
       padding-right: minmax(30px, safe-area-inset-right);
       padding-left: 30px;
       padding-left: minmax(30px, safe-area-inset-left);
-   }
-   
-   [flexr-grid] {
-      grid-column-gap: 30px;
-      column-gap: 30px
    }
    
    html {
