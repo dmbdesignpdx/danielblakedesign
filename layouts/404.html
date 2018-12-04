@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+   <meta charset="utf-8">
+
+   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+   <title>Oh snap! 404 - Daniel Blake</title>
+
+   <meta name="description" content="There was a problem with the page.">
+
+   {{ $snap := resources.Get "sass/_content/_404.scss" | toCSS | minify | fingerprint }}
+   <style>{{ $snap.Content | safeCSS }}</style>
+
+</head>
+
+<body>
+
+   <main>
+
+      <h1>404</h1>
+
+      <div>
+
+         <p>Uh oh... that page doesn't exist. 😬</p>
+         
+         <a
+            href="{{ .Site.BaseURL }}"
+            aria-label="Go to home page">
+
+            Home
+
+         </a>
+
+      </div>
+
+   </main>
+
+</body>
+</html>
