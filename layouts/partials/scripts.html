@@ -1,3 +1,19 @@
 <!-- Animate Hero Text -->
 
 <script>!function(){function e(){var e=document.querySelectorAll("h1 span");document.querySelector("body > header").classList.remove("js-intro"),e.forEach(function(e){e.classList.add("js-underline")})}"fonts"in document?document.fonts.ready.then(e):addEventListener("DOMContentLoaded",e,{once:true})}()</script>
+
+
+<!-- Service Worker -->
+
+<script>
+if ("serviceWorker" in navigation) {
+   navigator.serviceWorker.register("sw.js")
+      .then(resolve => {
+         console.log(`service worker registered:\n${resolve}`)
+      })
+      .catch(error => {
+         console.warn(`service worker did not register:\n${error}`)
+         // throw error
+      })
+}
+</script>
