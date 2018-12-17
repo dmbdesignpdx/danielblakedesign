@@ -41,6 +41,27 @@ function pageIs(cls) {
 }
 
 
+/**
+ *  @name isOnline
+ *  @global
+ *  @desc Detects if the user is offline, disables form button if so
+ *  @returns {undefined}
+ *
+ */
+function isOnline() {
+   const btn = document.drop.send
+
+   if (!navigator.onLine) {
+      btn.disabled = true
+      btn.innerText = "Offline"
+   
+   } else {
+      btn.disabled = false
+      btn.innerText = "Send"
+   }
+}
+
+
 
 //
 //  Invoke
@@ -126,3 +147,7 @@ addEventListener("load", function pageLoad() {
    performance.measure("script_loaded", "initial", "page_loaded")
 
 }, { once: true })
+
+addEventListener("online", isOnline)
+addEventListener("offline", isOnline)
+isOnline()

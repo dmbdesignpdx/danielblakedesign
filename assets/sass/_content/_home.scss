@@ -41,6 +41,10 @@
    h2 {
       width: auto;
       margin-bottom: 1em;
+
+      @include desktop {
+         margin-left: 8%;
+      }
    }
 
    // Preview sections
@@ -273,7 +277,12 @@ picture.thumb {
          color: brand()
       }
 
-      // &:hover //
+      @include desktop {
+
+         &:hover {
+            color: brand()
+         }
+      }
    }
 
    // Icons
@@ -288,7 +297,12 @@ picture.thumb {
          stroke: brand();
       }
 
-      // &:hover //
+      @at-root #contact a:hover svg {
+         
+         @include desktop {
+            stroke: brand();
+         }
+      }
    }
 }
 
@@ -302,7 +316,9 @@ form[name=drop] {
       grid-column: 1 / span 4
    }
 
-   // @include desktop //
+   @include desktop {
+      grid-column: 1 / span 3
+   }
 
    legend {
       font-size: 1.2rem;
@@ -331,7 +347,9 @@ form[name=drop] {
          margin-bottom: 24px
       }
 
-      // @include desktop //
+      @include desktop {
+         margin-bottom: 30px
+      }
    }
 
    input, textarea {
@@ -348,7 +366,13 @@ form[name=drop] {
       line-height: 1.4
    }
 
-   // input:hover, textarea:hover //
+   input:hover, textarea:hover {
+      
+      @include desktop {
+         outline: 0;
+         box-shadow: 0 3px 8px ts(0.15)
+      }
+   }
 
    input:focus, textarea:focus {
       outline: 0;
