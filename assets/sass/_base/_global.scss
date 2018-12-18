@@ -215,7 +215,18 @@ section, h2::after, h5::after {
       @include box-shadow(0 1px 1px ts(0.35));
    }
 
-   // &:hover //
+   &:disabled {
+      opacity: 0.3;
+      pointer-events: none
+   }
+
+   @include desktop {
+    
+      &:hover {
+         @include box-shadow(0 2px 5px ts(0.35));
+         background: value(brand(), 5);
+      }
+   }
 }
 
 
@@ -237,5 +248,11 @@ section, h2::after, h5::after {
       @include box-shadow(0 1px 1px ts(0.2));
    }
 
-   // &:hover //
+   @include desktop {
+
+      &:hover {
+         @include box-shadow(0 2px 5px ts(0.2));
+         background: value(brand(_darkwhite),1);
+      }
+   }
 }

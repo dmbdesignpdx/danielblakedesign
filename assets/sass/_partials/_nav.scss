@@ -15,20 +15,37 @@
    a:first-child {
 
       &:active svg {
-
-         .a, .c, .e, .f, .g, .h, .i, .j {
+         
+         * {
             fill: brand();
          }
       }
 
-      // &:hover //
+      @include desktop {
+
+         &:hover svg {
+         
+            * {
+               fill: brand();
+            }
+         }        
+      
+      }
    }
 
-   a:active, a:focus {
-      color: brand()
-   }
+   a {
 
-   // a:hover //
+      &:active, &:focus {
+         color: brand();
+      }
+
+      @include desktop {
+
+         &:hover {
+            color: brand();
+         }
+      }
+   }
    
    &.js-show {
       @include transform(translateY(calc(100% + 3px)));
@@ -47,6 +64,8 @@
          top: -93px
       }
 
-      // @include desktop //
+      @include desktopLG {
+         top: -153px
+      }
    }
 }

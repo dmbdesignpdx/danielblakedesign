@@ -65,7 +65,14 @@
       fill: none;
       background: #111;
 
-      // @include desktop //
+      @include desktop {
+         @include size(90px);
+         opacity: 0;
+
+         @at-root .sib section a:hover svg {
+            opacity: 0.95
+         }
+      }
    }
 
    main p {

@@ -1,3 +1,9 @@
 <!-- Animate Hero Text -->
 
 <script>!function(){function e(){var e=document.querySelectorAll("h1 span");document.querySelector("body > header").classList.remove("js-intro"),e.forEach(function(e){e.classList.add("js-underline")})}"fonts"in document?document.fonts.ready.then(e):addEventListener("DOMContentLoaded",e,{once:true})}()</script>
+
+
+<!-- Service Worker -->
+
+<script>(1280 > innerWidth)&&("serviceWorker" in navigator)&&addEventListener("load",()=>{
+function webp(a){if(!window.createImageBitmap)return void a(!1);fetch("data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA=").then(d=>d.blob()).then(d=>{window.createImageBitmap(d).then(()=>a(!0),()=>a(!1))})}webp(a=>{let c=a?"/sw.js":"/sw-jpg.js";navigator.serviceWorker.register(c)})},{once:true})</script>
