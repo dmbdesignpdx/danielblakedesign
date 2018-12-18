@@ -172,7 +172,7 @@ picture.thumb {
       margin-bottom: 120px;
 
       @include phoneLan {
-         grid-column: span 4;
+         grid-column: span 6;
          grid-row: 2
       }
    }

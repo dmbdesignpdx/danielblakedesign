@@ -1,5 +1,7 @@
+"use strict"
+
 const
-name = "daniel-blake-jpg-v1",
+name = "daniel-blake-jpg-v2",
 assets = [
    "/",
    "/flexr/",
@@ -10,54 +12,54 @@ assets = [
    "/css/master.min.css",
    "/dist/main.min.js",
    "/manifest.json",
+   "/fonts/montserrat-900.woff",
    "/img/icons.svg",
    "/img/favicon.svg",
    "/img/favicon-96x96.png",
    "/img/favicon-192x192.png",
    "/img/android-chrome-192x192.png",
    "/img/pinned-tab.svg",
-   "/img/work-md.jpg",
    "/img/work-sm.jpg",
-   "/img/work-xs.jpg",
-   "/img/flexr/flexr-1-md.jpg",
+   "/img/work-lg.jpg",
+   "/img/work-xl.jpg",
+   "/img/work-fl.jpg",
    "/img/flexr/flexr-1-sm.jpg",
-   "/img/flexr/flexr-1-xs.jpg",
-   "/img/flexr/flexr-2-md.jpg",
+   "/img/flexr/flexr-1-lg.jpg",
+   "/img/flexr/flexr-1-xl.jpg",
+   "/img/flexr/flexr-1-fl.jpg",
    "/img/flexr/flexr-2-sm.jpg",
-   "/img/flexr/flexr-2-xs.jpg",
-   "/img/flexr/flexr-3-md.jpg",
+   "/img/flexr/flexr-2-lg.jpg",
+   "/img/flexr/flexr-2-xl.jpg",
+   "/img/flexr/flexr-2-fl.jpg",
    "/img/flexr/flexr-3-sm.jpg",
-   "/img/flexr/flexr-3-xs.jpg",
-   "/img/leadshub/leadshub-1-md.jpg",
+   "/img/flexr/flexr-3-lg.jpg",
+   "/img/flexr/flexr-3-xl.jpg",
+   "/img/flexr/flexr-3-fl.jpg",
    "/img/leadshub/leadshub-1-sm.jpg",
-   "/img/leadshub/leadshub-1-xs.jpg",
-   "/img/leadshub/leadshub-2-md.jpg",
+   "/img/leadshub/leadshub-1-lg.jpg",
+   "/img/leadshub/leadshub-1-xl.jpg",
+   "/img/leadshub/leadshub-1-fl.jpg",
    "/img/leadshub/leadshub-2-sm.jpg",
-   "/img/leadshub/leadshub-2-xs.jpg",
-   "/img/leadshub/leadshub-3-md.jpg",
+   "/img/leadshub/leadshub-2-lg.jpg",
+   "/img/leadshub/leadshub-2-xl.jpg",
+   "/img/leadshub/leadshub-2-fl.jpg",
    "/img/leadshub/leadshub-3-sm.jpg",
-   "/img/leadshub/leadshub-3-xs.jpg",
-   "/img/turntable/turntable-1-md.jpg",
+   "/img/leadshub/leadshub-3-lg.jpg",
+   "/img/leadshub/leadshub-3-xl.jpg",
+   "/img/leadshub/leadshub-3-fl.jpg",
    "/img/turntable/turntable-1-sm.jpg",
-   "/img/turntable/turntable-1-xs.jpg",
-   "/img/turntable/turntable-2-md.jpg",
+   "/img/turntable/turntable-1-lg.jpg",
+   "/img/turntable/turntable-1-xl.jpg",
+   "/img/turntable/turntable-1-fl.jpg",
    "/img/turntable/turntable-2-sm.jpg",
-   "/img/turntable/turntable-2-xs.jpg",
-   "/img/turntable/turntable-3-md.jpg",
+   "/img/turntable/turntable-2-lg.jpg",
+   "/img/turntable/turntable-2-xl.jpg",
+   "/img/turntable/turntable-2-fl.jpg",
    "/img/turntable/turntable-3-sm.jpg",
-   "/img/turntable/turntable-3-xs.jpg",
+   "/img/turntable/turntable-3-lg.jpg",
+   "/img/turntable/turntable-3-xl.jpg",
+   "/img/turntable/turntable-3-fl.jpg",
 ]
-
-
-function autoCache(request) {
-   fetch(request).then(response => {
-      return caches.open(name).then(cache => {
-         cache.put(request.url, response.clone())
-   
-         return response
-      })
-   })
-}
 
 
 self.addEventListener("install", event => {
@@ -75,7 +77,7 @@ self.addEventListener("fetch", event => {
 
    event.respondWith(
       caches.match(request).then(response => {
-         return response || autoCache(request)
+         return response || fetch(request)
       })
    )
 })
