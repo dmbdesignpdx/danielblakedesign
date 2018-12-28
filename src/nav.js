@@ -96,8 +96,8 @@ export default function navScroll() {
    addEventListener("scroll", function onScroll() {
       if (!scrolling) requestAnimationFrame(toggleNav)
       scrolling = true
-   })
+   }, { passive: true })
 
    findHeight()
-   addEventListener("resize", findHeight)
+   addEventListener("resize", findHeight, { passive: true })
 }

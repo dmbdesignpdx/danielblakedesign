@@ -1,5 +1,4 @@
 ---
-layout: "sib"
 title: Flexr Preview - Daniel Blake
 description: Flexr is a CSS Grid Micro Framework. Website designed and developed by Daniel Blake.
 date: August 30, 2018
