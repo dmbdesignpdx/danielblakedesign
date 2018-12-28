@@ -1,12 +1,12 @@
 "use strict"
 
 const
-name = "daniel-blake-jpg-v2",
+name = "daniel-blake-jpg-v3",
 assets = [
    "/",
    "/flexr/",
    "/turntable/",
-   "leadshub/",
+   "/leadshub/",
    "/favicon.ico",
    "/apple-touch-icon.png",
    "/css/master.min.css",

@@ -106,7 +106,7 @@ addEventListener("load", function pageLoad() {
    !function thirdOfWindow() {
       
       // Add a listener for itself just once
-      if (0 === breakPoint) addEventListener("resize", thirdOfWindow)
+      if (0 === breakPoint) addEventListener("resize", thirdOfWindow, { passive: true })
       
       // Update
       breakPoint = Math.round(window.innerHeight * 0.33)
@@ -135,7 +135,7 @@ addEventListener("load", function pageLoad() {
             icon.classList.remove("js-fade")
          }
       }
-   })
+   }, { passive: true })
    
 
    /** @external */

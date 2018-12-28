@@ -1,6 +1,4 @@
 ---
-layout: "sib"
-permalink: /turntable/
 title: Turntable Preview - Daniel Blake
 description: Turntable is a Sass library. Website designed and developed by Daniel Blake.
 date: October 26, 2018
