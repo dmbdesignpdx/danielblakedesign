@@ -216,11 +216,28 @@
       <form
          name="drop"
          action="POST"
+         netlify-honeypot="honey"
          netlify>
 
          <fieldset>
 
             <legend>Or drop me a line!</legend>
+
+
+            <!-- Honeypot -->
+
+            <label class="honey">
+
+               <span>
+
+                  Your Company
+
+               </span>
+
+
+               <input type="text" name="honey" />
+            
+            </label>
 
 
             <!-- Name -->

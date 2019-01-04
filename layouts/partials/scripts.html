@@ -5,5 +5,9 @@
 
 <!-- Service Worker -->
 
+{{ if ne (getenv "HUGO_ENV") "nocache" }}
+
 <script>(1280 > innerWidth)&&("serviceWorker" in navigator)&&addEventListener("load",()=>{
 function webp(a){if(!window.createImageBitmap)return void a(!1);fetch("data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v3AgAA=").then(d=>d.blob()).then(d=>{window.createImageBitmap(d).then(()=>a(!0),()=>a(!1))})}webp(a=>{let c=a?"/sw.js":"/sw-jpg.js";navigator.serviceWorker.register(c)})},{once:true})</script>
+
+{{ end }}
