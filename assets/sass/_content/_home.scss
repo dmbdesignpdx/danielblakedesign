@@ -171,10 +171,14 @@ picture.thumb {
    p {
       margin-bottom: 120px;
 
-      @include phoneLan {
+      @include tabletPor {
          grid-column: span 6;
          grid-row: 2
       }
+
+      @include desktop {
+        grid-column: span 4;
+     }
    }
 
    // Skills sections
@@ -336,6 +340,10 @@ form[name=drop] {
 
       &:focus-within span {
          color: brand(_nearblack)
+      }
+
+      &.honey {
+         display: none
       }
    }
 
