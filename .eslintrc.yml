@@ -10,7 +10,8 @@ rules:
   accessor-pairs: off
   array-bracket-newline:
     - error
-    - minItems: 3
+    -
+      minItems: 3
   array-bracket-spacing: error
   array-callback-return: error
   array-element-newline:
@@ -28,7 +29,8 @@ rules:
   brace-style:
     - error
     - 1tbs
-    - allowSingleLine: true
+    -
+      allowSingleLine: true
   callback-return: error
   camelcase: error
   capitalized-comments:
@@ -76,7 +78,8 @@ rules:
   key-spacing: error
   keyword-spacing:
     - error
-    - after: true
+    -
+      after: true
       before: true
   line-comment-position: error
   linebreak-style:
@@ -86,9 +89,10 @@ rules:
   lines-around-directive: error
   lines-between-class-members: error
   max-depth: error
-  max-len: 
+  max-len:
     - error
-    - ignoreTemplateLiterals: true
+    -
+      ignoreTemplateLiterals: true
       ignoreStrings: true
       ignoreUrls: true
       ignorePattern: "<.+"
@@ -145,9 +149,10 @@ rules:
   no-multi-str: error
   no-multiple-empty-lines:
     - error
-    - max: 3
+    -
+      max: 3
   no-native-reassign: error
-  no-negated-condition: error
+  no-negated-condition: off
   no-negated-in-lhs: error
   no-nested-ternary: error
   no-new: error
@@ -195,7 +200,7 @@ rules:
   no-useless-constructor: error
   no-useless-rename: error
   no-useless-return: error
-  no-var: off
+  no-var: error
   no-void: error
   no-warning-comments: error
   no-whitespace-before-property: error
@@ -203,7 +208,8 @@ rules:
   nonblock-statement-body-position: error
   object-curly-newline:
     - error
-    - minProperties: 3
+    -
+      minProperties: 3
       consistent: true
   object-curly-spacing:
     - error
@@ -212,7 +218,10 @@ rules:
   object-shorthand: error
   one-var:
     - error
-    - separateRequires: true
+    -
+      let: never
+      const: never
+      separateRequires: true
   one-var-declaration-per-line: error
   operator-assignment: error
   operator-linebreak: error
@@ -244,7 +253,8 @@ rules:
   semi-style: error
   sort-imports:
     - error
-    - ignoreCase: true
+    -
+      ignoreCase: true
       ignoreMemberSort: true
   sort-keys: off
   sort-vars: off
@@ -273,6 +283,4 @@ rules:
   wrap-iife: off
   wrap-regex: error
   yield-star-spacing: error
-  yoda:
-    - warn
-    - always
+  yoda: off
