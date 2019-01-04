@@ -1,6 +1,7 @@
 <!-- 
    Contents:
 
+   - Variables
    - Initial
    - HTTP Headers
    - Prebrowsing Hints
@@ -19,7 +20,15 @@
    - Generator
  -->
 
+
+<!-- Variables -->
+
 {{ $info := .Site.Data.info }}
+{{ $phone := replace .Site.Author.phone "-" "" }}
+
+{{ if not (in .Site.Author.phone "+1") }}
+{{ $phone = print "+1" $phone }}
+{{ end }}
 
 
 <!-- Initial -->
@@ -119,7 +128,7 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify | fingerprint }}
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify }}       
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
@@ -141,7 +150,7 @@
       "description":"{{ .Site.Author.title }}",
       "address":"{{ .Site.Author.city }}",
       "email":"{{ .Site.Author.email }}",
-      "telephone":"+{{ replace .Site.Author.phone "-" "" }}"
+      "telephone":"{{ $phone }}"
    },
    "offers":{
       "@type":"Offer",
