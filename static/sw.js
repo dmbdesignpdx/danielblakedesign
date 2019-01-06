@@ -1,7 +1,7 @@
 "use strict"
 
 const
-name = "daniel-blake-v3",
+name = "daniel-blake-v4",
 assets = [
    "/",
    "/flexr/",
