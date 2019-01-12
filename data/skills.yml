@@ -15,7 +15,7 @@
   text: 
     - HTML5
     - CSS3 / SCSS / SassScript
-    - JavaScript / ES6+
+    - JavaScript / ES2015+
     - Vue.js / React.js / Preact.js
     - NativeScript
     - Git
@@ -23,7 +23,7 @@
     - Gulp.js / Webpack.js
     - jQuery / CoffeeScript
     - XML / JSON / YAML
-    - PHP / MySQL
+    - GraphQL / PHP / MySQL
     - Node.js / NPM
 -
   type: Experience
