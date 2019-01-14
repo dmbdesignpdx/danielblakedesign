@@ -44,9 +44,9 @@
 [flexr-wrap] {
    @extend %width_100;
    padding-right: 18px;
-   padding-right: minmax(18px, safe-area-inset-right);
+   padding-right: m#{a}x(18px, env(safe-area-inset-right));
    padding-left: 18px;
-   padding-left: minmax(18px, safe-area-inset-left);
+   padding-left: m#{a}x(18px, env(safe-area-inset-left));
    margin: 0 auto
 }
 
@@ -373,9 +373,9 @@ p {
    
    [flexr-wrap] {
       padding-right: 24px;
-      padding-right: minmax(24px, safe-area-inset-right);
+      padding-right: m#{a}x(24px, env(safe-area-inset-right));
       padding-left: 24px;
-      padding-left: minmax(24px, safe-area-inset-left);
+      padding-left: m#{a}x(24px, env(safe-area-inset-left));
    }
    
    h1 {
@@ -408,9 +408,9 @@ p {
       width: 84%;
       max-width: 1436px;
       padding-right: 30px;
-      padding-right: minmax(30px, safe-area-inset-right);
+      padding-right: m#{a}x(30px, env(safe-area-inset-right));
       padding-left: 30px;
-      padding-left: minmax(30px, safe-area-inset-left);
+      padding-left: m#{a}x(30px, env(safe-area-inset-left));
    }
    
    html {
