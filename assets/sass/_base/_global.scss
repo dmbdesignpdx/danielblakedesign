@@ -14,28 +14,28 @@
 //
 
 [flexr-grid] {
-   width: 100%;
-   padding-right: 18px;
-   padding-right: m#{a}x(18px, env(safe-area-inset-right));
-   padding-left: 18px;
-   padding-left: m#{a}x(18px, env(safe-area-inset-left));
-   margin: 0 auto;
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 0 auto;
 
-   @include tabletPor {
-      padding-right: 24px;
-      padding-right: m#{a}x(24px, env(safe-area-inset-right));
-      padding-left: 24px;
-      padding-left: m#{a}x(24px, env(safe-area-inset-left));
-   }
+  @include tabletPor {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
 
-   @include desktop {
-      width: 84%;
-      max-width: 1436px;
-      padding-right: 30px;
-      padding-right: m#{a}x(30px, env(safe-area-inset-right));
-      padding-left: 30px;
-      padding-left: m#{a}x(30px, env(safe-area-inset-left));
-   }
+  // iPhone X, XS, XR, XS Max Landscape
+  @media (min-width: 810px) and (max-height: 416px) {
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+  }
+
+  @include desktop {
+    width: 84%;
+    max-width: 1436px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
 }
 
 [flexr-grid] {
@@ -151,7 +151,7 @@ img, source, picture, h2::after, h5::after {
    display: block
 }
 
-h2, h3, h5, legend {
+h2, h3, h4, h5, legend {
    font-family: Montserrat, sans-serif;
    font-weight: 900;
    letter-spacing: -0.04em;

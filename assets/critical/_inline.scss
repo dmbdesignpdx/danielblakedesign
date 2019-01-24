@@ -42,12 +42,10 @@
 //
 
 [flexr-wrap] {
-   @extend %width_100;
-   padding-right: 18px;
-   padding-right: m#{a}x(18px, env(safe-area-inset-right));
-   padding-left: 18px;
-   padding-left: m#{a}x(18px, env(safe-area-inset-left));
-   margin: 0 auto
+  @extend %width_100;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 0 auto
 }
 
 
@@ -373,9 +371,7 @@ p {
    
    [flexr-wrap] {
       padding-right: 24px;
-      padding-right: m#{a}x(24px, env(safe-area-inset-right));
       padding-left: 24px;
-      padding-left: m#{a}x(24px, env(safe-area-inset-left));
    }
    
    h1 {
@@ -398,6 +394,16 @@ p {
 }
 
 
+// iPhone X, XS, XR, XS Max Landscape
+@media (min-width: 810px) and (max-height: 416px) {
+  [flexr-wrap] {
+    padding-right: env(safe-area-inset-right);
+    padding-left: env(safe-area-inset-left);
+  }
+}
+
+
+
 /**
  *  Desktop
  */
@@ -408,9 +414,7 @@ p {
       width: 84%;
       max-width: 1436px;
       padding-right: 30px;
-      padding-right: m#{a}x(30px, env(safe-area-inset-right));
       padding-left: 30px;
-      padding-left: m#{a}x(30px, env(safe-area-inset-left));
    }
    
    html {
