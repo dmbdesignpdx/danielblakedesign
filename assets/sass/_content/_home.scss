@@ -140,6 +140,31 @@ picture.thumb {
 
 
 //
+//  Codepen
+//
+
+#codepen {
+  padding-top: 120px;
+  text-align: center;
+
+  svg {
+    @include size(100px);
+    display: inline-block;
+    stroke-width: 1.6;
+    fill: none;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke: brand(_darkgray);
+  }
+
+  p {
+    margin-bottom: 1.2em;
+  }
+}
+
+
+
+//
 //  About
 //
 
@@ -194,7 +219,6 @@ picture.thumb {
 
    // Skills Title
    h4 {
-      font-weight: normal;
       font-size: 1.2rem;
       margin-bottom: 0.8em;
    }
@@ -219,27 +243,20 @@ picture.thumb {
 
 
 /**
- *  Skills
+ *  Skill Colors
  */
 
-// Colors slightly tweaked for accessibility
-// Saturation down 2%, Brightness down 6%
-@function tweak($original) {
-   $step-one: desaturate($original, 4%);
-   $step-two: darken($step-one, 6%);
-   @return $step-two;
-}
-
 #design {
-   color: tweak(brand())
+  color: brand()
 }
 
 #development {
-   color: tweak(brand(_three))
+  color: brand(_three)
 }
 
 #experience {
-   color: tweak(brand(_two))
+  // Purple color is a tad too bright, darken for accessibility
+  color: darken(brand(_two), 4%)
 }
 
 

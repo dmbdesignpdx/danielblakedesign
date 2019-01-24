@@ -13,16 +13,24 @@
    <rect x="6" y="9" width="38" height="32" rx="4"/><path d="M7,10,22.2,25.2a4,4,0,0,0,5.7,0h0L43,10"/>
 </symbol>
 
+<symbol id="codepen" viewBox="0 0 50 50">
+  <path d="M5,31.6V18.4L25,5,45,18.4V31.6L25,45ZM5,18.4,25,31.6,45,18.4m0,13.2L25,18.4,5,31.6M25,5V18.4m0,13.2V45"/>
+</symbol>
+
 <symbol id="experience" viewBox="0 0 80 80">
 	<path d="M25,15H42a2,2,0,0,1,2,2V63a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V17a2,2,0,0,1,2-2H7.9"/><path style="stroke:#B42DB4" d="M12,15V30.8c0,.4.5.6.9.3l3.2-3.3a.5.5,0,0,1,.7,0l3.3,3.3a.5.5,0,0,0,.9-.3V15a.9.9,0,0,0-1-1H13A.9.9,0,0,0,12,15Z"/><circle cx="25" cy="40" r="4"/><line x1="6" y1="15" x2="6" y2="65"/>
 </symbol>
 
 <symbol id="development" viewBox="0 0 80 80">
-	<path d="M12,19H62a2,2,0,0,1,2,2V57a0,0,0,0,1,0,0H10a0,0,0,0,1,0,0V21A2,2,0,0,1,12,19Z"/><rect x="2" y="57" width="70" height="4" rx="2" ry="2"/><line style="stroke:#CC2494" x1="17" y1="27" x2="25" y2="27"/><line style="stroke:#CC2494" x1="21" y1="42" x2="39" y2="42"/><line style="stroke:#CC2494" x1="21" y1="32" x2="45" y2="32"/><line style="stroke:#CC2494" x1="21" y1="37" x2="34" y2="37"/><line style="stroke:#CC2494" x1="17" y1="47" x2="25" y2="47"/>
+	<path d="M12,19H62a2,2,0,0,1,2,2V57a0,0,0,0,1,0,0H10a0,0,0,0,1,0,0V21A2,2,0,0,1,12,19Z"/><rect x="2" y="57" width="70" height="4" rx="2"/><line style="stroke:#CC2494" x1="17" y1="27" x2="25" y2="27"/><line style="stroke:#CC2494" x1="21" y1="42" x2="39" y2="42"/><line style="stroke:#CC2494" x1="21" y1="32" x2="45" y2="32"/><line style="stroke:#CC2494" x1="21" y1="37" x2="34" y2="37"/><line style="stroke:#CC2494" x1="17" y1="47" x2="25" y2="47"/>
 </symbol>
 
 <symbol id="design" viewBox="0 0 80 80">
 	<path d="M10,20a4.1,4.1,0,0,0-4.4-4A4.1,4.1,0,0,0,2,20.2V56l3.1,6.9a1,1,0,0,0,1.8,0L10,56V20.2"/><rect x="19" y="17" width="12" height="46" rx="2" ry="2"/><line x1="19" y1="24" x2="25" y2="24"/><line x1="19" y1="32" x2="23" y2="32"/><line x1="19" y1="48" x2="23" y2="48"/><line x1="19" y1="40" x2="25" y2="40"/><line x1="19" y1="56" x2="26" y2="56"/><polyline points="2 56 6 55 10 56"/><line x1="2" y1="22" x2="10" y2="22"/><path d="M41.1,33.9A34,34,0,0,0,40,43c0,5.3,2.2,15.1,3.5,20.6a1,1,0,0,0,2,0C46.8,58.1,49,48.3,49,43a38.1,38.1,0,0,0-1-8.8"/><path style="stroke:#e82c64" d="M45.9,31a2.1,2.1,0,0,0,1.8-1.1A13.2,13.2,0,0,0,49,24c0-4.6-3.4-7-5.7-8.1A1,1,0,0,0,41.9,17a3.1,3.1,0,0,1,.1,1c0,2.2-2,4-2,7a10.9,10.9,0,0,0,1.4,4.9A1.9,1.9,0,0,0,43.2,31Z"/><line x1="6" y1="22" x2="6" y2="55"/>
+</symbol>
+
+<symbol id="snippet" viewBox="0 0 80 80">
+  <polyline style="stroke:#e82c64" points="30 35 20 44 30 53"/><polyline style="stroke:#e82c64" points="50 35 60 44 50 53"/><path style="stroke:#B42DB4" d="M46,32,34,56"/><rect x="9" y="15" width="62" height="50" rx="4"/><path d="M9,23H71"/><circle style="fill:#17151d;stroke:none" cx="14" cy="19" r="1"/><circle style="fill:#17151d;stroke:none" cx="18" cy="19" r="1"/><circle style="fill:#17151d;stroke:none" cx="22" cy="19" r="1"/>
 </symbol>
 
 </svg>
