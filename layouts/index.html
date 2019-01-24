@@ -110,6 +110,32 @@
       {{ end }}
 
 
+      <!-- Codepen -->
+
+      <section
+        id="codepen"
+        aria-labelledby="cp1"
+        flexr-wrap>
+
+        <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
+
+        <h3 id="cp1">Code Snippets</h3>
+
+        <p>Check out my Codepens to see some ideas and experiments I've working&nbsp;on.</p>
+
+        <a
+          class="btn primary"
+          rel="nofollow external noopener"
+          target="_blank"
+          aria-label="Go to Codepen for snippets"
+          href="https://codepen.io/dmbdesignpdx/">
+          
+          Visit
+        
+        </a>
+
+      </section>
+
    </section>
 
 
@@ -157,6 +183,10 @@
 
          <h5>Contact</h5>
 
+         <!--
+           *  TO DO:
+           *  Convert to Loop
+         -->
 
          {{ with .Site.Author }}
 
@@ -202,6 +232,23 @@
                </svg>
 
                {{- replace .github "https://github.com/" "" -}}
+
+            </a>
+
+            <a
+              href="{{ .codepen }}"
+              target="_blank"
+              rel="external noopener">
+
+              <svg
+                role="img"
+                aria-label="My Github username: ">
+
+                <use xlink:href="/img/icons.svg#codepen"/>
+
+              </svg>
+
+              {{- replace .codepen "https://codepen.io/" "" -}}
 
             </a>
 
