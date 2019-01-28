@@ -9,6 +9,7 @@
  "private": true,
  "scripts": {
   "clean:js": "rm static/dist/main.min.js",
+  "clean:hugo": "hugo --cleanDestinationDir",
   "publish": "env HUGO_ENV=production hugo --minify",
   "serve": "hugo serve -p 3000",
   "serve:nolr": "hugo serve -p 3000 --disableLiveReload",
