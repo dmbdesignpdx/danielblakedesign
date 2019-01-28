@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Params.lang }}">
 <head>
 
 {{ partial "head.html" . }}
@@ -10,7 +10,7 @@
 
 {{ block "SITE" . }}{{ end }}
 
-{{ partialCached "footer.html" . }}
+{{ partial "footer.html" . }}
 
 {{ partialCached "scripts.html" . }}
 

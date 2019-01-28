@@ -1,0 +1,76 @@
+# Nav
+- 
+  id: work
+  translation: Work
+- 
+  id: aria_work
+  translation: Go to Work section
+- 
+  id: about
+  translation: About
+- 
+  id: aria_about
+  translation: Go to Work Section
+- 
+  id: aria_home
+  translation: Daniel Blake home page
+
+# CTAs
+- 
+  id: preview
+  translation: Preview
+- 
+  id: visit
+  translation: Visit
+- 
+  id: send
+  translation: Send
+
+# Work
+- 
+  id: project
+  translation: Project {{ .Count }} of 3
+
+# About
+- 
+  id: skill
+  translation: Skill {{ .Count }} of 3
+
+# Contact
+- 
+  id: contact
+  translation: Contact
+- 
+  id: aria_phone
+  translation: "Call: "
+- 
+  id: aria_email
+  translation: "Email: "
+- 
+  id: aria_github
+  translation: "My Github username: "
+- 
+  id: aria_codepen
+  translation: "My Codepen username: "
+
+# Form
+- 
+  id: legend
+  translation: Or drop me a line!
+- 
+  id: name
+  translation: Your Name
+- 
+  id: email
+  translation: Your Email
+- 
+  id: message
+  translation: Your Message
+
+# Footer
+- 
+  id: made
+  translation: Made with {{ .Count }} by Daniel Blake.
+- 
+  id: built
+  translation: Built with {{ index . 0 }}, sourced on {{ index . 1 }}, and hosted on&nbsp;{{ index . 2 }}.

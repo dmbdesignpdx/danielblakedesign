@@ -1,12 +1,20 @@
 ---
+## Page Variables ##
 title: LeadsHub Preview - Daniel Blake
 description: LeadsHub is a mobile app for modern communication for businesses. Website designed and developed by Daniel Blake.
 date: August 30, 2018
 
-# Params
+## Params ##
+# Meta
+id: leadshub
 class: sib
+lang: en
+
+# Hero
 one: LeadsHub
 two: Mobile App
+
+# Content
 link: https://leadshub.com
 alt: Go to the LeadsHub website
 rel: external nofollow noreferrer

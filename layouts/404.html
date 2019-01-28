@@ -1,16 +1,18 @@
+{{- $page := index .Site.Data.error (string .Language) -}}
+
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Language }}">
 <head>
 
    <meta charset="utf-8">
 
    <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
-   <title>Oh snap! 404 - Daniel Blake</title>
+   <title>{{ $page.title }}</title>
 
-   <meta name="description" content="There was a problem with the page.">
+   <meta name="description" content="{{ $page.description }}">
 
-   {{ $snap := resources.Get "sass/_content/_404.scss" | toCSS | minify | fingerprint }}
+   {{ $snap := resources.Get "sass/_content/_404.scss" | toCSS | minify }}
    <style>{{ $snap.Content | safeCSS }}</style>
 
 </head>
@@ -23,13 +25,13 @@
 
       <div>
 
-         <p>Uh oh... that page doesn't exist. 😬</p>
+         <p>{{ $page.copy }}</p>
          
          <a
             href="{{ .Site.BaseURL }}"
-            aria-label="Go to home page">
+            aria-label='{{ $page.aria_home }}'>
 
-            Home
+            {{- $page.home -}}
 
          </a>
 

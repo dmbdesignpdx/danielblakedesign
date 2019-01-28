@@ -25,7 +25,7 @@
 
 <!-- Navigation -->
 
-{{ partialCached "nav.html" . }}
+{{ partial "nav.html" . }}
 
 
 <!-- Below the Fold -->
@@ -46,19 +46,20 @@
          id="w1"
          flexr-wrap>
 
-         Work
+         {{ .Params.work.title }}
 
       </h2>
 
 
       <!-- Thumbs Logic -->
 
-      {{ range $i, $e := .Site.Data.work }}
+      {{ $lang := index .Site.Data.work .Params.lang }}
+      {{ range $i, $e := $lang }}
       {{ $n := add $i 1 }}
 
       <section
          id="{{ .image }}"
-         aria-label="Project {{ $n }} of 3"
+         aria-label='{{ T "project" $n }}'
          flexr-grid>
 
          <h3>{{ .title | safeHTML }}</h3>
@@ -70,7 +71,7 @@
                href="/{{ .image }}/"
                aria-label="{{ .ariaOne }}">
 
-               Preview
+               {{- T "preview" -}}
 
             </a>
 
@@ -81,7 +82,7 @@
                aria-label="{{ .ariaTwo }}"
                rel="{{ .rel }}">
 
-               Visit
+               {{- T "visit" -}}
 
             </a>
 
@@ -119,9 +120,9 @@
 
         <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
 
-        <h3 id="cp1">Code Snippets</h3>
+        <h3 id="cp1">{{ .Params.codepen.title }}</h3>
 
-        <p>Check out my Codepens for some ideas and experiments that I've been working&nbsp;on.</p>
+        <p>{{ .Params.codepen.copy | safeHTML }}</p>
 
         <a
           class="btn primary"
@@ -130,7 +131,7 @@
           aria-label="Go to Codepen for snippets"
           href="https://codepen.io/dmbdesignpdx/">
           
-          Visit
+          {{- T "visit" -}}
         
         </a>
 
@@ -146,7 +147,7 @@
       aria-labelledby="a1"
       flexr-grid>
 
-      <h2 id="a1">About</h2>
+      <h2 id="a1">{{ .Params.about.title }}</h2>
 
       {{ .Content }}
 
@@ -156,7 +157,7 @@
       {{ range $i, $e := .Site.Data.skills }}
       {{ $n := add $i 1 }}
 
-      <section aria-label="Skills {{ $n }} of 3">
+      <section aria-label='{{ T "skill" $n }}'>
 
          <svg><use xlink:href="/img/icons.svg#{{ lower .type }}"/></svg>
 
@@ -181,7 +182,7 @@
 
       <address id="contact">
 
-         <h5>Contact</h5>
+         <h5>{{ T "contact" }}</h5>
 
          <!--
            *  TO DO:
@@ -194,7 +195,7 @@
 
             <svg
                role="img"
-               aria-label="Call: ">
+               aria-label='{{ T "aria_phone" }}'>
 
                <use xlink:href="/img/icons.svg#phone"/>
 
@@ -208,7 +209,7 @@
 
             <svg
                role="img"
-               aria-label="Email: ">
+               aria-label='{{ T "aria_email" }}'>
 
                <use xlink:href="/img/icons.svg#email"/>
 
@@ -225,7 +226,7 @@
 
                <svg
                   role="img"
-                  aria-label="My Github username: ">
+                  aria-label='{{ T "aria_github" }}'>
 
                   <use xlink:href="/img/icons.svg#github"/>
 
@@ -242,7 +243,7 @@
 
               <svg
                 role="img"
-                aria-label="My Github username: ">
+                aria-label='{{ T "aria_codepen" }}'>
 
                 <use xlink:href="/img/icons.svg#codepen"/>
 
@@ -268,12 +269,14 @@
 
          <fieldset>
 
-            <legend>Or drop me a line!</legend>
+            <legend>{{ T "legend" }}</legend>
 
 
             <!-- Honeypot -->
 
-            <label class="honey">
+            <label
+              class="honey"
+              aria-hidden="true">
 
                <span>
 
@@ -295,7 +298,7 @@
                   id="c1"
                   aria-hidden="true">
 
-                  Your Name
+                  {{ T "name" }}
 
                </span>
 
@@ -320,7 +323,7 @@
                   id="c2"
                   aria-hidden="true">
 
-                  Your Email
+                  {{ T "email" }}
 
                </span>
 
@@ -345,7 +348,7 @@
                   id="c3"
                   aria-hidden="true">
 
-                  Your Message
+                  {{ T "message" }}
 
                </span>
 
@@ -366,7 +369,7 @@
                class="btn primary"
                type="submit">
 
-               Send
+               {{ T "send" }}
 
             </button>
 

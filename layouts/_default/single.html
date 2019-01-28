@@ -22,7 +22,7 @@
 
 <!-- Navigation -->
 
-{{ partialCached "nav.html" . }}
+{{ partial "nav.html" . }}
 
 
 <!-- Main Content -->
@@ -76,7 +76,7 @@
          aria-label="{{ .Params.alt }}"
          rel="{{ .Params.rel }}">
 
-         View Website
+         {{- T "visit" -}}
 
       </a>
 
