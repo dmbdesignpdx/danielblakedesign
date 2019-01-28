@@ -1,5 +1,4 @@
-languageCode: en-us
-baseURL: https://danielblake.design
+# Core
 title: Daniel Blake
 author:
   name: Daniel Blake
@@ -10,8 +9,19 @@ author:
   github: https://github.com/dmbdesignpdx
   linkedin: https://www.linkedin.com/in/danielblakepdx
   codepen: https://codepen.io/dmbdesignpdx
-copyright: 2018 Daniel Blake
 
+# Languages
+defaultContentLanguage: en
+languages:
+  en:
+    languageName: English
+    weight: 1
+    contentDir: content/en
+    baseURL: https://danielblake.design
+    copyright: |
+      Copyright 2018 Daniel Blake. All rights reserved. All other trademarks are the property of their respective owners.
+
+# Meta
 enableGitInfo: true
 disableHugoGeneratorInject: true
 disableKinds:
