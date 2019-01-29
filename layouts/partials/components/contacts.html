@@ -1,0 +1,13 @@
+<a href="tel:{{ .link }}">
+
+  <svg
+     role="img"
+     aria-label='{{ .aria }}'>
+
+     <use xlink:href="/img/icons.svg#{{ .type }}"/>
+
+  </svg>
+
+  {{- .text -}}
+
+</a>

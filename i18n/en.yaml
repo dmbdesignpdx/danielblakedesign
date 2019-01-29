@@ -40,18 +40,6 @@
 - 
   id: contact
   translation: Contact
-- 
-  id: aria_phone
-  translation: "Call: "
-- 
-  id: aria_email
-  translation: "Email: "
-- 
-  id: aria_github
-  translation: "My Github username: "
-- 
-  id: aria_codepen
-  translation: "My Codepen username: "
 
 # Form
 - 

@@ -1,0 +1,115 @@
+<form
+  name="drop"
+  action="POST"
+  netlify-honeypot="honey"
+  netlify>
+
+  <fieldset>
+
+    <legend>{{ T "legend" }}</legend>
+
+
+    <!-- Honeypot -->
+
+    <label
+      class="honey"
+      aria-hidden="true">
+
+        <span>
+
+          Your Company
+
+        </span>
+
+
+        <input type="text" name="honey" />
+    
+    </label>
+
+
+    <!-- Name -->
+
+    <label>
+
+        <span
+          id="c1"
+          aria-hidden="true">
+
+          {{ T "name" }}
+
+        </span>
+
+        <input
+          name="name"
+          type="text"
+          autocomplete="name"
+          aria-autocomplete="both"
+          aria-labelledby="c1"
+          aria-required="true"
+          required
+        />
+
+    </label>
+
+
+    <!-- Email -->
+
+    <label>
+
+        <span
+          id="c2"
+          aria-hidden="true">
+
+          {{ T "email" }}
+
+        </span>
+
+        <input
+          name="email"
+          type="email"
+          autocomplete="email"
+          aria-autocomplete="both"
+          aria-labelledby="c2"
+          aria-required="true"
+          required 
+        />
+
+    </label>
+
+
+    <!-- Message -->
+
+    <label>
+
+        <span
+          id="c3"
+          aria-hidden="true">
+
+          {{ T "message" }}
+
+        </span>
+
+        <textarea 
+          name="message"
+          rows="10"
+          aria-labelledby="c3"
+          aria-required="true"
+          required></textarea>
+
+    </label>
+
+
+    <!-- Send -->
+
+    <button
+        name="send"
+        class="btn primary"
+        type="submit">
+
+        {{ T "send" }}
+
+    </button>
+
+  </fieldset>
+
+</form>
