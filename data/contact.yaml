@@ -1,0 +1,21 @@
+en:
+  -
+    type: phone
+    link: "tel:19718010208"
+    aria: "Call: "
+    text: 971-801-0208
+  -
+    type: email
+    link: "mailto:daniel@danielblake.design"
+    aria: "Email: "
+    text: daniel@danielblake.design
+  -
+    type: github
+    link: "https://github.com/dmbdesignpdx"
+    aria: "My Github username: "
+    text: dmbdesignpdx
+  -
+    type: codepen
+    link: "https://codepen.io/dmbdesignpdx"
+    aria: "My Codepen username: "
+    text: dmbdesignpdx

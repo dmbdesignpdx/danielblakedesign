@@ -51,62 +51,12 @@
       </h2>
 
 
-      <!-- Thumbs Logic -->
+      <!-- Thumbs -->
 
-      {{ $lang := index .Site.Data.work .Params.lang }}
-      {{ range $i, $e := $lang }}
-      {{ $n := add $i 1 }}
-
-      <section
-         id="{{ .image }}"
-         aria-label='{{ T "project" $n }}'
-         flexr-grid>
-
-         <h3>{{ .title | safeHTML }}</h3>
-
-         <div class="cta">
-
-            <a
-               class="btn primary"
-               href="/{{ .image }}/"
-               aria-label="{{ .ariaOne }}">
-
-               {{- T "preview" -}}
-
-            </a>
-
-            <a
-               class="btn secondary"
-               href="{{ .link }}"
-               target="_blank"
-               aria-label="{{ .ariaTwo }}"
-               rel="{{ .rel }}">
-
-               {{- T "visit" -}}
-
-            </a>
-
-         </div>
-
-         <picture class="thumb">
-
-
-            <!-- Presentational image -->
-
-            <source
-               type="image/webp"
-               srcset="/img/work-xs.webp 750w, /img/work-sm.webp 1080w, /img/work-md.webp 1280w, /img/work-lg.webp 1440w, /img/work-xl.webp 1920w, /img/work-fl.webp 2880w"
-            />
-
-            <img
-               src="/img/work-fl.jpg"
-               srcset="/img/work-xs.jpg 750w, /img/work-sm.jpg 1080w, /img/work-md.jpg 1280w, /img/work-lg.jpg 1440w, /img/work-xl.jpg 1920w, /img/work-fl.jpg 2880w"
-               alt=""
-            />
-
-         </picture>
-
-      </section>
+      {{ $thumbs := index .Site.Data.work .Params.lang }}
+      {{ range $thumbs }}
+      
+        {{- partial "components/thumbs.html" . -}}
 
       {{ end }}
 
@@ -152,28 +102,11 @@
       {{ .Content }}
 
 
-      <!-- Skills Logic -->
+      <!-- Skills -->
 
-      {{ range $i, $e := .Site.Data.skills }}
-      {{ $n := add $i 1 }}
+      {{ range .Site.Data.skills }}
 
-      <section aria-label='{{ T "skill" $n }}'>
-
-         <svg><use xlink:href="/img/icons.svg#{{ lower .type }}"/></svg>
-
-         <h4 id="{{ lower .type }}">{{ .type }}</h4>
-
-         <ul aria-labelledby="{{ lower .type }}">
-
-            {{ range .text }}
-
-            <li>{{ . }}
-
-            {{ end }}
-
-         </ul>
-
-      </section>
+        {{- partial "components/skills.html" . -}}
 
       {{ end }}
 
@@ -184,74 +117,10 @@
 
          <h5>{{ T "contact" }}</h5>
 
-         <!--
-           *  TO DO:
-           *  Convert to Loop
-         -->
+         {{ $contacts := index .Site.Data.contact .Params.lang }}
+         {{ range $contacts }}
 
-         {{ with .Site.Author }}
-
-         <a href="tel:{{ .phone }}">
-
-            <svg
-               role="img"
-               aria-label='{{ T "aria_phone" }}'>
-
-               <use xlink:href="/img/icons.svg#phone"/>
-
-            </svg>
-
-            {{- substr .phone 2 -}}
-
-         </a>
-
-         <a href="mailto:{{ .email }}">
-
-            <svg
-               role="img"
-               aria-label='{{ T "aria_email" }}'>
-
-               <use xlink:href="/img/icons.svg#email"/>
-
-            </svg>
-
-            {{- .email -}}
-
-         </a>
-
-         <a
-            href="{{ .github }}"
-            target="_blank"
-            rel="external noopener">
-
-               <svg
-                  role="img"
-                  aria-label='{{ T "aria_github" }}'>
-
-                  <use xlink:href="/img/icons.svg#github"/>
-
-               </svg>
-
-               {{- replace .github "https://github.com/" "" -}}
-
-            </a>
-
-            <a
-              href="{{ .codepen }}"
-              target="_blank"
-              rel="external noopener">
-
-              <svg
-                role="img"
-                aria-label='{{ T "aria_codepen" }}'>
-
-                <use xlink:href="/img/icons.svg#codepen"/>
-
-              </svg>
-
-              {{- replace .codepen "https://codepen.io/" "" -}}
-
-            </a>
+            {{- partial "components/contacts.html" . -}}
 
          {{ end }}
 
@@ -261,121 +130,7 @@
 
       <!-- Contact Form -->
 
-      <form
-         name="drop"
-         action="POST"
-         netlify-honeypot="honey"
-         netlify>
-
-         <fieldset>
-
-            <legend>{{ T "legend" }}</legend>
-
-
-            <!-- Honeypot -->
-
-            <label
-              class="honey"
-              aria-hidden="true">
-
-               <span>
-
-                  Your Company
-
-               </span>
-
-
-               <input type="text" name="honey" />
-            
-            </label>
-
-
-            <!-- Name -->
-
-            <label>
-
-               <span
-                  id="c1"
-                  aria-hidden="true">
-
-                  {{ T "name" }}
-
-               </span>
-
-               <input
-                  name="name"
-                  type="text"
-                  autocomplete="name"
-                  aria-autocomplete="both"
-                  aria-labelledby="c1"
-                  aria-required="true"
-                  required
-               />
-
-            </label>
-
-
-            <!-- Email -->
-
-            <label>
-
-               <span
-                  id="c2"
-                  aria-hidden="true">
-
-                  {{ T "email" }}
-
-               </span>
-
-               <input
-                  name="email"
-                  type="email"
-                  autocomplete="email"
-                  aria-autocomplete="both"
-                  aria-labelledby="c2"
-                  aria-required="true"
-                  required 
-               />
-
-            </label>
-
-
-            <!-- Message -->
-
-            <label>
-
-               <span
-                  id="c3"
-                  aria-hidden="true">
-
-                  {{ T "message" }}
-
-               </span>
-
-               <textarea 
-                  name="message"
-                  rows="10"
-                  aria-labelledby="c3"
-                  aria-required="true"
-                  required></textarea>
-
-            </label>
-
-
-            <!-- Send -->
-
-            <button
-               name="send"
-               class="btn primary"
-               type="submit">
-
-               {{ T "send" }}
-
-            </button>
-
-         </fieldset>
-
-      </form>
+      {{- partial "components/form.html" . -}}
 
    </section>
 

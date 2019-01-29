@@ -1,6 +1,7 @@
 # For Skills in About
 
 -
+  key: 1
   type: Design
   text: 
     - InDesign
@@ -11,6 +12,7 @@
     - After Effects
     - InVision
 -
+  key: 2
   type: Development
   text: 
     - HTML5
@@ -26,6 +28,7 @@
     - GraphQL / PHP / MySQL
     - Node.js / NPM
 -
+  key: 3
   type: Experience
   text: 
     - Responsive Web Design and Development

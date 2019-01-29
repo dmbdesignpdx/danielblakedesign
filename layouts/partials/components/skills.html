@@ -1,0 +1,17 @@
+<section aria-label='{{ T "skill" .key }}'>
+
+  <svg><use xlink:href="/img/icons.svg#{{ lower .type }}"/></svg>
+
+  <h4 id="{{ lower .type }}">{{ .type }}</h4>
+
+  <ul aria-labelledby="{{ lower .type }}">
+
+     {{ range .text }}
+
+     <li>{{ . }}
+
+     {{ end }}
+
+  </ul>
+
+</section>

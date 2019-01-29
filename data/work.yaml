@@ -2,6 +2,7 @@
 
 en:
   -
+    key: 1
     image: leadshub
     title: LeadsHub &mdash; Mobile App
     ariaOne: Preview the LeadsHub website
@@ -9,6 +10,7 @@ en:
     link: "https://leadshub.com"
     rel: external nofollow noreferrer noopener
   -
+    key: 2
     image: turntable
     title: Turntable &mdash; Sass Library
     ariaOne: Preview the Turntable website
@@ -16,6 +18,7 @@ en:
     link: "https://turntablelib.com"
     rel: external noopener
   -
+    key: 3
     image: flexr
     title: Flexr &mdash; CSS Micro Framework
     ariaOne: Preview the Flexr website
