@@ -1,8 +1,8 @@
 # For Skills in About
 
 -
-  key: 1
-  type: Design
+  aria: Skill 1 of 3
+  type: design
   text: 
     - InDesign
     - Illustrator
@@ -12,8 +12,8 @@
     - After Effects
     - InVision
 -
-  key: 2
-  type: Development
+  aria: Skill 2 of 3
+  type: development
   text: 
     - HTML5
     - CSS3 / SCSS / SassScript
@@ -28,8 +28,8 @@
     - GraphQL / PHP / MySQL
     - Node.js / NPM
 -
-  key: 3
-  type: Experience
+  aria: Skill 3 of 3
+  type: experience
   text: 
     - Responsive Web Design and Development
     - Semantic Markup and Accessibility

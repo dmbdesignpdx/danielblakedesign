@@ -1,16 +1,16 @@
 <section
-    id="{{ .image }}"
-    aria-label='{{ T "project" .key }}'
+    id="{{ .title }}"
+    aria-label='{{ .aria }}'
     flexr-grid>
 
-    <h3>{{ .title | safeHTML }}</h3>
+    <h3>{{ .title | title }} &mdash; {{ .sub }}</h3>
 
     <div class="cta">
 
       <a
           class="btn primary"
-          href="/{{ .image }}/"
-          aria-label="{{ .ariaOne }}">
+          href="/{{ .title }}/"
+          aria-label='{{ T "aria_preview" (.title | title) }}'>
 
           {{- T "preview" -}}
 
@@ -20,7 +20,7 @@
           class="btn secondary"
           href="{{ .link }}"
           target="_blank"
-          aria-label="{{ .ariaTwo }}"
+          aria-label='{{ T "aria_visit" (.title | title) }}'
           rel="{{ .rel }}">
 
           {{- T "visit" -}}

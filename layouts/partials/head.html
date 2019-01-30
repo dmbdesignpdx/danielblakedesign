@@ -23,7 +23,6 @@
 
 <!-- Variables -->
 
-{{ $info := .Site.Data.info }}
 {{ $phone := replace .Site.Author.phone "-" "" }}
 
 {{ if not (in .Site.Author.phone "+1") }}
@@ -73,7 +72,7 @@
 
 <meta name="format-detection" content="email=no">
 
-<meta name="theme-color" content="{{ $info.theme }}">
+<meta name="theme-color" content="{{ .Site.Params.theme }}">
 
 
 <!-- Favicons -->
@@ -86,7 +85,7 @@
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
-<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ $info.theme }}">
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Params.theme }}">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -101,7 +100,7 @@
 
 <meta name="twitter:description" content="{{ .Description }}">
 
-<meta name="twitter:image" content="{{ $info.image }}">
+<meta name="twitter:image" content="{{ .Site.Params.image }}">
 
 <meta name="twitter:image:alt" content="{{ .Description }}">
 
@@ -115,13 +114,13 @@
 
 <meta property="og:description" content="{{ .Description }}">
 
-<meta property="og:image" content="{{ $info.image }}">
+<meta property="og:image" content="{{ .Site.Params.image }}">
 
 <meta property="og:image:width" content="1200">
 
 <meta property="og:image:height" content="628">
 
-<meta property="og:image:type" content="{{ $info.type }}">
+<meta property="og:image:type" content="{{ .Site.Params.type }}">
 
 <meta property="og:url" content="{{ absURL .URL }}">
 
@@ -143,7 +142,7 @@
    "name":"{{ .Title }}",
    "description":"{{ .Description }}",
    "url":"{{ .URL | absURL }}",
-   "image":"{{ $info.image }}",
+   "image":"{{ .Site.Params.image }}",
    "creator":{
       "@type":"Person",
       "name":"{{ .Site.Author.name }}",
@@ -159,9 +158,9 @@
          "serviceType":"Website design and development"
       }
    },
-   "sameAs":"{{ $info.linkedin }}",
-   "sameAs":"{{ $info.github }}",
-   "sameAs":"{{ $info.codepen }}"
+   "sameAs":"{{ .Site.Author.linkedin }}",
+   "sameAs":"{{ .Site.Author.github }}",
+   "sameAs":"{{ .Site.Author.codepen }}"
 }
 </script>
 
