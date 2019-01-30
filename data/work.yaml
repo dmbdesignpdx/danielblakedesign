@@ -1,27 +1,24 @@
-# For Thumbs in Work
-
+## Thumbs ##
+# English
 en:
   -
     key: 1
-    image: leadshub
-    title: LeadsHub &mdash; Mobile App
-    ariaOne: Preview the LeadsHub website
-    ariaTwo: Go to the LeadsHub website
-    link: "https://leadshub.com"
+    title: leadshub
+    sub: Mobile App
+    aria: Project 1 of 3
+    link: https://leadshub.com
     rel: external nofollow noreferrer noopener
   -
     key: 2
-    image: turntable
-    title: Turntable &mdash; Sass Library
-    ariaOne: Preview the Turntable website
-    ariaTwo: Go to the Turntable website
-    link: "https://turntablelib.com"
+    title: turntable
+    sub: Sass Library
+    aria: Project 2 of 3
+    link: https://turntablelib.com
     rel: external noopener
   -
     key: 3
-    image: flexr
-    title: Flexr &mdash; CSS Micro Framework
-    ariaOne: Preview the Flexr website
-    ariaTwo: Go to the Flexr website
+    title: flexr
+    sub: CSS Micro Framework
+    aria: Project 3 of 3
     link: "https://flexrgrid.com"
     rel: external noopener

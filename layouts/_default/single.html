@@ -43,22 +43,22 @@
       {{ $sizes := dict "a" $xs "b" $sm "c" $md "d" $lg "e" $xl "f" $fl }}
       {{ $project := replace .URL "/" "" }}
       
-      {{ range (seq 3) }}
+      {{ range $num := seq 3 }}
 
       <picture>
 
          <source
             type="image/webp"
             srcset='{{- range $key, $value := $sizes -}}
-            /img/{{ $project }}/{{ $project }}-{{ . }}-{{ $value.size }}.webp {{ $value.width }}w{{- if ne $key "f" -}},{{ end }}
+            /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.webp {{ $value.width }}w{{- if ne $key "f" -}},{{ end }}
             {{- end -}}'
          />
 
          <img 
-            src="/img/{{ $project }}/{{ $project }}-{{ . }}-fl.jpg"
-            alt="{{ $project }} project preview {{ . }} of 3"
+            src="/img/{{ $project }}/{{ $project }}-{{ $num }}-fl.jpg"
+            alt='{{ T "aria_sib" (dict "title" ($project | title) "num" $num) }}'
             srcset='{{- range $key, $value := $sizes -}}
-            /img/{{ $project }}/{{ $project }}-{{ . }}-{{ $value.size }}.jpg {{ $value.width }}w{{- if ne $key "f" -}},{{ end }}
+            /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.jpg {{ $value.width }}w{{- if ne $key "f" -}},{{ end }}
             {{- end -}}'
          />
 

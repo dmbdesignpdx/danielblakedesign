@@ -1,4 +1,4 @@
-{{- $page := index .Site.Data.error (string .Language) -}}
+{{- $page := index .Site.Data.error (.Site.Language.Lang) -}}
 
 <!doctype html>
 <html lang="{{ .Language }}">

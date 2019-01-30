@@ -46,15 +46,14 @@
          id="w1"
          flexr-wrap>
 
-         {{ .Params.work.title }}
+         {{- T "work" -}}
 
       </h2>
 
 
       <!-- Thumbs -->
 
-      {{ $thumbs := index .Site.Data.work .Params.lang }}
-      {{ range $thumbs }}
+      {{ range (index .Site.Data.work .Params.lang) }}
       
         {{- partial "components/thumbs.html" . -}}
 
@@ -97,7 +96,7 @@
       aria-labelledby="a1"
       flexr-grid>
 
-      <h2 id="a1">{{ .Params.about.title }}</h2>
+      <h2 id="a1">{{ T "about" }}</h2>
 
       {{ .Content }}
 
@@ -117,13 +116,11 @@
 
          <h5>{{ T "contact" }}</h5>
 
-         {{ $contacts := index .Site.Data.contact .Params.lang }}
-         {{ range $contacts }}
+         {{ range (index .Site.Data.contact .Params.lang) }}
 
             {{- partial "components/contacts.html" . -}}
 
          {{ end }}
-
 
       </address>
 

@@ -1,4 +1,4 @@
-# Nav
+## Nav ##
 - 
   id: work
   translation: Work
@@ -15,7 +15,9 @@
   id: aria_home
   translation: Daniel Blake home page
 
-# CTAs
+
+
+## CTAs ##
 - 
   id: preview
   translation: Preview
@@ -25,23 +27,15 @@
 - 
   id: send
   translation: Send
+-
+  id: aria_preview
+  translation: Preview the {{ .Count }} website
+-
+  id: aria_visit
+  translation: Go to the {{ .Count }} website
 
-# Work
-- 
-  id: project
-  translation: Project {{ .Count }} of 3
 
-# About
-- 
-  id: skill
-  translation: Skill {{ .Count }} of 3
-
-# Contact
-- 
-  id: contact
-  translation: Contact
-
-# Form
+## Form ##
 - 
   id: legend
   translation: Or drop me a line!
@@ -55,10 +49,17 @@
   id: message
   translation: Your Message
 
-# Footer
+
+## Footer ##
 - 
   id: made
   translation: Made with {{ .Count }} by Daniel Blake.
 - 
   id: built
   translation: Built with {{ index . 0 }}, sourced on {{ index . 1 }}, and hosted on&nbsp;{{ index . 2 }}.
+
+
+## Siblings ##
+-
+  id: aria_sib
+  translation: "{{ .title }} project preview {{ .num }} of 3"

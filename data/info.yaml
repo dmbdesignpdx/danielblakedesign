@@ -1,11 +1,7 @@
-# For General Site Info
+## General Site Info ##
 
 # Theme
 theme: "#E82C61"
-
-# SameAs
-github: https://github.com/dmbdesignpdx
-linkedin: https://www.linkedin.com/in/danielblakepdx
 
 # Open Graph / Twitter
 image: https://danielblake.design/img/daniel-og.png
