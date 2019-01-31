@@ -16,7 +16,6 @@
   translation: Daniel Blake home page
 
 
-
 ## CTAs ##
 - 
   id: preview
@@ -33,6 +32,9 @@
 -
   id: aria_visit
   translation: Go to the {{ .Count }} website
+-
+  id: contact
+  translation: Contact
 
 
 ## Form ##
