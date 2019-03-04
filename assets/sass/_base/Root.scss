@@ -1,0 +1,144 @@
+/**
+ *  Contents:
+ *
+ *  Global Styles and Resets
+ *  Common Rules
+ *  Buttons
+ */
+
+
+
+//
+//  Global Styles and Resets
+//
+
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+ul,
+li,
+h2,
+h3,
+h4,
+h5,
+form,
+fieldset,
+label,
+legend,
+input,
+textarea,
+button {
+   padding: 0;
+   margin: 0;
+   border: 0;
+}
+
+img,
+li::before {
+   font-size: 0;
+}
+
+input,
+textarea,
+button {
+   @include appearance(none);
+}
+
+ul {
+   list-style: none;
+}
+
+// Needed for VoiceOver in Safari
+li::before {
+   display: block;
+   content: "\200C";
+}
+
+abbr {
+   text-decoration: none;
+   color: inherit;
+}
+
+button,
+textarea {
+   font: inherit;
+}
+
+h2,
+h5 {
+   display: inline-block;
+   height: 1em;
+   width: auto;
+   
+   &::after {
+      content: "";
+      width: 100%;
+      height: 4px;
+      background: brand(_main);
+      top: -.1em;
+      z-index: -1;
+      border-radius: 2px;
+   }
+}
+
+h2 {
+   font-size: 2rem;
+}
+
+a:focus,
+a:active {
+   outline: 0;
+}
+
+a:hover {
+   cursor: pointer;
+}
+
+address {
+   font-style: normal;
+}
+
+main {
+   padding: 10vh 0 20vh;
+}
+
+
+
+//
+//  Common Styles
+//
+
+main,
+img,
+footer {
+   width: 100%;
+}
+
+img,
+source,
+picture,
+h2::after,
+h5::after {
+   display: block;
+}
+
+h2,
+h3,
+h4,
+h5,
+legend {
+   font-family: Montserrat, sans-serif;
+   font-weight: 900;
+   letter-spacing: -.04em;
+   word-spacing: .03em;
+   text-rendering: geometricPrecision;
+}
+
+section,
+h2::after,
+h5::after {
+   position: relative
+}
+

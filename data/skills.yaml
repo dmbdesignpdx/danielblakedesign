@@ -18,15 +18,16 @@
     - HTML5
     - CSS3 / SCSS / SassScript
     - JavaScript / ES2015+
-    - Vue.js / React.js / Preact.js
-    - NativeScript
+    - Vue.js / React.js
     - Git
     - Nuxt.js / Hugo / Jekyll
     - Gulp.js / Webpack.js
     - jQuery / CoffeeScript
+    - NativeScript
     - XML / JSON / YAML
     - GraphQL / PHP / MySQL
     - Node.js / NPM
+    - Jest / Enzyme
 -
   aria: Skill 3 of 3
   type: experience

@@ -5,7 +5,7 @@
 
 <header
    id="hero"
-   flexr-wrap>
+   class="Flexr">
 
    <h1><span>{{ .Params.one }}</span><br>{{ .Params.two }}</h1>
 
@@ -22,12 +22,12 @@
 
 <!-- Navigation -->
 
-{{ partial "nav.html" . }}
+{{ partial "Nav.html" . }}
 
 
 <!-- Main Content -->
 
-<main flexr-wrap>
+<main class="Flexr">
 
    <section>
 
@@ -70,7 +70,7 @@
       {{ .Content }}
 
       <a
-         class="btn primary"
+         class="Btn --primary"
          href="{{ .Params.link }}"
          target="_blank"
          aria-label="{{ .Params.alt }}"

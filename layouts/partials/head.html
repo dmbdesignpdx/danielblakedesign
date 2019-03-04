@@ -34,10 +34,16 @@
 
 <meta charset="utf-8">
 
-<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
-
 
 {{ if eq (getenv "HUGO_ENV") "production" }}
+
+<!-- Prebrowsing Hints -->
+
+<link rel="preload" as="font" href="/fonts/montserrat-900.woff" type="font/woff" crossorigin>
+
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+
+<link rel="preconnect" href="https://www.google-analytics.com/">
 
 
 <!-- HTTP Headers -->
@@ -46,19 +52,12 @@
 
 <meta http-equiv="cache-control" content="public,max-age=5256000">
 
-
-<!-- Prebrowsing Hints -->
-
-<link rel="preload" as="font" href="/fonts/montserrat-900.woff" type="font/woff" crossorigin>
-
-<link rel="dns-prefetch" href="https://www.googletagmanager.com/">
-
-<link rel="dns-prefetch" href="https://www.google-analytics.com/">
-
 {{ end }}
 
 
 <!-- General -->
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
 <title>{{ .Title }}</title>
 
@@ -127,7 +126,11 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify }}       
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
+{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ $critical = $critical | postCSS }}
+{{ end }}
+
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
@@ -137,30 +140,32 @@
 
 <script type="application/ld+json">
 {
-   "@context":"http://schema.org",
-   "@type":"WebSite",
-   "name":"{{ .Title }}",
-   "description":"{{ .Description }}",
-   "url":"{{ .URL | absURL }}",
-   "image":"{{ .Site.Params.image }}",
-   "creator":{
-      "@type":"Person",
-      "name":"{{ .Site.Author.name }}",
-      "description":"{{ .Site.Author.title }}",
-      "address":"{{ .Site.Author.city }}",
-      "email":"{{ .Site.Author.email }}",
-      "telephone":"{{ $phone }}"
-   },
-   "offers":{
-      "@type":"Offer",
-      "itemOffered":{
-         "@type":"Service",
-         "serviceType":"Website design and development"
-      }
-   },
-   "sameAs":"{{ .Site.Author.linkedin }}",
-   "sameAs":"{{ .Site.Author.github }}",
-   "sameAs":"{{ .Site.Author.codepen }}"
+  "@context":"http://schema.org",
+  "@type":"WebSite",
+  "name":"{{ .Title }}",
+  "description":"{{ .Description }}",
+  "url":"{{ .URL | absURL }}",
+  "image":"{{ .Site.Params.image }}",
+  "creator":{
+    "@type":"Person",
+    "name":"{{ .Site.Author.name }}",
+    "description":"{{ .Site.Author.title }}",
+    "address":"{{ .Site.Author.city }}",
+    "email":"{{ .Site.Author.email }}",
+    "telephone":"{{ $phone }}"
+  },
+  "offers":{
+    "@type":"Offer",
+    "itemOffered":{
+      "@type":"Service",
+      "serviceType":"Website design and development"
+    }
+  },
+  "sameAs":[
+    "{{ .Site.Author.linkedin }}",
+    "{{ .Site.Author.github }}",
+    "{{ .Site.Author.codepen }}"
+  ]
 }
 </script>
 
@@ -175,7 +180,12 @@
 
 <!-- Master CSS -->
 
-{{ $master := resources.Get "css/master.scss" | toCSS | minify }}
+{{ $master := resources.Get "css/master.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $master.RelPermalink }}">
+
+{{ if eq (getenv "HUGO_ENV") "production" }}
+
+{{ $master = $master | postCSS }}
 <link rel="preload" as="style" href="{{ $master.RelPermalink }}" onload="this.onload=null;this.rel='stylesheet'">
 
 
@@ -183,9 +193,7 @@
 
 <script>!function(t){t.loadCSS||(t.loadCSS=function(){});var e=loadCSS.relpreload={};if(e.support=function(){var e;try{e=t.document.createElement("link").relList.supports("preload")}catch(t){e=!1}return function(){return e}}(),e.bindMediaToggle=function(t){var e=t.media||"all";function a(){t.media=e}t.addEventListener?t.addEventListener("load",a):t.attachEvent&&t.attachEvent("onload",a),setTimeout(function(){t.rel="stylesheet",t.media="only x"}),setTimeout(a,3e3)},e.poly=function(){if(!e.support())for(var a=t.document.getElementsByTagName("link"),n=0;n<a.length;n++){var o=a[n];"preload"!==o.rel||"style"!==o.getAttribute("as")||o.getAttribute("data-loadcss")||(o.setAttribute("data-loadcss",!0),e.bindMediaToggle(o))}},!e.support()){e.poly();var a=t.setInterval(e.poly,500);t.addEventListener?t.addEventListener("load",function(){e.poly(),t.clearInterval(a)}):t.attachEvent&&t.attachEvent("onload",function(){e.poly(),t.clearInterval(a)})}"undefined"!=typeof exports?exports.loadCSS=loadCSS:t.loadCSS=loadCSS}("undefined"!=typeof global?global:this)</script>
 
-
-<!-- Service Worker -->
-<!-- (TO DO) -->
+{{ end }}
 
 
 <!-- Main Script -->

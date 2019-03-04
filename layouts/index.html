@@ -5,8 +5,7 @@
 
 <header
    id="hero"
-   class="js-intro"
-   flexr-wrap>
+   class="Flexr js-intro">
 
    <h1>{{ .Params.hero.title | safeHTML }}</h1>
 
@@ -25,7 +24,7 @@
 
 <!-- Navigation -->
 
-{{ partial "nav.html" . }}
+{{ partial "Nav.html" . }}
 
 
 <!-- Below the Fold -->
@@ -44,7 +43,7 @@
 
       <h2
          id="w1"
-         flexr-wrap>
+         class="Flexr">
 
          {{- T "work" -}}
 
@@ -55,7 +54,7 @@
 
       {{ range (index .Site.Data.work .Params.lang) }}
       
-        {{- partial "components/thumbs.html" . -}}
+        {{- partial "components/Thumbs.html" . -}}
 
       {{ end }}
 
@@ -64,8 +63,8 @@
 
       <section
         id="codepen"
-        aria-labelledby="cp1"
-        flexr-wrap>
+        class="Flexr"
+        aria-labelledby="cp1">
 
         <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
 
@@ -74,7 +73,7 @@
         <p>{{ .Params.codepen.copy | safeHTML }}</p>
 
         <a
-          class="btn primary"
+          class="Btn --primary"
           rel="nofollow external noopener"
           target="_blank"
           aria-label="Go to Codepen for snippets"
@@ -93,8 +92,8 @@
 
    <section
       id="about"
-      aria-labelledby="a1"
-      flexr-grid>
+      class="Flexr --grid"
+      aria-labelledby="a1">
 
       <h2 id="a1">{{ T "about" }}</h2>
 
@@ -105,7 +104,7 @@
 
       {{ range .Site.Data.skills }}
 
-        {{- partial "components/skills.html" . -}}
+        {{- partial "components/Skills.html" . -}}
 
       {{ end }}
 
@@ -118,7 +117,7 @@
 
          {{ range (index .Site.Data.contact .Params.lang) }}
 
-            {{- partial "components/contacts.html" . -}}
+            {{- partial "components/Contacts.html" . -}}
 
          {{ end }}
 
@@ -127,7 +126,7 @@
 
       <!-- Contact Form -->
 
-      {{- partial "components/form.html" . -}}
+      {{- partial "components/Form.html" . -}}
 
    </section>
 

@@ -3,14 +3,20 @@
 // Vendors
 "../sass/_vendor/turntable",
 
-// Globals
-"../sass/_base/vars",
-"../sass/_base/global",
+// Variables
+"../sass/_vars/vars",
+
+// Base
+"../sass/_base/Root",
+"../sass/_base/Flexr",
 
 // Partials
-"../sass/_partials/nav",
-"../sass/_partials/footer",
+"../sass/_partials/Nav",
+"../sass/_partials/Footer",
+
+// GUI
+"../sass/_gui/Btn",
 
 // Content
-"../sass/_content/home",
-"../sass/_content/sibling";
+"../sass/_content/Home",
+"../sass/_content/Sibling";
