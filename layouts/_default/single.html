@@ -5,7 +5,7 @@
 
 <header
    id="hero"
-   class="Flexr">
+   flexr-wrap>
 
    <h1><span>{{ .Params.one }}</span><br>{{ .Params.two }}</h1>
 
@@ -22,12 +22,12 @@
 
 <!-- Navigation -->
 
-{{ partial "Nav.html" . }}
+{{ partial "Nav" . }}
 
 
 <!-- Main Content -->
 
-<main class="Flexr">
+<main flexr-wrap>
 
    <section>
 

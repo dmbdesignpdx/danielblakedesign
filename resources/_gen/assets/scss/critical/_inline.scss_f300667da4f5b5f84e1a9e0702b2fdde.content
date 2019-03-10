@@ -1,22 +1,22 @@
 /**
- *  Contents:
+ * Contents:
  *
- *  Font
- *  Imports
- *  Grid
- *  Global Styles and Resets
- *  Common Rules
- *  Logo
- *  Nav
- *  Hero
- *  Media Queries
+ * Font
+ * Imports
+ * Grid
+ * Global Styles and Resets
+ * Common Rules
+ * Logo
+ * Nav
+ * Hero
+ * Media Queries
  */
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 900;
   font-display: block;
-  src: local("Montserrat Black"), local("Montserrat-Black"), url("../fonts/montserrat-900.woff") format("woff"); }
+  src: local("Montserrat Black"), local("Montserrat-Black"), url("../fonts/montserrat-90.woff") format("woff"); }
 
 /**
  *  Contents:
@@ -57,12 +57,19 @@ body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   touch-action: manipulation;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent; }
 
 body, h1, p {
   padding: 0;
   margin: 0;
   border: 0; }
+
+h1,
+#nav a:first-child {
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  line-height: 1.2; }
 
 svg {
   display: block; }
@@ -70,17 +77,14 @@ svg {
 a {
   text-decoration: none;
   color: inherit;
-  font-weight: bold; }
+  font-weight: 700; }
 
 h1 {
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
   text-rendering: geometricPrecision;
-  letter-spacing: -0.03em;
-  word-spacing: 0.1em;
+  letter-spacing: -.03em;
+  word-spacing: .1em;
   padding-top: 27vh;
-  margin-bottom: 0.3em;
+  margin-bottom: .3em;
   font-size: 2.4rem; }
   h1 span {
     display: inline-block; }
@@ -91,13 +95,13 @@ h1 {
       height: 6px;
       background: #e82c61;
       position: relative;
-      margin-top: -0.14em;
+      margin-top: -.14em;
       z-index: -1;
       border-radius: 3px; }
       h1 span:last-child::after {
-        transition: width 0.4s 1.2s; }
+        transition: width .4s 1.2s; }
       h1 span:first-child::after {
-        transition: width 0.4s 0.8s; }
+        transition: width .4s .8s; }
       h1 span.js-underline::after {
         width: 100%; }
   .sib h1 {
@@ -108,7 +112,7 @@ p {
   text-rendering: optimizeSpeed;
   color: #58536e;
   line-height: 1.5;
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
   hyphens: none; }
 
 #hero.js-intro h1, #hero.js-intro p {
@@ -118,14 +122,14 @@ p {
 #hero h1, #hero p {
   transform: translateX(0);
   opacity: 1;
-  transition: transform 0.4s 0s, opacity 0.4s 0s;
+  transition: transform .4s 0s, opacity .4s 0s;
   transform-style: preserve-3d; }
 
 #hero p {
-  transition: transform 0.4s 0.4s, opacity 0.4s 0.4s; }
+  transition: transform .4s .4s, opacity .4s .4s; }
 
 /**
- *  Whole
+ * Whole
  */
 #logo {
   stroke: #17161d;
@@ -133,33 +137,33 @@ p {
   stroke-linecap: round; }
 
 /**
- *  Parts
+ * Parts
  */
-.a {
+#a {
   fill: #c8c8d2; }
 
 .c {
   fill: #fafafa; }
 
-.d {
+#d {
   fill: #17161d; }
 
-.e {
+#e {
   fill: #e82c64; }
 
-.f {
+#f {
   fill: #ef6b92; }
 
-.g {
+#g {
   fill: #f395b1; }
 
-.h {
+#h {
   fill: #9e2b9c; }
 
-.i {
+#i {
   fill: #bb6aba; }
 
-.j {
+#j {
   fill: #cf95cd; }
 
 #nav {
@@ -178,24 +182,21 @@ p {
   #nav a {
     -webkit-tap-highlight-color: transparent;
     display: block;
-    font-size: 0.8rem;
-    letter-spacing: 0.03em; }
+    font-size: .8rem;
+    letter-spacing: .03em; }
   #nav a:first-child {
     display: -webkit-flex;
     display: flex;
     -webkit-align-items: center;
     align-items: center;
-    font-family: Montserrat, sans-serif;
-    font-weight: 900;
-    line-height: 1.2;
     margin-bottom: 1px;
-    letter-spacing: -0.02em; }
+    letter-spacing: -.02em; }
     #nav a:first-child span {
       display: none; }
     #nav a:first-child svg {
       width: 2.6em;
       height: 2.6em;
-      margin: 1px 0.4em auto 0; }
+      margin: 1px .4em auto 0; }
   #nav a:not(:first-child) {
     padding: 16px 0; }
   #nav a:nth-child(2) {
@@ -218,19 +219,20 @@ p {
   stroke-linejoin: round; }
 
 /**
- *  Phone Landscape
+ * Phone Landscape
  */
 @media (min-width: 540px) {
   #nav a:first-child span {
     display: block; }
-  #hero p, #hero h1 {
+  #hero p,
+  #hero h1 {
     width: 25rem; } }
 
 /**
- *  Tablet Portrait
+ * Tablet Portrait
  */
 @media (min-width: 766px) {
-  [flexr-wrap] {
+  [flex-wrap] {
     padding-right: 24px;
     padding-left: 24px; }
   h1 {
@@ -244,12 +246,12 @@ p {
       margin-left: 2em; } }
 
 @media (min-width: 810px) and (max-height: 416px) {
-  [flexr-wrap] {
+  [flex-wrap] {
     padding-right: env(safe-area-inset-right);
     padding-left: env(safe-area-inset-left); } }
 
 /**
- *  Desktop
+ * Desktop
  */
 @media (min-width: 1278px) {
   [flexr-wrap] {
@@ -261,7 +263,7 @@ p {
     font-size: 20px; } }
 
 /**
- *  Desktop Large
+ * Desktop Large
  */
 @media (min-width: 1680px) {
   html {

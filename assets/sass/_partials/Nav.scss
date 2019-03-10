@@ -14,7 +14,8 @@
 
    a:first-child {
 
-      &:active svg {
+      &:active svg,
+      &:focus svg {
          
          * {
             fill: brand();
@@ -35,7 +36,8 @@
 
    a {
 
-      &:active, &:focus {
+      &:active,
+      &:focus {
          color: brand();
       }
 

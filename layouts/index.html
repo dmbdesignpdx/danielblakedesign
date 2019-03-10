@@ -5,7 +5,8 @@
 
 <header
    id="hero"
-   class="Flexr js-intro">
+   class="js-intro"
+   flexr-wrap>
 
    <h1>{{ .Params.hero.title | safeHTML }}</h1>
 
@@ -24,7 +25,7 @@
 
 <!-- Navigation -->
 
-{{ partial "Nav.html" . }}
+{{ partial "Nav" . }}
 
 
 <!-- Below the Fold -->
@@ -43,7 +44,7 @@
 
       <h2
          id="w1"
-         class="Flexr">
+         flexr-wrap>
 
          {{- T "work" -}}
 
@@ -54,7 +55,7 @@
 
       {{ range (index .Site.Data.work .Params.lang) }}
       
-        {{- partial "components/Thumbs.html" . -}}
+        {{- partial "components/Thumbs" . -}}
 
       {{ end }}
 
@@ -63,8 +64,8 @@
 
       <section
         id="codepen"
-        class="Flexr"
-        aria-labelledby="cp1">
+        aria-labelledby="cp1"
+        flexr-wrap>
 
         <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
 
@@ -92,8 +93,8 @@
 
    <section
       id="about"
-      class="Flexr --grid"
-      aria-labelledby="a1">
+      aria-labelledby="a1"
+      flexr-grid>
 
       <h2 id="a1">{{ T "about" }}</h2>
 
@@ -104,7 +105,7 @@
 
       {{ range .Site.Data.skills }}
 
-        {{- partial "components/Skills.html" . -}}
+        {{- partial "components/Skills" . -}}
 
       {{ end }}
 
@@ -117,7 +118,7 @@
 
          {{ range (index .Site.Data.contact .Params.lang) }}
 
-            {{- partial "components/Contacts.html" . -}}
+            {{- partial "components/Contacts" . -}}
 
          {{ end }}
 
@@ -126,7 +127,7 @@
 
       <!-- Contact Form -->
 
-      {{- partial "components/Form.html" . -}}
+      {{- partial "components/Form" . -}}
 
    </section>
 
