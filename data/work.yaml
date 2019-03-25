@@ -1,22 +1,19 @@
 ## Thumbs ##
 # English
 en:
-  -
-    key: 1
+  - key: 1
     title: leadshub
     sub: Mobile App
     aria: Project 1 of 3
     link: https://leadshub.com
     rel: external nofollow noreferrer noopener
-  -
-    key: 2
+  - key: 2
     title: turntable
     sub: Sass Library
     aria: Project 2 of 3
     link: https://turntablelib.com
     rel: external noopener
-  -
-    key: 3
+  - key: 3
     title: flexr
     sub: CSS Micro Framework
     aria: Project 3 of 3

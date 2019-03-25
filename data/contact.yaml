@@ -1,23 +1,19 @@
 ## Contact ##
 # English
 en:
-  -
-    type: phone
+  - type: phone
     aria: "Call: "
     link: "tel:19718010208"
     text: 971-801-0208
-  -
-    type: email
+  - type: email
     aria: "Email: "
     link: "mailto:daniel@danielblake.design"
     text: daniel@danielblake.design
-  -
-    type: github
+  - type: github
     aria: "My Github username: "
     link: https://github.com/dmbdesignpdx
     text: dmbdesignpdx
-  -
-    type: codepen
+  - type: codepen
     aria: "My Codepen username: "
     link: https://codepen.io/dmbdesignpdx
     text: dmbdesignpdx    

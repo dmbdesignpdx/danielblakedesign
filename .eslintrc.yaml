@@ -10,13 +10,12 @@ rules:
   accessor-pairs: off
   array-bracket-newline:
     - error
-    -
-      minItems: 3
+    - minItems: 3
   array-bracket-spacing: error
   array-callback-return: error
   array-element-newline:
     - error
-    - consistent
+    - always
   arrow-body-style: error
   arrow-parens:
     - error
@@ -29,15 +28,16 @@ rules:
   brace-style:
     - error
     - 1tbs
-    -
-      allowSingleLine: true
+    - allowSingleLine: true
   callback-return: error
   camelcase: error
   capitalized-comments:
     - error
     - always
   class-methods-use-this: error
-  comma-dangle: error
+  comma-dangle:
+    - error
+    - always-multiline
   comma-spacing: error
   comma-style:
     - error
@@ -59,10 +59,10 @@ rules:
   func-names:
     - error
     - always
-  func-style:
+  func-style: off
+  function-paren-newline:
     - error
-    - declaration
-  function-paren-newline: error
+    - minItems: 4
   generator-star-spacing: error
   global-require: error
   guard-for-in: error
@@ -71,15 +71,16 @@ rules:
   id-length: off
   id-match: error
   implicit-arrow-linebreak: error
-  indent: off
+  indent:
+    - error
+    - 2
   indent-legacy: off
   init-declarations: off
   jsx-quotes: error
   key-spacing: error
   keyword-spacing:
     - error
-    -
-      after: true
+    - after: true
       before: true
   line-comment-position: error
   linebreak-style:
@@ -91,8 +92,7 @@ rules:
   max-depth: error
   max-len:
     - error
-    -
-      ignoreTemplateLiterals: true
+    - ignoreTemplateLiterals: true
       ignoreStrings: true
       ignoreUrls: true
       ignorePattern: "<.+"
@@ -149,8 +149,7 @@ rules:
   no-multi-str: error
   no-multiple-empty-lines:
     - error
-    -
-      max: 3
+    - max: 3
   no-native-reassign: error
   no-negated-condition: off
   no-negated-in-lhs: error
@@ -182,7 +181,7 @@ rules:
   no-shadow-restricted-names: error
   no-spaced-func: error
   no-sync: error
-  no-tabs: off
+  no-tabs: error
   no-template-curly-in-string: error
   no-ternary: off
   no-throw-literal: error
@@ -208,8 +207,7 @@ rules:
   nonblock-statement-body-position: error
   object-curly-newline:
     - error
-    -
-      minProperties: 3
+    - minProperties: 3
       consistent: true
   object-curly-spacing:
     - error
@@ -218,8 +216,7 @@ rules:
   object-shorthand: error
   one-var:
     - error
-    -
-      let: never
+    - let: never
       const: never
       separateRequires: true
   one-var-declaration-per-line: error
@@ -239,12 +236,12 @@ rules:
   quote-props: off
   quotes:
     - error
-    - double
+    - backtick
   radix:
     - error
     - as-needed
   require-await: error
-  require-jsdoc: off
+  require-jsdoc: error
   rest-spread-spacing: error
   semi:
     - error
@@ -253,8 +250,7 @@ rules:
   semi-style: error
   sort-imports:
     - error
-    -
-      ignoreCase: true
+    - ignoreCase: true
       ignoreMemberSort: true
   sort-keys: off
   sort-vars: off

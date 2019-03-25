@@ -1,20 +1,17 @@
-// A querySelectors shorthand for DOM elements
-
-
 /**
- *  Decides which element(s) to select based on a selector
+ * Decides which element(s) to select based on a selector
+ * @param {string} el - Selector to query
+ * @returns {array, element} Either a single element or array of elements
+ *
  */
-function $(element) {
-  let query = []
+export default $ = el => {
+  el = el === `body`
+  ? [document.body]
+  : el === `html`
+  ? [document.documentElement]
+  : el === `head`
+  ? [document.head]
+  : [...document.querySelectorAll(el)]
 
-  if (element === "body") query = [window.document.body]
-  else if (element === "html") query = [window.document.documentElement]
-  else if (element === "head") query = [window.document.head]
-  else query = [...window.document.querySelectorAll(element)]
-
-  if (query.length > 1) return query
-  return query[0]
+  return 1 < el.length ? el : el[0]
 }
-
-
-export default $

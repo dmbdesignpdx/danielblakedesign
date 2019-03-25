@@ -1,7 +1,6 @@
 # For Skills in About
 
--
-  aria: Skill 1 of 3
+- aria: Skill 1 of 3
   type: design
   text: 
     - InDesign
@@ -11,8 +10,7 @@
     - Premiere Pro
     - After Effects
     - InVision
--
-  aria: Skill 2 of 3
+- aria: Skill 2 of 3
   type: development
   text: 
     - HTML5
@@ -28,8 +26,7 @@
     - GraphQL / PHP / MySQL
     - Node.js / NPM
     - Jest / Enzyme
--
-  aria: Skill 3 of 3
+- aria: Skill 3 of 3
   type: experience
   text: 
     - Responsive Web Design and Development
