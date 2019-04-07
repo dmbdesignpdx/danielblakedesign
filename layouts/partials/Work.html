@@ -1,0 +1,53 @@
+<section
+  id="Work"
+  aria-labelledby="w1"
+>
+
+  <h2
+    id="w1"
+    flexr-wrap
+  >
+
+    {{- T "work" -}}
+
+  </h2>
+
+
+  <!-- Thumbs -->
+
+  {{ range (index .Site.Data.work .Params.lang) }}
+
+    {{- partial "Thumbs" . -}}
+
+  {{ end }}
+
+
+  <!-- Codepen -->
+
+  <section
+    id="codepen"
+    aria-labelledby="cp1"
+    flexr-wrap
+  >
+
+    <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
+
+    <h3 id="cp1">{{ .Params.codepen.title }}</h3>
+
+    <p>{{ .Params.codepen.copy | safeHTML }}</p>
+
+    <a
+      class="Btn --primary"
+      rel="nofollow external noopener"
+      target="_blank"
+      aria-label="Go to Codepen for snippets"
+      href="https://codepen.io/dmbdesignpdx/"
+    >
+      
+      {{- T "visit" -}}
+    
+    </a>
+
+  </section>
+
+</section>

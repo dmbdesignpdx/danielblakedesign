@@ -3,7 +3,7 @@
 {{- $netlify := "<a href='https://www.netlify.com' target='_blank' rel='external nofollow noreferrer'>Netlify</a>" -}}
 {{- $links := slice $hugo $github $netlify -}}
 
-<footer id="footer">
+<footer id="Footer">
 
   <div flexr-grid>
 
@@ -15,7 +15,11 @@
 
     </address>
     
-    <p>{{ T "built" $links | safeHTML }}</p>
+    <aside>
+      
+      <p>{{ T "built" $links | safeHTML }}</p>
+    
+    </aside>  
 
     <p><small>{{ .Site.Copyright }}</small></p>
 

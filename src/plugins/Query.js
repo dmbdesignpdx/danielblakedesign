@@ -1,10 +1,10 @@
 /**
  * Decides which element(s) to select based on a selector
  * @param {string} el - Selector to query
- * @returns {array, element} Either a single element or array of elements
+ * @returns {(array|element)} Either a single element or array of elements
  *
  */
-export default $ = el => {
+export default el => {
   el = el === `body`
   ? [document.body]
   : el === `html`

@@ -1,7 +1,8 @@
 <section
   id="{{ .title }}"
   aria-label='{{ .aria }}'
-  flexr-grid>
+  flexr-grid
+>
 
   <h3>{{ .title | title }} &mdash; {{ .sub }}</h3>
 
@@ -10,7 +11,8 @@
     <a
       class="Btn --primary"
       href="/{{ .title }}/"
-      aria-label='{{ T "aria_preview" (.title | title) }}'>
+      aria-label='{{ T "aria_preview" (.title | title) }}'
+    >
 
       {{- T "preview" -}}
 
@@ -21,7 +23,8 @@
       href="{{ .link }}"
       target="_blank"
       aria-label='{{ T "aria_visit" (.title | title) }}'
-      rel="{{ .rel }}">
+      rel="{{ .rel }}"
+    >
 
       {{- T "visit" -}}
 
@@ -29,7 +32,7 @@
 
   </div>
 
-  <picture class="thumb">
+  <picture class="Thumb">
 
 
     <!-- Presentational image -->

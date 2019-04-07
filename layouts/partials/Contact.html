@@ -1,0 +1,28 @@
+<section
+  id="Contact"
+  aria-labelledby="c1"
+  flexr-grid
+>
+
+  <h2 id="c1">
+        
+    {{- T "contact" -}}
+
+  </h2>
+
+  <address>
+
+    {{ range (index .Site.Data.contact .Params.lang) }}
+
+      {{- partial "Contacts" . -}}
+
+    {{ end }}
+
+  </address>
+
+
+  <!-- Contact Form -->
+
+  {{- partial "Form" . -}}
+
+</section>

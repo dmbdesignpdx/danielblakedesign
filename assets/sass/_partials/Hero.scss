@@ -1,0 +1,7 @@
+#arrow {
+  @include transition(opacity 0.4s);
+
+  &.js-fade {
+     opacity: 0;
+  }
+}

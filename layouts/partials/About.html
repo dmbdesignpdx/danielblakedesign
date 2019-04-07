@@ -1,0 +1,24 @@
+<section
+  id="About"
+  aria-labelledby="a1"
+  flexr-grid
+>
+
+  <h2 id="a1">
+
+    {{- T "about" -}}
+
+  </h2>
+
+  {{ .Content }}
+
+
+  <!-- Skills -->
+
+  {{ range .Site.Data.skills }}
+
+    {{- partial "Skills" . -}}
+
+  {{ end }}
+
+</section>

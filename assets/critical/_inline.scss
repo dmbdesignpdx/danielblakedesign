@@ -35,7 +35,10 @@
 // Imports
 //
 
-@import "../sass/_vars/vars", "../sass/_vendor/turntable";
+@import
+  "../sass/_base/Vars",
+  "../sass/_base/Mixins",
+  "../sass/_vendor/turntable";
 
 
 
@@ -66,7 +69,7 @@
 
 html {
   background: brand(_offwhite);
-  font: normal 18px system-ui, sans-serif;
+  font: normal 1.1em system-ui, sans-serif;
 }
 
 body {
@@ -83,13 +86,11 @@ body {
 }
 
 body, h1, p {
-  padding: 0;
   margin: 0;
-  border: 0;
 }
 
 h1,
-#nav a:first-child {
+#Nav a:first-child {
   font-family: Montserrat, sans-serif;
   font-weight: 900;
   line-height: 1.2;
@@ -162,7 +163,7 @@ p {
   hyphens: none;
 }
 
-#hero.js-intro {
+#Hero.js-intro {
 
   h1, p {
     transform: translateX(-50%);
@@ -171,14 +172,14 @@ p {
 }
 
 
-#hero h1, #hero p {
+#Hero h1, #Hero p {
   transform: translateX(0);
   opacity: 1;
   transition: transform .4s 0s, opacity .4s 0s;
   transform-style: preserve-3d;
 }
 
-#hero p {
+#Hero p {
   transition: transform .4s .4s, opacity .4s .4s;
 }
 
@@ -246,7 +247,7 @@ p {
 // Navigation
 //
 
-#nav {
+#Nav {
   width: 100%;
   position: absolute;
   background: brand(_offwhite);
@@ -307,7 +308,7 @@ p {
 // Hero
 //
 
-#hero {
+#Hero {
   height: 100vh;
 }
 
@@ -337,14 +338,14 @@ p {
 
 @media (min-width: 540px) {
    
-  #nav {
+  #Nav {
     
     a:first-child span {
       display: block;
     }
   }
   
-  #hero {
+  #Hero {
     
     p,
     h1 {
@@ -371,11 +372,11 @@ p {
     font-size: 2.6rem;
   }
   
-  #nav {
+  #Nav {
     height: 90px;
     
     a:first-child {
-      font-size: 1.1rem;
+      font-size: 1.13rem;
     }
     
     a:last-child {
@@ -412,7 +413,7 @@ p {
   }
   
   html {
-    font-size: 20px;
+    font-size: 1.25em;
   }
    
 }
@@ -425,10 +426,10 @@ p {
 @media (min-width:1680px) {
   
   html {
-    font-size: 22px;
+    font-size: 1.38em;
   }
   
-  #nav {
+  #Nav {
     height: 150px;
   }
    

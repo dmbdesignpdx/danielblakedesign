@@ -1,43 +1,5 @@
 /**
- *  Contents:
- *
- *  Colors
- *  Grid
- *  Extends
- */
-
-
-
-//
-//  Colors
-//
-
-$brand: (
-   _offwhite: hsl(250,12%,96%),
-   _darkwhite: hsl(250,13%,94%),
-   _slightgray: hsl(250,11%,76%),
-   _lightgray: hsl(250,11%,43%),
-   _darklight: hsl(250,14%,38%),
-   _darkgray: hsl(250,14%,24%),
-   _nearblack: hsl(250,14%,10%),
-   _main: hsl(343,80%,54%),
-   _two: hsl(300,60%,46%),
-   _three: hsl(320,70%,47%)
-);
-
-@function brand($arg:_main) {
-   @return map-get($brand, $arg);
-}
-
-
-
-//
-//  Grid
-//
-
-
-/**
- *  Gutter Widths
+ * Grid
  */
 
 $gutter: (
@@ -75,7 +37,7 @@ $gutter: (
 
 
 /**
- *  Breakpoints
+ * Breakpoints
  */
 
 @mixin phoneLan {
@@ -106,14 +68,4 @@ $gutter: (
    @media (min-width:1680px) {
       @content;
    }
-}
-
-
-
-//
-//  Common Rules
-//
-
-%mainColor {
-   color: brand()
 }

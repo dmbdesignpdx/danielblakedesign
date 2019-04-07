@@ -14,7 +14,7 @@ window.addEventListener(`load`, () => {
   let scrolling = false
 
   /**
-   * Adds the `js-sub` class if form exists
+   * Adds the 'js-sub' class if form exists
    */
   if (FORM) {
     FORM.send.addEventListener(`click`, () => {
@@ -32,7 +32,7 @@ window.addEventListener(`load`, () => {
 
 
   /**
-   * Adds or removes the `js-fade` class
+   * Adds or removes the 'js-fade' class
    * @returns {undefined}
    *
   */

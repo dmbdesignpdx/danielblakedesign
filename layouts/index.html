@@ -1,137 +1,22 @@
 {{ define "SITE" }}
 
 
-<!-- Hero  -->
+  {{- partial "Hero" . -}}
 
-<header
-   id="hero"
-   class="js-intro"
-   flexr-wrap>
-
-   <h1>{{ .Params.hero.title | safeHTML }}</h1>
-
-   <p>{{ .Params.hero.copy | safeHTML }}</p>
-
-   <svg
-      id="arrow"
-      viewBox="0 0 50 50">
-      
-      <path d="M4,25 25,46 46,25"/>
-
-   </svg>
-
-</header>
+  {{- partial "Nav" . -}}
 
 
-<!-- Navigation -->
+  <!-- Below the Fold -->
 
-{{ partial "Nav" . }}
+  <main>
 
+    {{- partial "Work" . -}}
 
-<!-- Below the Fold -->
+    {{- partial "About" . -}}
 
+    {{- partial "Contact" . -}}
 
-<!-- Main Content -->
-
-<main>
-
-
-   <!-- Work Section -->
-
-   <section
-      id="work"
-      aria-labelledby="w1">
-
-      <h2
-         id="w1"
-         flexr-wrap>
-
-         {{- T "work" -}}
-
-      </h2>
-
-
-      <!-- Thumbs -->
-
-      {{ range (index .Site.Data.work .Params.lang) }}
-      
-        {{- partial "components/Thumbs" . -}}
-
-      {{ end }}
-
-
-      <!-- Codepen -->
-
-      <section
-        id="codepen"
-        aria-labelledby="cp1"
-        flexr-wrap>
-
-        <svg><use xlink:href="/img/icons.svg#snippet"/></svg>
-
-        <h3 id="cp1">{{ .Params.codepen.title }}</h3>
-
-        <p>{{ .Params.codepen.copy | safeHTML }}</p>
-
-        <a
-          class="Btn --primary"
-          rel="nofollow external noopener"
-          target="_blank"
-          aria-label="Go to Codepen for snippets"
-          href="https://codepen.io/dmbdesignpdx/">
-          
-          {{- T "visit" -}}
-        
-        </a>
-
-      </section>
-
-   </section>
-
-
-   <!-- About Section -->
-
-   <section
-      id="about"
-      aria-labelledby="a1"
-      flexr-grid>
-
-      <h2 id="a1">{{ T "about" }}</h2>
-
-      {{ .Content }}
-
-
-      <!-- Skills -->
-
-      {{ range .Site.Data.skills }}
-
-        {{- partial "components/Skills" . -}}
-
-      {{ end }}
-
-
-      <!-- Contact Info -->
-
-      <address id="contact">
-
-         <h5>{{ T "contact" }}</h5>
-
-         {{ range (index .Site.Data.contact .Params.lang) }}
-
-            {{- partial "components/Contacts" . -}}
-
-         {{ end }}
-
-      </address>
-
-
-      <!-- Contact Form -->
-
-      {{- partial "components/Form" . -}}
-
-   </section>
-
-</main>
+  </main>
 
 
 {{ end }}

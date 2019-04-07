@@ -1,0 +1,77 @@
+#Work {
+  padding-top: 10vh;
+  padding-bottom: 20vh;
+
+  // Title
+  h2 {
+     width: auto;
+     margin-bottom: 1em;
+
+     @include desktop {
+        margin-left: 8%;
+     }
+  }
+
+  // Preview sections
+  section {
+     margin-bottom: 60px;
+  }
+  
+  // Preview titles
+  h3 {
+     margin-bottom: 0.8em;
+     font-size: 1.3rem;
+     grid-row: 2;
+     align-self: end;
+     line-height: 1;
+     color: brand(_darkgray);
+
+     @include phoneLan {
+        grid-column: span 3;
+        grid-row: 1 / 2;
+
+        // For second section
+        @at-root #turntable h3 {
+           text-align: right
+        }
+     }
+  }
+
+  // CTA group
+  .cta {
+     grid-row: 3;
+     align-self: start;
+
+     @include phoneLan {
+        grid-column: span 3;
+        grid-row: 2 / 3;
+
+        // For second section
+        @at-root #turntable .cta {
+           justify-self: end;
+        }
+     }
+  }
+}
+
+
+#codepen {
+  padding-top: 120px;
+  text-align: center;
+
+  svg {
+    @include size(100px);
+    display: inline-block;
+    stroke-width: 1.6;
+    fill: none;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+    stroke: brand(_darkgray);
+  }
+
+  p {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 1.2em;
+  }
+}

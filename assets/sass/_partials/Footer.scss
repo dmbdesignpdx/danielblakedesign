@@ -1,21 +1,9 @@
-/**
- *  Contents:
- *
- *  Footer Rules
- */
-
-
-
-//
-//  Footer Rules
-//
-
-#footer {
+#Footer {
    padding-top: 60px;
    padding-bottom: 90px;
    background: brand(_nearblack);
-   
-   address, p:nth-of-type(1) {
+
+   address, aside {
 
       @include phoneLan {
          grid-column: 1 / span 2
@@ -26,7 +14,7 @@
       font-size: 0.9rem;
       color: brand(_darkwhite);
       text-align: left;
-      letter-spacing: 0.2pt;
+      letter-spacing: 0.02em;
    }
 
    address {
@@ -42,7 +30,7 @@
       color: brand(_slightgray);
    }
 
-   p:nth-of-type(1) {
+   aside {
       margin-top: 30px;
 
       @include phoneLan {
@@ -50,7 +38,7 @@
       }
    }
    
-   p:nth-of-type(2) {
+   & div > p {
       margin-top: 30px;
 
       @include phoneLan {
