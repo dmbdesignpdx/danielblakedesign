@@ -1,6 +1,6 @@
 module.exports = {
   plugins: [
-    require("postcss-merge-selectors"),
+    // require("postcss-merge-selectors"),
     require("postcss-clean")({
       level: {
         2: {

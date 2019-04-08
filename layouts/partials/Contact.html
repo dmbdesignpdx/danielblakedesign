@@ -1,5 +1,5 @@
 <section
-  id="Contact"
+  class="Contact"
   aria-labelledby="c1"
   flexr-grid
 >
@@ -14,7 +14,7 @@
 
     {{ range (index .Site.Data.contact .Params.lang) }}
 
-      {{- partial "Contacts" . -}}
+      {{- partial "Contacts.html" . -}}
 
     {{ end }}
 
@@ -23,6 +23,6 @@
 
   <!-- Contact Form -->
 
-  {{- partial "Form" . -}}
+  {{- partial "Form.html" . -}}
 
 </section>

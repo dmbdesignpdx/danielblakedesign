@@ -186,18 +186,18 @@ h5::after {
   #arrow.js-fade {
     opacity: 0; }
 
-#Work {
+.Work {
   padding-top: 10vh;
   padding-bottom: 20vh; }
-  #Work h2 {
+  .Work h2 {
     width: auto;
     margin-bottom: 1em; }
     @media (min-width: 1278px) {
-      #Work h2 {
+      .Work h2 {
         margin-left: 8%; } }
-  #Work section {
+  .Work section {
     margin-bottom: 60px; }
-  #Work h3 {
+  .Work h3 {
     margin-bottom: 0.8em;
     font-size: 1.3rem;
     grid-row: 2;
@@ -205,16 +205,16 @@ h5::after {
     line-height: 1;
     color: #373546; }
     @media (min-width: 540px) {
-      #Work h3 {
+      .Work h3 {
         grid-column: span 3;
         grid-row: 1 / 2; }
         #turntable h3 {
           text-align: right; } }
-  #Work .cta {
+  .Work .cta {
     grid-row: 3;
     align-self: start; }
     @media (min-width: 540px) {
-      #Work .cta {
+      .Work .cta {
         grid-column: span 3;
         grid-row: 2 / 3; }
         #turntable .cta {
@@ -397,7 +397,7 @@ h5::after {
       margin-bottom: 0;
       grid-column-end: span 4;
       grid-row: 1 / 3; }
-      #turntable picture.thumb {
+      #turntable picture.Thumb {
         grid-column-start: 4; } }
   .Thumb::before {
     display: block;

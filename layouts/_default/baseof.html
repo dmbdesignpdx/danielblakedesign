@@ -2,7 +2,7 @@
 <html lang="{{ .Params.lang }}">
 <head>
 
-{{ partial "Head" . }}
+{{ partial "Head.html" . }}
 
 </head>
 
@@ -10,9 +10,9 @@
 
 {{ block "SITE" . }}{{ end }}
 
-{{ partial "Footer" . }}
+{{ partial "Footer.html" . }}
 
-{{ partialCached "Scripts" . }}
+{{ partialCached "Scripts.html" . }}
 
 </body>
 </html>
