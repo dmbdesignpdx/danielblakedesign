@@ -90,7 +90,7 @@ body, h1, p {
 }
 
 h1,
-#Nav a:first-child {
+.Nav a:first-child {
   font-family: Montserrat, sans-serif;
   font-weight: 900;
   line-height: 1.2;
@@ -247,7 +247,7 @@ p {
 // Navigation
 //
 
-#Nav {
+.Nav {
   width: 100%;
   position: absolute;
   background: brand(_offwhite);
@@ -338,7 +338,7 @@ p {
 
 @media (min-width: 540px) {
    
-  #Nav {
+  .Nav {
     
     a:first-child span {
       display: block;
@@ -372,7 +372,7 @@ p {
     font-size: 2.6rem;
   }
   
-  #Nav {
+  .Nav {
     height: 90px;
     
     a:first-child {
@@ -429,7 +429,7 @@ p {
     font-size: 1.38em;
   }
   
-  #Nav {
+  .Nav {
     height: 150px;
   }
    

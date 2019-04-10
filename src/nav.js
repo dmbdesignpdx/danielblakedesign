@@ -7,7 +7,7 @@ import $ from './plugins/Query'
  *
  */
 const navScroll = () => {
-  const NAV = $(`#Nav`)
+  const NAV = $(`.Nav`)
   const navHeight = NAV.clientHeight
   let original = window.pageYOffset
   let isShowing = NAV.classList.contains(`js-show`)
