@@ -1,0 +1,12 @@
+<!-- Animate Hero Text -->
+
+<script>!function(){function e(){var e=document.querySelectorAll("h1 span");document.querySelector("body > header").classList.remove("js-intro"),e.forEach(function(e){e.classList.add("js-underline")})}"fonts"in document?document.fonts.ready.then(e):addEventListener("DOMContentLoaded",e,{once:true})}()</script>
+
+
+<!-- Master CSS (Production) -->
+{{ if eq (getenv "HUGO_ENV") "production" }}
+
+{{ $master := resources.Get "css/master.scss" | toCSS | postCSS }}
+<style>{{ $master.Content | safeCSS }}</style>
+
+{{ end }}

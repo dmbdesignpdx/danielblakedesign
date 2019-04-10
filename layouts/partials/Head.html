@@ -1,0 +1,195 @@
+<!-- 
+   Contents:
+
+   - Variables
+   - Initial
+   - Prebrowsing Hints
+   - HTTP Headers
+   - General
+   - Favicons
+   - Summary Cards
+   - Critical CSS
+   - Structured Data
+   - Google Analytics
+   - Google Font
+   - Master CSS
+   - Main Script
+   - Generator
+ -->
+
+
+<!-- Variables -->
+
+{{ $phone := replace .Site.Author.phone "-" "" }}
+
+{{ if not (in .Site.Author.phone "+1") }}
+{{ $phone = print "+1" $phone }}
+{{ end }}
+
+
+<!-- Initial -->
+
+<meta charset="utf-8">
+
+
+{{ if eq (getenv "HUGO_ENV") "production" }}
+
+<!-- Prebrowsing Hints -->
+
+<link rel="preload" as="font" href="/fonts/montserrat-900.woff" type="font/woff" crossorigin>
+
+<link rel="preconnect" href="https://www.googletagmanager.com/">
+
+<link rel="preconnect" href="https://www.google-analytics.com/">
+
+
+<!-- HTTP Headers -->
+
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+<meta http-equiv="cache-control" content="public,max-age=5256000">
+
+{{ end }}
+
+
+<!-- General -->
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<title>{{ .Title }}</title>
+
+<meta name="description" content="{{ .Description }}">
+
+<meta name="author" content="{{ .Site.Author.name }}">
+
+<link rel="canonical" href="{{ .Site.BaseURL }}">
+
+<meta name="format-detection" content="telephone=no">
+
+<meta name="format-detection" content="email=no">
+
+<meta name="theme-color" content="{{ .Site.Params.theme }}">
+
+
+<!-- Favicons -->
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="icon" type="image/png" href="/img/favicon-96x96.png" sizes="96x96">
+
+<link rel="icon" type="image/png" href="/img/favicon-192x192.png" sizes="192x192">
+
+<link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
+
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Params.theme }}">
+
+<link rel="manifest" href="/manifest.json">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+
+
+<!-- Summary Cards -->
+
+<meta name="twitter:card" content="summary_large_image">
+
+<meta name="twitter:title" content="{{ .Title }}">
+
+<meta name="twitter:description" content="{{ .Description }}">
+
+<meta name="twitter:image" content="{{ .Site.Params.image }}">
+
+<meta name="twitter:image:alt" content="{{ .Description }}">
+
+<meta name="twitter:url" content="{{ absURL .URL }}">
+
+<meta property="og:type" content="website">
+
+<meta property="og:title" content="{{ .Title }}">
+
+<meta property="og:site_name" content="{{ .Site.Title }}">
+
+<meta property="og:description" content="{{ .Description }}">
+
+<meta property="og:image" content="{{ .Site.Params.image }}">
+
+<meta property="og:image:width" content="1200">
+
+<meta property="og:image:height" content="628">
+
+<meta property="og:image:type" content="{{ .Site.Params.type }}">
+
+<meta property="og:url" content="{{ absURL .URL }}">
+
+
+<!-- Critical Styles -->
+
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
+{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ $critical = $critical | postCSS }}
+{{ end }}
+
+<style>{{ $critical.Content | safeCSS }}</style>
+
+
+<!-- Structured Data (Schema) -->
+
+{{ if eq (getenv "HUGO_ENV") "production" }}
+
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org",
+  "@type":"WebSite",
+  "name":"{{ .Title }}",
+  "description":"{{ .Description }}",
+  "url":"{{ .URL | absURL }}",
+  "image":"{{ .Site.Params.image }}",
+  "creator":{
+    "@type":"Person",
+    "name":"{{ .Site.Author.name }}",
+    "description":"{{ .Site.Author.title }}",
+    "address":"{{ .Site.Author.city }}",
+    "email":"{{ .Site.Author.email }}",
+    "telephone":"{{ $phone }}"
+  },
+  "offers":{
+    "@type":"Offer",
+    "itemOffered":{
+      "@type":"Service",
+      "serviceType":"Website design and development"
+    }
+  },
+  "sameAs":[
+    "{{ .Site.Author.linkedin }}",
+    "{{ .Site.Author.github }}",
+    "{{ .Site.Author.codepen }}"
+  ]
+}
+</script>
+
+
+<!-- Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-124883259-1"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1')</script>
+
+{{ end }}
+
+
+<!-- Master CSS (Development) -->
+
+{{ if ne (getenv "HUGO_ENV") "production" }}
+
+{{ $master := resources.Get "css/master.scss" | toCSS }}
+<link rel="stylesheet" href="{{ $master.RelPermalink }}">
+
+{{ end }}
+
+
+<!-- Main Script -->
+
+<script async src="/dist/main.min.js"></script>
+
+
+<!-- Generator -->
+
+<meta name="generator" content="HUGO">
