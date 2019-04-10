@@ -4,8 +4,8 @@
 
 [context.production]
   HUGO_VERSION = "0.52"
-  NODE_VERSION = "8.15.0"
+  NODE_VERSION = "10.15.3"
 
-[context.netlify]
+[context.nightly]
   HUGO_VERSION = "0.54.0"
   NODE_VERSION = "11.13.0"
