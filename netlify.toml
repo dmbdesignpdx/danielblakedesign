@@ -1,0 +1,11 @@
+[build]
+  publish = "public/"
+  command = "env HUGO_ENV=production hugo --minify"
+
+[context.production]
+  HUGO_VERSION = "0.52"
+  NODE_VERSION = "8.15.0"
+
+[context.netlify]
+  HUGO_VERSION = "0.54.0"
+  NODE_VERSION = "11.13.0"
