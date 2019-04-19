@@ -66,6 +66,7 @@ svg {
   display: block; }
 
 a {
+  -webkit-tap-highlight-color: transparent;
   text-decoration: none;
   color: inherit;
   font-weight: 700; }
@@ -163,25 +164,20 @@ p {
   background: #f4f4f6;
   height: 56px;
   top: 0;
-  z-index: 99; }
+  z-index: 99;
+  contain: strict; }
   .Nav div {
     height: 100%;
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
     align-items: center; }
   .Nav a {
-    -webkit-tap-highlight-color: transparent;
-    display: block;
-    font-size: .8rem;
-    letter-spacing: .03em; }
-  .Nav a:first-child {
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em; }
+  .Nav a:first-child {
     align-items: center;
-    margin-bottom: 1px;
-    letter-spacing: -.02em; }
+    margin: 0 auto 1px 0;
+    letter-spacing: -0.02em; }
     .Nav a:first-child span {
       display: none; }
     .Nav a:first-child svg {
@@ -190,9 +186,7 @@ p {
       margin: 1px .4em auto 0; }
   .Nav a:not(:first-child) {
     padding: 16px 0; }
-  .Nav a:nth-child(2) {
-    margin-left: auto; }
-  .Nav a:last-child {
+  .Nav a:nth-child(1n+2) {
     margin-left: 1.6em; }
 
 #Hero {

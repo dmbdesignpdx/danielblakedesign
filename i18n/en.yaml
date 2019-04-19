@@ -12,6 +12,9 @@
   id: aria_about
   translation: Go to Work Section
 - 
+  id: aria_contact
+  translation: Go to Contact Section
+- 
   id: aria_home
   translation: Daniel Blake home page
 

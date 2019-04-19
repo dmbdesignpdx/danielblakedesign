@@ -101,6 +101,7 @@ svg {
 }
 
 a {
+  @include tap-highlight-color(transparent);
   text-decoration: none;
   color: inherit;
   font-weight: 700;
@@ -254,29 +255,24 @@ p {
   height: 56px;
   top: 0;
   z-index: 99;
-   
+  contain: strict;
+
   div {
     height: 100%;
-    display: -webkit-flex;
     display: flex;
-    -webkit-align-items: center;
     align-items: center;
   }
   
   a {
-    @include tap-highlight-color(transparent);
-    display: block;
-    font-size: .8rem;
-    letter-spacing: .03em;
+    display: flex;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
   }
   
   a:first-child {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-align-items: center;
     align-items: center;
-    margin-bottom: 1px;
-    letter-spacing: -.02em;
+    margin: 0 auto 1px 0;
+    letter-spacing: -0.02em;
     
     span {
       display: none;
@@ -293,11 +289,7 @@ p {
     padding: 16px 0;
   }
   
-  a:nth-child(2) {
-    margin-left: auto;
-  }
-  
-  a:last-child {
+  a:nth-child(1n+2) {
     margin-left: 1.6em;
   }
 }
