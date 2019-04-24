@@ -227,7 +227,7 @@ p {
     height: 90px; }
     .Nav a:first-child {
       font-size: 1.13rem; }
-    .Nav a:last-child {
+    .Nav a:nth-child(1n+2) {
       margin-left: 2em; } }
 
 @media (min-width: 810px) and (max-height: 416px) {

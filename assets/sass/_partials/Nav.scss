@@ -1,61 +1,60 @@
 #nav {
-
-   a:first-child {
-
-      &:active svg,
-      &:focus svg {
-         
-         * {
-            fill: brand();
-         }
+  
+  a:first-child {
+    
+    &:hover svg {
+        
+      * {
+        
+        @include desktop {
+          fill: brand();
+        }
       }
-
-      @include desktop {
-
-         &:hover svg {
-         
-            * {
-               fill: brand();
-            }
-         }        
+    }
+    
+    &:active svg,
+    &:focus svg {
       
+      * {
+        fill: brand();
       }
-   }
+    }
+  }
+  
+  a {
+    
+    &:active,
+    &:focus {
+      color: brand();
+    }
 
-   a {
-
-      &:active,
-      &:focus {
-         color: brand();
-      }
-
+    &:hover {
+      
       @include desktop {
-
-         &:hover {
-            color: brand();
-         }
+        color: brand();
       }
-   }
-   
-   &.js-show {
-      @include transform(translateY(calc(100% + 3px)));
-   }
-   
-   &.js-time {
-      @include transition(transform 0.4s);
-   }
-   
-   &.js-fixed {
-      @include box-shadow(0 1px 3px ts(0.3));
-      position: fixed;
-      top: -59px;
+    }
+  }
 
-      @include tabletPor {
-         top: -93px
-      }
+  &.js-show {
+    @include transform(translateY(calc(100% + 3px)));
+  }
 
-      @include desktopLG {
-         top: -153px
-      }
-   }
+  &.js-time {
+    @include transition(transform 0.4s);
+  }
+  
+  &.js-fixed {
+    @include box-shadow(0 1px 3px ts(0.3));
+    position: fixed;
+    top: -59px;
+    
+    @include tabletPor {
+      top: -93px
+    }
+    
+    @include desktopLG {
+      top: -153px
+    }
+  }
 }

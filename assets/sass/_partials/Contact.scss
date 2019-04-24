@@ -1,12 +1,12 @@
 .Contact {
   padding-top: 10vh;
   padding-bottom: 10vh;
-
+  
   h2 {
     margin-bottom: 1.5em;
     justify-self: start;
   }
-
+  
   address {
     @include display(flex);
     @include flex-direction(column);
@@ -14,46 +14,46 @@
     margin-bottom: 60px;
     
     @include phoneLan {
-       grid-column: 1 / span 3
+      grid-column: 1 / span 3;
     }
- 
+    
     // Links
     a {
-       @include display(inline-flex);
-       @include align-items(center);
-       margin-bottom: 1em;
-       color: brand(_darkgray);
- 
-       &:active, &:focus {
-          color: brand()
-       }
- 
-       @include desktop {
- 
-          &:hover {
-             color: brand()
-          }
-       }
+      @include display(inline-flex);
+      @include align-items(center);
+      margin-bottom: 1em;
+      color: brand(_darkgray);
+
+      &:hover {
+        
+        @include desktop {
+          color: brand();
+        }
+      }
+
+      &:active, &:focus {
+        color: brand();
+      }
     }
- 
+    
     // Icons
     svg {
-       @include size(2em);
-       margin: auto 0.7em auto 0;
-       stroke: brand(_darkgray);
-       stroke-width: 2.6;
-       fill: none;
- 
-       @at-root #contact a:active svg, #contact a:focus svg {
+      @include size(2em);
+      margin: auto 0.7em auto 0;
+      stroke: brand(_darkgray);
+      stroke-width: 2.6;
+      fill: none;
+      
+      @at-root #contact a:active svg, #contact a:focus svg {
+        stroke: brand();
+      }
+      
+      @at-root #contact a:hover svg {
+        
+        @include desktop {
           stroke: brand();
-       }
- 
-       @at-root #contact a:hover svg {
-          
-          @include desktop {
-             stroke: brand();
-          }
-       }
+        }
+      }
     }
   }
 }

@@ -14,7 +14,7 @@
 
 *::before,
 *::after {
-   box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 ul,
@@ -30,78 +30,78 @@ legend,
 input,
 textarea,
 button {
-   padding: 0;
-   margin: 0;
-   border: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
 img,
 li::before {
-   font-size: 0;
+  font-size: 0;
 }
 
 input,
 textarea,
 button {
-   @include appearance(none);
+  @include appearance(none);
 }
 
 ul {
-   list-style: none;
+  list-style: none;
 }
 
 // Needed for VoiceOver in Safari
 li::before {
-   display: block;
-   content: "\200C";
+  display: block;
+  content: "\200C";
 }
 
 abbr {
-   text-decoration: none;
-   color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 button,
 textarea {
-   font: inherit;
+  font: inherit;
 }
 
 h2,
 h5 {
-   display: inline-block;
-   height: 1em;
-   width: auto;
-   
-   &::after {
-      content: "";
-      width: 100%;
-      height: 4px;
-      background: brand(_main);
-      top: -.1em;
-      z-index: -1;
-      border-radius: 2px;
-   }
+  display: inline-block;
+  height: 1em;
+  width: auto;
+  
+  &::after {
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: brand(_main);
+    top: -.1em;
+    z-index: -1;
+    border-radius: 2px;
+  }
 }
 
 h2 {
-   font-size: 2rem;
+  font-size: 2rem;
 }
 
 a:focus,
 a:active {
-   outline: 0;
+  outline: 0;
 }
 
 a:hover {
-   cursor: pointer;
+  cursor: pointer;
 }
 
 address {
-   font-style: normal;
+  font-style: normal;
 }
 
 main {
-   padding: 10vh 0 20vh;
+  padding: 10vh 0 20vh;
 }
 
 
@@ -113,7 +113,7 @@ main {
 main,
 img,
 footer {
-   width: 100%;
+  width: 100%;
 }
 
 img,
@@ -121,7 +121,7 @@ source,
 picture,
 h2::after,
 h5::after {
-   display: block;
+  display: block;
 }
 
 h2,
@@ -129,16 +129,25 @@ h3,
 h4,
 h5,
 legend {
-   font-family: Montserrat, sans-serif;
-   font-weight: 900;
-   letter-spacing: -.04em;
-   word-spacing: .03em;
-   text-rendering: geometricPrecision;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  word-spacing: 0.03em;
+  text-rendering: geometricPrecision;
 }
 
 section,
 h2::after,
 h5::after {
-   position: relative
+  position: relative;
+}
+
+input,
+button {
+  @include user-select(none);
+}
+
+textarea {
+  line-height: 1.4;
 }
 

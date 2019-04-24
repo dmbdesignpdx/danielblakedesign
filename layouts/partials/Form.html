@@ -14,7 +14,7 @@
     <!-- Honeypot -->
 
     <label
-      class="honey"
+      class="Honey"
       aria-hidden="true">
 
       <span>
@@ -30,31 +30,55 @@
     
     </label>
 
+
     <!-- Work -->
 
-    <label class="workable">
+    <label class="Radio">
+
       <input
-      type="checkbox"
-      name="hire"
-      aria-labelledby="wa1"
-      disabled
+        class="RadioBtn"
+        type="radio"
+        name="workquest"
+        aria-labelledby="wa1"
+        disabled
+        aria-disabled="true"
       >
-      <span id="wa1">Freelance</span>
+
+      <span
+        id="wa1"
+        aria-hidden="true"  
+      >
+ 
+        Freelance
+
+      </span>
+
     </label>
 
-    <label class="workable">
+    <label class="Radio --buffer">
+
       <input
-      type="checkbox"
-      name="general"
-      aria-labelledby="wa2"
+        class="RadioBtn"
+        type="radio"
+        name="workquest"
+        aria-labelledby="wa2"
       >
-      <span id="wa2">General Inquiry</span>
+
+      <span
+        id="wa2"
+        aria-hidden="true"  
+      >
+
+        General Inquiry
+
+      </span>
+
     </label>
 
 
     <!-- Name -->
 
-    <label>
+    <label class="Input">
 
       <span
         id="c1"
@@ -65,6 +89,7 @@
       </span>
 
       <input
+        class="InputField"
         name="name"
         type="text"
         autocomplete="name"
@@ -79,7 +104,7 @@
 
     <!-- Email -->
 
-    <label>
+    <label class="Input">
 
       <span
         id="c2"
@@ -90,6 +115,7 @@
       </span>
 
       <input
+        class="InputField"
         name="email"
         type="email"
         autocomplete="email"
@@ -104,7 +130,7 @@
 
     <!-- Message -->
 
-    <label>
+    <label class="Input">
 
       <span
         id="c3"
@@ -115,6 +141,7 @@
       </span>
 
       <textarea 
+        class="InputField"
         name="message"
         rows="10"
         aria-labelledby="c3"

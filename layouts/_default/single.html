@@ -41,7 +41,7 @@
       {{ $xl := dict "size" "xl" "width" 1920 }}
       {{ $fl := dict "size" "fl" "width" 2880 }}
       {{ $sizes := dict "a" $xs "b" $sm "c" $md "d" $lg "e" $xl "f" $fl }}
-      {{ $project := replace .URL "/" "" }}
+      {{ $project := replace .RelPermalink "/" "" }}
       
       {{ range $num := seq 3 }}
 

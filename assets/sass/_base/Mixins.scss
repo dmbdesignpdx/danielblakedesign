@@ -3,36 +3,36 @@
  */
 
 $gutter: (
-   p: 18px,
-   t: 24px,
-   d: 30px
+  p: 18px,
+  t: 24px,
+  d: 30px
 );
 
 @function gutter($arg) {
-   @return map-get($gutter,$arg);
+  @return map-get($gutter,$arg);
 }
 
 // Gutter steps
 @mixin gutter($args...) {
-   @for $i from 1 through 3 {
-      @if $i == 1 {
-         @each $arg in $args {
-            #{$arg}: 16px;
-         }
-      } @else if $i == 2 {
-         @include tabletPor {
-            @each $arg in $args {
-               #{$arg}: 24px;
-            }
-         }
-      } @else {
-         @include desktop {
-            @each $arg in $args {
-               #{$arg}: 30px;
-            }
-         }
+  @for $i from 1 through 3 {
+    @if $i == 1 {
+      @each $arg in $args {
+        #{$arg}: 16px;
       }
-   }
+    } @else if $i == 2 {
+      @include tabletPor {
+        @each $arg in $args {
+          #{$arg}: 24px;
+        }
+      }
+    } @else {
+      @include desktop {
+        @each $arg in $args {
+          #{$arg}: 30px;
+        }
+      }
+    }
+  }
 }
 
 
@@ -41,31 +41,31 @@ $gutter: (
  */
 
 @mixin phoneLan {
-   @media (min-width:540px) {
-      @content;
-   }
+  @media (min-width:540px) {
+    @content;
+  }
 }
 
 @mixin tabletPor {
-   @media (min-width:766px) {
-      @content;
-   }
+  @media (min-width:766px) {
+    @content;
+  }
 }
 
 @mixin tabletLan {
-   @media (min-width:1022px) {
-      @content;
-   }
+  @media (min-width:1022px) {
+    @content;
+  }
 }
 
 @mixin desktop {
-   @media (min-width:1278px) {
-      @content;
-   }
+  @media (min-width:1278px) {
+    @content;
+  }
 }
 
 @mixin desktopLG {
-   @media (min-width:1680px) {
-      @content;
-   }
+  @media (min-width:1680px) {
+    @content;
+  }
 }

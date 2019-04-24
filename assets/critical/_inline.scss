@@ -24,11 +24,11 @@
   font-weight: 900;
   font-display: block;
   src:
-    local('Montserrat Black'),
-    local('Montserrat-Black'),
-    url('../fonts/montserrat-90.woff') format('woff');
- }
- 
+  local('Montserrat Black'),
+  local('Montserrat-Black'),
+  url('../fonts/montserrat-90.woff') format('woff');
+}
+
 
 
 //
@@ -36,9 +36,9 @@
 //
 
 @import
-  "../sass/_base/Vars",
-  "../sass/_base/Mixins",
-  "../sass/_vendor/turntable";
+"../sass/_base/Vars",
+"../sass/_base/Mixins",
+"../sass/_vendor/turntable";
 
 
 
@@ -114,7 +114,7 @@ h1 {
   padding-top: 27vh;
   margin-bottom: .3em;
   font-size: 2.4rem;
-   
+  
   // Underlined words
   span {
     display: inline-block;
@@ -146,9 +146,9 @@ h1 {
       }
     }
   }
-   
-
-
+  
+  
+  
   // Sibling h1
   .sib & {
     padding-top: 38vh;
@@ -165,7 +165,7 @@ p {
 }
 
 #Hero.js-intro {
-
+  
   h1, p {
     transform: translateX(-50%);
     opacity: 0;
@@ -256,7 +256,7 @@ p {
   top: 0;
   z-index: 99;
   contain: strict;
-
+  
   div {
     height: 100%;
     display: flex;
@@ -329,7 +329,7 @@ p {
  */
 
 @media (min-width: 540px) {
-   
+  
   .Nav {
     
     a:first-child span {
@@ -344,7 +344,7 @@ p {
       width: 25rem;
     }
   }
-   
+  
 }
 
 
@@ -353,7 +353,7 @@ p {
  */
 
 @media (min-width:766px) {
-   
+  
   [flex-wrap] {
     padding-right: 24px;
     padding-left: 24px;
@@ -371,11 +371,11 @@ p {
       font-size: 1.13rem;
     }
     
-    a:last-child {
+    a:nth-child(1n+2) {
       margin-left: 2em;
     }
   }
-   
+
 }
 
 
@@ -396,18 +396,18 @@ p {
  */
 
 @media (min-width:1278px) {
-   
+
   [flexr-wrap] {
     width: 84%;
     max-width: 1436px;
     padding-right: 30px;
     padding-left: 30px;
   }
-  
+
   html {
     font-size: 1.25em;
   }
-   
+
 }
 
 
@@ -416,13 +416,13 @@ p {
  */
 
 @media (min-width:1680px) {
-  
+
   html {
     font-size: 1.38em;
   }
-  
+
   .Nav {
     height: 150px;
   }
-   
+
 }

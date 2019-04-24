@@ -1,82 +1,70 @@
-/**
- *  Contents:
- *
- *  Sibling Rules
- */
-
-
-
-//
-//  Sibling Rules
-//
-
 .sib {
-
-   h1 {
-
-      span {
-         
-         &::after {
-            
-            // Animation delay override for Siblings
-            @at-root .sib h1 span:first-child::after {
-               transition: width 0.4s 0.4s;
-            }
-
-         }
-      }
+  
+  h1 {
+    
+    span {
       
-      // Sibling h1
-      .sib & {
-         padding-top: 38vh;
-         line-height: 1.2
+      &::after {
+        
+        // Animation delay override for Siblings
+        @at-root .sib h1 span:first-child::after {
+          transition: width 0.4s 0.4s;
+        }
+        
       }
-   }
-
-   picture {
-      margin-bottom: 18px;
-
-      @include tabletPor {
-         margin-bottom: 60px;
+    }
+    
+    // Sibling h1
+    .sib & {
+      padding-top: 38vh;
+      line-height: 1.2;
+    }
+  }
+  
+  picture {
+    margin-bottom: 18px;
+    
+    @include tabletPor {
+      margin-bottom: 60px;
+    }
+  }
+  
+  img {
+    border-radius: 4px;
+    border: 1px solid #{brand(_darkwhite)};
+  }
+  
+  li {
+    position: relative;
+  }
+  
+  section svg {
+    @include transition(0.3s);
+    @include size(30px);
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    display: block;
+    border-radius: 50%;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+    background: #111;
+    
+    @include desktop {
+      @include size(90px);
+      opacity: 0;
+      
+      @at-root .sib section a:hover svg {
+        opacity: 0.95;
       }
-   }
-
-   img {
-      border-radius: 4px;
-      border: 1px solid #{brand(_darkwhite)};
-   }
-
-   li {
-      position: relative
-   }
-
-   section svg {
-      @include transition(0.3s);
-      @include size(30px);
-      position: absolute;
-      left: 18px;
-      bottom: 18px;
-      display: block;
-      border-radius: 50%;
-      stroke: white;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
-      background: #111;
-
-      @include desktop {
-         @include size(90px);
-         opacity: 0;
-
-         @at-root .sib section a:hover svg {
-            opacity: 0.95
-         }
-      }
-   }
-
-   main p {
-      padding-top: 60px;
-      padding-bottom: 30px
-   }
+    }
+  }
+  
+  main p {
+    padding-top: 60px;
+    padding-bottom: 30px;
+  }
 }

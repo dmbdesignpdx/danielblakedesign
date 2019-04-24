@@ -1,59 +1,59 @@
 .Footer {
-   padding-top: 60px;
-   padding-bottom: 90px;
-   background: brand(_nearblack);
-   contain: content;
-
-   address, aside {
-
-      @include phoneLan {
-         grid-column: 1 / span 2
-      }
-   }
-
-   p, small, address {
-      font-size: 0.9rem;
-      color: brand(_darkwhite);
-      text-align: left;
-      letter-spacing: 0.02em;
-   }
-
-   address {
-      font-weight: normal;
-      line-height: 1.5;
-
-      @include phoneLan {
-         grid-row: 1 / 1
-      }
-   }
-   
-   small {
-      color: brand(_slightgray);
-   }
-
-   aside {
-      margin-top: 30px;
-
-      @include phoneLan {
-         grid-row: 2 / 2
-      }
-   }
-   
-   & div > p {
-      margin-top: 30px;
-
-      @include phoneLan {
-         margin-top: 0;
-         grid-column: 5 / span 3;
-         grid-row: 1 / 2;		
-      }
-   }
-
-   a {
-      color: hsl(342,84%,56%);
-
-      &:hover {
-         text-decoration: underline
-      }
-   }
+  padding-top: 60px;
+  padding-bottom: 90px;
+  background: brand(_nearblack);
+  contain: content;
+  
+  address, aside {
+    
+    @include phoneLan {
+      grid-column: 1 / span 2;
+    }
+  }
+  
+  p, small, address {
+    font-size: 0.9rem;
+    color: brand(_darkwhite);
+    text-align: left;
+    letter-spacing: 0.02em;
+  }
+  
+  address {
+    font-weight: normal;
+    line-height: 1.5;
+    
+    @include phoneLan {
+      grid-row: 1 / 1;
+    }
+  }
+  
+  small {
+    color: brand(_slightgray);
+  }
+  
+  aside {
+    margin-top: 30px;
+    
+    @include phoneLan {
+      grid-row: 2 / 2;
+    }
+  }
+  
+  & div > p {
+    margin-top: 30px;
+    
+    @include phoneLan {
+      margin-top: 0;
+      grid-column: 5 / span 3;
+      grid-row: 1 / 2;		
+    }
+  }
+  
+  a {
+    color: hsl(342,84%,56%);
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
