@@ -126,6 +126,10 @@
     padding-left: 0.6em;
     cursor: pointer;
 
+    @supports (-moz-orient:vertical) {
+      margin-top: 2px;
+    }
+
     // Hover
     @at-root
     .Radio:hover span {

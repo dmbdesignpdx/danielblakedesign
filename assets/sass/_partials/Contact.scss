@@ -8,9 +8,9 @@
   }
   
   address {
-    @include display(flex);
-    @include flex-direction(column);
-    @include align-items(flex-start);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     margin-bottom: 60px;
     
     @include phoneLan {

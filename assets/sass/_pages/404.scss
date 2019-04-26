@@ -1,7 +1,7 @@
 @import "../_base/Vars";
 
 @function ts($arg) {
-  @return rgba(0,0,30,#{$arg});
+  @return unquote("rgba(0,0,30,#{$arg})");
 }
 
 @-ms-viewport {
