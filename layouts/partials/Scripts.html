@@ -5,8 +5,6 @@
 
 <!-- Master CSS (Production) -->
 {{ if eq (getenv "HUGO_ENV") "production" }}
-
-{{ $master := resources.Get "css/master.scss" | toCSS | postCSS }}
+{{ $master := resources.Get "css/master.scss" | toCSS | postCSS | fingerprint }}
 <style>{{ $master.Content | safeCSS }}</style>
-
 {{ end }}

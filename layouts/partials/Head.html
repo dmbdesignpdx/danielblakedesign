@@ -123,11 +123,7 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
-{{ if eq (getenv "HUGO_ENV") "production" }}
-{{ $critical = $critical | postCSS }}
-{{ end }}
-
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS | postCSS | fingerprint }}
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
