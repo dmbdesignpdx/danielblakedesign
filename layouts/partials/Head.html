@@ -123,7 +123,7 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS | postCSS | fingerprint }}
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify | fingerprint }}
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
