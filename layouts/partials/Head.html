@@ -12,7 +12,6 @@
    - Structured Data
    - Google Analytics
    - Google Font
-   - Master CSS
    - Main Script
    - Generator
  -->
@@ -123,7 +122,10 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS | minify | fingerprint }}
+{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
+{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ $critical = $critical | minify }}
+{{ end }}
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
@@ -171,19 +173,16 @@
 {{ end }}
 
 
-<!-- Master CSS (Development) -->
-
-{{ if ne (getenv "HUGO_ENV") "production" }}
-
-{{ $master := resources.Get "css/master.scss" | toCSS }}
-<link rel="stylesheet" href="{{ $master.RelPermalink }}">
-
-{{ end }}
-
-
 <!-- Main Script -->
 
-<script async src="/dist/main.min.js"></script>
+{{ $scripts := resources.Get "dist/main.min.js" | fingerprint }}
+<script
+  async
+  src="{{ $scripts.RelPermalink }}"
+  integrity="{{ $scripts.Data.Integrity }}"
+  crossorigin="anonymous"
+  >
+</script>
 
 
 <!-- Generator -->

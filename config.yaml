@@ -41,3 +41,7 @@ disableKinds:
   - RSS
   - robotsTXT
 enableEmoji: true
+
+caches:
+  assets:
+    max-age: 0

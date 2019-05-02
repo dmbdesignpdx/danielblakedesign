@@ -6,7 +6,7 @@ module.exports = {
   },
   output: {
     filename: "[name].min.js",
-    path: path.join(__dirname, "static/dist"),
+    path: path.join(__dirname, "assets/dist"),
   },
   module: {
     rules: [
