@@ -40,8 +40,8 @@
         type="radio"
         name="workquest"
         aria-labelledby="wa1"
-        disabled
         aria-disabled="true"
+        disabled
       >
 
       <span
@@ -49,7 +49,7 @@
         aria-hidden="true"  
       >
  
-        Freelance
+        {{ T "freelance" }}
 
       </span>
 
@@ -69,7 +69,7 @@
         aria-hidden="true"  
       >
 
-        General Inquiry
+        {{ T "general" }}
 
       </span>
 
@@ -146,7 +146,8 @@
         rows="10"
         aria-labelledby="c3"
         aria-required="true"
-        required></textarea>
+        required>
+      </textarea>
 
     </label>
 
@@ -156,7 +157,8 @@
     <button
       name="send"
       class="Btn --primary"
-      type="submit">
+      type="submit"
+    >
 
       {{ T "send" }}
 

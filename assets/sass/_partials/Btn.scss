@@ -25,17 +25,18 @@
 //
 
 .Btn.--primary {
-  @include box-shadow(0 1px 2px ts(0.35));
+  box-shadow: 0 1px 2px ts(0.35);
   background: brand();
   color: hsl(250,12%,98%);
 
   &:focus {
-     @include box-shadow(0 2px 5px ts(0.35));
+     box-shadow: 0 2px 5px ts(0.35);
      background: value(brand(), 5);
   }
 
   &:active {
-     @include box-shadow(0 1px 1px ts(0.35));
+     box-shadow: 0 1px 1px ts(0.35);
+     transform: scale(0.96);
   }
 
   &:disabled {
@@ -46,7 +47,7 @@
   &:hover {
 
     @include desktop {
-      @include box-shadow(0 2px 5px ts(0.35));
+      box-shadow: 0 2px 5px ts(0.35);
       background: value(brand(), 5);
     }
   }
@@ -57,21 +58,22 @@
 //
 
 .Btn.--secondary {
-  @include box-shadow(0 1px 2px ts(0.2));
+  box-shadow: 0 1px 2px ts(0.2);
   background: brand(_darkwhite);
   margin-left: 1em;
   
   &:focus {
-     @include box-shadow(0 2px 5px ts(0.2));
+     box-shadow: 0 2px 5px ts(0.2);
      background: value(brand(_darkwhite),1);
   }
 
   &:active {
-     @include box-shadow(0 1px 1px ts(0.2));
+     box-shadow: 0 1px 1px ts(0.2);
+     transform: scale(0.96);
   }
 
   &:hover {
-    @include box-shadow(0 2px 5px ts(0.2));
+    box-shadow: 0 2px 5px ts(0.2);
     background: value(brand(_darkwhite),1);
   }
 }

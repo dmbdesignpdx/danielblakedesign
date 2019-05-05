@@ -35,7 +35,7 @@
 
 <!-- Prebrowsing Hints -->
 
-<link rel="preload" as="font" href="/fonts/montserrat-900.woff" type="font/woff" crossorigin>
+<link rel="preload" as="font" href="/fonts/montserrat-900.woff" type="font/woff" crossorigin="anonymous">
 
 <link rel="preconnect" href="https://www.googletagmanager.com/">
 
@@ -175,7 +175,11 @@
 
 <!-- Main Script -->
 
-{{ $scripts := resources.Get "dist/main.min.js" | fingerprint }}
+{{ $scripts := resources.Get "dist/main.min.js" }}
+{{ if ne (getenv "HUGO_ENV") "production" }}
+<script async src="{{ $scripts.RelPermalink }}"></script>
+{{ else }}
+{{ $scripts = $scripts | fingerprint }}
 <script
   async
   src="{{ $scripts.RelPermalink }}"
@@ -183,6 +187,7 @@
   crossorigin="anonymous"
   >
 </script>
+{{ end }}
 
 
 <!-- Generator -->

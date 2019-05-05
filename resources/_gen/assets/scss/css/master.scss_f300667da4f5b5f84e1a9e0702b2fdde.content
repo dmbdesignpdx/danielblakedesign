@@ -322,8 +322,11 @@ textarea {
       @media (min-width: 1278px) {
         .Contact address a:hover {
           color: #e82c61; } }
-      .Contact address a:active, .Contact address a:focus {
+      .Contact address a:focus {
         color: #e82c61; }
+      .Contact address a:active {
+        transform: scale(0.96);
+        transform-origin: 0 50%; }
     .Contact address svg {
       width: 2em;
       height: 2em;
@@ -331,7 +334,7 @@ textarea {
       stroke: #373546;
       stroke-width: 2.6;
       fill: none; }
-      #contact a:active svg, #contact a:focus svg {
+      #contact a:focus svg {
         stroke: #e82c61; }
       @media (min-width: 1278px) {
         #contact a:hover svg {
@@ -385,7 +388,6 @@ textarea {
   @media (min-width: 1278px) {
     .Input:hover span {
       color: #bc2fbc; } }
-  .InputField:active span,
   .InputField:focus span {
     color: #bc2fbc; }
 
@@ -401,7 +403,7 @@ textarea {
   @media (min-width: 1278px) {
     .Input:hover .InputField {
       box-shadow: 0 3px 8px rgba(0,0,30,0.15); } }
-  .InputField:focus, .InputField:active {
+  .InputField:focus {
     box-shadow: 0 3px 8px rgba(0,0,30,0.15); }
   .js-sub .InputField:invalid {
     border-color: #F30; }
@@ -413,6 +415,9 @@ textarea {
   margin-bottom: 15px; }
   .Radio.--buffer {
     margin-bottom: 40px; }
+  .Radio:active {
+    transform: scale(0.98);
+    transform-origin: 0 50%; }
   .Radio span {
     padding-left: 0.6em;
     cursor: pointer; }
@@ -422,7 +427,6 @@ textarea {
     @media (min-width: 1278px) {
       .Radio:hover span {
         color: #bc2fbc; } }
-    .Radio:active span,
     .Radio:focus span {
       color: #bc2fbc; }
     .RadioBtn:disabled + span {
@@ -442,7 +446,7 @@ textarea {
   @media (min-width: 1278px) {
     .Radio:hover .RadioBtn:not(:disabled) {
       border-color: #bc2fbc; } }
-  .RadioBtn:active:not(:disabled), .RadioBtn:focus:not(:disabled) {
+  .RadioBtn:focus:not(:disabled) {
     border-color: #bc2fbc; }
   .RadioBtn:checked {
     background: #bc2fbc;
@@ -549,7 +553,8 @@ textarea {
     box-shadow: 0 2px 5px rgba(0,0,30,0.35);
     background: #ea4372; }
   .Btn.--primary:active {
-    box-shadow: 0 1px 1px rgba(0,0,30,0.35); }
+    box-shadow: 0 1px 1px rgba(0,0,30,0.35);
+    transform: scale(0.96); }
   .Btn.--primary:disabled {
     opacity: 0.3;
     pointer-events: none; }
@@ -566,7 +571,8 @@ textarea {
     box-shadow: 0 2px 5px rgba(0,0,30,0.2);
     background: #f1f1f4; }
   .Btn.--secondary:active {
-    box-shadow: 0 1px 1px rgba(0,0,30,0.2); }
+    box-shadow: 0 1px 1px rgba(0,0,30,0.2);
+    transform: scale(0.96); }
   .Btn.--secondary:hover {
     box-shadow: 0 2px 5px rgba(0,0,30,0.2);
     background: #f1f1f4; }

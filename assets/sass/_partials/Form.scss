@@ -71,7 +71,6 @@
 
     // Active, Focus
     @at-root
-    .InputField:active span,
     .InputField:focus span {
       color: brand(_two);
     }
@@ -98,9 +97,8 @@
     }
   }
 
-  // Focus, Active
-  &:focus,
-  &:active {
+  // Focus
+  &:focus {
     box-shadow: 0 3px 8px ts(0.15);
   }
 
@@ -122,6 +120,11 @@
     margin-bottom: 40px;
   }
 
+  &:active {
+    transform: scale(0.98);
+    transform-origin: 0 50%;
+  }
+
   span {
     padding-left: 0.6em;
     cursor: pointer;
@@ -139,9 +142,8 @@
       }
     }
 
-    // Focus, Active
+    // Focus
     @at-root
-    .Radio:active span,
     .Radio:focus span {
       color: brand(_two);
     }
@@ -177,8 +179,7 @@
     }
   }
 
-  // Focus, Active
-  &:active:not(:disabled),
+  // Focus
   &:focus:not(:disabled) {
     border-color: brand(_two);
   } 

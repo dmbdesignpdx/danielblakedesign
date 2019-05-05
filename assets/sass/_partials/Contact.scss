@@ -31,8 +31,13 @@
         }
       }
 
-      &:active, &:focus {
+      &:focus {
         color: brand();
+      }
+
+      &:active {
+        transform: scale(0.96);
+        transform-origin: 0 50%;
       }
     }
     
@@ -44,11 +49,13 @@
       stroke-width: 2.6;
       fill: none;
       
-      @at-root #contact a:active svg, #contact a:focus svg {
+      @at-root
+      #contact a:focus svg {
         stroke: brand();
       }
       
-      @at-root #contact a:hover svg {
+      @at-root
+      #contact a:hover svg {
         
         @include desktop {
           stroke: brand();

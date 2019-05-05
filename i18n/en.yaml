@@ -1,70 +1,55 @@
 ## Nav ##
-- 
-  id: work
+- id: work
   translation: Work
-- 
-  id: aria_work
+- id: aria_work
   translation: Go to Work section
-- 
-  id: about
+- id: about
   translation: About
-- 
-  id: aria_about
+- id: aria_about
   translation: Go to Work Section
-- 
-  id: aria_contact
+- id: aria_contact
   translation: Go to Contact Section
-- 
-  id: aria_home
+- id: aria_home
   translation: Daniel Blake home page
 
 
 ## CTAs ##
-- 
-  id: preview
+- id: preview
   translation: Preview
-- 
-  id: visit
+- id: visit
   translation: Visit
-- 
-  id: send
+- id: send
   translation: Send
--
-  id: aria_preview
+- id: aria_preview
   translation: Preview the {{ .Count }} website
--
-  id: aria_visit
+- id: aria_visit
   translation: Go to the {{ .Count }} website
--
-  id: contact
+- id: contact
   translation: Contact
 
 
 ## Form ##
-- 
-  id: legend
+- id: legend
   translation: Or drop me a line!
-- 
-  id: name
+- id: name
   translation: Your Name
-- 
-  id: email
+- id: freelance
+  translation: Freelance Opportunity
+- id: general
+  translation: General Inquiry
+- id: email
   translation: Your Email
-- 
-  id: message
+- id: message
   translation: Your Message
 
 
 ## Footer ##
-- 
-  id: made
+- id: made
   translation: Made with {{ .Count }} by Daniel Blake.
-- 
-  id: built
+- id: built
   translation: Built with {{ index . 0 }}, sourced on {{ index . 1 }}, and hosted on&nbsp;{{ index . 2 }}.
 
 
 ## Siblings ##
--
-  id: aria_sib
+- id: aria_sib
   translation: "{{ .title }} project preview {{ .num }} of 3"

@@ -12,10 +12,10 @@ en:
     sub: Sass Library
     aria: Project 2 of 3
     link: https://turntablelib.com
-    rel: external noopener
+    rel: external noreferrer noopener
   - key: 3
     title: flexr
     sub: CSS Micro Framework
     aria: Project 3 of 3
     link: "https://flexrgrid.com"
-    rel: external noopener
+    rel: external noreferrer noopener
