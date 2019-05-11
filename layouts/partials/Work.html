@@ -16,11 +16,11 @@
 
   <!-- Thumbs -->
 
-  {{ range (index .Site.Data.work .Params.lang) }}
+  {{- range first 3 (index .Site.Data.work .Params.lang) -}}
 
     {{- partial "Thumbs" . -}}
 
-  {{ end }}
+  {{- end -}}
 
 
   <!-- Codepen -->
@@ -37,17 +37,13 @@
 
     <p>{{ .Params.codepen.copy | safeHTML }}</p>
 
-    <a
-      class="Btn --primary"
-      rel="external noreferrer noopener"
-      target="_blank"
-      aria-label="Go to Codepen for snippets"
-      href="https://codepen.io/dmbdesignpdx/"
-    >
-      
-      {{- T "visit" -}}
+    <!-- Visit -->
+
+    {{ with (index (index .Site.Data.work .Params.lang) 3) }}
     
-    </a>
+      {{ partial "Btn" (dict "type" "link" "theme" "primary" "link" .link  "title" .title "blank" true "rel" .rel "text" "visit") }}
+
+    {{ end }}
 
   </section>
 

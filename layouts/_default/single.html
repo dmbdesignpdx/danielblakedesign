@@ -69,16 +69,9 @@
 
       {{ .Content }}
 
-      <a
-         class="Btn --primary"
-         href="{{ .Params.link }}"
-         target="_blank"
-         aria-label="{{ .Params.alt }}"
-         rel="{{ .Params.rel }}">
+      <!-- Visit -->
 
-         {{- T "visit" -}}
-
-      </a>
+      {{ partial "Btn" (dict "type" "link" "theme" "primary" "link" .Params.link "blank" true "rel" .Params.rel "title" .Params.id "text" "visit") }}
 
    </section>
 

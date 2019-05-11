@@ -11,9 +11,9 @@ en:
     text: daniel@danielblake.design
   - type: github
     aria: "My Github username: "
-    link: https://github.com/dmbdesignpdx
+    link: "https://github.com/dmbdesignpdx"
     text: dmbdesignpdx
   - type: codepen
     aria: "My Codepen username: "
-    link: https://codepen.io/dmbdesignpdx
+    link: "https://codepen.io/dmbdesignpdx"
     text: dmbdesignpdx    

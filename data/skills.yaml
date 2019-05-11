@@ -1,37 +1,36 @@
 # For Skills in About
 
-- aria: Skill 1 of 3
-  type: design
-  text: 
-    - InDesign
-    - Illustrator
-    - XD
-    - Photoshop
-    - Premiere Pro
-    - After Effects
-    - InVision
-- aria: Skill 2 of 3
-  type: development
-  text: 
-    - HTML5
-    - CSS3 / SCSS / SassScript
-    - JavaScript / ES2015+
-    - Vue.js / React.js
-    - Git
-    - Nuxt.js / Hugo / Jekyll
-    - Gulp.js / Webpack.js
-    - jQuery / CoffeeScript
-    - NativeScript
-    - XML / JSON / YAML
-    - GraphQL / PHP / MySQL
-    - Node.js / NPM
-    - Jest / Enzyme
-- aria: Skill 3 of 3
-  type: experience
-  text: 
-    - Responsive Web Design and Development
-    - Semantic Markup and Accessibility
-    - UX and GUI Design
-    - Branding
-    - Art and Creative Direction
-    - BFA in Communication Design
+en:
+  - aria: Skill 1 of 3
+    type: design
+    text: 
+      - InVision
+      - Sketch
+      - XD
+      - InDesign
+      - Illustrator
+      - Photoshop
+  - aria: Skill 2 of 3
+    type: development
+    text: 
+      - HTML5
+      - CSS3 / SCSS / SassScript
+      - JavaScript / ES2015+
+      - React.js / Vue.js
+      - Git
+      - Nuxt.js / Hugo / Jekyll
+      - Webpack.js / Gulp.js
+      - jQuery / CoffeeScript
+      - XML / JSON / YAML
+      - GraphQL / PHP / MySQL
+      - Node.js / NPM
+      - Jest / Enzyme
+  - aria: Skill 3 of 3
+    type: experience
+    text: 
+      - Responsive Web Design and Development
+      - Semantic Markup and Accessibility
+      - UX and GUI Design
+      - Branding
+      - Art and Creative Direction
+      - BFA in Communication Design

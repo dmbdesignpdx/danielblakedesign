@@ -1,0 +1,37 @@
+<label class="Input">
+
+  <span
+    id="{{ .id }}"
+    aria-hidden="true">
+
+    {{ T .name }}
+
+  </span>
+
+  {{ if eq .type "textarea" }}
+
+  <textarea 
+    class="InputField"
+    name="{{ .name }}"
+    rows="10"
+    aria-labelledby="{{ .id }}"
+    aria-required="true"
+    required>
+  </textarea>
+
+  {{ else }}
+
+  <input
+    class="InputField"
+    name="{{ .name }}"
+    type="{{ .type }}"
+    autocomplete="{{ .name }}"
+    aria-autocomplete="both"
+    aria-labelledby="{{ .id }}"
+    aria-required="true"
+    required
+  />
+
+  {{ end }}
+
+</label>

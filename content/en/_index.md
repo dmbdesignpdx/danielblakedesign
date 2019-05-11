@@ -2,7 +2,7 @@
 ## Page Variables ##
 title: Daniel Blake - Front End Web Designer
 description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
-date: April 12, 2019
+date: May 10, 2019
 
 
 ## Params ##
@@ -16,7 +16,7 @@ lang: en
 hero:
   title: I <span>design</span> and <span>develop</span> websites.
   copy: |
-    Hello! 👋  My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
+    Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
 
 # Codepen
 codepen:

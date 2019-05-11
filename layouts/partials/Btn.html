@@ -1,0 +1,54 @@
+{{- if eq .type "link" -}}
+
+  {{- if eq .theme "primary" -}}
+
+  <a
+    class="Btn --primary"
+    {{ if eq .blank true }}
+      target="_blank"
+      rel="{{ .rel }}"
+    {{ end }}
+    {{ if eq .local true }}
+      href="{{ .title }}"
+    {{ else }}
+      href="{{ .link }}"
+    {{ end }}
+    aria-label='{{ T "aria_preview" (.title | title) }}'
+    >
+
+  {{- else -}}
+
+  <a
+    class="Btn --secondary"
+    {{ if eq .blank true }}
+      target="_blank"
+      rel="{{ .rel }}"
+    {{ end }}
+    {{ if eq .local true }}
+      href="{{ .title }}"
+    {{ else }}
+      href="{{ .link }}"
+    {{ end }}
+    aria-label='{{ T "aria_visit" (.title | title) }}'
+    >
+    
+  {{- end -}}
+    
+    {{- T .text -}}
+
+  </a>
+
+
+{{- else -}}
+
+<button
+  name="send"
+  class="Btn --{{ .theme }}"
+  type="{{ .submit }}"
+  >
+
+  {{- T .text -}}
+
+</button>
+
+{{- end -}}

@@ -1,0 +1,53 @@
+.Input {
+
+  span {
+    margin-bottom: 0.33em;
+
+    // Hover
+    @at-root
+    .Input:hover span {
+      
+      @include desktop {
+        color: brand(_two);
+      }
+    }
+
+    // Active, Focus
+    @at-root
+    .InputField:focus span {
+      color: brand(_two);
+    }
+  }
+}
+
+
+.InputField {
+  padding: 12px;
+  font-size: 1rem;
+  box-shadow: 0 1px 2px ts(0.2);
+  border-radius: 3px;
+  border: 1px solid brand(_almostwhite);
+  color: brand(_darkgray);
+  background: brand(_almostwhite);
+  outline: 0;
+
+  // Hover
+  @at-root
+  .Input:hover & {
+    
+    @include desktop {
+      box-shadow: 0 3px 8px ts(0.15);
+    }
+  }
+
+  // Focus
+  &:focus {
+    box-shadow: 0 3px 8px ts(0.15);
+  }
+
+  // Invalid
+  @at-root
+  .js-sub .InputField:invalid {
+    border-color: #F30;
+  }
+}

@@ -16,7 +16,7 @@
 
   <!-- Skills -->
 
-  {{ range .Site.Data.skills }}
+  {{ range (index .Site.Data.skills .Params.lang) }}
 
     {{- partial "Skills" . -}}
 

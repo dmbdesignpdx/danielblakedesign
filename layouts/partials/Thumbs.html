@@ -8,27 +8,13 @@
 
   <div class="cta">
 
-    <a
-      class="Btn --primary"
-      href="/{{ .title }}/"
-      aria-label='{{ T "aria_preview" (.title | title) }}'
-    >
+    <!-- Preview -->
 
-      {{- T "preview" -}}
+    {{ partial "Btn" (dict "type" "link" "theme" "primary" "title" .title "local" true "rel" .rel "text" "preview") }}
 
-    </a>
+    <!-- Visit -->
 
-    <a
-      class="Btn --secondary"
-      href="{{ .link }}"
-      target="_blank"
-      aria-label='{{ T "aria_visit" (.title | title) }}'
-      rel="{{ .rel }}"
-    >
-
-      {{- T "visit" -}}
-
-    </a>
+    {{ partial "Btn" (dict "type" "link" "theme" "secondary" "title" .title "blank" true "link" .link "rel" .rel "text" "visit") }}
 
   </div>
 
