@@ -1,16 +1,16 @@
 {{- $page := index .Site.Data.error (.Site.Language.Lang) -}}
 
 <!doctype html>
-<html lang="{{- .Language -}}">
+<html lang='{{ .Language }}'>
 <head>
 
-   <meta charset="utf-8">
+   <meta charset='utf-8'>
 
-   <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+   <meta name='viewport' content='width=device-width,initial-scale=1.0,viewport-fit=cover'>
 
    <title>{{- $page.title -}}</title>
 
-   <meta name="description" content="{{- $page.description -}}">
+   <meta name='description' content='{{ $page.description }}'>
 
    {{- $snap := resources.Get "sass/_pages/404.scss" | toCSS | minify -}}
    <style>{{- $snap.Content | safeCSS -}}</style>
@@ -28,8 +28,8 @@
          <p>{{- $page.copy -}}</p>
          
          <a
-            href="{{- .Site.BaseURL -}}"
-            aria-label='{{- $page.aria_home -}}'>
+            href='{{ .Site.BaseURL }}'
+            aria-label='{{ $page.aria_home }}'>
 
             {{- $page.home -}}
 

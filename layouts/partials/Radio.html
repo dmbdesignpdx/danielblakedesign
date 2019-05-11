@@ -1,20 +1,20 @@
-<label class="Radio">
+<label class='Radio'>
 
   <input
-    class="RadioBtn"
-    type="radio"
-    name="{{- .type -}}"
-    value="{{- .type -}}"
-    aria-labelledby="{{- .id -}}"
+    class='RadioBtn'
+    type='radio'
+    name='{{ .type }}'
+    value='{{ .type }}'
+    aria-labelledby='{{ .id }}'
     {{- if eq .disabled true -}}
-      aria-disabled="true"
+      aria-disabled='true'
       disabled
     {{- end -}}
   >
 
   <span
-    id="wa1"
-    aria-hidden="true"  
+    id='wa1'
+    aria-hidden='true'  
   >
 
     {{- T .type -}}

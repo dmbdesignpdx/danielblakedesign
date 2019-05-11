@@ -1,49 +1,51 @@
 {{- if eq .type "link" -}}
 
+
   {{- if eq .theme "primary" -}}
 
     <a
-      class="Btn --primary"
+      class='Btn --primary'
       {{- if eq .blank true -}}
-        target="_blank"
-        rel="{{- .rel -}}"
+        target='_blank'
+        rel='{{ .rel }}'
       {{- end -}}
       {{- if eq .local true -}}
-        href="{{- .title -}}"
+        href='{{ .title }}'
       {{- else -}}
-        href="{{- .link -}}"
+        href='{{ .link }}'
       {{- end -}}
-      aria-label='{{- T "aria_preview" (.title | title) -}}'
+      aria-label='{{ T "aria_preview" (.title | title) }}'
     >
 
-    {{- else -}}
+  {{- else -}}
 
     <a
-      class="Btn --secondary"
+      class='Btn --secondary'
       {{- if eq .blank true -}}
-        target="_blank"
-        rel="{{- .rel -}}"
+        target='_blank'
+        rel='{{ .rel }}'
       {{- end -}}
       {{- if eq .local true -}}
-        href="{{- .title -}}"
+        href='{{ .title }}'
       {{- else -}}
-        href="{{- .link -}}"
+        href='{{ .link }}'
       {{- end -}}
-      aria-label='{{- T "aria_visit" (.title | title) -}}'
+      aria-label='{{ T "aria_visit" (.title | title) }}'
     >
     
   {{- end -}}
     
+
     {{- T .text -}}
 
   </a>
 
-  {{- else -}}
+{{- else -}}
 
   <button
-    name="send"
-    class="Btn --{{- .theme -}}"
-    type="{{- .type -}}"
+    name='send'
+    class='Btn --{{ .theme }}'
+    type='{{ .type }}'
   >
 
     {{- T .text -}}

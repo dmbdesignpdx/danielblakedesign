@@ -16,7 +16,7 @@ one: Turntable
 two: Sass Library
 
 # Content
-link: "https://turntablelib.com"
+link: 'https://turntablelib.com'
 rel: external noreferrer noopener
 ---
 

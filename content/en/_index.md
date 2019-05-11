@@ -22,7 +22,7 @@ hero:
 codepen:
   title: Code Snippets
   copy: |
-    Check out my Codepens for some ideas and experiments that I've been working on.
+    Check out my Codepens for some ideas and experiments that I've been working&nbsp;on.
 
 # About Content Below
 ---

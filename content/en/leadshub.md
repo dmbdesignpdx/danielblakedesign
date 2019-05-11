@@ -16,7 +16,7 @@ one: LeadsHub
 two: Mobile App
 
 # Content
-link: "https://leadshub.com"
+link: 'https://leadshub.com'
 rel: external nofollow noreferrer noopener
 ---
 

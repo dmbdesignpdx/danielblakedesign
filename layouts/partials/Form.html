@@ -1,21 +1,22 @@
 <form
-  class="Form"
-  name="drop"
-  action="POST"
-  netlify-honeypot="honey"
+  class='Form'
+  name='drop'
+  action='POST'
+  netlify-honeypot='honey'
   netlify
 >
 
   <fieldset>
 
-    <legend>{{ T "legend" }}</legend>
+    <legend>{{- T "legend" -}}</legend>
 
 
     <!-- Honeypot -->
 
     <label
-      class="Honey"
-      aria-hidden="true">
+      class='Honey'
+      aria-hidden='true'
+    >
 
       <span>
 
@@ -24,8 +25,8 @@
       </span>
 
       <input
-        type="text"
-        name="honey"
+        type='text'
+        name='honey'
       />
     
     </label>
@@ -33,29 +34,29 @@
 
     <!-- Inquiries -->
 
-    {{ partial "Radio" (dict "type" "freelance" "id" "wa1" "disabled" true) }}
+    {{- partial "Radio" (dict "type" "freelance" "id" "wa1" "disabled" true) -}}
     
-    {{ partial "Radio" (dict "type" "general" "id" "wa2" "disabled" false) }}
+    {{- partial "Radio" (dict "type" "general" "id" "wa2" "disabled" false) -}}
 
 
     <!-- Name -->
 
-    {{ partial "Input" (dict "type" "text" "name" "name" "id" "c1") }}
+    {{- partial "Input" (dict "type" "text" "name" "name" "id" "c1") -}}
 
 
     <!-- Email -->
     
-    {{ partial "Input" (dict "type" "email" "name" "email" "id" "c2") }}
+    {{- partial "Input" (dict "type" "email" "name" "email" "id" "c2") -}}
 
 
     <!-- Message -->
 
-    {{ partial "Input" (dict "type" "textarea" "name" "message" "id" "c3") }}
+    {{- partial "Input" (dict "type" "textarea" "name" "message" "id" "c3") -}}
 
 
     <!-- Send -->
 
-    {{ partial "Btn" (dict "type" "submit" "theme" "primary" "text" "send") }}
+    {{- partial "Btn" (dict "type" "submit" "theme" "primary" "text" "send") -}}
 
   </fieldset>
 

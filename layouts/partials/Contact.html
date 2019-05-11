@@ -1,11 +1,11 @@
 <section
-  id="contact"
-  class="Contact"
-  aria-labelledby="c1"
+  id='contact'
+  class='Contact'
+  aria-labelledby='c1'
   flexr-grid
 >
 
-  <h2 id="c1">
+  <h2 id='c1'>
         
     {{- T "contact" -}}
 
@@ -13,11 +13,13 @@
 
   <address>
 
+
     {{- range (index .Site.Data.contact .Params.lang) -}}
 
       {{- partial "Contacts" . -}}
 
     {{- end -}}
+
 
   </address>
 

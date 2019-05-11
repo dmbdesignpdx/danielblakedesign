@@ -1,20 +1,22 @@
 <header
-  class="Hero __intro"
+  class='Hero __intro'
   flexr-wrap
 >
 
-  {{ if eq .home true }}
 
-    <h1>{{ .one | safeHTML }}</h1>
+  {{- if eq .home true -}}
+
+    <h1>{{- .one | safeHTML -}}</h1>
   
-    <p>{{ .two | safeHTML }}</p>
+    <p>{{- .two | safeHTML -}}</p>
 
-  {{ else }}
+  {{- else -}}
 
-    <h1><span>{{ .one | safeHTML }}</span><br>{{ .two | safeHTML }}</h1>
+    <h1><span>{{- .one | safeHTML -}}</span><br>{{- .two | safeHTML -}}</h1>
 
-  {{ end }}
+  {{- end -}}
 
-  <svg class="Arrow" viewBox="0 0 50 50"><path d="M4,25 25,46 46,25"/></svg>
+
+  <svg class='Arrow' viewBox='0 0 50 50'><path d='M4,25 25,46 46,25'/></svg>
 
 </header>

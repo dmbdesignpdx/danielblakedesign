@@ -16,7 +16,7 @@ one: Flexr Grid
 two: CSS Micro Framework
 
 # Content
-link: "https://flexrgrid.com"
+link: 'https://flexrgrid.com'
 rel: external noreferrer noopener
 ---
 
