@@ -1,37 +1,38 @@
 <label class="Input">
 
   <span
-    id="{{ .id }}"
-    aria-hidden="true">
+    id="{{- .id -}}"
+    aria-hidden="true"
+  >
 
-    {{ T .name }}
+    {{- T .name -}}
 
   </span>
 
-  {{ if eq .type "textarea" }}
+  {{- if eq .type "textarea" -}}
 
   <textarea 
     class="InputField"
-    name="{{ .name }}"
+    name="{{- .name -}}"
     rows="10"
-    aria-labelledby="{{ .id }}"
+    aria-labelledby="{{- .id -}}"
     aria-required="true"
     required>
   </textarea>
 
-  {{ else }}
+  {{- else -}}
 
   <input
     class="InputField"
-    name="{{ .name }}"
-    type="{{ .type }}"
-    autocomplete="{{ .name }}"
+    name="{{- .name -}}"
+    type="{{- .type -}}"
+    autocomplete="{{- .name -}}"
     aria-autocomplete="both"
-    aria-labelledby="{{ .id }}"
+    aria-labelledby="{{- .id -}}"
     aria-required="true"
     required
   />
 
-  {{ end }}
+  {{- end -}}
 
 </label>

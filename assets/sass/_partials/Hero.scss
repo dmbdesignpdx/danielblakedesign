@@ -1,7 +1,7 @@
-#arrow {
+.Arrow {
   @include transition(opacity 0.4s);
   
-  &.js-fade {
+  &.__fade {
     opacity: 0;
   }
 }

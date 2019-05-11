@@ -2,34 +2,34 @@
 
   {{- if eq .theme "primary" -}}
 
-  <a
-    class="Btn --primary"
-    {{ if eq .blank true }}
-      target="_blank"
-      rel="{{ .rel }}"
-    {{ end }}
-    {{ if eq .local true }}
-      href="{{ .title }}"
-    {{ else }}
-      href="{{ .link }}"
-    {{ end }}
-    aria-label='{{ T "aria_preview" (.title | title) }}'
+    <a
+      class="Btn --primary"
+      {{- if eq .blank true -}}
+        target="_blank"
+        rel="{{- .rel -}}"
+      {{- end -}}
+      {{- if eq .local true -}}
+        href="{{- .title -}}"
+      {{- else -}}
+        href="{{- .link -}}"
+      {{- end -}}
+      aria-label='{{- T "aria_preview" (.title | title) -}}'
     >
 
-  {{- else -}}
+    {{- else -}}
 
-  <a
-    class="Btn --secondary"
-    {{ if eq .blank true }}
-      target="_blank"
-      rel="{{ .rel }}"
-    {{ end }}
-    {{ if eq .local true }}
-      href="{{ .title }}"
-    {{ else }}
-      href="{{ .link }}"
-    {{ end }}
-    aria-label='{{ T "aria_visit" (.title | title) }}'
+    <a
+      class="Btn --secondary"
+      {{- if eq .blank true -}}
+        target="_blank"
+        rel="{{- .rel -}}"
+      {{- end -}}
+      {{- if eq .local true -}}
+        href="{{- .title -}}"
+      {{- else -}}
+        href="{{- .link -}}"
+      {{- end -}}
+      aria-label='{{- T "aria_visit" (.title | title) -}}'
     >
     
   {{- end -}}
@@ -38,17 +38,16 @@
 
   </a>
 
+  {{- else -}}
 
-{{- else -}}
-
-<button
-  name="send"
-  class="Btn --{{ .theme }}"
-  type="{{ .submit }}"
+  <button
+    name="send"
+    class="Btn --{{- .theme -}}"
+    type="{{- .type -}}"
   >
 
-  {{- T .text -}}
+    {{- T .text -}}
 
-</button>
+  </button>
 
 {{- end -}}

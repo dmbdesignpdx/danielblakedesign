@@ -1,17 +1,17 @@
 <a 
-  href="{{ .link | safeURL }}"
-  {{ if and (ne .type "email") (ne .type "phone") }}
+  href="{{- .link | safeURL -}}"
+  {{- if and (ne .type "email") (ne .type "phone") -}}
   target="_blank"
   rel="external noreferrer noopener"
-  {{ end }}
+  {{- end -}}
 >
 
   <svg
     role="img"
-    aria-label='{{ .aria }}'
+    aria-label='{{- .aria -}}'
   >
 
-    <use xlink:href="/img/icons.svg#{{ .type }}"/>
+    <use xlink:href="/img/icons.svg#{{- .type -}}"/>
 
   </svg>
 

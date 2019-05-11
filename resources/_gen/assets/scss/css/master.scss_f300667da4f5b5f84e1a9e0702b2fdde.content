@@ -173,27 +173,27 @@ textarea {
   #nav a:hover {
     color: #e82c61; } }
 
-#nav.js-show {
+#nav.__show {
   -webkit-transform: translateY(calc(100% + 3px));
   transform: translateY(calc(100% + 3px)); }
 
-#nav.js-time {
+#nav.__time {
   transition: transform 0.4s; }
 
-#nav.js-fixed {
+#nav.__fixed {
   box-shadow: 0 1px 3px rgba(0,0,30,0.3);
   position: fixed;
   top: -59px; }
   @media (min-width: 766px) {
-    #nav.js-fixed {
+    #nav.__fixed {
       top: -93px; } }
   @media (min-width: 1680px) {
-    #nav.js-fixed {
+    #nav.__fixed {
       top: -153px; } }
 
-#arrow {
+.Arrow {
   transition: opacity 0.4s; }
-  #arrow.js-fade {
+  .Arrow.__fade {
     opacity: 0; }
 
 .Work {
@@ -408,7 +408,7 @@ textarea {
       box-shadow: 0 3px 8px rgba(0,0,30,0.15); } }
   .InputField:focus {
     box-shadow: 0 3px 8px rgba(0,0,30,0.15); }
-  .js-sub .InputField:invalid {
+  .__sub .InputField:invalid {
     border-color: #F30; }
 
 .Radio {

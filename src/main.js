@@ -9,16 +9,16 @@ import navScroll from './nav'
 
 
 window.addEventListener(`load`, () => {
-  const ICON = $(`#arrow`)
+  const ICON = $(`.Arrow`)
   const FORM = document.drop
   let scrolling = false
 
   /**
-   * Adds the 'js-sub' class if form exists
+   * Adds the '__sub' class if form exists
    */
   if (FORM) {
     FORM.send.addEventListener(`click`, () => {
-      FORM.classList.add(`js-sub`)
+      FORM.classList.add(`__sub`)
     })
   }
 
@@ -32,18 +32,18 @@ window.addEventListener(`load`, () => {
 
 
   /**
-   * Adds or removes the 'js-fade' class
+   * Adds or removes the '__fade' class
    * @returns {undefined}
    *
   */
   const arrowFade = () => {
     if (window.scrollY > breakpoint()) {
-      if (!ICON.classList.contains(`js-fade`)) {
-        ICON.classList.add(`js-fade`)
+      if (!ICON.classList.contains(`__fade`)) {
+        ICON.classList.add(`__fade`)
       }
     } else {
-      if (ICON.classList.contains(`js-fade`)) {
-        ICON.classList.remove(`js-fade`)
+      if (ICON.classList.contains(`__fade`)) {
+        ICON.classList.remove(`__fade`)
       }
     }
 

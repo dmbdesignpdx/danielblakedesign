@@ -19,11 +19,11 @@
 
 <!-- Variables -->
 
-{{ $phone := replace .Site.Author.phone "-" "" }}
+{{- $phone := replace .Site.Author.phone "-" "" -}}
 
-{{ if not (in .Site.Author.phone "+1") }}
-{{ $phone = print "+1" $phone }}
-{{ end }}
+{{- if not (in .Site.Author.phone "+1") -}}
+{{- $phone = print "+1" $phone -}}
+{{- end -}}
 
 
 <!-- Initial -->
@@ -31,7 +31,7 @@
 <meta charset="utf-8">
 
 
-{{ if eq (getenv "HUGO_ENV") "production" }}
+{{- if eq (getenv "HUGO_ENV") "production" -}}
 
 <!-- Prebrowsing Hints -->
 
@@ -48,26 +48,26 @@
 
 <meta http-equiv="cache-control" content="public,max-age=5256000">
 
-{{ end }}
+{{- end -}}
 
 
 <!-- General -->
 
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
 
-<title>{{ .Title }}</title>
+<title>{{- .Title -}}</title>
 
-<meta name="description" content="{{ .Description }}">
+<meta name="description" content="{{- .Description -}}">
 
-<meta name="author" content="{{ .Site.Author.name }}">
+<meta name="author" content="{{- .Site.Author.name -}}">
 
-<link rel="canonical" href="{{ .Site.BaseURL }}">
+<link rel="canonical" href="{{- .Site.BaseURL -}}">
 
 <meta name="format-detection" content="telephone=no">
 
 <meta name="format-detection" content="email=no">
 
-<meta name="theme-color" content="{{ .Site.Params.theme }}">
+<meta name="theme-color" content="{{- .Site.Params.theme -}}">
 
 
 <!-- Favicons -->
@@ -80,7 +80,7 @@
 
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 
-<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{ .Site.Params.theme }}">
+<link rel="mask-icon" href="/img/pinned-tab.svg" color="{{- .Site.Params.theme -}}">
 
 <link rel="manifest" href="/manifest.json">
 
@@ -91,63 +91,63 @@
 
 <meta name="twitter:card" content="summary_large_image">
 
-<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:title" content="{{- .Title -}}">
 
-<meta name="twitter:description" content="{{ .Description }}">
+<meta name="twitter:description" content="{{- .Description -}}">
 
-<meta name="twitter:image" content="{{ .Site.Params.image }}">
+<meta name="twitter:image" content="{{- .Site.Params.image -}}">
 
-<meta name="twitter:image:alt" content="{{ .Description }}">
+<meta name="twitter:image:alt" content="{{- .Description -}}">
 
-<meta name="twitter:url" content="{{ .Permalink }}">
+<meta name="twitter:url" content="{{- .Permalink -}}">
 
 <meta property="og:type" content="website">
 
-<meta property="og:title" content="{{ .Title }}">
+<meta property="og:title" content="{{- .Title -}}">
 
-<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:site_name" content="{{- .Site.Title -}}">
 
-<meta property="og:description" content="{{ .Description }}">
+<meta property="og:description" content="{{- .Description -}}">
 
-<meta property="og:image" content="{{ .Site.Params.image }}">
+<meta property="og:image" content="{{- .Site.Params.image -}}">
 
 <meta property="og:image:width" content="1200">
 
 <meta property="og:image:height" content="628">
 
-<meta property="og:image:type" content="{{ .Site.Params.type }}">
+<meta property="og:image:type" content="{{- .Site.Params.type -}}">
 
-<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:url" content="{{- .Permalink -}}">
 
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
-{{ if eq (getenv "HUGO_ENV") "production" }}
-{{ $critical = $critical | minify }}
-{{ end }}
-<style>{{ $critical.Content | safeCSS }}</style>
+{{- $critical := resources.Get "critical/_inline.scss" | toCSS -}}
+{{- if eq (getenv "HUGO_ENV") "production" -}}
+{{- $critical = $critical | minify -}}
+{{- end -}}
+<style>{{- $critical.Content | safeCSS -}}</style>
 
 
 <!-- Structured Data (Schema) -->
 
-{{ if eq (getenv "HUGO_ENV") "production" }}
+{{- if eq (getenv "HUGO_ENV") "production" -}}
 
 <script type="application/ld+json">
 {
   "@context":"http://schema.org",
   "@type":"WebSite",
-  "name":"{{ .Title }}",
-  "description":"{{ .Description }}",
-  "url":"{{ .Permalink }}",
-  "image":"{{ .Site.Params.image }}",
+  "name":"{{- .Title -}}",
+  "description":"{{- .Description -}}",
+  "url":"{{- .Permalink -}}",
+  "image":"{{- .Site.Params.image -}}",
   "creator":{
     "@type":"Person",
-    "name":"{{ .Site.Author.name }}",
-    "description":"{{ .Site.Author.title }}",
-    "address":"{{ .Site.Author.city }}",
-    "email":"{{ .Site.Author.email }}",
-    "telephone":"{{ $phone }}"
+    "name":"{{- .Site.Author.name -}}",
+    "description":"{{- .Site.Author.title -}}",
+    "address":"{{- .Site.Author.city -}}",
+    "email":"{{- .Site.Author.email -}}",
+    "telephone":"{{- $phone -}}"
   },
   "offers":{
     "@type":"Offer",
@@ -157,9 +157,9 @@
     }
   },
   "sameAs":[
-    "{{ .Site.Author.linkedin }}",
-    "{{ .Site.Author.github }}",
-    "{{ .Site.Author.codepen }}"
+    "{{- .Site.Author.linkedin -}}",
+    "{{- .Site.Author.github -}}",
+    "{{- .Site.Author.codepen -}}"
   ]
 }
 </script>
@@ -170,24 +170,24 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-124883259-1"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1')</script>
 
-{{ end }}
+{{- end -}}
 
 
 <!-- Main Script -->
 
-{{ $scripts := resources.Get "dist/main.min.js" }}
-{{ if ne (getenv "HUGO_ENV") "production" }}
-<script async src="{{ $scripts.RelPermalink }}"></script>
-{{ else }}
-{{ $scripts = $scripts | fingerprint }}
+{{- $scripts := resources.Get "dist/main.min.js" -}}
+{{- if ne (getenv "HUGO_ENV") "production" -}}
+<script async src="{{- $scripts.RelPermalink -}}"></script>
+{{- else -}}
+{{- $scripts = $scripts | fingerprint -}}
 <script
   async
-  src="{{ $scripts.RelPermalink }}"
-  integrity="{{ $scripts.Data.Integrity }}"
+  src="{{- $scripts.RelPermalink -}}"
+  integrity="{{- $scripts.Data.Integrity -}}"
   crossorigin="anonymous"
   >
 </script>
-{{ end }}
+{{- end -}}
 
 
 <!-- Generator -->

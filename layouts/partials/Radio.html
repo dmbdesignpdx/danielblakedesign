@@ -3,9 +3,9 @@
   <input
     class="RadioBtn"
     type="radio"
-    name="{{ .type }}"
-    value="{{ .type }}"
-    aria-labelledby="{{ .id }}"
+    name="{{- .type -}}"
+    value="{{- .type -}}"
+    aria-labelledby="{{- .id -}}"
     {{- if eq .disabled true -}}
       aria-disabled="true"
       disabled
@@ -17,7 +17,7 @@
     aria-hidden="true"  
   >
 
-    {{ T .type }}
+    {{- T .type -}}
 
   </span>
 

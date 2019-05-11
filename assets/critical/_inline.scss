@@ -141,7 +141,7 @@ h1 {
       }
       
       // JS animation
-      @at-root h1 span.js-underline::after {
+      @at-root h1 span.__underline::after {
         width: 100%
       }
     }
@@ -164,7 +164,7 @@ p {
   hyphens: none;
 }
 
-#Hero.js-intro {
+.Hero.__intro {
   
   h1, p {
     transform: translateX(-50%);
@@ -173,14 +173,14 @@ p {
 }
 
 
-#Hero h1, #Hero p {
+.Hero h1, .Hero p {
   transform: translateX(0);
   opacity: 1;
   transition: transform .4s 0s, opacity .4s 0s;
   transform-style: preserve-3d;
 }
 
-#Hero p {
+.Hero p {
   transition: transform .4s .4s, opacity .4s .4s;
 }
 
@@ -300,11 +300,11 @@ p {
 // Hero
 //
 
-#Hero {
+.Hero {
   height: 100vh;
 }
 
-#arrow {
+.Arrow {
   position: absolute;
   bottom: 5vh;
   width: 34px;
@@ -337,7 +337,7 @@ p {
     }
   }
   
-  #Hero {
+  .Hero {
     
     p,
     h1 {

@@ -9,7 +9,7 @@
 
     <address>
 
-      {{ T "made" "&#x1F984;&#x1F308;" | safeHTML }}<br>
+      {{- T "made" "&#x1F984;&#x1F308;" | safeHTML -}}<br>
 
       <a href="mailto:daniel@danielblake.design">daniel@danielblake.design</a>
 
@@ -17,11 +17,11 @@
     
     <aside>
       
-      <p>{{ T "built" $links | safeHTML }}</p>
+      <p>{{- T "built" $links | safeHTML -}}</p>
     
     </aside>  
 
-    <p><small>{{ .Site.Copyright }}</small></p>
+    <p><small>{{- .Site.Copyright -}}</small></p>
 
   </div>
 

@@ -1,7 +1,7 @@
-{{ define "SITE" }}
+{{- define "SITE" -}}
 
 
-  {{- partial "Hero" . -}}
+  {{- partial "Hero" (dict "one" .Params.hero.title "two" .Params.hero.copy "home" true) -}}
 
   {{- partial "Nav" . -}}
 
@@ -19,4 +19,4 @@
   </main>
 
 
-{{ end }}
+{{- end -}}

@@ -1,18 +1,21 @@
 <!doctype html>
-<html lang="{{ .Params.lang }}">
-<head>
 
-  {{ partial "Head" . }}
+  <html lang="{{- .Params.lang -}}">
 
-</head>
+  <head>
 
-<body class="{{ .Params.class }}">
+    {{- partial "Head" . -}}
 
-  {{ block "SITE" . }}{{ end }}
+  </head>
 
-  {{ partial "Footer" . }}
+  <body class="{{- .Params.class -}}">
 
-  {{ partial "Defer" . }}
+    {{- block "SITE" . -}}{{- end -}}
 
-</body>
+    {{- partial "Footer" . -}}
+
+    {{- partial "Defer" . -}}
+
+  </body>
+
 </html>

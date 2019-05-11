@@ -1,16 +1,16 @@
-<section aria-label='{{ .aria }}'>
+<section aria-label='{{- .aria -}}'>
 
-  <svg><use xlink:href="/img/icons.svg#{{ .type }}"/></svg>
+  <svg><use xlink:href="/img/icons.svg#{{- .type -}}"/></svg>
 
-  <h4 id="{{ .type }}">{{ .type | title }}</h4>
+  <h4 id="{{- .type -}}">{{- .type | title -}}</h4>
 
-  <ul aria-labelledby="{{ .type }}">
+  <ul aria-labelledby="{{- .type -}}">
 
-     {{ range .text }}
+     {{- range .text -}}
 
-     <li>{{ . }}
+     <li>{{- . -}}
 
-     {{ end }}
+     {{- end -}}
 
   </ul>
 

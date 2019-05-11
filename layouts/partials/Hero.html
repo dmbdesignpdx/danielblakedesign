@@ -1,13 +1,20 @@
 <header
-  id="Hero"
-  class="js-intro"
+  class="Hero __intro"
   flexr-wrap
 >
 
-  <h1>{{ .Params.hero.title | safeHTML }}</h1>
+  {{ if eq .home true }}
 
-  <p>{{ .Params.hero.copy | safeHTML }}</p>
+    <h1>{{ .one | safeHTML }}</h1>
+  
+    <p>{{ .two | safeHTML }}</p>
 
-  <svg id="arrow" viewBox="0 0 50 50"><path d="M4,25 25,46 46,25"/></svg>
+  {{ else }}
+
+    <h1><span>{{ .one | safeHTML }}</span><br>{{ .two | safeHTML }}</h1>
+
+  {{ end }}
+
+  <svg class="Arrow" viewBox="0 0 50 50"><path d="M4,25 25,46 46,25"/></svg>
 
 </header>

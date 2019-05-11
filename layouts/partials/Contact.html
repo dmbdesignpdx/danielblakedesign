@@ -13,11 +13,11 @@
 
   <address>
 
-    {{ range (index .Site.Data.contact .Params.lang) }}
+    {{- range (index .Site.Data.contact .Params.lang) -}}
 
       {{- partial "Contacts" . -}}
 
-    {{ end }}
+    {{- end -}}
 
   </address>
 

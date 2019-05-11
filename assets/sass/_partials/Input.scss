@@ -47,7 +47,7 @@
 
   // Invalid
   @at-root
-  .js-sub .InputField:invalid {
+  .__sub .InputField:invalid {
     border-color: #F30;
   }
 }

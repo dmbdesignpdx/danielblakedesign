@@ -7,7 +7,7 @@
 
     <a
       href="/"
-      aria-label='{{ T "aria_home" }}'
+      aria-label='{{- T "aria_home" -}}'
       {{- if eq $.Params.id "home" -}}
         aria-current="page"
       {{- end -}}
@@ -21,7 +21,7 @@
     
     <a
       href="/#work"
-      aria-label='{{ T "aria_work" }}'
+      aria-label='{{- T "aria_work" -}}'
     >
       
       {{- T "work" -}}
@@ -30,7 +30,7 @@
 
     <a
       href="/#about"
-      aria-label='{{ T "aria_about" }}'
+      aria-label='{{- T "aria_about" -}}'
     >
       
       {{- T "about" -}}
@@ -39,7 +39,7 @@
 
     <a
       href="/#contact"
-      aria-label='{{ T "aria_contact" }}'
+      aria-label='{{- T "aria_contact" -}}'
     >
       
       {{- T "contact" -}}

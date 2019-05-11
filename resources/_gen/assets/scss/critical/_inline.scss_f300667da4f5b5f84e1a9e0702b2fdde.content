@@ -94,7 +94,7 @@ h1 {
         transition: width .4s 1.2s; }
       h1 span:first-child::after {
         transition: width .4s .8s; }
-      h1 span.js-underline::after {
+      h1 span.__underline::after {
         width: 100%; }
   .sib h1 {
     padding-top: 38vh;
@@ -107,17 +107,17 @@ p {
   letter-spacing: .02em;
   hyphens: none; }
 
-#Hero.js-intro h1, #Hero.js-intro p {
+.Hero.__intro h1, .Hero.__intro p {
   transform: translateX(-50%);
   opacity: 0; }
 
-#Hero h1, #Hero p {
+.Hero h1, .Hero p {
   transform: translateX(0);
   opacity: 1;
   transition: transform .4s 0s, opacity .4s 0s;
   transform-style: preserve-3d; }
 
-#Hero p {
+.Hero p {
   transition: transform .4s .4s, opacity .4s .4s; }
 
 /**
@@ -189,10 +189,10 @@ p {
   .Nav a:nth-child(1n+2) {
     margin-left: 1.6em; }
 
-#Hero {
+.Hero {
   height: 100vh; }
 
-#arrow {
+.Arrow {
   position: absolute;
   bottom: 5vh;
   width: 34px;
@@ -209,8 +209,8 @@ p {
 @media (min-width: 540px) {
   .Nav a:first-child span {
     display: block; }
-  #Hero p,
-  #Hero h1 {
+  .Hero p,
+  .Hero h1 {
     width: 25rem; } }
 
 /**

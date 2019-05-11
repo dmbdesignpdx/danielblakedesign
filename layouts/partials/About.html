@@ -11,15 +11,15 @@
 
   </h2>
 
-  {{ .Content }}
+  {{- .Content -}}
 
 
   <!-- Skills -->
 
-  {{ range (index .Site.Data.skills .Params.lang) }}
+  {{- range (index .Site.Data.skills .Params.lang) -}}
 
     {{- partial "Skills" . -}}
 
-  {{ end }}
+  {{- end -}}
 
 </article>
