@@ -418,11 +418,8 @@ textarea {
   margin-bottom: 30px; }
   .Radio + .Radio {
     margin-top: -15px; }
-  .Radio:active {
-    transform: scale(0.98);
-    transform-origin: 0 50%; }
   .Radio span {
-    padding-left: 0.6em;
+    padding-left: 0.5em;
     cursor: pointer; }
     @supports (-moz-orient: vertical) {
       .Radio span {
@@ -449,6 +446,8 @@ textarea {
   @media (min-width: 1278px) {
     .Radio:hover .RadioBtn:not(:disabled) {
       border-color: #bc2fbc; } }
+  .Radio:active .RadioBtn {
+    transform: scale(0.8); }
   .RadioBtn:focus:not(:disabled) {
     border-color: #bc2fbc; }
   .RadioBtn:checked {

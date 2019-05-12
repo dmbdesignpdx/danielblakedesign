@@ -8,13 +8,8 @@
     margin-top: -15px;
   }
 
-  &:active {
-    transform: scale(0.98);
-    transform-origin: 0 50%;
-  }
-
   span {
-    padding-left: 0.6em;
+    padding-left: 0.5em;
     cursor: pointer;
 
     @supports (-moz-orient:vertical) {
@@ -65,6 +60,12 @@
     @include desktop {
       border-color: brand(_two);
     }
+  }
+
+  // Active
+  @at-root
+  .Radio:active & {
+    transform: scale(0.8);
   }
 
   // Focus
