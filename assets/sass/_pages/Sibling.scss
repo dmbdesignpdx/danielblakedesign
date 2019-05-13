@@ -21,7 +21,7 @@
     }
   }
   
-  picture {
+  picture:not(:last-of-type) {
     margin-bottom: 18px;
     
     @include tabletPor {

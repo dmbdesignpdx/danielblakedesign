@@ -583,10 +583,10 @@ textarea {
   padding-top: 38vh;
   line-height: 1.2; }
 
-.sib picture {
+.sib picture:not(:last-of-type) {
   margin-bottom: 18px; }
   @media (min-width: 766px) {
-    .sib picture {
+    .sib picture:not(:last-of-type) {
       margin-bottom: 60px; } }
 
 .sib img {
