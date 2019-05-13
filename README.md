@@ -2,28 +2,27 @@
 
 ### Design
 
+- InVision
+- Sketch
+- XD
 - InDesign
 - Illustrator
-- XD
 - Photoshop
-- After Effects
-- Premiere Pro
-- InVision Studio
 
 ### Development
 
 - HTML5
 - CSS3 / SCSS / SassScript
-- JavaScript / ES6+
-- Vue.js / React.js / Preact.js
+- JavaScript / ES2015+
+- React.js / Vue.js
 - Git
-- NativeScript
 - Nuxt.js / Hugo / Jekyll
-- Gulp.js / Webpack.js
-- XML / YAML / JSON
-- CoffeeScript
-- PHP / MySQL
+- Webpack.js / Gulp.js
+- jQuery / CoffeeScript
+- XML / JSON / YAML
+- GraphQL / PHP / MySQL
 - Node.js / NPM
+- Jest / Enzyme
 
 ### Experience
 
