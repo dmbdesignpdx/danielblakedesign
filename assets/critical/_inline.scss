@@ -24,9 +24,10 @@
   font-weight: 900;
   font-display: block;
   src:
-  local('Montserrat Black'),
-  local('Montserrat-Black'),
-  url('../fonts/montserrat-90.woff') format('woff');
+    local('Montserrat Black'),
+    local('Montserrat-Black'),
+    url('../fonts/montserrat-900.woff2') format('woff2'),
+    url('../fonts/montserrat-900.woff') format('woff');
 }
 
 
