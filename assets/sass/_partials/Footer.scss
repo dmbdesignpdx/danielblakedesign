@@ -11,11 +11,17 @@
     }
   }
   
-  p, small, address {
+  p,
+  small,
+  address {
     font-size: 0.9rem;
-    color: brand(_darkwhite);
     text-align: left;
     letter-spacing: 0.02em;
+  }
+
+  p,
+  address {
+    color: brand(_darkwhite);
   }
   
   address {
@@ -28,7 +34,7 @@
   }
   
   small {
-    color: brand(_slightgray);
+    color: hsl(250,11%,70%);
   }
   
   aside {

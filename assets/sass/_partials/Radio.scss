@@ -10,10 +10,11 @@
 
   span {
     padding-left: 0.5em;
+    margin-top: 1px;
     cursor: pointer;
 
     @supports (-moz-orient:vertical) {
-      margin-top: 2px;
+      // margin-top: 1px;
     }
 
     // Hover

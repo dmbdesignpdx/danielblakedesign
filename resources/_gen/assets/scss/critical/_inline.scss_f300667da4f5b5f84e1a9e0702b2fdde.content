@@ -12,11 +12,18 @@
  * Media Queries
  */
 @font-face {
-  font-family: 'Montserrat';
+  font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  font-display: block;
-  src: local("Montserrat Black"), local("Montserrat-Black"), url("/fonts/montserrat-900.woff2") format("woff2"), url("/fonts/montserrat-900.woff") format("woff"); }
+  font-display: swap;
+  src: url("/fonts/montserrat-900.woff2") format("woff2"), url("/fonts/montserrat-900.woff") format("woff"); }
+
+@font-face {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/heebo-400.woff2") format("woff2"), url("/fonts/heebo-400.woff") format("woff"); }
 
 /**
  * Grid
@@ -39,7 +46,7 @@
 
 html {
   background: #f4f4f6;
-  font: normal 1.1em system-ui, sans-serif; }
+  font: 400 1.1em Heebo, sans-serif; }
 
 body {
   color: #373546;
@@ -73,27 +80,27 @@ a {
 
 h1 {
   text-rendering: geometricPrecision;
-  letter-spacing: -.03em;
-  word-spacing: .1em;
+  letter-spacing: -0.03em;
+  word-spacing: 0.1em;
   padding-top: 27vh;
-  margin-bottom: .3em;
+  margin-bottom: 0.3em;
   font-size: 2.4rem; }
   h1 span {
     display: inline-block; }
     h1 span::after {
       display: block;
-      content: "";
+      content: '';
       width: 0;
       height: 6px;
       background: #e82c61;
       position: relative;
-      margin-top: -.14em;
+      margin-top: -0.14em;
       z-index: -1;
       border-radius: 3px; }
       h1 span:last-child::after {
-        transition: width .4s 1.2s; }
+        transition: width 0.4s 1.2s; }
       h1 span:first-child::after {
-        transition: width .4s .8s; }
+        transition: width 0.4s 0.8s; }
       h1 span.__underline::after {
         width: 100%; }
   .sib h1 {
@@ -103,8 +110,8 @@ h1 {
 p {
   text-rendering: optimizeSpeed;
   color: #58536e;
-  line-height: 1.5;
-  letter-spacing: .02em;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
   hyphens: none; }
 
 .Hero.__intro h1, .Hero.__intro p {
@@ -114,11 +121,11 @@ p {
 .Hero h1, .Hero p {
   transform: translateX(0);
   opacity: 1;
-  transition: transform .4s 0s, opacity .4s 0s;
+  transition: transform 0.4s 0s, opacity 0.4s 0s;
   transform-style: preserve-3d; }
 
 .Hero p {
-  transition: transform .4s .4s, opacity .4s .4s; }
+  transition: transform 0.4s 0.4s, opacity 0.4s 0.4s; }
 
 /**
  * Whole
@@ -221,7 +228,7 @@ p {
     padding-right: 24px;
     padding-left: 24px; }
   h1 {
-    padding-top: 37vh;
+    padding-top: 36vh;
     font-size: 2.6rem; }
   .Nav {
     height: 90px; }

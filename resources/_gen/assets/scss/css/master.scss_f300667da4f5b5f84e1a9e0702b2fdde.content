@@ -287,9 +287,9 @@ textarea {
     stroke-linecap: round;
     stroke: #373546; }
   .About li {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.6em;
     font-size: 0.9rem;
-    line-height: 1.3; }
+    line-height: 1.4; }
 
 #design {
   color: #e82c61; }
@@ -420,10 +420,8 @@ textarea {
     margin-top: -15px; }
   .Radio span {
     padding-left: 0.5em;
+    margin-top: 1px;
     cursor: pointer; }
-    @supports (-moz-orient: vertical) {
-      .Radio span {
-        margin-top: 2px; } }
     @media (min-width: 1278px) {
       .Radio:hover span {
         color: #bc2fbc; } }
@@ -495,11 +493,15 @@ textarea {
   @media (min-width: 540px) {
     .Footer address, .Footer aside {
       grid-column: 1 / span 2; } }
-  .Footer p, .Footer small, .Footer address {
+  .Footer p,
+  .Footer small,
+  .Footer address {
     font-size: 0.9rem;
-    color: #eeeef2;
     text-align: left;
     letter-spacing: 0.02em; }
+  .Footer p,
+  .Footer address {
+    color: #eeeef2; }
   .Footer address {
     font-weight: normal;
     line-height: 1.5; }
@@ -507,7 +509,7 @@ textarea {
       .Footer address {
         grid-row: 1 / 1; } }
   .Footer small {
-    color: #b8b5c4; }
+    color: #adaabb; }
   .Footer aside {
     margin-top: 30px; }
     @media (min-width: 540px) {
@@ -528,21 +530,13 @@ textarea {
 .Btn {
   -webkit-tap-highlight-color: transparent;
   display: inline-block;
-  height: 50px;
-  padding: 0 1.5em;
+  padding: 0.6em 1.5em;
   font-weight: 700;
-  line-height: 50px;
   letter-spacing: 0.02em;
   text-align: center;
   font-size: 0.9em;
   border-radius: 3px;
   cursor: pointer; }
-  @supports (-moz-binding: none) {
-    .Btn {
-      line-height: 52px; } }
-  @supports (-webkit-marquee: revert) {
-    .Btn {
-      line-height: 48px; } }
 
 .Btn.--primary {
   box-shadow: 0 1px 2px rgba(0,0,30,0.35);
