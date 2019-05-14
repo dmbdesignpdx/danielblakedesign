@@ -33,7 +33,7 @@
 
     <svg><use xlink:href='/img/icons.svg#snippet'/></svg>
 
-    <h3 id='cp1'>{{- .Params.codepen.title -}}</h3>
+    <h3 id='cp1'>{{- .Params.codepen.title | safeHTML -}}</h3>
 
     <p>{{- .Params.codepen.copy | safeHTML -}}</p>
 
