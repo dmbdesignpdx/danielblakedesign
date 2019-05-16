@@ -6,10 +6,10 @@
     name='{{ .type }}'
     value='{{ .type }}'
     aria-labelledby='{{ .id }}'
-    {{- if eq .disabled true -}}
+    {{ if eq .disabled true }}
       aria-disabled='true'
       disabled
-    {{- end -}}
+    {{ end }}
   >
 
   <span
@@ -17,7 +17,7 @@
     aria-hidden='true'  
   >
 
-    {{- T .type -}}
+    {{ T .type }}
 
   </span>
 

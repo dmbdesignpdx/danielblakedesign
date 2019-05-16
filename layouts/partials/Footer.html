@@ -1,7 +1,7 @@
-{{- $hugo := "<a href='https://gohugo.io/' target='_blank' rel='external noopener noreferrer'>Hugo</a>" -}}
-{{- $github := "<a href='https://github.com' target='_blank' rel='external noopener noreferrer'>Github</a>" -}}
-{{- $netlify := "<a href='https://www.netlify.com' target='_blank' rel='external noopener noreferrer'>Netlify</a>" -}}
-{{- $links := slice $hugo $github $netlify -}}
+{{ $hugo := "<a href='https://gohugo.io/' target='_blank' rel='external noopener noreferrer'>Hugo</a>" }}
+{{ $github := "<a href='https://github.com' target='_blank' rel='external noopener noreferrer'>Github</a>" }}
+{{ $netlify := "<a href='https://www.netlify.com' target='_blank' rel='external noopener noreferrer'>Netlify</a>" }}
+{{ $links := slice $hugo $github $netlify }}
 
 
 <footer class='Footer'>
@@ -10,7 +10,7 @@
 
     <address>
 
-      {{- T "made" "&#x1F984;&#x1F308;" | safeHTML -}}<br>
+      {{ T "made" "&#x1F984;&#x1F308;" | safeHTML }}<br>
 
       <a href='mailto:daniel@danielblake.design'>daniel@danielblake.design</a>
 
@@ -18,11 +18,11 @@
     
     <aside>
       
-      <p>{{- T "built" $links | safeHTML -}}</p>
+      <p>{{ T "built" $links | safeHTML }}</p>
     
     </aside>  
 
-    <p><small>{{- .Site.Copyright -}}</small></p>
+    <p><small>{{ .Site.Copyright }}</small></p>
 
   </div>
 

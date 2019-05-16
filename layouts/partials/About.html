@@ -7,20 +7,20 @@
 
   <h2 id='a1'>
 
-    {{- T "about" -}}
+    {{ T "about" }}
 
   </h2>
 
-  {{- .Content -}}
+  {{ .Content }}
 
 
   <!-- Skills -->
 
-  {{- range (index .Site.Data.skills .Params.lang) -}}
+  {{ range ( index .Site.Data.skills .Params.lang ) }}
 
-    {{- partial "Skills" . -}}
+    {{ partial "Skills" . }}
 
-  {{- end -}}
+  {{ end }}
 
 
 </article>

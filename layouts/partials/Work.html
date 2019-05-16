@@ -9,18 +9,18 @@
     flexr-wrap
   >
 
-    {{- T "work" -}}
+    {{ T "work" }}
 
   </h2>
 
 
   <!-- Thumbs -->
 
-  {{- range first 3 (index .Site.Data.work .Params.lang) -}}
+  {{ range first 3 ( index .Site.Data.work .Params.lang ) }}
 
-    {{- partial "Thumbs" . -}}
+    {{ partial "Thumbs" . }}
 
-  {{- end -}}
+  {{ end }}
 
 
   <!-- Codepen -->
@@ -33,18 +33,18 @@
 
     <svg><use xlink:href='/img/icons.svg#snippet'/></svg>
 
-    <h3 id='cp1'>{{- .Params.codepen.title | safeHTML -}}</h3>
+    <h3 id='cp1'>{{ .Params.codepen.title | safeHTML }}</h3>
 
-    <p>{{- .Params.codepen.copy | safeHTML -}}</p>
+    <p>{{ .Params.codepen.copy | safeHTML }}</p>
 
 
     <!-- Visit -->
 
-    {{- with (index (index .Site.Data.work .Params.lang) 3) -}}
+    {{ with (index (index .Site.Data.work .Params.lang) 3) }}
     
-      {{- partial "Btn" (dict "type" "link" "theme" "primary" "link" .link  "title" .title "blank" true "rel" .rel "text" "visit") -}}
+      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .link  "title" .title "blank" true "rel" .rel "text" "visit" ) }}
 
-    {{- end -}}
+    {{ end }}
 
   </section>
 

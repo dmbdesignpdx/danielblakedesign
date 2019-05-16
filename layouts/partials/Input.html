@@ -5,12 +5,12 @@
     aria-hidden='true'
   >
 
-    {{- T .name -}}
+    {{ T .name }}
 
   </span>
 
 
-  {{- if eq .type "textarea" -}}
+  {{ if eq .type "textarea" }}
 
     <textarea 
       class='InputField'
@@ -21,7 +21,7 @@
       required>
     </textarea>
 
-  {{- else -}}
+  {{ else }}
 
     <input
       class='InputField'
@@ -34,7 +34,7 @@
       required
     />
 
-  {{- end -}}
+  {{ end }}
 
 
 </label>

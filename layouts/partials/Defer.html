@@ -4,8 +4,8 @@
 
 
 <!-- Master -->
-{{- $master := resources.Get "css/master.scss" | toCSS -}}
-{{- if eq (getenv "HUGO_ENV") "production" -}}
-{{- $master = $master | minify -}}
-{{- end -}}
-<style>{{- $master.Content | safeCSS -}}</style>
+{{ $master := resources.Get "css/master.scss" | toCSS }}
+{{ if eq (getenv "HUGO_ENV") "production" }}
+{{ $master = $master | minify }}
+{{ end }}
+<style>{{ $master.Content | safeCSS }}</style>

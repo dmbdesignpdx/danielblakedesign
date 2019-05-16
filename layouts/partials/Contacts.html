@@ -1,9 +1,9 @@
 <a 
   href='{{ .link | safeURL }}'
-  {{- if and (ne .type "email") (ne .type "phone") -}}
+  {{ if and ( ne .type "email" ) ( ne .type "phone" ) }}
     target='_blank'
     rel='external noreferrer noopener'
-  {{- end -}}
+  {{ end }}
 >
 
   <svg
@@ -15,6 +15,6 @@
 
   </svg>
 
-  {{- .text -}}
+  {{ .text }}
 
 </a>
