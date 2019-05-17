@@ -1,43 +1,47 @@
-{{- $page := index .Site.Data.error (.Site.Language.Lang) -}}
+{{ $page := index .Site.Data.error ( .Site.Language.Lang ) }}
 
 <!doctype html>
+
 <html lang='{{ .Language }}'>
-<head>
 
-   <meta charset='utf-8'>
+  <head>
 
-   <meta name='viewport' content='width=device-width,initial-scale=1.0,viewport-fit=cover'>
+    <meta charset='utf-8'>
 
-   <title>{{- $page.title -}}</title>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,viewport-fit=cover'>
 
-   <meta name='description' content='{{ $page.description }}'>
+    <title>{{ $page.title }}</title>
 
-   {{- $snap := resources.Get "sass/_pages/404.scss" | toCSS | minify -}}
-   <style>{{- $snap.Content | safeCSS -}}</style>
+    <meta name='description' content='{{ $page.description }}'>
 
-</head>
+    {{ $snap := resources.Get "sass/_pages/404.scss" | toCSS | minify }}
 
-<body>
+    <style>{{ $snap.Content | safeCSS }}</style>
 
-   <main>
+  </head>
+
+  <body>
+
+    <main>
 
       <h1>404</h1>
 
       <div>
 
-         <p>{{- $page.copy -}}</p>
+        <p>{{ $page.copy }}</p>
 
-         <a
-            href='{{ .Site.BaseURL }}'
-            aria-label='{{ $page.aria_home }}'>
+        <a
+          href='{{ .Site.BaseURL }}'
+          aria-label='{{ $page.aria_home }}'>
 
-            {{- $page.home -}}
+          {{ $page.home }}
 
-         </a>
+        </a>
 
       </div>
 
-   </main>
+    </main>
 
-</body>
+  </body>
+
 </html>

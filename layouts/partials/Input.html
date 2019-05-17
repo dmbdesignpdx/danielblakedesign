@@ -16,10 +16,10 @@
       class='InputField'
       name='{{ .name }}'
       rows='10'
+      value=''
       aria-labelledby='{{ .id }}'
-      aria-required='true'
-      required>
-    </textarea>
+      required
+    ></textarea>
 
   {{ else }}
 
@@ -27,10 +27,10 @@
       class='InputField'
       name='{{ .name }}'
       type='{{ .type }}'
+      value=''
       autocomplete='{{ .name }}'
       aria-autocomplete='both'
       aria-labelledby='{{ .id }}'
-      aria-required='true'
       required
     />
 

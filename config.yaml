@@ -6,9 +6,9 @@ author:
   email: daniel@danielblake.design
   phone: 1-971-801-0208
   city: Portland, Oregon
-  github: https://github.com/dmbdesignpdx
-  linkedin: https://www.linkedin.com/in/danielblakepdx
-  codepen: https://codepen.io/dmbdesignpdx
+  github: 'https://github.com/dmbdesignpdx'
+  linkedin: 'https://www.linkedin.com/in/danielblakepdx'
+  codepen: 'https://codepen.io/dmbdesignpdx'
 
 ## Params ##
 params:
@@ -16,7 +16,7 @@ params:
   theme: "#E6285D"
 
   # Open Graph / Twitter
-  image: https://danielblake.design/img/daniel-og.png
+  image: 'https://danielblake.design/img/daniel-og.png'
   type: image/png
 
 
@@ -27,7 +27,7 @@ languages:
     languageName: English
     weight: 1
     contentDir: content/en
-    baseURL: https://danielblake.design
+    baseURL: 'https://danielblake.design'
     copyright: |
       Copyright 2019 Daniel Blake. All rights reserved. All other trademarks are the property of their respective owners.
 

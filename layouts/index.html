@@ -1,22 +1,19 @@
-{{- define "SITE" -}}
+{{ define "SITE" }}
 
 
-  {{- partial "Hero" ( dict "one" .Params.hero.title "two" .Params.hero.copy "home" true ) -}}
+  {{ partial "Hero" ( dict "one" .Params.hero.title "two" .Params.hero.copy "home" true ) }}
 
-  {{- partial "Nav" . -}}
-
-
-  <!-- Below the Fold -->
+  {{ partial "Nav" . }}
 
   <main>
 
-    {{- partial "Work" . -}}
+    {{ partial "Work" . }}
 
-    {{- partial "About" . -}}
+    {{ partial "About" . }}
 
-    {{- partial "Contact" . -}}
+    {{ partial "Contact" . }}
 
   </main>
 
 
-{{- end -}}
+{{ end }}
