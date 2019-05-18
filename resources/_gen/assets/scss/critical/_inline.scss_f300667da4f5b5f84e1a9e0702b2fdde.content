@@ -82,7 +82,7 @@ h1 {
   text-rendering: geometricPrecision;
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
-  padding-top: 27vh;
+  padding-top: 28vh;
   margin-bottom: 0.3em;
   font-size: 2.4rem; }
   h1 span {

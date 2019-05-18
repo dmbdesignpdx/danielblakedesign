@@ -9,10 +9,6 @@
   border-radius: 3px;
   cursor: pointer;
   
-  @include target(firefox) {
-    //  line-height: 52px;
- }
-  
   @include target(safari) {
     padding-bottom: 0.7em;
   }
