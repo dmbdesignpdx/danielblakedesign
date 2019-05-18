@@ -88,11 +88,14 @@ h2 {
 }
 
 a:focus,
-a:active {
+a:active,
+button:focus,
+button:active {
   outline: 0;
 }
 
-a:hover {
+a:hover,
+button:hover {
   cursor: pointer;
 }
 
@@ -149,5 +152,22 @@ button {
 
 textarea {
   line-height: 1.4;
+}
+
+p {
+
+  a {
+
+    &:hover {
+
+      @include desktop {
+        text-decoration: underline;
+      }   
+    }
+
+    &:focus {
+      text-decoration: underline;
+    }
+  }
 }
 

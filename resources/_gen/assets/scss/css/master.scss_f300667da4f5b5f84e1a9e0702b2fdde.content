@@ -69,7 +69,7 @@ h5 {
     content: "";
     width: 100%;
     height: 4px;
-    background: #e82c61;
+    background: #e13364;
     top: -.1em;
     z-index: -1;
     border-radius: 2px; }
@@ -78,10 +78,13 @@ h2 {
   font-size: 2rem; }
 
 a:focus,
-a:active {
+a:active,
+button:focus,
+button:active {
   outline: 0; }
 
-a:hover {
+a:hover,
+button:hover {
   cursor: pointer; }
 
 address {
@@ -128,6 +131,13 @@ button {
 textarea {
   line-height: 1.4; }
 
+@media (min-width: 1278px) {
+  p a:hover {
+    text-decoration: underline; } }
+
+p a:focus {
+  text-decoration: underline; }
+
 [flexr-grid] {
   width: 100%;
   padding-right: 18px;
@@ -160,18 +170,18 @@ textarea {
 
 @media (min-width: 1278px) {
   #nav a:first-child:hover svg * {
-    fill: #e82c61; } }
+    fill: #e13364; } }
 
 #nav a:first-child:active svg *,
 #nav a:first-child:focus svg * {
-  fill: #e82c61; }
+  fill: #e13364; }
 
 #nav a:active, #nav a:focus {
-  color: #e82c61; }
+  color: #e13364; }
 
 @media (min-width: 1278px) {
   #nav a:hover {
-    color: #e82c61; } }
+    color: #e13364; } }
 
 #nav.__show {
   -webkit-transform: translateY(calc(100% + 3px));
@@ -250,7 +260,7 @@ textarea {
 .About {
   padding-top: 10vh;
   padding-bottom: 10vh; }
-  .About h3, .About p, .About li {
+  .About h3, .About li {
     color: #58536e; }
   .About h2 {
     margin-bottom: 1em;
@@ -281,8 +291,8 @@ textarea {
   .About svg {
     width: 100px;
     height: 100px;
-    stroke-width: 1.6;
     fill: none;
+    stroke-width: 1.6;
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke: #373546; }
@@ -292,13 +302,13 @@ textarea {
     line-height: 1.4; }
 
 #design {
-  color: #e82c61; }
+  color: #d92659; }
 
 #development {
   color: #cc2494; }
 
 #experience {
-  color: #ab2bab; }
+  color: #ae29ae; }
 
 .Contact {
   padding-top: 10vh;
@@ -321,9 +331,9 @@ textarea {
       color: #373546; }
       @media (min-width: 1278px) {
         .Contact address a:hover {
-          color: #e82c61; } }
+          color: #e13364; } }
       .Contact address a:focus {
-        color: #e82c61; }
+        color: #e13364; }
       .Contact address a:active {
         transform: scale(0.96);
         transform-origin: 0 50%; }
@@ -335,10 +345,10 @@ textarea {
       stroke-width: 2.6;
       fill: none; }
       #contact a:focus svg {
-        stroke: #e82c61; }
+        stroke: #e13364; }
       @media (min-width: 1278px) {
         #contact a:hover svg {
-          stroke: #e82c61; } }
+          stroke: #e13364; } }
 
 @media (min-width: 766px) {
   .Form {
@@ -362,7 +372,7 @@ textarea {
   color: #66627a; }
 
 .Form label:focus-within span {
-  color: #bc2fbc; }
+  color: #ae29ae; }
 
 .Form legend,
 .Form .InputField {
@@ -390,9 +400,9 @@ textarea {
   margin-bottom: 0.33em; }
   @media (min-width: 1278px) {
     .Input:hover span {
-      color: #bc2fbc; } }
+      color: #ae29ae; } }
   .InputField:focus span {
-    color: #bc2fbc; }
+    color: #ae29ae; }
 
 .InputField {
   padding: 12px;
@@ -424,9 +434,9 @@ textarea {
     cursor: pointer; }
     @media (min-width: 1278px) {
       .Radio:hover span {
-        color: #bc2fbc; } }
+        color: #ae29ae; } }
     .Radio:focus span {
-      color: #bc2fbc; }
+      color: #ae29ae; }
     .RadioBtn:disabled + span {
       color: #b8b5c4;
       cursor: default; }
@@ -443,14 +453,14 @@ textarea {
       cursor: pointer; } }
   @media (min-width: 1278px) {
     .Radio:hover .RadioBtn:not(:disabled) {
-      border-color: #bc2fbc; } }
+      border-color: #ae29ae; } }
   .Radio:active .RadioBtn {
     transform: scale(0.8); }
   .RadioBtn:focus:not(:disabled) {
-    border-color: #bc2fbc; }
+    border-color: #ae29ae; }
   .RadioBtn:checked {
-    background: #bc2fbc;
-    border-color: #bc2fbc; }
+    background: #ae29ae;
+    border-color: #ae29ae; }
   .RadioBtn:disabled {
     border-color: #b8b5c4;
     cursor: auto; }
@@ -530,21 +540,24 @@ textarea {
 .Btn {
   -webkit-tap-highlight-color: transparent;
   display: inline-block;
-  padding: 0.6em 1.5em;
+  padding: 0.7em 1.5em 0.6em;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-align: center;
   font-size: 0.9em;
   border-radius: 3px;
   cursor: pointer; }
+  @supports (-webkit-marquee: revert) {
+    .Btn {
+      padding-bottom: 0.7em; } }
 
 .Btn.--primary {
   box-shadow: 0 1px 2px rgba(0,0,30,0.35);
-  background: #e82c61;
+  background: #e13364;
   color: #f9f9fb; }
   .Btn.--primary:focus {
     box-shadow: 0 2px 5px rgba(0,0,30,0.35);
-    background: #ea4372; }
+    background: #e44975; }
   .Btn.--primary:active {
     box-shadow: 0 1px 1px rgba(0,0,30,0.35);
     transform: scale(0.96); }
@@ -554,21 +567,21 @@ textarea {
   @media (min-width: 1278px) {
     .Btn.--primary:hover {
       box-shadow: 0 2px 5px rgba(0,0,30,0.35);
-      background: #ea4372; } }
+      background: #e34572; } }
 
 .Btn.--secondary {
-  box-shadow: 0 1px 2px rgba(0,0,30,0.2);
+  margin-left: 1em;
   background: #eeeef2;
-  margin-left: 1em; }
+  box-shadow: 0 1px 2px rgba(0,0,30,0.2); }
   .Btn.--secondary:focus {
-    box-shadow: 0 2px 5px rgba(0,0,30,0.2);
-    background: #f1f1f4; }
+    background: #f1f1f4;
+    box-shadow: 0 2px 5px rgba(0,0,30,0.2); }
   .Btn.--secondary:active {
     box-shadow: 0 1px 1px rgba(0,0,30,0.2);
     transform: scale(0.96); }
   .Btn.--secondary:hover {
-    box-shadow: 0 2px 5px rgba(0,0,30,0.2);
-    background: #f1f1f4; }
+    background: #f1f1f4;
+    box-shadow: 0 2px 5px rgba(0,0,30,0.2); }
 
 .sib h1 span:first-child::after {
   transition: width 0.4s 0.4s; }

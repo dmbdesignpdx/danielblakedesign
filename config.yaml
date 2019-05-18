@@ -13,7 +13,7 @@ author:
 ## Params ##
 params:
 # Theme
-  theme: "#E6285D"
+  theme: "#E13364"
 
   # Open Graph / Twitter
   image: 'https://danielblake.design/img/daniel-og.png'

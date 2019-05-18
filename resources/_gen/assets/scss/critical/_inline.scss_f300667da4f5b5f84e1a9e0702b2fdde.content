@@ -92,7 +92,7 @@ h1 {
       content: '';
       width: 0;
       height: 6px;
-      background: #e82c61;
+      background: #e13364;
       position: relative;
       margin-top: -0.14em;
       z-index: -1;
