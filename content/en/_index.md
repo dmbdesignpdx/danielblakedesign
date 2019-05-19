@@ -27,4 +27,4 @@ codepen:
 # Main Site Content Below (in About Section)
 ---
 
-I am a UI engineer and designer living in Portland,&nbsp;OR and a <i>Web Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank' aria-label='Visit The Program Website'>The Program</a>. I've always been inspired by and excited about visual design and front end development &mdash; both have been my passion for the past six years. A website should be usable and enjoyable for anyone because the web is for <em>everyone</em>. That is the bar I set for&nbsp;myself.
+I am a UI engineer and designer living and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank' aria-label='Visit The Program Website'>The Program</a> in Portland,&nbsp;OR. I've always been inspired by and excited about visual design and front end development &mdash; both have been my passion for the past six years. Websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself.
