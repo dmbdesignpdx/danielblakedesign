@@ -27,7 +27,12 @@
       class='InputField'
       name='{{ .name }}'
       type='{{ .type }}'
-      value=''
+      {{ if eq .type "email" }}
+        inputmode='email'
+      {{ else }}
+        inputmode='text'
+        value=''
+      {{ end }}
       autocomplete='{{ .name }}'
       aria-autocomplete='both'
       aria-labelledby='{{ .id }}'
