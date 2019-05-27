@@ -1,40 +1,27 @@
+{{/*
+  * Props
+  *
+  * type: string (Required)
+  * theme: string (Required)
+  * text: string (Required)
+  * link: string (Required)
+  * rel: string
+ */}}
+
+
 {{ if eq .type "link" }}
 
-
-  {{ if eq .theme "primary" }}
-
-    <a
-      class='Btn --primary sr'
-      {{ if eq .blank true }}
-        target='_blank'
-        rel='{{ .rel }}'
-      {{ end }}
-      {{ if eq .local true }}
-        href='{{ .title }}'
-      {{ else }}
-        href='{{ .link }}'
-      {{ end }}
-    >
-
-  {{ else }}
-
-    <a
-      class='Btn --secondary sr'
-      {{ if eq .blank true }}
-        target='_blank'
-        rel='{{ .rel }}'
-      {{ end }}
-      {{ if eq .local true }}
-        href='{{ .title }}'
-      {{ else }}
-        href='{{ .link }}'
-      {{ end }}
-    >
-
-  {{ end }}
-    
-
-    {{ T .text }} <span>{{ .title | title }}</span>
+  <a
+    class='Btn --{{ .theme }}'
+    {{ if .rel }}
+      target='_blank'
+      rel='{{ .rel }}'
+    {{ end }}
+    href='{{ .link }}'
+    aria-label='{{ T .text }} {{ .title | title }}'
+  >
+  
+    {{ T .text }}
 
   </a>
 

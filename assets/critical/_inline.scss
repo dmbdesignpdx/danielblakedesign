@@ -110,7 +110,6 @@ svg {
 }
 
 a {
-  @include tap-highlight-color(transparent);
   text-decoration: none;
   color: inherit;
   font-weight: 700;
@@ -121,7 +120,6 @@ h1 {
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
   padding-top: 28vh;
-  margin-bottom: 0.3em;
   font-size: 2.4rem;
   
   // Underlined words
@@ -154,7 +152,7 @@ h1 {
       // JS animation
       @at-root
       h1 span.__underline::after {
-        width: 100%
+        width: 100%;
       }
     }
   }
@@ -164,7 +162,6 @@ h1 {
   // Sibling h1
   .sib & {
     padding-top: 38vh;
-    line-height: 1.2;
   }
 }
 
@@ -198,6 +195,7 @@ p {
 }
 
 .Hero p {
+  margin-top: 0.8em;
   transition: transform 0.4s 0.4s, opacity 0.4s 0.4s;
 }
 
@@ -290,11 +288,11 @@ p {
     align-items: center;
     margin: 0 auto 1px 0;
     letter-spacing: -0.02em;
-    
+
     span {
       display: none;
     }
-    
+
     svg {
       width: 2.6em;
       height: 2.6em;

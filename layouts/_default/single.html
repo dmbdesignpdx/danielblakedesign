@@ -1,14 +1,14 @@
-{{- define "SITE" -}}
+{{ define "SITE" }}
 
 
   <!-- Hero -->
 
-  {{- partial "Hero" ( dict "one" .Params.one "two" .Params.two ) -}}
+  {{ partial "Hero" ( dict "one" .Params.one "two" .Params.two ) }}
 
 
   <!-- Navigation -->
 
-  {{- partial "Nav" . -}}
+  {{ partial "Nav" . }}
 
 
   <!-- Main Content -->
@@ -20,24 +20,24 @@
 
       <!-- Thumbs Logic -->
 
-      {{- $xs := dict "size" "xs" "width" 750 -}}
-      {{- $sm := dict "size" "sm" "width" 1080 -}}
-      {{- $md := dict "size" "md" "width" 1280 -}}
-      {{- $lg := dict "size" "lg" "width" 1440 -}}
-      {{- $xl := dict "size" "xl" "width" 1920 -}}
-      {{- $fl := dict "size" "fl" "width" 2880 -}}
-      {{- $sizes := dict "a" $xs "b" $sm "c" $md "d" $lg "e" $xl "f" $fl -}}
-      {{- $project := replace .RelPermalink "/" "" -}}
+      {{ $xs := dict "size" "xs" "width" 750 }}
+      {{ $sm := dict "size" "sm" "width" 1080 }}
+      {{ $md := dict "size" "md" "width" 1280 }}
+      {{ $lg := dict "size" "lg" "width" 1440 }}
+      {{ $xl := dict "size" "xl" "width" 1920 }}
+      {{ $fl := dict "size" "fl" "width" 2880 }}
+      {{ $sizes := dict "a" $xs "b" $sm "c" $md "d" $lg "e" $xl "f" $fl }}
+      {{ $project := replace .RelPermalink "/" "" }}
 
 
-      {{- range $num := seq 3 -}}
+      {{ range $num := seq 3 }}
 
         <picture>
 
           <source
               type='image/webp'
               srcset='{{- range $key, $value := $sizes -}}
-                /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.webp {{ $value.width }}w{{- if ne $key "f" -}},{{- end -}}
+                /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.webp {{ $value.width }}w{{ if ne $key "f" }},{{ end }}
               {{- end -}}'
           />
 
@@ -45,25 +45,25 @@
               src='/img/{{ $project }}/{{ $project }}-{{ $num }}-fl.jpg'
               alt='{{ T "aria_sib" (dict "title" ($project | title) "num" $num) }}'
               srcset='{{- range $key, $value := $sizes -}}
-                /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.jpg {{ $value.width }}w{{- if ne $key "f" -}},{{- end -}}
+                /img/{{ $project }}/{{ $project }}-{{ $num }}-{{ $value.size }}.jpg {{ $value.width }}w{{ if ne $key "f" }},{{ end }}
               {{- end -}}'
           />
 
         </picture>
 
-      {{- end -}}
+      {{ end }}
 
 
-      {{- .Content -}}
+      {{ .Content }}
 
 
       <!-- Visit -->
 
-      {{- partial "Btn" (dict "type" "link" "theme" "primary" "link" .Params.link "blank" true "rel" .Params.rel "title" .Params.id "text" "visit") -}}
+      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .Params.link "rel" .Params.rel "title" .Params.id "text" "visit" ) }}
 
     </section>
 
   </main>
 
 
-{{- end -}}
+{{ end }}

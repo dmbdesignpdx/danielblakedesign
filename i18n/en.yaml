@@ -3,7 +3,8 @@
   translation: Work
 - id: about
   translation: About
-
+- id: contact
+  translation: Contact
 
 ## CTAs ##
 - id: preview
@@ -12,8 +13,6 @@
   translation: Visit
 - id: send
   translation: Send
-- id: contact
-  translation: Contact
 
 
 ## Form ##

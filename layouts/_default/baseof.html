@@ -4,17 +4,17 @@
 
   <head>
 
-    {{- partial "Head" . -}}
+    {{ partial "Head" . }}
 
   </head>
 
   <body class='{{ .Params.class }}'>
 
-    {{- block "SITE" . -}}{{- end -}}
+    {{ block "SITE" . }}{{ end }}
 
-    {{- partial "Footer" . -}}
+    {{ partial "Footer" . }}
 
-    {{- partial "Defer" . -}}
+    {{ partial "Defer" . }}
 
   </body>
 

@@ -11,12 +11,12 @@
 
     <!-- Preview -->
 
-    {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "local" true "rel" .rel "text" "preview" ) }}
+    {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "text" "preview" "link" .title ) }}
 
 
     <!-- Visit -->
 
-    {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" .title "blank" true "link" .link "rel" .rel "text" "visit" ) }}
+    {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
 
   </div>
 

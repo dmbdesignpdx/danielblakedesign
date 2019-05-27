@@ -42,7 +42,7 @@
 
     {{ with ( index ( index .Site.Data.work .Params.lang ) 3 ) }}
     
-      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .link  "title" .title "blank" true "rel" .rel "text" "visit" ) }}
+      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
 
     {{ end }}
 
