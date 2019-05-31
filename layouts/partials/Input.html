@@ -3,7 +3,14 @@
   for='{{ .name }}'
 >
 
-  <span>{{ T .name }}</span>
+  <span
+    id='{{ .id }}'
+    aria-hidden='true'
+  >
+
+    {{ T .name | safeHTML }}
+
+  </span>
 
 
   {{ if eq .type "textarea" }}

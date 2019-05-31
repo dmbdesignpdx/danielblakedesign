@@ -9,14 +9,14 @@ date: May 30, 2019
 ## Meta ##
 id: home
 class: home
-lang: en
+lang: es
 
 ## Content ##
 # Hero
 hero:
   title: I <span>design</span> and <span>develop</span> websites.
   copy: |
-    Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
+    ¡Hola! 👋 Me llamo Daniel Blake and&nbsp;yo soy un front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
 
 # Codepen
 codepen:

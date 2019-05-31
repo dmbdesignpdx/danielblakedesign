@@ -9,14 +9,14 @@
     flexr-wrap
   >
 
-    {{ T "work" }}
+    {{ T "work" | safeHTML }}
 
   </h2>
 
 
   <!-- Thumbs -->
 
-  {{ range first 3 ( index .Site.Data.work .Params.lang ) }}
+  {{ range first 3 .Site.Data.work }}
 
     {{ partial "Thumbs" . }}
 
@@ -40,7 +40,7 @@
 
     <!-- Visit -->
 
-    {{ with ( index ( index .Site.Data.work .Params.lang ) 3 ) }}
+    {{ with ( index .Site.Data.work 3 ) }}
     
       {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
 

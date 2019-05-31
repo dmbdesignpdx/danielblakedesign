@@ -4,3 +4,10 @@ en:
   copy: Uh oh... that page doesn't exist. 😬
   home: Home
   aria_home: Go to home page
+
+es:
+  title: Oh snap! 404 - Daniel Blake
+  description: There was a problem with the requested page.
+  copy: Uh oh... that page doesn't exist. 😬
+  home: Home
+  aria_home: Go to home page

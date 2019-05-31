@@ -28,11 +28,11 @@
 
       <div>
 
-        <p>{{ $page.copy }}</p>
+        <p>{{ $page.copy | safeHTML }}</p>
 
         <a href='{{ .Site.BaseURL }}'>
 
-          {{ $page.home }}
+          {{ $page.home | safeHTML }}
 
         </a>
 

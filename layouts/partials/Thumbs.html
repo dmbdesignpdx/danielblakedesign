@@ -1,10 +1,10 @@
 <section
   id='{{ .title }}'
-  aria-label='{{ .aria }}'
+  aria-label='{{ .title | title }}'
   flexr-grid
 >
 
-  <h3>{{ .title | title }} &mdash; {{ .sub }}</h3>
+  <h3>{{ .title | title | safeHTML }} &mdash; {{ T .title | safeHTML }}</h3>
 
   <div class='cta'>
 

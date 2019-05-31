@@ -5,20 +5,16 @@
   flexr-grid
 >
 
-  <h2 id='c1'>
-        
-    {{- T "contact" -}}
-
-  </h2>
+  <h2 id='c1'>{{ T "contact" | safeHTML }}</h2>
 
   <address>
 
 
-    {{- range ( index .Site.Data.contact .Params.lang ) -}}
+    {{ range .Site.Data.contact }}
 
-      {{- partial "Contacts" . -}}
+      {{ partial "Contacts" . }}
 
-    {{- end -}}
+    {{ end }}
 
 
   </address>
@@ -26,6 +22,6 @@
 
   <!-- Contact Form -->
 
-  {{- partial "Form" . -}}
+  {{ partial "Form" . }}
 
 </section>

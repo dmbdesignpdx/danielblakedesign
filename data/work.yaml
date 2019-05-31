@@ -1,24 +1,16 @@
 ## Thumbs ##
-# English
-en:
-  - key: 1
-    title: leadshub
-    sub: Mobile App
-    aria: Project 1 of 3
-    link: 'https://leadshub.com'
-    rel: external nofollow noreferrer noopener
-  - key: 2
-    title: turntable
-    sub: Sass Library
-    aria: Project 2 of 3
-    link: 'https://turntablelib.com'
-    rel: external noreferrer noopener
-  - key: 3
-    title: flexr
-    sub: CSS Micro Framework
-    aria: Project 3 of 3
-    link: 'https://flexrgrid.com'
-    rel: external noreferrer noopener
-  - title: codepen
-    link: 'https://codepen.io/dmbdesignpdx/'
-    rel: external noreferrer noopener
+- key: 1
+  title: leadshub
+  link: 'https://leadshub.com'
+  rel: external nofollow noreferrer noopener
+- key: 2
+  title: turntable
+  link: 'https://turntablelib.com'
+  rel: external noreferrer noopener
+- key: 3
+  title: flexr
+  link: 'https://flexrgrid.com'
+  rel: external noreferrer noopener
+- title: codepen
+  link: 'https://codepen.io/dmbdesignpdx/'
+  rel: external noreferrer noopener

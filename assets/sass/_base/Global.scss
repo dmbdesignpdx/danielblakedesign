@@ -44,11 +44,10 @@ input {
   @include appearance(none);
 }
 
-ul {
+li {
   list-style: none;
 }
 
-// Needed for VoiceOver in Safari
 li::before {
   content: "\200C";
 }

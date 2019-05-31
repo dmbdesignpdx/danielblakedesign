@@ -42,7 +42,7 @@ input {
   -webkit-appearance: none;
   appearance: none; }
 
-ul {
+li {
   list-style: none; }
 
 li::before {
@@ -281,15 +281,15 @@ p a:focus {
     @media (min-width: 1278px) {
       .About p {
         grid-column: span 4; } }
-  .About section:not(:first-of-type) {
+  .About section {
     margin-top: 30px; }
-  .About section:first-of-type {
-    margin-top: 120px; }
-  @media (min-width: 540px) {
-    .About section {
-      margin-top: 120px;
-      grid-column: span 2;
-      grid-row: 3; } }
+    .About section:first-of-type {
+      margin-top: 120px; }
+    @media (min-width: 540px) {
+      .About section {
+        margin-top: 120px;
+        grid-column: span 2;
+        grid-row: 3; } }
   .About h4 {
     font-size: 1.2rem;
     margin-bottom: 0.8em; }

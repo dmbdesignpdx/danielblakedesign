@@ -1,20 +1,21 @@
 <a 
   class='sr'
   href='{{ .link | safeURL }}'
-  {{ if and ( ne .type "email" ) ( ne .type "phone" ) }}
+  {{ if and ( ne .type "cemail" ) ( ne .type "phone" ) }}
     target='_blank'
     rel='external noreferrer noopener'
   {{ end }}
 >
 
-  <svg>
-  
-    <use xlink:href='/img/icons.svg#{{ .type }}' />
+  <svg
+    role='img'
+    aria-label='{{ T .type }}'
+  >
+
+    <use xlink:href='/img/icons.svg#{{ .type }}'/>
 
   </svg>
 
-  <span>{{ .aria }}</span>
-
-  {{ .text }}
+  {{ .text | safeHTML }}
 
 </a>

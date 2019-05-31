@@ -21,7 +21,7 @@
     aria-label='{{ T .text }} {{ .title | title }}'
   >
   
-    {{ T .text }}
+    {{ T .text | safeHTML }}
 
   </a>
 
@@ -33,7 +33,7 @@
     type='{{ .type }}'
   >
 
-    {{ T .text }}
+    {{ T .text | safeHTML }}
 
   </button>
 

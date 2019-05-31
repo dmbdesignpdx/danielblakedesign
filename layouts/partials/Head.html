@@ -6,6 +6,7 @@
    - Prebrowsing Hints
    - HTTP Headers
    - General
+   - Languages
    - Favicons
    - Summary Cards
    - Critical CSS
@@ -72,6 +73,9 @@
 <meta name='format-detection' content='email=no'>
 
 <meta name='theme-color' content='{{ .Site.Params.theme }}'>
+
+
+<!-- TO DO: Languages -->
 
 
 <!-- Favicons -->
@@ -192,7 +196,7 @@
 
 {{ if ne ( getenv "HUGO_ENV" ) "production" }}
 
-  <script defer src='{{ $scripts.RelPermalink }}'></script>
+  <script defer src='{{ $scripts.Permalink }}'></script>
 
 {{ else }}
 
