@@ -1,7 +1,7 @@
 ---
 ## Page Variables ##
-title: Daniel Blake - Front End Web Designer
-description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
+title: Daniel Blake - Diseñador Web Front-End
+description: Daniel Blake, desarrollador y diseñador, es un apasionado de crear sitios web accesibles y receptivos.
 date: May 30, 2019
 
 
@@ -14,17 +14,17 @@ lang: es
 ## Content ##
 # Hero
 hero:
-  title: I <span>design</span> and <span>develop</span> websites.
+  title: <span>Diseño</span> y <span>desarrollo</span> sitios web.
   copy: |
-    ¡Hola! 👋 Me llamo Daniel Blake and&nbsp;yo soy un front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
+    ¡Hola! 👋 Me llamo Daniel Blake and&nbsp;soy un diseñador web front-end que cree que los sitios web deben ser simples, accesibles, receptivos y&nbsp;rápidos.
 
 # Codepen
 codepen:
   title: Code Snippets
   copy: |
-    Check out my Codepens for some ideas and experiments that I've been working&nbsp;on.
+    Echa un vistazo a mis Codepens para ver algunas ideas y experimentos en los que he estado trabajando.
 
 # Main Site Content Below (in About Section)
 ---
 
-I am a UI engineer and designer living and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> in Portland,&nbsp;OR. I've always been inspired by and excited about visual design and front end development &mdash; both have been my passion for the past six years. Websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself.
+Soy un ingeniero y diseñador de UI que vive y trabaja como <i>desarrollador web<i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos seis años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el bar que me&nbsp;puse.

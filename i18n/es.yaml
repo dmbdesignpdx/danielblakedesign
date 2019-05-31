@@ -1,35 +1,35 @@
 ## Nav ##
 - id: work
-  translation: Work
+  translation: Obra
 - id: about
-  translation: About
+  translation: Sobre
 - id: contact
-  translation: Contact
+  translation: Contacto
 
 
 ## CTAs ##
 - id: preview
-  translation: Preview
+  translation: Previsualizarlo
 - id: visit
-  translation: Visit
+  translation: Visitarla
 - id: send
-  translation: Send
+  translation: Envía
 
 
 ## Work ##
 - id: project
-  translation: Project
+  translation: Proyecto
 - id: leadshub
-  translation: Mobile App
+  translation: Aplicación Movil
 - id: turntable
-  translation: Sass Library
+  translation: Biblioteca de Sass
 - id: Flexr
-  translation: CSS Micro Framework
+  translation: Micro Estructura de CSS
 
 
 ## Contact ##
 - id: phone
-  translation: Call 971-801-0208
+  translation: Llama 971-801-0208
 - id: cemail
   translation: Email daniel@danielblake.design
 - id: github

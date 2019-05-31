@@ -23,7 +23,7 @@
   translation: Mobile App
 - id: turntable
   translation: Sass Library
-- id: Flexr
+- id: flexr
   translation: CSS Micro Framework
 
 
@@ -62,4 +62,4 @@
 
 ## Siblings ##
 - id: aria_sib
-  translation: '{{ .title }} project preview {{ .num }} of 3'
+  translation: {{ .title }} project preview {{ .num }} of 3
