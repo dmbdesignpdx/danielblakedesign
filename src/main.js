@@ -11,7 +11,7 @@ import navScroll from './nav'
 window.addEventListener(`load`, () => {
   const ICON = $(`.Arrow`)
   const FORM = document.drop
-  const LANG = $(`#language`)
+  const LANG = $(`#lang`)
   let scrolling = false
 
   /**

@@ -26,25 +26,28 @@
 
     <a href='{{ "/#contact" | relLangURL }}'>{{ T "contact" | safeHTML }}</a>
 
-    <select name='language' id='language'>
-      
-      
-      {{ range .AllTranslations }}
+    <select
+      id='lang'
+      aria-label='select a language'
+    >
 
-        <option
-          lang='{{ .Language.Lang }}'
-          value='{{ .Permalink }}'
-          {{ if eq .Language.Lang $lang }}
-            selected
-          {{ end }}
-        >
-          {{ .Language.Lang | upper }}
-        
-        </option>
-    
-      {{ end }}
-    
-    
+
+        {{ range .AllTranslations }}
+
+          <option
+            lang='{{ .Language.Lang }}'
+            value='{{ .Permalink }}'
+            {{ if eq .Language.Lang $lang }}
+              selected
+            {{ end }}
+          >
+            {{ .Language.Lang | upper }}
+
+          </option>
+
+        {{ end }}
+      
+      
     </select>
 
   </div>

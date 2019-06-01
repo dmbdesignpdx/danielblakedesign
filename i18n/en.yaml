@@ -5,6 +5,8 @@
   translation: About
 - id: contact
   translation: Contact
+- id: select
+  translation: Select a language
 
 
 ## CTAs ##

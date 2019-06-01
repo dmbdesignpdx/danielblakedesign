@@ -94,7 +94,9 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-body, h1, p {
+body,
+h1,
+p {
   margin: 0;
 }
 
@@ -305,10 +307,22 @@ p {
   }
   
   a:nth-child(1n+2) {
-    margin-left: 1.6em;
+    margin-right: 1.6em;
   }
 }
 
+#lang {
+  padding: .3em 1.5em .3em .5em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: inherit;
+  border: 0;
+  border-radius: 3px;
+  background: #FFF url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center / 12px 12px no-repeat;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  cursor: pointer;
+  -webkit-appearance: none;
+}
 
 
 //
@@ -357,6 +371,10 @@ p {
     p,
     h1 {
       width: 25rem;
+
+      [lang=es] & {
+        width: 27rem;
+      }
     }
   }
   
@@ -387,7 +405,7 @@ p {
     }
     
     a:nth-child(1n+2) {
-      margin-left: 2em;
+      margin-right: 2em;
     }
   }
 
@@ -421,6 +439,10 @@ p {
 
   html {
     font-size: 1.25em;
+  }
+
+  #lang:hover {
+    box-shadow: 0 2px 7px rgba(0,0,0,0.2);
   }
 
 }

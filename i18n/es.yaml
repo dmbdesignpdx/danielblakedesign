@@ -5,7 +5,8 @@
   translation: Sobre
 - id: contact
   translation: Contacto
-
+- id: select
+  translation: Select a language
 
 ## CTAs ##
 - id: preview
@@ -23,7 +24,7 @@
   translation: Aplicación Movil
 - id: turntable
   translation: Biblioteca de Sass
-- id: Flexr
+- id: flexr
   translation: Micro Estructura de CSS
 
 
