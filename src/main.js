@@ -11,6 +11,7 @@ import navScroll from './nav'
 window.addEventListener(`load`, () => {
   const ICON = $(`.Arrow`)
   const FORM = document.drop
+  const LANG = $(`#language`)
   let scrolling = false
 
   /**
@@ -49,6 +50,16 @@ window.addEventListener(`load`, () => {
 
     scrolling = false
   }
+
+
+  /**
+   * Changes location based on language selection
+   * @returns {undefined}
+   *
+   */
+  LANG.addEventListener(`change`, event => {
+    window.location = event.target.value
+  })
 
 
   window.addEventListener(`scroll`, () => {

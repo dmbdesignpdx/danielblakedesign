@@ -25,11 +25,16 @@ defaultContentLanguage: en
 languages:
   en:
     languageName: English
-    weight: 2
+    weight: 1
     contentDir: content/en
-    baseURL: 'https://danielblake.design'
     copyright: |
       Copyright 2019 Daniel Blake. All rights reserved. All other trademarks are the property of their respective owners.
+  es:
+    languageName: Español
+    weight: 2
+    contentDir: content/es
+    copyright: |
+      Copyright 2019 Daniel Blake. Todos los derechos reservados. Todas las demás marcas registradas son propiedad de sus respectivos dueños.
 
 
 ## Build ##
@@ -41,3 +46,4 @@ disableKinds:
   - RSS
   - robotsTXT
 enableEmoji: true
+relativeURLs: true

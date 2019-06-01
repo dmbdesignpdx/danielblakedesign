@@ -7,7 +7,7 @@ date: May 30, 2019
 
 ## Params ##
 ## Meta ##
-id: home
+id: home-es
 class: home
 lang: es
 
@@ -16,7 +16,7 @@ lang: es
 hero:
   title: <span>Diseño</span> y <span>desarrollo</span> sitios web.
   copy: |
-    ¡Hola! 👋 Me llamo Daniel Blake and&nbsp;soy un diseñador web front-end que cree que los sitios web deben ser simples, accesibles, receptivos y&nbsp;rápidos.
+    ¡Hola! 👋 Me llamo Daniel Blake y&nbsp;soy un diseñador web front-end que cree que los sitios web deben ser simples, accesibles, receptivos y&nbsp;rápidos.
 
 # Codepen
 codepen:
@@ -27,4 +27,4 @@ codepen:
 # Main Site Content Below (in About Section)
 ---
 
-Soy un ingeniero y diseñador de UI que vive y trabaja como <i>desarrollador web<i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos seis años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el bar que me&nbsp;puse.
+Soy un ingeniero y diseñador de UI que vive y trabaja como <i>desarrollador web</i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos seis años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el bar que me&nbsp;puse.

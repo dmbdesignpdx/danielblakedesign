@@ -75,7 +75,19 @@
 <meta name='theme-color' content='{{ .Site.Params.theme }}'>
 
 
-<!-- TO DO: Languages -->
+<!-- Languages -->
+
+{{ range .AllTranslations }}
+
+  {{ if eq .Language.Lang "en" }}
+    
+    <link rel='alternate' hreflang='x-default' href='{{ .Permalink }}' >
+  
+  {{ end }}
+
+  <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
+
+{{ end }}
 
 
 <!-- Favicons -->
@@ -196,7 +208,7 @@
 
 {{ if ne ( getenv "HUGO_ENV" ) "production" }}
 
-  <script defer src='{{ $scripts.Permalink }}'></script>
+  <script defer src='{{ $scripts.RelPermalink }}'></script>
 
 {{ else }}
 

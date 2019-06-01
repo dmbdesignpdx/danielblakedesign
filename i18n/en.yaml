@@ -62,4 +62,4 @@
 
 ## Siblings ##
 - id: aria_sib
-  translation: {{ .title }} project preview {{ .num }} of 3
+  translation: '{{ .title }} project preview {{ .num }} of 3'
