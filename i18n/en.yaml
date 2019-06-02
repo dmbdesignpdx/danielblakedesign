@@ -29,15 +29,24 @@
   translation: CSS Micro Framework
 
 
+## About ##
+- id: design
+  translation: Design
+- id: development
+  translation: Development
+- id: experience
+  translation: Experience
+
+
 ## Contact ##
 - id: phone
   translation: Call 971-801-0208
 - id: cemail
   translation: Email daniel@danielblake.design
 - id: github
-  translation: Github account
+  translation: My Github account
 - id: codepen
-  translation: Codepen account
+  translation: My Codepen account
 
 
 ## Form ##
@@ -64,4 +73,4 @@
 
 ## Siblings ##
 - id: aria_sib
-  translation: '{{ .title }} project preview {{ .num }} of 3'
+  translation: Screen shot of {{ .title }}, {{ .num }} of 3

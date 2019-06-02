@@ -1,8 +1,8 @@
 ---
 ## Page Variables ##
-title: LeadsHub Preview - Daniel Blake
-description: LeadsHub is a mobile app for modern communication for businesses. Website designed and developed by Daniel Blake.
-date: May 10, 2019
+title: Vista Previa de LeadsHub - Daniel Blake
+description: LeadsHub es una aplicación móvil para la comunicación moderna para empresas. Sitio web diseñado y desarrollado por Daniel Blake.
+date: June 2, 2019
 
 
 ## Params ##
@@ -13,11 +13,11 @@ lang: es
 
 # Hero
 one: LeadsHub
-two: Mobile App
+two: Aplicación Movil
 
 # Content
 link: 'https://leadshub.com'
 rel: external nofollow noreferrer noopener
 ---
 
-LeadsHub is a product of Dice Services &mdash; a mobile and desktop app designed to bring communication between the seller and customer into the modern era.
+LeadsHub es un producto de Dice Services & mdash; una aplicación móvil y de escritorio diseñada para llevar la comunicación entre el vendedor y el cliente a la era moderna.

@@ -1,8 +1,8 @@
 ---
 ## Page Variables ##
-title: Flexr Preview - Daniel Blake
-description: Flexr is a CSS Grid Micro Framework. Website designed and developed by Daniel Blake.
-date: May 18, 2019
+title: Vista Previa de Flexr - Daniel Blake
+description: Flexr es un micro estructura de CSS. Sitio web diseñado y desarrollado por Daniel Blake.
+date: June 2, 2019
 
 
 ## Params ##
@@ -13,11 +13,11 @@ lang: es
 
 # Hero
 one: Flexr Grid
-two: CSS Micro Framework
+two: Micro Estructura de CSS
 
 # Content
 link: 'https://flexrgrid.com'
 rel: external noreferrer noopener
 ---
 
-Flexr is a CSS grid that I created three years ago after being fed up with Bootstrap. I wanted something that focused on two things: the grid/layout and reducing DOM clutter by using less elements to build the grid.
+Flexr es una cuadrícula CSS que creé hace tres años después de estar harta de Bootstrap. Quería algo que se centrara en dos cosas: la cuadrícula / diseño y reducir el desorden de DOM utilizando menos elementos para construir la cuadrícula.

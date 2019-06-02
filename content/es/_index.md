@@ -2,7 +2,7 @@
 ## Page Variables ##
 title: Daniel Blake - Diseñador Web Front-End
 description: Daniel Blake, desarrollador y diseñador, es un apasionado de crear sitios web accesibles y receptivos.
-date: May 30, 2019
+date: June 2, 2019
 
 
 ## Params ##
@@ -20,11 +20,11 @@ hero:
 
 # Codepen
 codepen:
-  title: Code Snippets
+  title: Fragmentos de Código
   copy: |
     Echa un vistazo a mis Codepens para ver algunas ideas y experimentos en los que he estado trabajando.
 
 # Main Site Content Below (in About Section)
 ---
 
-Soy un ingeniero y diseñador de UI que vive y trabaja como <i>desarrollador web</i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos seis años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el bar que me&nbsp;puse.
+Soy un ingeniero y diseñador de UI que vive y trabaja como <i>Desarrollador Web</i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos seis años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el bar que me&nbsp;puse.

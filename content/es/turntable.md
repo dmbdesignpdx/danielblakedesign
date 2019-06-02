@@ -1,8 +1,8 @@
 ---
 ## Page Variables ##
-title: Turntable Preview - Daniel Blake
-description: Turntable is a Sass library. Website designed and developed by Daniel Blake.
-date: May 10, 2019
+title: Vista Previa de Turntable - Daniel Blake
+description: Turntable es una librería Sass. Sitio web diseñado y desarrollado por Daniel Blake.
+date: June 2, 2019
 
 
 ## Params ##
@@ -13,7 +13,7 @@ lang: es
 
 # Hero
 one: Turntable
-two: Sass Library
+two: Librería Sass
 
 # Content
 link: 'https://turntablelib.com'

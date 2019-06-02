@@ -8,6 +8,7 @@
 - id: select
   translation: Select a language
 
+
 ## CTAs ##
 - id: preview
   translation: Previsualizarlo
@@ -17,13 +18,22 @@
   translation: Envía
 
 
+## About ##
+- id: design
+  translation: Diseño
+- id: development
+  translation: Desarrollo
+- id: experience
+  translation: Experiencia
+
+
 ## Work ##
 - id: project
   translation: Proyecto
 - id: leadshub
   translation: Aplicación Movil
 - id: turntable
-  translation: Biblioteca de Sass
+  translation: Librería Sass
 - id: flexr
   translation: Micro Estructura de CSS
 
@@ -32,35 +42,35 @@
 - id: phone
   translation: Llama 971-801-0208
 - id: cemail
-  translation: Email daniel@danielblake.design
+  translation: E-mail daniel@danielblake.design
 - id: github
-  translation: Github account
+  translation: Mi cuenta Github 
 - id: codepen
-  translation: Codepen account
+  translation: Mi cuenta Codepen
 
 
 ## Form ##
 - id: legend
-  translation: Or drop me a line!
+  translation: ¡O enviame un mensaje!
 - id: name
-  translation: Your Name
+  translation: Tu Nombre
 - id: freelance
-  translation: Freelance Opportunity
+  translation: Oportunidad Independiente
 - id: general
-  translation: General Inquiry
+  translation: Consulta General
 - id: email
-  translation: Your Email
+  translation: Tu E-mail
 - id: message
-  translation: Your Message
+  translation: Tu Mensaje
 
 
 ## Footer ##
 - id: made
-  translation: Made with {{ .Count }} by Daniel Blake.
+  translation: Hecho con {{ .Count }} por Daniel Blake.
 - id: built
-  translation: Built with {{ index . 0 }}, sourced on {{ index . 1 }}, and hosted on&nbsp;{{ index . 2 }}.
+  translation: Construido con {{ index . 0 }}, procedente de {{ index . 1 }}, y alojado en&nbsp;{{ index . 2 }}.
 
 
 ## Siblings ##
 - id: aria_sib
-  translation: '{{ .title }} project preview {{ .num }} of 3'
+  translation: Captura de pantalla {{ .title }}, {{ .num }} de 3
