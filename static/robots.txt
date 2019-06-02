@@ -1,4 +1,2 @@
 User-agent: *
-Disallow: /404.html
-
-sitemap: https://danielblake.design/sitemap.xml 
+Disallow: /
