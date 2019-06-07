@@ -1,8 +1,8 @@
 .Footer {
+  @extend %content;
   padding-top: 60px;
   padding-bottom: 90px;
   background: brand(_nearblack);
-  contain: content;
   
   address, aside {
     

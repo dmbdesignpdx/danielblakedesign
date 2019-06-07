@@ -111,6 +111,8 @@ p {
   color: #58536e;
   line-height: 1.6;
   letter-spacing: 0.02em;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
   hyphens: none; }
 
 .Hero.__intro h1, .Hero.__intro p {
@@ -214,7 +216,8 @@ p {
   -webkit-appearance: none; }
 
 .Hero {
-  height: 100vh; }
+  height: 100vh;
+  contain: size layout; }
 
 .Arrow {
   position: absolute;

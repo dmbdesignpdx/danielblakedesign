@@ -1,4 +1,5 @@
 .Form {
+  @extend %content;
 
   @include tabletPor {
     grid-column: 1 / span 4;

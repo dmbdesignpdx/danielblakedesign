@@ -29,3 +29,11 @@ $brand: (
 %mainColor {
   color: brand();
 }
+
+%content {
+  contain: content;
+}
+
+%strict {
+  contain: strict;
+}

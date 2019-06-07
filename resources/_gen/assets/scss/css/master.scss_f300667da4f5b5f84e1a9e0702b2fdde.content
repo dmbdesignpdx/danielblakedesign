@@ -1,4 +1,7 @@
 /* Mixin' with Turntable v0.2.0 -- by Daniel Blake */
+.Work, #codepen, .About, .Contact, .Form, .Footer {
+  contain: content; }
+
 /**
  * Grid
  */
@@ -503,8 +506,7 @@ p a:focus {
 .Footer {
   padding-top: 60px;
   padding-bottom: 90px;
-  background: #17161d;
-  contain: content; }
+  background: #17161d; }
   @media (min-width: 540px) {
     .Footer address, .Footer aside {
       grid-column: 1 / span 2; } }
