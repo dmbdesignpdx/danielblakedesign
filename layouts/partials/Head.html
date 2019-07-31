@@ -170,31 +170,37 @@
   <script type='application/ld+json'>
     {
       "@context":"http://schema.org",
-      "@type":"WebSite",
+      "@type":"WebPage",
+      "@id":"{{ .Permalink }}/#webpage",
       "name":"{{ .Title }}",
       "description":"{{ .Description }}",
       "url":"{{ .Permalink }}",
-      "image":"{{ .Site.Params.image }}",
-      "creator":{
+      "isPartOf":{
+        "@type":"WebSite",
+        "@id":"{{ .Permalink }}/#website",
+        "name":"{{ .Site.Title }}",
+        "url":"{{ .Site.BaseURL }}"
+      },
+      "publisher":{
         "@type":"Person",
+        "@id":"{{ .Permalink }}/#person",
         "name":"{{ .Site.Author.name }}",
         "description":"{{ .Site.Author.title }}",
-        "address":"{{ .Site.Author.city }}",
+        "address":{
+          "@type":"PostalAddress",
+          "addressLocality":"{{ .Site.Author.city }}",
+          "addressRegion":"{{ .Site.Author.state }}"
+        },
         "email":"{{ .Site.Author.email }}",
-        "telephone":"{{ $phone }}"
-      },
-      "offers":{
-        "@type":"Offer",
-        "itemOffered":{
-          "@type":"Service",
-          "serviceType":"Website design and development"
-        }
-      },
-      "sameAs":[
-        "{{ .Site.Author.linkedin }}",
-        "{{ .Site.Author.github }}",
-        "{{ .Site.Author.codepen }}"
-      ]
+        "telephone":"{{ $phone }}",
+        "url":"{{ .Permalink }}",
+        "image":"{{ .Site.Params.image }}",
+        "sameAs":[
+          "{{ .Site.Author.linkedin }}",
+          "{{ .Site.Author.github }}",
+          "{{ .Site.Author.codepen }}"
+        ]
+      }
     }
   </script>
 

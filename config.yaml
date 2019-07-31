@@ -1,11 +1,12 @@
 ## Site Variables ##
-title: Daniel Blake
+title: Daniel Blake - Front End Web Designer
 author:
   name: Daniel Blake
   title: Front End Web Designer
   email: daniel@danielblake.design
   phone: 1-971-801-0208
-  city: Portland, Oregon
+  city: Portland
+  state: Oregon
   github: 'https://github.com/dmbdesignpdx'
   linkedin: 'https://www.linkedin.com/in/danielblakepdx'
   codepen: 'https://codepen.io/dmbdesignpdx'
