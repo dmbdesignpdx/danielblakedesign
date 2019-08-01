@@ -8,17 +8,17 @@
  "license": "UNLICENSED",
  "private": true,
  "scripts": {
-   "webdev": "webpack --mode development",
-   "webpro": "webpack --mode production",
-   "webdev:watch": "webpack --mode development --watch",
-   "hugo:min": "env HUGO_ENV=production hugo --minify",
-   "serve": "hugo serve -p 3000",
-   "serve:min": "env HUGO_ENV=production hugo serve -p 9000 --disableLiveReload --minify",
-   "dev": "npm-run-all -p webdev:watch serve",
-   "build": "npm-run-all -s webpro hugo:min",
-   "preview": "npm-run-all -s webpro serve:min",
-   "lint": "eslint src/*.js",
-   "clean": "rm -rf public"
+  "webdev": "webpack --mode development",
+  "webpro": "webpack --mode production",
+  "webdev:watch": "webpack --mode development --watch",
+  "hugo:min": "env HUGO_ENV=production hugo --minify",
+  "serve": "hugo serve -p 3000",
+  "serve:min": "env HUGO_ENV=production hugo serve -p 9000 --disableLiveReload --minify",
+  "dev": "npm-run-all -p webdev:watch serve",
+  "build": "npm-run-all -s webpro hugo:min",
+  "preview": "npm-run-all -s webpro serve:min",
+  "lint": "eslint src/*.js",
+  "clean": "rm -rf public"
  },
  "dependencies": {
   "@babel/core": "^7.4.3",
