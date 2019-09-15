@@ -78,7 +78,7 @@
 
 html {
   background: brand(_offwhite);
-  font: 400 1.1em Heebo, sans-serif;
+  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 body {
@@ -177,10 +177,15 @@ p {
 }
 
 .Hero.__intro {
-  
+
   h1, p {
     transform: translateX(-50%);
     opacity: 0;
+
+    @media (prefers-reduced-motion:reduce) {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
 
@@ -435,6 +440,21 @@ p {
 
   .Nav {
     height: 150px;
+  }
+
+}
+
+
+@media (prefers-color-scheme:dark) {
+
+  html,
+  .Nav {
+    background: brand(_nearblack);
+  }
+
+  body,
+  p {
+    color: brand(_darkwhite)
   }
 
 }

@@ -40,9 +40,7 @@ li::before {
   font-size: 0;
 }
 
-input,
-textarea,
-button {
+input {
   @include appearance(none);
 }
 
@@ -52,7 +50,6 @@ ul {
 
 // Needed for VoiceOver in Safari
 li::before {
-  display: block;
   content: "\200C";
 }
 

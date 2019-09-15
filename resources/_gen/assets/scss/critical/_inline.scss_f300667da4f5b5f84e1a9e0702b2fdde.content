@@ -46,7 +46,7 @@
 
 html {
   background: #f4f4f6;
-  font: 400 1.1em Heebo, sans-serif; }
+  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; }
 
 body {
   color: #373546;
@@ -117,6 +117,10 @@ p {
 .Hero.__intro h1, .Hero.__intro p {
   transform: translateX(-50%);
   opacity: 0; }
+  @media (prefers-reduced-motion: reduce) {
+    .Hero.__intro h1, .Hero.__intro p {
+      transform: translateX(0);
+      opacity: 1; } }
 
 .Hero h1, .Hero p {
   transform: translateX(0);
@@ -262,3 +266,11 @@ p {
     font-size: 1.38em; }
   .Nav {
     height: 150px; } }
+
+@media (prefers-color-scheme: dark) {
+  html,
+  .Nav {
+    background: #17161d; }
+  body,
+  p {
+    color: #eeeef2; } }

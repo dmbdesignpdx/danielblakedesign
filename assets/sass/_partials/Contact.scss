@@ -16,50 +16,50 @@
     @include phoneLan {
       grid-column: 1 / span 3;
     }
-    
-    // Links
-    a {
-      @include display(inline-flex);
-      @include align-items(center);
-      margin-bottom: 1em;
-      color: brand(_darkgray);
+  }
 
-      &:hover {
-        
-        @include desktop {
-          color: brand();
-        }
-      }
+  // Links
+  a {
+    @include display(inline-flex);
+    @include align-items(center);
+    margin-bottom: 1em;
+    color: brand(_darkgray);
 
-      &:focus {
+    &:hover {
+      
+      @include desktop {
         color: brand();
       }
+    }
 
-      &:active {
-        transform: scale(0.96);
-        transform-origin: 0 50%;
-      }
+    &:focus {
+      color: brand();
+    }
+
+    &:active {
+      transform: scale(0.96);
+      transform-origin: 0 50%;
+    }
+  }
+  
+  // Icons
+  svg {
+    @include size(2em);
+    margin: auto 0.7em auto 0;
+    stroke: brand(_darkgray);
+    stroke-width: 2.6;
+    fill: none;
+    
+    @at-root
+    #contact a:focus svg {
+      stroke: brand();
     }
     
-    // Icons
-    svg {
-      @include size(2em);
-      margin: auto 0.7em auto 0;
-      stroke: brand(_darkgray);
-      stroke-width: 2.6;
-      fill: none;
+    @at-root
+    #contact a:hover svg {
       
-      @at-root
-      #contact a:focus svg {
+      @include desktop {
         stroke: brand();
-      }
-      
-      @at-root
-      #contact a:hover svg {
-        
-        @include desktop {
-          stroke: brand();
-        }
       }
     }
   }
