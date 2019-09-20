@@ -9,6 +9,9 @@
  * Breakpoints
  */
 /**
+ * Theme
+ */
+/**
  *  Contents:
  *
  *  Global Styles and Resets
@@ -208,6 +211,15 @@ p a:focus {
     #nav.__fixed {
       top: -153px; } }
 
+#lang:focus {
+  color: #e13364;
+  box-shadow: 0 2px 5px rgba(0,0,30,0.2); }
+
+@media (min-width: 1278px) {
+  #lang:hover {
+    color: #e13364;
+    box-shadow: 0 2px 5px rgba(0,0,30,0.2); } }
+
 .Arrow {
   transition: opacity 0.4s; }
   .Arrow.__fade {
@@ -231,6 +243,9 @@ p a:focus {
     align-self: end;
     line-height: 1;
     color: #373546; }
+    @media (prefers-color-scheme: dark) {
+      .Work h3 {
+        color: #eeeef2; } }
     @media (min-width: 540px) {
       .Work h3 {
         grid-column: span 3;
@@ -259,6 +274,9 @@ p a:focus {
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke: #373546; }
+    @media (prefers-color-scheme: dark) {
+      #codepen svg {
+        stroke: #eeeef2; } }
   #codepen p {
     width: 100%;
     max-width: 600px;
@@ -269,6 +287,9 @@ p a:focus {
   padding-bottom: 10vh; }
   .About h3, .About li {
     color: #58536e; }
+    @media (prefers-color-scheme: dark) {
+      .About h3, .About li {
+        color: #eeeef2; } }
   .About h2 {
     justify-self: start; }
     @media (min-width: 540px) {
@@ -304,6 +325,9 @@ p a:focus {
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke: #373546; }
+    @media (prefers-color-scheme: dark) {
+      .About svg {
+        stroke: #eeeef2; } }
   .About li {
     margin-bottom: 0.6em;
     font-size: 0.9rem;
@@ -337,6 +361,9 @@ p a:focus {
     align-items: center;
     margin-bottom: 1em;
     color: #373546; }
+    @media (prefers-color-scheme: dark) {
+      .Contact a {
+        color: #eeeef2; } }
     @media (min-width: 1278px) {
       .Contact a:hover {
         color: #e13364; } }
@@ -352,6 +379,9 @@ p a:focus {
     stroke: #373546;
     stroke-width: 2.6;
     fill: none; }
+    @media (prefers-color-scheme: dark) {
+      .Contact svg {
+        stroke: #eeeef2; } }
     #contact a:focus svg {
       stroke: #e13364; }
     @media (min-width: 1278px) {
@@ -580,6 +610,9 @@ p a:focus {
   margin-left: 1em;
   background: #eeeef2;
   box-shadow: 0 1px 2px rgba(0,0,30,0.2); }
+  @media (prefers-color-scheme: dark) {
+    .Btn.--secondary {
+      color: #17161d; } }
   .Btn.--secondary:focus {
     background: #f1f1f4;
     box-shadow: 0 2px 5px rgba(0,0,30,0.2); }

@@ -69,3 +69,14 @@ $gutter: (
     @content;
   }
 }
+
+
+/**
+ * Theme
+ */
+
+@mixin theme($arg) {
+  @media (prefers-color-scheme:$arg) {
+    @content;
+  }
+}

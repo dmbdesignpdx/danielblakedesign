@@ -315,16 +315,20 @@ p {
 }
 
 #lang {
-  padding: 0.3em 1.5em 0.3em 0.5em;
+  padding: 0.3em 1.6em 0.3em 0.5em;
   font-size: 0.65rem;
   font-weight: 700;
   color: inherit;
   border: 0;
   border-radius: 3px;
-  background: brand(_almostwhite) url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center / 12px 12px no-repeat;
+  background:
+    brand(_almostwhite)
+    url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center / 12px 12px
+    no-repeat;
   box-shadow: 0 1px 2px ts(0.2);
   cursor: pointer;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 
@@ -445,10 +449,6 @@ p {
     font-size: 1.25em;
   }
 
-  #lang:hover {
-    box-shadow: 0 2px 5px ts(0.2);
-  }
-
 }
 
 
@@ -469,6 +469,9 @@ p {
 }
 
 
+/**
+ * Dark Theme
+ */
 @media (prefers-color-scheme:dark) {
 
   html,
@@ -479,6 +482,10 @@ p {
   body,
   p {
     color: brand(_darkwhite)
+  }
+
+  #lang {
+    color: brand(_darkgray)
   }
 
 }

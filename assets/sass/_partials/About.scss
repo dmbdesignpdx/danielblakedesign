@@ -5,6 +5,10 @@
 
   h3, li {
     color: brand(_darklight);
+
+    @include theme(dark) {
+      color: brand(_darkwhite);
+    }
   }
 
   // Title
@@ -60,6 +64,10 @@
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke: brand(_darkgray);
+
+    @include theme(dark) {
+      stroke: brand(_darkwhite);
+    }
   }
   
   // List

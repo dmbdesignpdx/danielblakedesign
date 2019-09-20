@@ -58,3 +58,19 @@
     }
   }
 }
+
+#lang {
+
+  &:focus {
+    color: brand();
+    box-shadow: 0 2px 5px ts(0.2);
+  }
+
+  &:hover {
+    
+    @include desktop {
+      color: brand();
+      box-shadow: 0 2px 5px ts(0.2);
+    }
+  }
+}

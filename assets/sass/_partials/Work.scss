@@ -26,6 +26,10 @@
     align-self: end;
     line-height: 1;
     color: brand(_darkgray);
+
+    @include theme(dark) {
+      color: brand(_darkwhite);
+    }
     
     @include phoneLan {
       grid-column: span 3;
@@ -69,6 +73,10 @@
     stroke-linejoin: round;
     stroke-linecap: round;
     stroke: brand(_darkgray);
+
+    @include theme(dark) {
+      stroke: brand(_darkwhite);
+    }
   }
   
   p {

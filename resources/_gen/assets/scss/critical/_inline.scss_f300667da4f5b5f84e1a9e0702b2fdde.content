@@ -31,6 +31,9 @@
 /**
  * Breakpoints
  */
+/**
+ * Theme
+ */
 /* Mixin' with Turntable v0.2.0 -- by Daniel Blake */
 [flexr-wrap] {
   width: 100%;
@@ -204,7 +207,7 @@ p {
     margin-right: 1.3em; }
 
 #lang {
-  padding: 0.3em 1.5em 0.3em 0.5em;
+  padding: 0.3em 1.6em 0.3em 0.5em;
   font-size: 0.65rem;
   font-weight: 700;
   color: inherit;
@@ -213,7 +216,8 @@ p {
   background: #FEFEFF url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center/12px 12px no-repeat;
   box-shadow: 0 1px 2px rgba(0,0,30,0.2);
   cursor: pointer;
-  -webkit-appearance: none; }
+  -webkit-appearance: none;
+  appearance: none; }
 
 .Hero {
   height: 100vh;
@@ -275,9 +279,7 @@ p {
     padding-right: 30px;
     padding-left: 30px; }
   html {
-    font-size: 1.25em; }
-  #lang:hover {
-    box-shadow: 0 2px 5px rgba(0,0,30,0.2); } }
+    font-size: 1.25em; } }
 
 /**
  * Desktop Large
@@ -288,10 +290,15 @@ p {
   .Nav {
     height: 150px; } }
 
+/**
+ * Dark Theme
+ */
 @media (prefers-color-scheme: dark) {
   html,
   .Nav {
     background: #17161d; }
   body,
   p {
-    color: #eeeef2; } }
+    color: #eeeef2; }
+  #lang {
+    color: #373546; } }
