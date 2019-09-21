@@ -8,7 +8,7 @@
 
     <meta charset='utf-8'>
 
-    <meta name='viewport' content='width=device-width,initial-scale=1.0,viewport-fit=cover'>
+    <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 
     <title>{{ $page.title }}</title>
 
@@ -30,9 +30,7 @@
 
         <p>{{ $page.copy }}</p>
 
-        <a
-          href='{{ .Site.BaseURL }}'
-          aria-label='{{ $page.aria_home }}'>
+        <a href='{{ .Site.BaseURL }}'>
 
           {{ $page.home }}
 

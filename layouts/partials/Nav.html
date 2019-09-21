@@ -7,7 +7,6 @@
 
     <a
       href='/'
-      aria-label='{{ T "aria_home" }}'
       {{ if eq $.Params.id "home" }}
         aria-current='page'
       {{ end }}
@@ -19,28 +18,19 @@
 
     </a>
     
-    <a
-      href='/#work'
-      aria-label='{{ T "aria_work" }}'
-    >
+    <a href='/#work'>
       
       {{ T "work" }}
       
     </a>
 
-    <a
-      href='/#about'
-      aria-label='{{ T "aria_about" }}'
-    >
+    <a href='/#about'>
       
       {{ T "about" }}
     
     </a>
 
-    <a
-      href='/#contact'
-      aria-label='{{ T "aria_contact" }}'
-    >
+    <a href='/#contact'>
       
       {{ T "contact" }}
     

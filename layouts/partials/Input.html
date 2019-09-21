@@ -1,29 +1,26 @@
-<label class='Input'>
+<label
+  class='Input'
+  for='{{ .name }}'
+>
 
-  <span
-    id='{{ .id }}'
-    aria-hidden='true'
-  >
-
-    {{ T .name }}
-
-  </span>
+  <span>{{ T .name }}</span>
 
 
   {{ if eq .type "textarea" }}
 
     <textarea 
+      id='{{ .name }}'
       class='InputField'
       name='{{ .name }}'
       rows='10'
       value=''
-      aria-labelledby='{{ .id }}'
       required
     ></textarea>
 
   {{ else }}
 
     <input
+      id='{{ .name }}'
       class='InputField'
       name='{{ .name }}'
       type='{{ .type }}'
@@ -31,11 +28,10 @@
         inputmode='email'
       {{ else }}
         inputmode='text'
-        value=''
       {{ end }}
+      value=''
       autocomplete='{{ .name }}'
       aria-autocomplete='both'
-      aria-labelledby='{{ .id }}'
       required
     />
 

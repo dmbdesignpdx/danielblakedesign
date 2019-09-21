@@ -1,4 +1,5 @@
 <a 
+  class='sr'
   href='{{ .link | safeURL }}'
   {{ if and ( ne .type "email" ) ( ne .type "phone" ) }}
     target='_blank'
@@ -6,14 +7,13 @@
   {{ end }}
 >
 
-  <svg
-    role='img'
-    aria-label='{{ .aria }}'
-  >
-
+  <svg>
+  
     <use xlink:href='/img/icons.svg#{{ .type }}' />
 
   </svg>
+
+  <span>{{ .aria }}</span>
 
   {{ .text }}
 

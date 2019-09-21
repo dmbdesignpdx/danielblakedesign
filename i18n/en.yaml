@@ -1,16 +1,8 @@
 ## Nav ##
 - id: work
   translation: Work
-- id: aria_work
-  translation: Go to Work section
 - id: about
   translation: About
-- id: aria_about
-  translation: Go to Work Section
-- id: aria_contact
-  translation: Go to Contact Section
-- id: aria_home
-  translation: Daniel Blake home page
 
 
 ## CTAs ##
@@ -20,10 +12,6 @@
   translation: Visit
 - id: send
   translation: Send
-- id: aria_preview
-  translation: Preview the {{ .Count }} website
-- id: aria_visit
-  translation: Go to the {{ .Count }} website
 - id: contact
   translation: Contact
 

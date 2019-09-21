@@ -37,9 +37,7 @@ img,
 li::before {
   font-size: 0; }
 
-input,
-textarea,
-button {
+input {
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none; }
@@ -48,7 +46,6 @@ ul {
   list-style: none; }
 
 li::before {
-  display: block;
   content: "\200C"; }
 
 abbr {
@@ -137,6 +134,13 @@ textarea {
 
 p a:focus {
   text-decoration: underline; }
+
+.sr span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap; }
 
 [flexr-grid] {
   width: 100%;
@@ -324,31 +328,31 @@ p a:focus {
     @media (min-width: 540px) {
       .Contact address {
         grid-column: 1 / span 3; } }
-    .Contact address a {
-      display: inline-flex;
-      align-items: center;
-      margin-bottom: 1em;
-      color: #373546; }
-      @media (min-width: 1278px) {
-        .Contact address a:hover {
-          color: #e13364; } }
-      .Contact address a:focus {
-        color: #e13364; }
-      .Contact address a:active {
-        transform: scale(0.96);
-        transform-origin: 0 50%; }
-    .Contact address svg {
-      width: 2em;
-      height: 2em;
-      margin: auto 0.7em auto 0;
-      stroke: #373546;
-      stroke-width: 2.6;
-      fill: none; }
-      #contact a:focus svg {
-        stroke: #e13364; }
-      @media (min-width: 1278px) {
-        #contact a:hover svg {
-          stroke: #e13364; } }
+  .Contact a {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 1em;
+    color: #373546; }
+    @media (min-width: 1278px) {
+      .Contact a:hover {
+        color: #e13364; } }
+    .Contact a:focus {
+      color: #e13364; }
+    .Contact a:active {
+      transform: scale(0.96);
+      transform-origin: 0 50%; }
+  .Contact svg {
+    width: 2em;
+    height: 2em;
+    margin: auto 0.7em auto 0;
+    stroke: #373546;
+    stroke-width: 2.6;
+    fill: none; }
+    #contact a:focus svg {
+      stroke: #e13364; }
+    @media (min-width: 1278px) {
+      #contact a:hover svg {
+        stroke: #e13364; } }
 
 @media (min-width: 766px) {
   .Form {

@@ -4,7 +4,7 @@
   {{ if eq .theme "primary" }}
 
     <a
-      class='Btn --primary'
+      class='Btn --primary sr'
       {{ if eq .blank true }}
         target='_blank'
         rel='{{ .rel }}'
@@ -14,13 +14,12 @@
       {{ else }}
         href='{{ .link }}'
       {{ end }}
-      aria-label='{{ T "aria_preview" ( .title | title ) }}'
     >
 
   {{ else }}
 
     <a
-      class='Btn --secondary'
+      class='Btn --secondary sr'
       {{ if eq .blank true }}
         target='_blank'
         rel='{{ .rel }}'
@@ -30,13 +29,12 @@
       {{ else }}
         href='{{ .link }}'
       {{ end }}
-      aria-label='{{ T "aria_visit" ( .title | title ) }}'
     >
-    
+
   {{ end }}
     
 
-    {{ T .text }}
+    {{ T .text }} <span>{{ .title | title }}</span>
 
   </a>
 
