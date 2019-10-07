@@ -1,7 +1,7 @@
 # For Skills in About
 - key: 1
   type: design
-  text: 
+  text:
     - InVision
     - Sketch
     - XD
@@ -10,18 +10,18 @@
     - Photoshop
 - key: 2
   type: development
-  text: 
+  text:
     - HTML5
     - CSS3 / SCSS / SassScript
     - JavaScript / ES2015+
     - React / Vue / Svelte
     - Gatsby / Hugo / Jekyll
+    - LitElement / lit-html
     - Git
-    - Webpack / Gulp
+    - Webpack / Gulp / Rollup
     - jQuery / CoffeeScript
-    - XML / JSON / YAML
     - GraphQL / PHP / MySQL
-    - Node / NPM
+    - Node
     - Jest / Enzyme
 - key: 3
   type: experience
