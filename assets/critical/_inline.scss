@@ -34,8 +34,20 @@
   font-weight: 400;
   font-display: swap;
   src:
+    local('Heebo Regular'),
     url('/fonts/heebo-400.woff2') format('woff2'),
     url('/fonts/heebo-400.woff') format('woff');
+}
+
+@font-face {
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local('Heebo Bold'),
+    url('/fonts/heebo-700.woff2') format('woff2'),
+    url('/fonts/heebo-700.woff') format('woff');
 }
 
 
