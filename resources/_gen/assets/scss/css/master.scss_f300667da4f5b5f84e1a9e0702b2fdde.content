@@ -404,14 +404,6 @@ p a:focus {
   display: flex;
   flex-direction: column; }
 
-.Form label span {
-  display: inline-block;
-  font-size: 80%;
-  color: #66627a; }
-
-.Form label:focus-within span {
-  color: #ae29ae; }
-
 .Form legend,
 .Form .InputField {
   width: 100%; }
@@ -435,7 +427,15 @@ p a:focus {
   display: none; }
 
 .Input span {
-  margin-bottom: 0.33em; }
+  display: inline-block;
+  margin-bottom: 0.33em;
+  font-size: 80%;
+  color: #66627a; }
+  @media (prefers-color-scheme: dark) {
+    .Input span {
+      color: #b8b5c4; } }
+  .Input:focus-within span {
+    color: #ae29ae; }
   @media (min-width: 1278px) {
     .Input:hover span {
       color: #ae29ae; } }
@@ -470,14 +470,17 @@ p a:focus {
     padding-left: 0.5em;
     margin-top: 1px;
     cursor: pointer; }
+    @supports (-moz-orient: vertical) {
+      .Radio span {
+        margin-top: 2px; } }
     @media (min-width: 1278px) {
-      .Radio:hover span {
+      .Radio:hover .RadioBtn:not(:disabled) + span {
         color: #ae29ae; } }
     .Radio:focus span {
       color: #ae29ae; }
     .RadioBtn:disabled + span {
-      color: #b8b5c4;
-      cursor: default; }
+      opacity: 0.3;
+      pointer-events: none; }
 
 .RadioBtn {
   width: 16px;
@@ -500,8 +503,8 @@ p a:focus {
     background: #ae29ae;
     border-color: #ae29ae; }
   .RadioBtn:disabled {
-    border-color: #b8b5c4;
-    cursor: auto; }
+    opacity: 0.3;
+    pointer-events: none; }
 
 .Thumb {
   margin-bottom: 18px;
@@ -510,6 +513,9 @@ p a:focus {
   overflow: hidden;
   border-radius: 4px;
   border: 1px solid #eeeef2; }
+  @media (prefers-color-scheme: dark) {
+    .Thumb {
+      border-color: #373546; } }
   @media (min-width: 540px) {
     .Thumb {
       margin-bottom: 0;
@@ -537,6 +543,9 @@ p a:focus {
   padding-top: 60px;
   padding-bottom: 90px;
   background: #17161d; }
+  @media (prefers-color-scheme: dark) {
+    .Footer {
+      background: #25232f; } }
   @media (min-width: 540px) {
     .Footer address, .Footer aside {
       grid-column: 1 / span 2; } }

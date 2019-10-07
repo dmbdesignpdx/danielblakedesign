@@ -1,6 +1,6 @@
 <form
+  id='drop'
   class='Form'
-  name='drop'
   action='POST'
   netlify-honeypot='honey'
   netlify
@@ -34,24 +34,24 @@
 
     <!-- Inquiries -->
 
-    {{ partial "Radio" ( dict "type" "freelance" "id" "wa1" "disabled" true ) }}
+    {{ partial "Radio" ( dict "type" "freelance" "disabled" true ) }}
     
-    {{ partial "Radio" ( dict "type" "general" "id" "wa2" "disabled" false ) }}
+    {{ partial "Radio" ( dict "type" "general" "disabled" false ) }}
 
 
     <!-- Name -->
 
-    {{ partial "Input" ( dict "type" "text" "name" "name" "id" "c1" ) }}
+    {{ partial "Input" ( dict "type" "text" "name" "name" ) }}
 
 
     <!-- Email -->
     
-    {{ partial "Input" ( dict "type" "email" "name" "email" "id" "c2" ) }}
+    {{ partial "Input" ( dict "type" "email" "name" "email" ) }}
 
 
     <!-- Message -->
 
-    {{ partial "Input" ( dict "type" "textarea" "name" "message" "id" "c3" ) }}
+    {{ partial "Input" ( dict "type" "textarea" "name" "message" ) }}
 
 
     <!-- Send -->

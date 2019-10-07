@@ -1,20 +1,19 @@
-<label class='Radio'>
+<label
+  class='Radio'
+  for='{{ .type }}'
+>
 
   <input
+    id='{{ .type }}'
     class='RadioBtn'
     type='radio'
-    name='{{ .type }}'
     value='{{ .type }}'
-    aria-labelledby='{{ .id }}'
     {{ if eq .disabled true }}
       disabled
     {{ end }}
   >
 
-  <span
-    id='wa1'
-    aria-hidden='true'  
-  >
+  <span>
 
     {{ T .type | safeHTML }}
 

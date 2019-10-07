@@ -5,6 +5,10 @@
   overflow: hidden;
   border-radius: 4px;
   border: 1px solid #{brand(_darkwhite)};
+
+  @include theme(dark) {
+    border-color: brand(_darkgray);
+  }
   
   @include phoneLan {
     margin-bottom: 0;

@@ -19,19 +19,6 @@
     flex-direction: column;
   }
 
-  label {
-     
-    span {
-      display: inline-block;
-      font-size: 80%;
-      color: brand(_lightgray);
-    }
-
-    &:focus-within span {
-      color: brand(_two);
-    }
-  }
-
   legend,
   .InputField {
     width: 100%;

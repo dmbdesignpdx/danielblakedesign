@@ -14,12 +14,12 @@
     cursor: pointer;
 
     @supports (-moz-orient:vertical) {
-      // margin-top: 1px;
+      margin-top: 2px;
     }
 
     // Hover
     @at-root
-    .Radio:hover span {
+    .Radio:hover .RadioBtn:not(:disabled) + span {
 
       @include desktop {
         color: brand(_two);
@@ -35,8 +35,8 @@
     // Disabled
     @at-root
     .RadioBtn:disabled + span {
-      color: brand(_slightgray);
-      cursor: default;
+      opacity: 0.3;
+      pointer-events: none;
     }
   }
 }
@@ -82,7 +82,8 @@
 
   // Disabled
   &:disabled {
-    border-color: brand(_slightgray);
-    cursor: auto;
+    // border-color: brand(_slightgray);
+    opacity: 0.3;
+    pointer-events: none;
   }
 }

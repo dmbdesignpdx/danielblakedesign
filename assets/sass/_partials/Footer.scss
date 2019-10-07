@@ -3,6 +3,10 @@
   padding-top: 60px;
   padding-bottom: 90px;
   background: brand(_nearblack);
+
+  @include theme(dark) {
+    background: brand(_darkergray);
+  }
   
   address, aside {
     

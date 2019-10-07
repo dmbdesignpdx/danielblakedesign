@@ -1,7 +1,19 @@
 .Input {
 
   span {
+    display: inline-block;
     margin-bottom: 0.33em;
+    font-size: 80%;
+    color: brand(_lightgray);
+
+    @include theme(dark) {
+      color: brand(_slightgray);
+    }
+
+    @at-root
+    .Input:focus-within span {
+      color: brand(_two);
+    }
 
     // Hover
     @at-root

@@ -3,10 +3,7 @@
   for='{{ .name }}'
 >
 
-  <span
-    id='{{ .id }}'
-    aria-hidden='true'
-  >
+  <span>
 
     {{ T .name | safeHTML }}
 
@@ -18,7 +15,6 @@
     <textarea 
       id='{{ .name }}'
       class='InputField'
-      name='{{ .name }}'
       rows='10'
       value=''
       required
@@ -29,7 +25,6 @@
     <input
       id='{{ .name }}'
       class='InputField'
-      name='{{ .name }}'
       type='{{ .type }}'
       {{ if eq .type "email" }}
         inputmode='email'
