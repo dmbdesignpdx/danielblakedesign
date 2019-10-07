@@ -290,6 +290,8 @@ p a:focus {
     @media (prefers-color-scheme: dark) {
       .About h3, .About li {
         color: #eeeef2; } }
+  .About a {
+    color: #e13364; }
   .About h2 {
     justify-self: start; }
     @media (min-width: 540px) {

@@ -11,6 +11,10 @@
     }
   }
 
+  a {
+    color: brand();
+  }
+
   // Title
   h2 {
     justify-self: start;
