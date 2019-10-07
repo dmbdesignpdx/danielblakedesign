@@ -14,14 +14,14 @@
 - HTML5
 - CSS3 / SCSS / SassScript
 - JavaScript / ES2015+
-- React.js / Vue.js
+- React / Vue / Svelte
+- Gatsby / Hugo / Jekyll
+- LitElement / lit-html
 - Git
-- Nuxt.js / Hugo / Jekyll
-- Webpack.js / Gulp.js
+- Webpack / Gulp / Rollup
 - jQuery / CoffeeScript
-- XML / JSON / YAML
 - GraphQL / PHP / MySQL
-- Node.js / NPM
+- Node
 - Jest / Enzyme
 
 ### Experience
@@ -29,6 +29,7 @@
 - Responsive Web Design and Development
 - Semantic Markup and Accessibility
 - UX/GUI Design
+- Unit Testing
 - Branding
 - Art/Creative Direction
 - BFA in Communication Design
