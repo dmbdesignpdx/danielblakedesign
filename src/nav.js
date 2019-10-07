@@ -65,11 +65,12 @@ const navScroll = () => {
 
     // Reset scroll
     scrolling = false
+    cancelAnimationFrame(toggleNav)
   }
 
 
-  window.addEventListener(`scroll`, () => {
-    if (!scrolling) window.requestAnimationFrame(toggleNav)
+  addEventListener(`scroll`, () => {
+    if (!scrolling) requestAnimationFrame(toggleNav)
     scrolling = true
   }, { passive: true })
 }

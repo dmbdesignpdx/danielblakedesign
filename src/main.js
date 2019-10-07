@@ -1,6 +1,3 @@
-// Mark
-performance.mark(`initial`)
-
 // SmoothScroll needs a require
 const smoothScroll = require(`./plugins/smooth-scroll`)
 
@@ -8,9 +5,9 @@ import $ from './plugins/Query'
 import navScroll from './nav'
 
 
-window.addEventListener(`load`, () => {
+addEventListener(`load`, () => {
   const ICON = $(`.Arrow`)
-  const FORM = document.drop
+  const FORM = document.forms.drop
   const LANG = $(`#lang`)
   let scrolling = false
 
@@ -49,6 +46,7 @@ window.addEventListener(`load`, () => {
     }
 
     scrolling = false
+    cancelAnimationFrame(arrowFade)
   }
 
 
@@ -62,15 +60,12 @@ window.addEventListener(`load`, () => {
   })
 
 
-  window.addEventListener(`scroll`, () => {
-    if (!scrolling) window.requestAnimationFrame(arrowFade)
+  addEventListener(`scroll`, () => {
+    if (!scrolling) requestAnimationFrame(arrowFade)
     scrolling = true
   }, { passive: true })
 
   navScroll()
   smoothScroll(`a[href*='#']`)
 
-  // Mark and Measure
-  performance.mark(`page_loaded`)
-  performance.measure(`script_loaded`, `initial`, `page_loaded`)
 }, { once: true })
