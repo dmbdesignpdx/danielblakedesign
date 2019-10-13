@@ -3,7 +3,8 @@
 title: Daniel Blake - Diseñador Web Front-End
 description: Daniel Blake, desarrollador y diseñador, es un apasionado de crear sitios web accesibles y receptivos.
 date: June 2, 2019
-
+sitemap:
+  priority: 1.0
 
 ## Params ##
 ## Meta ##

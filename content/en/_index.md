@@ -3,6 +3,8 @@
 title: Daniel Blake - Front End Web Designer
 description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
 date: May 30, 2019
+sitemap:
+  priority: 1.0
 
 
 ## Params ##

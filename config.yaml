@@ -37,6 +37,12 @@ languages:
     copyright: |
       Copyright 2019 Daniel Blake. Todos los derechos reservados. Todas las demás marcas registradas son propiedad de sus respectivos dueños.
 
+## Sitemap ##
+sitemap:
+  changefreq: monthly
+  filename: sitemap.xml
+  priority: 0.9
+
 
 ## Build ##
 enableGitInfo: true
