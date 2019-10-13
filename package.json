@@ -7,19 +7,6 @@
  "author": "Daniel Blake <daniel@danielblake.design>",
  "license": "UNLICENSED",
  "private": true,
- "scripts": {
-  "webdev": "webpack --mode development",
-  "webpro": "webpack --mode production",
-  "webdev:watch": "webpack --mode development --watch",
-  "hugo:min": "env HUGO_ENV=production hugo --minify",
-  "serve": "hugo serve -p 3000",
-  "serve:min": "env HUGO_ENV=production hugo serve -p 9000 --disableLiveReload --minify",
-  "dev": "run-p webdev:watch serve",
-  "build": "run-s webpro hugo:min",
-  "preview": "run-s webpro serve:min",
-  "lint": "eslint src/*.js",
-  "clean": "rm -rf public"
- },
  "dependencies": {
   "@babel/core": "^7.4.3",
   "@babel/polyfill": "^7.4.3",
@@ -33,5 +20,17 @@
  "devDependencies": {
   "eslint": "^5.16.0",
   "npm-run-all": "^4.1.5"
+ },
+ "scripts": {
+  "web:dev": "webpack --mode development --watch",
+  "web:pro": "webpack --mode production",
+  "hugo:min": "env HUGO_ENV=production hugo --minify",
+  "serve:dev": "hugo serve -p 3000",
+  "serve:pro": "env HUGO_ENV=production hugo serve -p 9000 --disableLiveReload --minify",
+  "start": "run-p web:dev serve:dev",
+  "build": "run-s web:pro hugo:min",
+  "preview": "run-s web:pro serve:pro",
+  "lint": "eslint src/*.js",
+  "clean": "rm -rf public"
  }
 }
