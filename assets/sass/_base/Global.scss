@@ -35,11 +35,6 @@ button {
   border: 0;
 }
 
-img,
-li::before {
-  font-size: 0;
-}
-
 input {
   @include appearance(none);
 }
@@ -49,7 +44,7 @@ li {
 }
 
 li::before {
-  content: "\200C";
+  content: "\200B";
 }
 
 abbr {
@@ -90,8 +85,7 @@ button:active {
   outline: 0;
 }
 
-a:hover,
-button:hover {
+button {
   cursor: pointer;
 }
 

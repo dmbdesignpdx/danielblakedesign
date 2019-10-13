@@ -295,13 +295,13 @@ p {
   }
 
   a {
-    display: flex;
     font-size: 0.8rem;
     letter-spacing: 0.03em;
     font-weight: 700;
   }
 
   a:first-child {
+    display: flex;
     align-items: center;
     margin: 0 auto 1px 0;
     letter-spacing: -0.02em;
@@ -335,7 +335,7 @@ p {
   border-radius: 3px;
   background:
     brand(_almostwhite)
-    url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center / 12px 12px
+    url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>")82% center / 12px 12px
     no-repeat;
   box-shadow: 0 1px 2px ts(0.2);
   cursor: pointer;

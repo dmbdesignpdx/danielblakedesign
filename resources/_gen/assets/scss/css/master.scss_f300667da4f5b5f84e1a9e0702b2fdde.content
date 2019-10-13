@@ -39,10 +39,6 @@ button {
   margin: 0;
   border: 0; }
 
-img,
-li::before {
-  font-size: 0; }
-
 input {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -52,7 +48,7 @@ li {
   list-style: none; }
 
 li::before {
-  content: "\200C"; }
+  content: "\200B"; }
 
 abbr {
   text-decoration: none;
@@ -86,8 +82,7 @@ button:focus,
 button:active {
   outline: 0; }
 
-a:hover,
-button:hover {
+button {
   cursor: pointer; }
 
 address {
@@ -630,9 +625,10 @@ p a:focus {
   .Btn.--secondary:active {
     box-shadow: 0 1px 1px rgba(0,0,30,0.2);
     transform: scale(0.96); }
-  .Btn.--secondary:hover {
-    background: #f1f1f4;
-    box-shadow: 0 2px 5px rgba(0,0,30,0.2); }
+  @media (min-width: 1278px) {
+    .Btn.--secondary:hover {
+      background: #f1f1f4;
+      box-shadow: 0 2px 5px rgba(0,0,30,0.2); } }
 
 .sib h1 span:first-child::after {
   transition: width 0.4s 0.4s; }
@@ -650,6 +646,9 @@ p a:focus {
 .sib img {
   border-radius: 4px;
   border: 1px solid #eeeef2; }
+  @media (prefers-color-scheme: dark) {
+    .sib img {
+      border-color: #373546; } }
 
 .sib li {
   position: relative; }

@@ -7,7 +7,8 @@
       &::after {
         
         // Animation delay override for Siblings
-        @at-root .sib h1 span:first-child::after {
+        @at-root
+        .sib h1 span:first-child::after {
           transition: width 0.4s 0.4s;
         }
         
@@ -32,6 +33,10 @@
   img {
     border-radius: 4px;
     border: 1px solid #{brand(_darkwhite)};
+
+    @include theme(dark) {
+      border-color: brand(_darkgray);
+    }
   }
   
   li {
@@ -57,7 +62,8 @@
       @include size(90px);
       opacity: 0;
       
-      @at-root .sib section a:hover svg {
+      @at-root
+      .sib section a:hover svg {
         opacity: 0.95;
       }
     }

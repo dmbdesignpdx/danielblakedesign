@@ -71,7 +71,10 @@
   }
 
   &:hover {
-    background: value(brand(_darkwhite),1);
-    box-shadow: 0 2px 5px ts(0.2);
+    
+    @include desktop {
+      background: value(brand(_darkwhite),1);
+      box-shadow: 0 2px 5px ts(0.2);
+    }
   }
 }

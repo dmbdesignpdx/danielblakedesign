@@ -36,7 +36,8 @@
       grid-row: 1 / 2;
       
       // For second section
-      @at-root #turntable h3 {
+      @at-root
+      #turntable h3 {
         text-align: right;
       }
     }
@@ -52,7 +53,8 @@
       grid-row: 2 / 3;
       
       // For second section
-      @at-root #turntable .cta {
+      @at-root
+      #turntable .cta {
         justify-self: end;
       }
     }

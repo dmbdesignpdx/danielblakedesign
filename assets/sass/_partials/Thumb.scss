@@ -16,7 +16,8 @@
     grid-row: 1 / 3;
     
     // For second section
-    @at-root #turntable picture.Thumb {
+    @at-root
+    #turntable picture.Thumb {
       grid-column-start: 4;
     }
   }
