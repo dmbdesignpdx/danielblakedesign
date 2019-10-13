@@ -1,35 +1,37 @@
-#### Hello! 👋 I am a front-end web designer living in Portland, Oregon.
+### Hello! 👋
 
-### Design
+I am a front-end web designer living in Portland, Oregon and this is the source code for my website.
 
-- InVision
-- Sketch
-- XD
-- InDesign
-- Illustrator
-- Photoshop
+This project is built with [Hugo](https://gohugo.io) and hosted on [Netlify](https://netlify.com).
 
-### Development
+<br>
 
-- HTML5
-- CSS3 / SCSS / SassScript
-- JavaScript / ES2015+
-- React / Vue / Svelte
-- Gatsby / Hugo / Jekyll
-- LitElement / lit-html
-- Git
-- Webpack / Gulp / Rollup
-- jQuery / CoffeeScript
-- GraphQL / PHP / MySQL
-- Node
-- Jest / Enzyme
+#### For those interested:
 
-### Experience
+(I'm assuming you have [Node](https://nodejs.org) installed.)
 
-- Responsive Web Design and Development
-- Semantic Markup and Accessibility
-- UX/GUI Design
-- Unit Testing
-- Branding
-- Art/Creative Direction
-- BFA in Communication Design
+After cloning this project, `cd` into it.
+
+Install Hugo:
+
+```bash
+brew install hugo
+```
+
+Install dependencies:
+
+```bash
+yarn
+```
+
+Initialize the Hugo build:
+
+```bash
+hugo
+```
+
+Then launch:
+
+```bash
+yarn start
+```
