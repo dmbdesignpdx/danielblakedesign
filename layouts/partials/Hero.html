@@ -1,3 +1,11 @@
+{{/*
+  * Props
+  *
+  * one: string (Required)
+  * two: string (Required)
+ */}}
+
+
 <header
   class='Hero __intro'
   flexr-wrap
@@ -7,7 +15,7 @@
   {{ if eq .home true }}
 
     <h1>{{ .one | safeHTML }}</h1>
-  
+
     <p>{{ .two | safeHTML }}</p>
 
   {{ else }}
