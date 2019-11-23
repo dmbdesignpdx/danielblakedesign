@@ -31,6 +31,7 @@
   "build": "run-s web:pro hugo:min",
   "preview": "run-s web:pro serve:pro",
   "lint": "eslint src/*.js",
-  "clean": "rm -rf public"
+  "clean": "rm -rf public",
+  "fresh": "rm -rf node_modules && yarn"
  }
 }
