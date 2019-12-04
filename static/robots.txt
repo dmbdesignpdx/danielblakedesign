@@ -1,2 +1,5 @@
-User-agent: *
-Disallow: /
+user-agent: *
+allow: /
+disallow:
+
+sitemap: https://danielblake.design/sitemap.xml
