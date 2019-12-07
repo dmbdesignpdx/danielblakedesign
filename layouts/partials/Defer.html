@@ -5,10 +5,7 @@
 
 <!-- Master -->
 
-{{ $master := resources.Get "css/master.scss" | toCSS }}
-{{ if eq ( getenv "HUGO_ENV" ) "production" }}
-{{ $master = $master | minify }}
-{{ end }}
+{{ $master := resources.Get "css/master.scss" | toCSS | minify }}
 <!-- <style>{{ $master.Content | safeCSS }}</style> -->
 <link rel="stylesheet" href="{{ $master.RelPermalink }}">
 
