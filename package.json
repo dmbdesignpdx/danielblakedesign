@@ -27,9 +27,9 @@
   "hugo:min": "env HUGO_ENV=production hugo --minify",
   "serve:dev": "hugo serve -p 3000",
   "serve:pro": "env HUGO_ENV=production hugo serve -p 9000 --disableLiveReload --minify",
-  "start": "run-p web:dev serve:dev",
-  "build": "run-s web:pro hugo:min",
-  "preview": "run-s web:pro serve:pro",
+  "start": "run-p clean web:dev serve:dev",
+  "build": "run-s clean web:pro hugo:min",
+  "preview": "run-s clean web:pro serve:pro",
   "lint": "eslint src/*.js",
   "clean": "rm -rf public",
   "fresh": "rm -rf node_modules && yarn"

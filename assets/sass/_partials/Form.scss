@@ -1,5 +1,7 @@
 .Form {
-  @extend %content;
+  @extend %layout;
+  display: flex;
+  flex-direction: column;
 
   @include tabletPor {
     grid-column: 1 / span 4;
@@ -9,22 +11,17 @@
     grid-column: 1 / span 3;
   }
 
-  legend {
+  h4 {
     font-size: 1.2rem;
     letter-spacing: -0.03em;
   }
 
-  fieldset {
-    display: flex;
-    flex-direction: column;
-  }
-
-  legend,
+  h4,
   .InputField {
     width: 100%;
   }
 
-  legend,
+  h4,
   .Input {
     margin-bottom: 18px;
 
@@ -41,10 +38,6 @@
     align-self: flex-start;
   }
 }
-
-
-
-
 
 
 

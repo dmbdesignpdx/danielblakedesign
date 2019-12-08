@@ -12,7 +12,7 @@
 {{ if eq .type "link" }}
 
   <a
-    class='Btn --{{ .theme }}'
+    class='Btn --{{ .theme }} graphical'
     {{ if .rel }}
       target='_blank'
       rel='{{ .rel }}'
@@ -21,7 +21,7 @@
     aria-label='{{ T .text }} {{ .title | title }}'
   >
 
-    {{ T .text | safeHTML }}
+    {{ T .text | safeHTML }} <span>{{ .title | title }}</span>
 
   </a>
 
@@ -29,7 +29,7 @@
 
   <button
     name='send'
-    class='Btn --{{ .theme }}'
+    class='Btn --{{ .theme }} graphical'
     type='{{ .type }}'
   >
 

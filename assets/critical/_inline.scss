@@ -89,8 +89,8 @@
 }
 
 html {
-  background: brand(_offwhite);
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  background: brand(_offwhite);
 }
 
 body {
@@ -130,12 +130,12 @@ a {
 }
 
 h1 {
-  text-rendering: geometricPrecision;
-  letter-spacing: -0.03em;
-  word-spacing: 0.1em;
   padding-top: 28vh;
   font-size: 2.4rem;
-  
+  letter-spacing: -0.03em;
+  word-spacing: 0.1em;
+  text-rendering: geometricPrecision;
+
   // Underlined words
   span {
     display: inline-block;
@@ -170,9 +170,7 @@ h1 {
       }
     }
   }
-  
-  
-  
+
   // Sibling h1
   .sib & {
     padding-top: 38vh;
@@ -180,10 +178,10 @@ h1 {
 }
 
 p {
-  text-rendering: optimizeSpeed;
   color: brand(_darklight);
-  line-height: 1.6;
   letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-rendering: optimizeSpeed;
   -ms-hyphens: none;
   -webkit-hyphens: none;
   hyphens: none;
@@ -192,20 +190,20 @@ p {
 .Hero.__intro {
 
   h1, p {
-    transform: translateX(-50%);
     opacity: 0;
+    transform: translateX(-50%);
 
     @media (prefers-reduced-motion:reduce) {
-      transform: translateX(0);
       opacity: 1;
+      transform: translateX(0);
     }
   }
 }
 
 
 .Hero h1, .Hero p {
-  transform: translateX(0);
   opacity: 1;
+  transform: translateX(0);
   transition: transform 0.4s 0s, opacity 0.4s 0s;
   transform-style: preserve-3d;
 }
@@ -318,7 +316,7 @@ p {
   }
   
   a:not(:first-child) {
-    padding: 16px 0;
+    padding: 0.8em 0;
   }
   
   a:nth-child(1n+2) {
@@ -327,10 +325,10 @@ p {
 }
 
 #lang {
-  padding: 0.3em 1.6em 0.3em 0.5em;
-  font-size: 0.65rem;
-  font-weight: 700;
+  padding: 0.8em 1.6em 0.8em 0.5em;
   color: inherit;
+  font-size: 0.7rem;
+  font-weight: 700;
   border: 0;
   border-radius: 3px;
   background:
@@ -427,6 +425,10 @@ p {
     a:nth-child(1n+2) {
       margin-right: 2em;
     }
+  }
+
+  #lang {
+    padding: 0.6em 1.6em 0.6em 0.5em;
   }
 
 }

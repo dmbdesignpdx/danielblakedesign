@@ -6,58 +6,51 @@
   netlify
 >
 
-  <fieldset>
-
-    <legend>{{ T "legend" | safeHTML }}</legend>
+  <h4>{{ T "legend" | safeHTML }}</h4>
 
 
-    <!-- Honeypot -->
+  <!-- Honeypot -->
 
-    <label
-      class='Honey'
-      aria-hidden='true'
-    >
+  <label class='Honey'>
 
-      <span>
+    <span>
 
-        Your Company
+      Your Company
 
-      </span>
+    </span>
 
-      <input
-        type='text'
-        name='honey'
-      />
-    
-    </label>
+    <input
+      type='text'
+      name='honey'
+    />
+  
+  </label>
 
 
-    <!-- Inquiries -->
+  <!-- Inquiries -->
 
-    {{ partial "Radio" ( dict "type" "freelance" "disabled" true ) }}
-    
-    {{ partial "Radio" ( dict "type" "general" "disabled" false ) }}
-
-
-    <!-- Name -->
-
-    {{ partial "Input" ( dict "type" "text" "name" "name" ) }}
+  {{ partial "Radio" ( dict "type" "freelance" "disabled" true ) }}
+  
+  {{ partial "Radio" ( dict "type" "general" "disabled" false ) }}
 
 
-    <!-- Email -->
-    
-    {{ partial "Input" ( dict "type" "email" "name" "email" ) }}
+  <!-- Name -->
+
+  {{ partial "Input" ( dict "type" "text" "name" "name" ) }}
 
 
-    <!-- Message -->
+  <!-- Email -->
+  
+  {{ partial "Input" ( dict "type" "email" "name" "email" ) }}
 
-    {{ partial "Input" ( dict "type" "textarea" "name" "message" ) }}
+
+  <!-- Message -->
+
+  {{ partial "Input" ( dict "type" "textarea" "name" "message" ) }}
 
 
-    <!-- Send -->
+  <!-- Send -->
 
-    {{ partial "Btn" ( dict "type" "submit" "theme" "primary" "text" "send" ) }}
-
-  </fieldset>
+  {{ partial "Btn" ( dict "type" "submit" "theme" "primary" "text" "send" ) }}
 
 </form>

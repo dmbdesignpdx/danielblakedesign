@@ -2,8 +2,9 @@
 - key: 1
   type: design
   text:
-    - InVision
+    - InVision Studio
     - Sketch
+    - Figma
     - XD
     - InDesign
     - Illustrator
@@ -15,11 +16,10 @@
     - CSS3 / SCSS / SassScript
     - JavaScript / ES2015+
     - React / Vue / Svelte
-    - Gatsby / Hugo / Jekyll
+    - Gatsby / Gridsome / Hugo
     - LitElement / lit-html
     - Git
     - Webpack / Gulp / Rollup
-    - jQuery / CoffeeScript
     - GraphQL / PHP / MySQL
     - Node
     - Jest / Enzyme
