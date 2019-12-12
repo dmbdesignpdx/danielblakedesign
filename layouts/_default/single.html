@@ -59,7 +59,11 @@
 
       <!-- Visit -->
 
-      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .Params.link "rel" .Params.rel "title" .Params.id "text" "visit" ) }}
+      {{ if .Params.link }}
+
+        {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .Params.link "rel" .Params.rel "title" .Params.id "text" "visit" ) }}
+
+      {{ end }}
 
     </section>
 

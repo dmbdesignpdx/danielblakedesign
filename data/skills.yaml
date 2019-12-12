@@ -22,7 +22,7 @@
     - Webpack / Gulp / Rollup
     - GraphQL / PHP / MySQL
     - Node
-    - Jest / Enzyme
+    - Storybook / Jest / Enzyme
 - key: 3
   type: experience
   text:

@@ -23,7 +23,11 @@
 
     <!-- Visit -->
 
-    {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
+    {{ if .link }}
+
+      {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
+
+    {{ end }}
 
   </div>
 

@@ -16,8 +16,8 @@ one: LeadsHub
 two: Aplicación Movil
 
 # Content
-link: 'https://leadshub.com'
-rel: external nofollow noreferrer noopener
 ---
 
 LeadsHub es un producto de Dice Services & mdash; una aplicación móvil y de escritorio diseñada para llevar la comunicación entre el vendedor y el cliente a la era moderna.
+
+Enlace al proyecto próximamente.

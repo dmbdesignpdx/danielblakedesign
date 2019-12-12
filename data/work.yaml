@@ -9,11 +9,9 @@
 #   rel: external nofollow noreferrer noopener
 - key: 1
   title: leadshub
-  link: 'https://leadshub.com'
-  rel: external nofollow noreferrer noopener
 - key: 2
   title: turntable
-  link: 'https://turntablelib.com'
+  link: 'https://turntablelib.netlify.com/'
   rel: external noreferrer noopener
 - key: 3
   title: flexr
