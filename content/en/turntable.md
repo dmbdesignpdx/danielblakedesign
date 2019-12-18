@@ -20,4 +20,8 @@ link: 'https://turntablelib.com'
 rel: external noreferrer noopener
 ---
 
-To help better grasp SassScript, I decided to build my own Sass library. Its focus is the compiled CSS output: not cluttering it with unnecessary rules by using a configuration and custom mixins for mundane tasks.
+### Turntable site info
+
+⚡ Hugo / Sass
+
+☕ Developed / Designed

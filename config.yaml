@@ -54,3 +54,4 @@ disableKinds:
   - robotsTXT
 enableEmoji: true
 relativeURLs: true
+disableFastRender: true

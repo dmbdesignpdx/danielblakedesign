@@ -4,7 +4,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 4px;
-  border: 1px solid #{brand(_darkwhite)};
+  border: 1px solid #DDD;
 
   @include theme(dark) {
     border-color: brand(_darkgray);
@@ -17,31 +17,8 @@
     
     // For second section
     @at-root
-    #turntable picture.Thumb {
+    #work section:nth-of-type(even) .Thumb {
       grid-column-start: 4;
-    }
-  }
-  
-  // Creates mask
-  &::before {
-    display: block;
-    width: 100%;
-    padding-top: 62.4%;
-    content: "";
-  }
-  
-  // Sprite positioning
-  img, source {
-    @include size(100% 300%);
-    @include xy(0);
-    position: absolute;
-    
-    @at-root #turntable img {
-      top: -100%;
-    }
-    
-    @at-root #flexr img {
-      top: -200%;
     }
   }
 }

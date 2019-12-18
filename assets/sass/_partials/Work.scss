@@ -37,7 +37,7 @@
       
       // For second section
       @at-root
-      #turntable h3 {
+      #work section:nth-of-type(even) h3 {
         text-align: right;
       }
     }
@@ -54,7 +54,7 @@
       
       // For second section
       @at-root
-      #turntable .cta {
+      #work section:nth-of-type(even) .cta {
         justify-self: end;
       }
     }

@@ -20,4 +20,8 @@ link: 'https://flexrgrid.com'
 rel: external noreferrer noopener
 ---
 
-Flexr is a CSS grid that I created three years ago after being fed up with Bootstrap. I wanted something that focused on two things: the grid/layout and reducing DOM clutter by using less elements to build the grid.
+### Flexr site info
+
+⚡ Jekyll / Sass
+
+☕ Developed / Designed
