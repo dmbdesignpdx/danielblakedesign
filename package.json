@@ -32,6 +32,6 @@
   "preview": "run-s clean web:pro serve:pro",
   "lint": "eslint src/*.js",
   "clean": "rm -rf public",
-  "fresh": "rm -rf node_modules && yarn"
+  "fresh": "rm -rf node_modules .cache && yarn"
  }
 }
