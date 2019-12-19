@@ -4,28 +4,30 @@
   * title: string (Required)
  */}}
 
+{{ $file := replace .title " " "" }}
+
 
 <section
-  id='{{ .title }}'
+  id='{{ $file }}'
   aria-label='{{ .title | title }}'
   flexr-grid
 >
 
-  <h3>{{ .title | title | safeHTML }} &mdash; {{ T .title | safeHTML }}</h3>
+  <h3>{{ .title | title | safeHTML }} &mdash; {{ T $file | safeHTML }}</h3>
 
   <div class='cta'>
 
 
     <!-- Preview -->
 
-    {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "text" "preview" "link" .title ) }}
+    {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" $file "text" "preview" "link" $file ) }}
 
 
     <!-- Visit -->
 
     {{ if .link }}
 
-      {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
+      {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" $file "rel" .rel "text" "visit" "link" .link ) }}
 
     {{ end }}
 
@@ -39,18 +41,18 @@
     <source
       type='image/webp'
       srcset='
-        /img/{{ .title }}/{{ .title }}-1-xs.webp 750w,
-        /img/{{ .title }}/{{ .title }}-1-sm.webp 1080w,
-        /img/{{ .title }}/{{ .title }}-1-md.webp 1280w
+        /img/{{ $file }}/{{ $file }}-1-xs.webp 750w,
+        /img/{{ $file }}/{{ $file }}-1-sm.webp 1080w,
+        /img/{{ $file }}/{{ $file }}-1-md.webp 1280w
       '
     />
 
     <img
       src='/img/work-fl.jpg'
       srcset='
-        /img/{{ .title }}/{{ .title }}-1-xs.jpg 750w,
-        /img/{{ .title }}/{{ .title }}-1-sm.jpg 1080w,
-        /img/{{ .title }}/{{ .title }}-1-md.jpg 1280w
+        /img/{{ $file }}/{{ $file }}-1-xs.jpg 750w,
+        /img/{{ $file }}/{{ $file }}-1-sm.jpg 1080w,
+        /img/{{ $file }}/{{ $file }}-1-md.jpg 1280w
       '
       alt=''
     />
