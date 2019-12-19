@@ -1,7 +1,7 @@
 ---
 ## Page Variables ##
 title: The Program Preview - Daniel Blake
-description: The Program is a marketing agency. Project at The Program.
+description: The Program es una agencia de mercadeo. Proyecto en The Program.
 date: Decemeber 17, 2019
 
 
@@ -9,11 +9,11 @@ date: Decemeber 17, 2019
 # Meta
 id: theprogram
 class: sib
-lang: en
+lang: es
 
 # Hero
 one: The Program
-two: Marketing Agency
+two: Agencia de Mercadeo
 
 # Content
 link: 'https://theprogrampdx.com'
@@ -24,4 +24,4 @@ rel: external noreferrer noopener
 
 ⚡ Next / React / Sass / Contentful
 
-☕ Co-Developed
+☕ Desarrollado Conjuntamente

@@ -33,9 +33,13 @@
 - id: leadshub
   translation: Aplicación Movil
 - id: turntable
-  translation: Librería Sass
+  translation: Librería de Sass
 - id: flexr
   translation: Micro Estructura de CSS
+- id: theprogram
+  translation: Agencia de Mercadeo
+- id: kaskada
+  translation: Estudio de Aprendizaje Automático
 
 
 ## Contact ##
