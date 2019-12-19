@@ -13,14 +13,14 @@
   type: development
   text:
     - HTML5
-    - CSS3 / SCSS / Styled Components
+    - CSS3 / SCSS / CSS-in-JS
     - JavaScript / ES2015+
     - React / Vue / Svelte
     - Gatsby / Gridsome / Hugo
     - LitElement / lit-html
     - Git
     - Storybook / Jest / Enzyme
-    - GraphQL / PHP / MySQL
+    - GraphQL / PHP
     - Webpack / Gulp / Rollup
     - Node
 - key: 3
