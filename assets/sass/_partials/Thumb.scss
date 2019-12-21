@@ -1,20 +1,5 @@
 .Thumb {
 
-  &:nth-of-type(even) {
-
-    picture {
-      grid-column-start: 4;
-    }
-
-    h3 {
-      text-align: right;
-    }
-
-    .cta {
-      justify-self: end;
-    }
-  }
-
   picture {
     margin-bottom: 18px;
     grid-row: 1;
@@ -49,6 +34,30 @@
     @include phoneLan {
       grid-column: span 3;
       grid-row: 1 / 2;
+    }
+  }
+
+  &:nth-of-type(even) {
+
+    picture {
+      
+      @include phoneLan {
+        grid-column-start: 4;
+      }
+    }
+
+    h3 {
+      
+      @include phoneLan {
+        text-align: right;
+      }
+    }
+
+    .cta {
+      
+      @include phoneLan {
+        justify-self: end;
+      }
     }
   }
 }

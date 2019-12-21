@@ -64,19 +64,6 @@
 
 
 //
-// Grid
-//
-
-[flexr-wrap] {
-  width: 100%;
-  padding-right: 18px;
-  padding-left: 18px;
-  margin: 0 auto;
-}
-
-
-
-//
 // Global Styles and Resets
 //
 
@@ -316,11 +303,11 @@ p {
   }
   
   a:not(:first-child) {
-    padding: 0.8em 0;
+    padding: 0.8em 0.2em;
   }
   
   a:nth-child(1n+2) {
-    margin-right: 1.3em;
+    margin-right: 0.8em;
   }
 }
 
@@ -361,6 +348,19 @@ p {
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+
+
+//
+// Grid
+//
+
+[flexr-wrap] {
+  width: 100%;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 0 auto;
 }
 
 
@@ -423,7 +423,7 @@ p {
     }
     
     a:nth-child(1n+2) {
-      margin-right: 2em;
+      margin-right: 1.6em;
     }
   }
 
