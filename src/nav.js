@@ -9,17 +9,14 @@ import $ from './plugins/Query'
 const navScroll = () => {
   const NAV = $(`.Nav`)
   const navHeight = NAV.clientHeight
-  let original = window.pageYOffset
-  let isShowing = NAV.classList.contains(`__show`)
-  let scrolling = false
 
-
-  /**
-   * Upates availHeight by subtracting viewport height from html height
-   * @returns {number} Height of viewable html
-   *
-   */
-  const availHeight = () => $(`html`).scrollHeight - window.innerHeight
+  let state = {
+    init: window.pageYOffset,
+    showing: NAV.classList.contains(`__show`),
+    get availHeight() {
+      return $(`html`).scrollHeight - window.innerHeight
+    },
+  }
 
 
   /**
@@ -36,17 +33,17 @@ const navScroll = () => {
       NAV.classList.add(`__time`)
 
       // 2. Check Available scroll height (top and bottom)
-      if (original > -1 && availHeight() > update) {
+      if (state.init > -1 && state.availHeight > update) {
         // 3. Decide nav visibility
         // Scrolling down and is visible (Hide)
-        if (update > original && isShowing) {
+        if (update > state.init && state.showing) {
           NAV.classList.remove(`__show`)
-          isShowing = false
+          state.showing = false
 
         // Or scrolling up and is not visible (Show)
-        } else if (update < original && !isShowing) {
+        } else if (update < state.init && !state.showing) {
           NAV.classList.add(`__show`)
-          isShowing = true
+          state.showing = true
         }
       }
 
@@ -61,18 +58,11 @@ const navScroll = () => {
     }
 
     // Update scroll position
-    original = update
-
-    // Reset scroll
-    scrolling = false
-    cancelAnimationFrame(toggleNav)
+    state.init = update
   }
 
 
-  addEventListener(`scroll`, () => {
-    if (!scrolling) requestAnimationFrame(toggleNav)
-    scrolling = true
-  }, { passive: true })
+  addEventListener(`scroll`, toggleNav, { passive: true })
 }
 
 
