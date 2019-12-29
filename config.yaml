@@ -1,4 +1,5 @@
 ## Site Variables ##
+baseURL: 'https://danielblake.design'
 title: Daniel Blake - Front End Web Designer
 author:
   name: Daniel Blake

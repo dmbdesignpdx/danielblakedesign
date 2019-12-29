@@ -1,18 +1,12 @@
-{{ $phone := print "+1" .Site.Author.phone }}
-{{ $phone = replace $phone "-" "" }}
+<!-- Animate Hero Text -->
 
+<script>!function(){function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(function(e){e.classList.add('__underline')})}'fonts'in document?document.fonts.ready.then(e):addEventListener('DOMContentLoaded',e,{once:true})}()</script>
 
 
 <!-- Master -->
 
 {{ $master := resources.Get "css/master.scss" | toCSS | minify }}
-<!-- <style>{{ $master.Content | safeCSS }}</style> -->
 <link rel="stylesheet" href="{{ $master.RelPermalink }}">
-
-
-<!-- Animate Hero Text -->
-
-<script>!function(){function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(function(e){e.classList.add('__underline')})}'fonts'in document?document.fonts.ready.then(e):addEventListener('DOMContentLoaded',e,{once:true})}()</script>
 
 
 <!-- Google Analytics -->
@@ -21,45 +15,52 @@
 
 <script async src='https://www.googletagmanager.com/gtag/js?id=UA-124883259-1'></script>
 
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','UA-124883259-1')</script>
+<script>if(1!==navigator.doNotTrack||1!==doNotTrack||1!==msDoNotTrack){function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-124883259-1")}</script>
 
 {{ end }}
 
 
 <!-- Structured Data (Schema) -->
 
+{{ $webpage := print .Site.BaseURL "#webpage" }}
+{{ $website := print .Site.BaseURL "#website" }}
+{{ $person := print .Site.BaseURL "#person" }}
+{{ $phone := print "+1" .Site.Author.phone }}
+{{ $phone = replace $phone "-" "" }}
+
+
 <script type='application/ld+json'>
   {
     "@context":"http://schema.org",
     "@type":"WebPage",
-    "@id":"{{ .Permalink }}#webpage",
-    "name":"{{ .Title }}",
-    "description":"{{ .Description }}",
-    "url":"{{ .Permalink }}",
+    "@id":{{ $webpage }},
+    "name":{{ .Title }},
+    "description":{{ .Description }},
+    "url":{{ .Permalink | absURL }},
     "isPartOf":{
       "@type":"WebSite",
-      "@id":"{{ .Permalink }}#website",
-      "name":"{{ .Site.Title }}",
-      "url":"{{ .Site.BaseURL }}"
+      "@id":{{ $website }},
+      "name":{{ .Site.Title }},
+      "url":{{ .Site.BaseURL }}
     },
     "publisher":{
       "@type":"Person",
-      "@id":"{{ .Permalink }}#person",
-      "name":"{{ .Site.Author.name }}",
-      "description":"{{ .Site.Author.title }}",
+      "@id":{{ $person }},
+      "name":{{ .Site.Author.name }},
+      "description":{{ .Site.Author.title }},
       "address":{
         "@type":"PostalAddress",
-        "addressLocality":"{{ .Site.Author.city }}",
-        "addressRegion":"{{ .Site.Author.state }}"
+        "addressLocality":{{ .Site.Author.city }},
+        "addressRegion":{{ .Site.Author.state }}
       },
-      "email":"{{ .Site.Author.email }}",
-      "telephone":"{{ $phone }}",
-      "url":"{{ .Permalink }}",
-      "image":"{{ .Site.Params.image }}",
+      "email":{{ .Site.Author.email }},
+      "telephone":{{ $phone }},
+      "url":{{ .Site.BaseURL }},
+      "image":{{ .Site.Params.image }},
       "sameAs":[
-        "{{ .Site.Author.linkedin }}",
-        "{{ .Site.Author.github }}",
-        "{{ .Site.Author.codepen }}"
+        {{ .Site.Author.linkedin }},
+        {{ .Site.Author.github }},
+        {{ .Site.Author.codepen }}
       ]
     }
   }
