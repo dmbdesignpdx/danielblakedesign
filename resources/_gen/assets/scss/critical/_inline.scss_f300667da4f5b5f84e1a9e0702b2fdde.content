@@ -49,11 +49,11 @@
   box-sizing: border-box; }
 
 html {
-  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  background: #f4f4f6; }
+  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; }
 
 body {
   color: #373546;
+  background: #f4f4f6;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -ms-text-size-adjust: 100%;
@@ -62,7 +62,8 @@ body {
   text-size-adjust: 100%;
   touch-action: manipulation;
   -webkit-overflow-scrolling: touch;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  -ms-overflow-style: -ms-autohiding-scrollbar; }
 
 body,
 h1,
@@ -84,7 +85,6 @@ a {
   font-weight: 700; }
 
 h1 {
-  padding-top: 28vh;
   font-size: 2.4rem;
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
@@ -93,14 +93,14 @@ h1 {
     display: inline-block; }
     h1 span::after {
       display: block;
-      content: '';
       width: 0;
       height: 6px;
-      background: #e13364;
       position: relative;
       margin-top: -0.14em;
       z-index: -1;
-      border-radius: 3px; }
+      content: '';
+      border-radius: 3px;
+      background: #e13364; }
       h1 span:last-child::after {
         transition: width 0.4s 1.2s; }
       h1 span:first-child::after {
@@ -118,24 +118,6 @@ p {
   -ms-hyphens: none;
   -webkit-hyphens: none;
   hyphens: none; }
-
-.Hero.__intro h1, .Hero.__intro p {
-  opacity: 0;
-  transform: translateX(-50%); }
-  @media (prefers-reduced-motion: reduce) {
-    .Hero.__intro h1, .Hero.__intro p {
-      opacity: 1;
-      transform: translateX(0); } }
-
-.Hero h1, .Hero p {
-  opacity: 1;
-  transform: translateX(0);
-  transition: transform 0.4s 0s, opacity 0.4s 0s;
-  transform-style: preserve-3d; }
-
-.Hero p {
-  margin-top: 0.8em;
-  transition: transform 0.4s 0.4s, opacity 0.4s 0.4s; }
 
 /**
  * Whole
@@ -177,15 +159,15 @@ p {
 
 .Nav {
   width: 100%;
-  position: absolute;
-  background: #f4f4f6;
   height: 56px;
+  position: absolute;
   top: 0;
   z-index: 99;
-  contain: strict; }
+  contain: strict;
+  background: #f4f4f6; }
   .Nav div {
-    height: 100%;
     display: flex;
+    height: 100%;
     align-items: center; }
   .Nav a {
     font-size: 0.8rem;
@@ -193,8 +175,8 @@ p {
     font-weight: 700; }
   .Nav a:first-child {
     display: flex;
-    align-items: center;
     margin: 0 auto 1px 0;
+    align-items: center;
     letter-spacing: -0.02em; }
     .Nav a:first-child span {
       display: none; }
@@ -221,14 +203,36 @@ p {
   appearance: none; }
 
 .Hero {
+  display: flex;
   height: 100vh;
-  contain: size layout; }
+  contain: layout;
+  flex-direction: column;
+  justify-content: center;
+  transition: height 0.4s; }
+
+.Hero.__intro h1, .Hero.__intro p {
+  opacity: 0;
+  transform: translateX(-50%); }
+  @media (prefers-reduced-motion: reduce) {
+    .Hero.__intro h1, .Hero.__intro p {
+      opacity: 1;
+      transform: translateX(0); } }
+
+.Hero h1, .Hero p {
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 0.4s 0s, opacity 0.4s 0s;
+  transform-style: preserve-3d; }
+
+.Hero p {
+  margin: 0.8em 0 40px;
+  transition: transform 0.4s 0.4s, opacity 0.4s 0.4s; }
 
 .Arrow {
-  position: absolute;
-  bottom: 5vh;
   width: 34px;
   height: 34px;
+  position: absolute;
+  bottom: 40px;
   fill: none;
   stroke: #66627a;
   stroke-width: 3;
@@ -236,7 +240,6 @@ p {
   stroke-linejoin: round; }
 
 [flexr-wrap] {
-  width: 100%;
   padding-right: 18px;
   padding-left: 18px;
   margin: 0 auto; }
@@ -257,12 +260,11 @@ p {
 /**
  * Tablet Portrait
  */
-@media (min-width: 766px) {
+@media (min-width: 768px) {
   [flex-wrap] {
     padding-right: 24px;
     padding-left: 24px; }
   h1 {
-    padding-top: 36vh;
     font-size: 2.6rem; }
   .Nav {
     height: 90px; }
@@ -281,7 +283,7 @@ p {
 /**
  * Desktop
  */
-@media (min-width: 1278px) {
+@media (min-width: 1280px) {
   [flexr-wrap] {
     width: 84%;
     max-width: 1436px;
@@ -303,7 +305,7 @@ p {
  * Dark Theme
  */
 @media (prefers-color-scheme: dark) {
-  html,
+  body,
   .Nav {
     background: #17161d; }
   body,
