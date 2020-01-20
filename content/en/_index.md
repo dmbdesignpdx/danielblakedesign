@@ -2,7 +2,7 @@
 ## Page Variables ##
 title: Daniel Blake - Front End Web Designer
 description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
-date: May 30, 2019
+date: January 20, 2020
 sitemap:
   priority: 1.0
 
@@ -29,4 +29,4 @@ codepen:
 # Main Site Content Below (in About Section)
 ---
 
-I am a UI engineer and designer living and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> in Portland,&nbsp;OR. I've always been inspired by and excited about visual design and front end development &mdash; both have been my passion for the past seven years. Websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself.
+I am a front end developer with a graphic design background living in Portland, OR and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a>. I've always been inspired by and excited about visual design and front end development &mdash; both have been my passion for the past seven years. Websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself.
