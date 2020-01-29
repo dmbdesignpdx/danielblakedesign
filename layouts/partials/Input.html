@@ -22,6 +22,7 @@
 
     <textarea 
       id='{{ .name }}'
+      name='{{ .name }}'
       class='InputField'
       rows='10'
       value=''
@@ -32,6 +33,7 @@
 
     <input
       id='{{ .name }}'
+      name='{{ .name }}'
       class='InputField'
       type='{{ .type }}'
       {{ if eq .type "email" }}
