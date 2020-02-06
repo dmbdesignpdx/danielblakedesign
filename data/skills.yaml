@@ -14,14 +14,14 @@
   text:
     - HTML5
     - CSS3 / SCSS / CSS-in-JS
-    - JavaScript / ES2015+
+    - JavaScript / TypeScript
     - React / Vue / Svelte
     - Gatsby / Gridsome / Hugo
     - LitElement / lit-html
     - Git
     - Storybook / Jest / Enzyme
     - GraphQL / PHP
-    - Webpack / Gulp / Rollup
+    - Webpack / Rollup / Gulp
     - Node
     - '<b>Learning</b>: Flutter / Dart'
 - key: 3
