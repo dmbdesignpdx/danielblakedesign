@@ -4,24 +4,24 @@
   * type: string (Required)
   * theme: string (Required)
   * text: string (Required)
-  * link: string (Required)
+  * link: string
   * rel: string
+  * value: string
  */}}
 
 
-{{ if eq .type "link" }}
+{{ if eq ( .Get "type" ) "link" }}
 
   <a
-    class='Btn --{{ .theme }} graphical'
-    {{ if .rel }}
+    class='Btn --{{ .Get "theme" }} graphical'
+    {{ if .Get "rel" }}
       target='_blank'
-      rel='{{ .rel }}'
+      rel='{{ .Get "rel" }}'
     {{ end }}
-    href='{{ .link }}'
-    aria-label='{{ T .text }} {{ .title | title }}'
+    href='{{ .Get "link" }}'
   >
 
-    {{ T .text | safeHTML }} <span>{{ .title | title }} website</span>
+    {{ T ( .Get "text" ) | safeHTML }} <span>{{ .Get "title" | title }} website</span>
 
   </a>
 
@@ -29,11 +29,14 @@
 
   <button
     name='send'
-    class='Btn --{{ .theme }} graphical'
-    type='{{ .type }}'
+    class='Btn --{{ .Get "theme" }} graphical'
+    type='{{ .Get "type" }}'
+    {{ if .Get "value" }}
+      data-value='{{ .Get "value" }}'
+    {{ end }}
   >
 
-    {{ T .text | safeHTML }}
+    {{ T ( .Get "text" ) | safeHTML }}
 
   </button>
 

@@ -41,8 +41,16 @@
     <!-- Visit -->
 
     {{ with ( index .Site.Data.work 4 ) }}
+
+      {{ $visit := newScratch }}
+      {{ $visit.Set "type" "link" }}
+      {{ $visit.Set "theme" "primary" }}
+      {{ $visit.Set "title" .title }}
+      {{ $visit.Set "rel" .rel }}
+      {{ $visit.Set "link" .link }}
+      {{ $visit.Set "text" "visit" }}
     
-      {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" .title "rel" .rel "text" "visit" "link" .link ) }}
+      {{ partial "Btn" $visit }}
 
     {{ end }}
 

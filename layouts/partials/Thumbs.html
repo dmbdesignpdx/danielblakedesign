@@ -21,14 +21,29 @@
 
     <!-- Preview -->
 
-    {{ partial "Btn" ( dict "type" "link" "theme" "primary" "title" $file "text" "preview" "link" $file ) }}
+    {{ $preview := newScratch }}
+    {{ $preview.Set "type" "link" }}
+    {{ $preview.Set "theme" "primary"}}
+    {{ $preview.Set "text" "preview" }}
+    {{ $preview.Set "title" $file }}
+    {{ $preview.Set "link" $file }}
+
+    {{ partial "Btn" $preview }}
 
 
     <!-- Visit -->
 
     {{ if .link }}
 
-      {{ partial "Btn" ( dict "type" "link" "theme" "secondary" "title" $file "rel" .rel "text" "visit" "link" .link ) }}
+      {{ $visit := newScratch }}
+      {{ $visit.Set "type" "link" }}
+      {{ $visit.Set "theme" "secondary"}}
+      {{ $visit.Set "text" "visit" }}
+      {{ $visit.Set "title" $file }}
+      {{ $visit.Set "link" .link }}
+      {{ $visit.Set "rel" .rel }}
+
+      {{ partial "Btn" $visit }}
 
     {{ end }}
 

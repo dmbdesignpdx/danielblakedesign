@@ -1,0 +1,23 @@
+<aside class="Cookies">
+
+  <p>❗Do you want this site to use cookies?</p>
+
+  <!-- No -->
+
+  {{ $no := newScratch }}
+  {{ $no.Set "theme" "secondary" }}
+  {{ $no.Set "type" "button" }}
+  {{ $no.Set "value" "no" }}
+
+  {{ partial "Btn" $no }}
+
+  <!-- Yes -->
+
+  {{ $yes := newScratch }}
+  {{ $yes.Set "theme" "primary" }}
+  {{ $yes.Set "type" "button" }}
+  {{ $yes.Set "value" "yes" }}
+
+  {{ partial "Btn" $yes }}
+  
+</aside>

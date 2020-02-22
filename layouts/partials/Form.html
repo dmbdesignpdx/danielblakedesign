@@ -51,6 +51,11 @@
 
   <!-- Send -->
 
-  {{ partial "Btn" ( dict "type" "submit" "theme" "primary" "text" "send" ) }}
+  {{ $send := newScratch }}
+  {{ $send.Set "type" "submit" }}
+  {{ $send.Set "theme" "primary" }}
+  {{ $send.Set "text" "send" }}
+
+  {{ partial "Btn" $send }}
 
 </form>

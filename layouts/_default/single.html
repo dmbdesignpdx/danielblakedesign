@@ -61,7 +61,15 @@
 
       {{ if .Params.link }}
 
-        {{ partial "Btn" ( dict "type" "link" "theme" "primary" "link" .Params.link "rel" .Params.rel "title" .Params.id "text" "visit" ) }}
+        {{ $visit := newScratch }}
+        {{ $visit.Set "type" "link" }}
+        {{ $visit.Set "theme" "primary" }}
+        {{ $visit.Set "link" .Params.link }}
+        {{ $visit.Set "rel" .Params.rel }}
+        {{ $visit.Set "title" .Params.id }}
+        {{ $visit.Set "text" "visit" }}
+
+        {{ partial "Btn" $visit }}
 
       {{ end }}
 
