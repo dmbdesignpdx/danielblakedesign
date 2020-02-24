@@ -1,0 +1,28 @@
+.animation {
+
+  [class*='fade-Up-'] {
+    animation: fadeUp 0.8s ease-out both paused;
+  }
+  
+  @for $i from 2 to 4 {
+    .fade-Up-#{$i} {
+      animation-delay: $i * 0.2s;
+    }
+  }
+
+  &.play [class*='fade-Up-'] {
+    animation-play-state: running;
+  }
+}
+
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(66.6%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

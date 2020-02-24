@@ -1,8 +1,9 @@
 const path = require('path')
 
+
 module.exports = {
   entry: {
-    main: './src/main.js',
+    main: './src/main.ts',
   },
   output: {
     filename: '[name].min.js',
@@ -11,15 +12,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-          },
-        },
+        test: /.ts$/,
+        exclude: /node_modules/,
+        use: 'ts-loader',
       },
     ],
+  },
+  resolve: {
+    extensions: ['.ts', '.js'],
   },
 }

@@ -1,3 +1,4 @@
 *.config.js
 **/plugins/*.js
 **/public
+**/assets
