@@ -1,10 +1,14 @@
 /**
  * Controls when the Nav is visibile or hidden on scroll
  */
-const navScroll = (): void => {
+const navScroll:
+Function = (): void => {
   const NAV: HTMLElement = document.querySelector(`#nav`);
   const navHeight: number = NAV.clientHeight;
 
+  /**
+   * Natural State
+   */
   interface State {
     init: number;
     showing: boolean;
@@ -23,7 +27,8 @@ const navScroll = (): void => {
   /**
    * Determines whether to show or hide the Nav based on scroll
    */
-  const toggleNav = (): void => {
+  const toggleNav:
+  EventListener = (): void => {
     const update: number = window.pageYOffset;
 
     // 1.a. Check scroll position
