@@ -102,12 +102,11 @@ p {
 
 h1,
 .Nav a:first-child {
-  font-family: Montserrat, sans-serif;
-  font-weight: 900;
-  line-height: 1.2;
+  font: 900 1em / 1.2 Montserrat, sans-serif;
 }
 
-svg {
+svg,
+h1 span::after {
   display: block;
 }
 
@@ -128,11 +127,10 @@ h1 {
     display: inline-block;
     
     &::after {
-      display: block;
-      width: 0;
-      height: 6px;
+      @include width(0);
+      @include height(6px);
+      @include margin-top(-0.14em);
       position: relative;
-      margin-top: -0.14em;
       z-index: -1;
       content: '';
       border-radius: 3px;
@@ -141,26 +139,28 @@ h1 {
       // Animation delay for second word
       @at-root
       h1 span:last-child::after {
-        transition: width 0.4s 1.2s;
+        transition: -webkit-inline-size 0.4s 1.2s;
+        transition: inline-size 0.4s 1.2s;
       }
       
       // Animation delay override if no second word
       @at-root
       h1 span:first-child::after {
-        transition: width 0.4s 0.8s;
+        transition: -webkit-inline-size 0.4s 0.8s;
+        transition: inline-size 0.4s 0.8s;
       }
       
       // JS animation
       @at-root
       h1 span.__underline::after {
-        width: 100%;
+        @include width(100%);
       }
     }
   }
 
   // Sibling h1
   .sib & {
-    padding-top: 38vh;
+    @include padding-top(38vh);
   }
 }
 
@@ -239,17 +239,17 @@ p {
 //
 
 .Nav {
-  width: 100%;
-  height: 56px;
+  @include width(100%);
+  @include height(56px);
+  @include top(0);
   position: absolute;
-  top: 0;
   z-index: 99;
   contain: strict;
   background: brand(_offwhite);
 
   div {
+    @include height(100%);
     display: flex;
-    height: 100%;
     align-items: center;
   }
 
@@ -260,8 +260,9 @@ p {
   }
 
   a:first-child {
+    @include margin-right(auto);
+    @include margin-bottom(1px);
     display: flex;
-    margin: 0 auto 1px 0;
     align-items: center;
     letter-spacing: -0.02em;
 
@@ -270,23 +271,30 @@ p {
     }
 
     svg {
+      @include margin-top(1px);
+      @include margin-right(0.4em);
       width: 2.6em;
       height: 2.6em;
-      margin: 1px .4em auto 0;
     }
   }
   
   a:not(:first-child) {
-    padding: 0.8em 0.2em;
+    @include padding-top(0.8em);
+    @include padding-right(0.2em);
+    @include padding-bottom(0.8em);
+    @include padding-left(0.2em);
   }
   
   a:nth-child(1n+2) {
-    margin-right: 0.8em;
+    @include margin-right(0.8em);
   }
 }
 
 #lang {
-  padding: 0.8em 1.6em 0.8em 0.5em;
+  @include padding-top(0.8em);
+  @include padding-right(1.6em);
+  @include padding-bottom(0.8em);
+  @include padding-left(0.5em);
   color: inherit;
   font-size: 0.7rem;
   font-weight: 700;
@@ -299,7 +307,6 @@ p {
   box-shadow: 0 1px 2px ts(0.2);
   cursor: pointer;
   -webkit-appearance: none;
-  appearance: none;
 }
 
 
@@ -308,8 +315,8 @@ p {
 //
 
 .Hero {
+  @include height(100vh);
   display: flex;
-  height: 100vh;
   contain: layout;
   flex-direction: column;
   justify-content: center;
@@ -329,7 +336,8 @@ p {
   }
 }
 
-.Hero h1, .Hero p {
+.Hero h1,
+.Hero p {
   opacity: 1;
   transform: translateX(0);
   transition: transform 0.4s 0s, opacity 0.4s 0s;
@@ -337,15 +345,15 @@ p {
 }
 
 .Hero p {
-  margin: 0.8em 0 40px;
+  @include margin-top(0.8em);
   transition: transform 0.4s 0.4s, opacity 0.4s 0.4s;
 }
 
 .Arrow {
+  @include bottom(40px);
   width: 34px;
   height: 34px;
   position: absolute;
-  bottom: 40px;
   fill: none;
   stroke: brand(_lightgray);
   stroke-width: 3;
@@ -360,9 +368,10 @@ p {
 //
 
 [flexr-wrap] {
-  padding-right: 18px;
-  padding-left: 18px;
-  margin: 0 auto;
+  @include padding-left(18px);
+  @include padding-right(18px);
+  @include margin-left(auto);
+  @include margin-right(auto);
 }
 
 
@@ -390,10 +399,10 @@ p {
     
     p,
     h1 {
-      width: 25rem;
+      @include width(25rem);
 
       [lang=es] & {
-        width: 27rem;
+        @include width(27rem);
       }
     }
   }
@@ -408,8 +417,8 @@ p {
 @media (min-width:768px) {
   
   [flex-wrap] {
-    padding-right: 24px;
-    padding-left: 24px;
+    @include padding-right(24px);
+    @include padding-right(24px);
   }
   
   h1 {
@@ -417,19 +426,20 @@ p {
   }
   
   .Nav {
-    height: 90px;
-    
+    @include height(90px);
+
     a:first-child {
       font-size: 1.13rem;
     }
     
     a:nth-child(1n+2) {
-      margin-right: 1.6em;
+      @include margin-right(1.6em);
     }
   }
 
   #lang {
-    padding: 0.6em 1.6em 0.6em 0.5em;
+    @include padding-top(0.6em);
+    @include padding-bottom(0.6em);
   }
 
 }
@@ -439,8 +449,8 @@ p {
 @media (min-width: 810px) and (max-height: 416px) {
 
   [flex-wrap] {
-    padding-right: env(safe-area-inset-right);
-    padding-left: env(safe-area-inset-left);
+    @include padding-right(env(safe-area-inset-right));
+    @include padding-left(env(safe-area-inset-left));
   }
 
 }
@@ -454,10 +464,11 @@ p {
 @media (min-width:1280px) {
 
   [flexr-wrap] {
-    width: 84%;
-    max-width: 1436px;
-    padding-right: 30px;
-    padding-left: 30px;
+    @include width(84%);
+    @include padding-left(30px);
+    @include padding-right(30px);
+    -webkit-max-inline-size: 1436px;
+    max-inline-size: 1436px;
   }
 
   html {
@@ -478,7 +489,7 @@ p {
   }
 
   .Nav {
-    height: 150px;
+    @include height(150px);
   }
 
 }

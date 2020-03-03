@@ -80,3 +80,84 @@ $gutter: (
     @content;
   }
 }
+
+
+/**
+ * Logical
+ * TODO: add to Turntable
+ */
+
+@mixin width($arg) {
+  -webkit-inline-size: $arg;
+  inline-size: $arg;
+}
+
+@mixin height($arg) {
+  -webkit-block-size: $arg;
+  block-size: $arg;
+}
+
+@mixin padding-top($arg) {
+  -webkit-padding-block-start: $arg;
+  padding-block-start: $arg;
+}
+
+@mixin padding-bottom($arg) {
+  -webkit-padding-block-end: $arg;
+  padding-block-end: $arg;
+}
+
+@mixin padding-left($arg) {
+  -webkit-padding-inline-start: $arg;
+  padding-inline-start: $arg;
+}
+
+@mixin padding-right($arg) {
+  -webkit-padding-inline-end: $arg;
+  padding-inline-end: $arg;
+}
+
+@mixin margin-top($arg) {
+  -webkit-margin-block-start: $arg;
+  margin-block-start: $arg;
+}
+
+@mixin margin-top($arg) {
+  -webkit-margin-block-start: $arg;
+  margin-block-start: $arg;
+}
+
+@mixin margin-bottom($arg) {
+  -webkit-margin-block-end: $arg;
+  margin-block-end: $arg;
+}
+
+@mixin margin-left($arg) {
+  -webkit-margin-inline-start: $arg;
+  margin-inline-start: $arg;
+}
+
+@mixin margin-right($arg) {
+  -webkit-margin-inline-end: $arg;
+  margin-inline-end: $arg;
+}
+
+@mixin top($arg) {
+  -webkit-inset-block-start: $arg;
+  inset-block-start: $arg;
+}
+
+@mixin bottom($arg) {
+  -webkit-inset-block-end: $arg;
+  inset-block-end: $arg;
+}
+
+@mixin left($arg) {
+  -webkit-inset-inline-start: $arg;
+  inset-inline-start: $arg;
+}
+
+@mixin right($arg) {
+  -webkit-inset-inline-end: $arg;
+  inset-inline-end: $arg;
+}
