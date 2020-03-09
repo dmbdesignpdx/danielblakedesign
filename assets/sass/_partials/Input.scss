@@ -36,12 +36,12 @@
 .InputField {
   padding: 12px;
   font-size: 1rem;
-  box-shadow: 0 1px 2px ts(0.2);
+  color: brand(_darkgray);
+  outline: 0;
   border-radius: 3px;
   border: 1px solid brand(_almostwhite);
-  color: brand(_darkgray);
   background: brand(_almostwhite);
-  outline: 0;
+  box-shadow: 0 1px 2px ts(0.2);
 
   // Hover
   @at-root

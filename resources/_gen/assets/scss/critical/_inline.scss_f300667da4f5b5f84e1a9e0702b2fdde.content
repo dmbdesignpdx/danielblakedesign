@@ -41,10 +41,6 @@
 /**
  * Theme
  */
-/**
- * Logical
- * TODO: add to Turntable
- */
 /* Mixin' with Turntable v0.2.0 -- by Daniel Blake */
 @-ms-viewport {
   width: device-width; }
@@ -60,7 +56,6 @@ body {
   background: #f4f4f6;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
@@ -82,6 +77,15 @@ svg,
 h1 span::after {
   display: block; }
 
+.Nav div,
+.Nav a:first-child,
+.Hero {
+  display: flex; }
+
+.Nav,
+.Arrow {
+  position: absolute; }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -95,29 +99,22 @@ h1 {
   h1 span {
     display: inline-block; }
     h1 span::after {
-      -webkit-inline-size: 0;
-      inline-size: 0;
-      -webkit-block-size: 6px;
-      block-size: 6px;
-      -webkit-margin-block-start: -0.14em;
-      margin-block-start: -0.14em;
+      width: 0;
+      height: 6px;
+      margin-top: -0.14em;
       position: relative;
       z-index: -1;
       content: '';
       border-radius: 3px;
       background: #e13364; }
       h1 span:last-child::after {
-        transition: -webkit-inline-size 0.4s 1.2s;
-        transition: inline-size 0.4s 1.2s; }
+        transition: width 0.4s 1.2s; }
       h1 span:first-child::after {
-        transition: -webkit-inline-size 0.4s 0.8s;
-        transition: inline-size 0.4s 0.8s; }
+        transition: width 0.4s 0.8s; }
       h1 span.__underline::after {
-        -webkit-inline-size: 100%;
-        inline-size: 100%; }
+        width: 100%; }
   .sib h1 {
-    -webkit-padding-block-start: 38vh;
-    padding-block-start: 38vh; }
+    padding-top: 38vh; }
 
 p {
   color: #58536e;
@@ -167,78 +164,47 @@ p {
   fill: #cf95cd; }
 
 .Nav {
-  -webkit-inline-size: 100%;
-  inline-size: 100%;
-  -webkit-block-size: 56px;
-  block-size: 56px;
-  -webkit-inset-block-start: 0;
-  inset-block-start: 0;
-  position: absolute;
+  width: 100%;
+  height: 56px;
+  top: 0;
   z-index: 99;
   contain: strict;
   background: #f4f4f6; }
   .Nav div {
-    -webkit-block-size: 100%;
-    block-size: 100%;
-    display: flex;
+    height: 100%;
     align-items: center; }
   .Nav a {
     font-size: 0.8rem;
     letter-spacing: 0.03em;
     font-weight: 700; }
   .Nav a:first-child {
-    -webkit-margin-inline-end: auto;
-    margin-inline-end: auto;
-    -webkit-margin-block-end: 1px;
-    margin-block-end: 1px;
-    display: flex;
+    margin: 0 auto 1px 0;
     align-items: center;
     letter-spacing: -0.02em; }
     .Nav a:first-child span {
       display: none; }
     .Nav a:first-child svg {
-      -webkit-margin-block-start: 1px;
-      margin-block-start: 1px;
-      -webkit-margin-inline-end: 0.4em;
-      margin-inline-end: 0.4em;
       width: 2.6em;
-      height: 2.6em; }
+      height: 2.6em;
+      margin: 1px 0.4em 0 0; }
   .Nav a:not(:first-child) {
-    -webkit-padding-block-start: 0.8em;
-    padding-block-start: 0.8em;
-    -webkit-padding-inline-end: 0.2em;
-    padding-inline-end: 0.2em;
-    -webkit-padding-block-end: 0.8em;
-    padding-block-end: 0.8em;
-    -webkit-padding-inline-start: 0.2em;
-    padding-inline-start: 0.2em; }
+    padding: 0.8em 0.2em; }
   .Nav a:nth-child(1n+2) {
-    -webkit-margin-inline-end: 0.8em;
-    margin-inline-end: 0.8em; }
+    margin-right: 0.8em; }
 
 #lang {
-  -webkit-padding-block-start: 0.8em;
-  padding-block-start: 0.8em;
-  -webkit-padding-inline-end: 1.6em;
-  padding-inline-end: 1.6em;
-  -webkit-padding-block-end: 0.8em;
-  padding-block-end: 0.8em;
-  -webkit-padding-inline-start: 0.5em;
-  padding-inline-start: 0.5em;
-  color: inherit;
+  padding: 0.8em 1.6em 0.8em 0.5em;
   font-size: 0.7rem;
   font-weight: 700;
+  color: inherit;
   border: 0;
   border-radius: 3px;
   background: #FEFEFF url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center/12px 12px no-repeat;
   box-shadow: 0 1px 2px rgba(0,0,30,0.2);
-  cursor: pointer;
   -webkit-appearance: none; }
 
 .Hero {
-  -webkit-block-size: 100vh;
-  block-size: 100vh;
-  display: flex;
+  height: 100vh;
   contain: layout;
   flex-direction: column;
   justify-content: center;
@@ -251,7 +217,6 @@ p {
     .Hero.__intro h1, .Hero.__intro p {
       opacity: 1;
       transform: translateX(0); } }
-
 .Hero h1,
 .Hero p {
   opacity: 1;
@@ -260,16 +225,13 @@ p {
   transform-style: preserve-3d; }
 
 .Hero p {
-  -webkit-margin-block-start: 0.8em;
-  margin-block-start: 0.8em;
+  margin-top: 0.8em;
   transition: transform 0.4s 0.4s, opacity 0.4s 0.4s; }
 
 .Arrow {
-  -webkit-inset-block-end: 40px;
-  inset-block-end: 40px;
   width: 34px;
   height: 34px;
-  position: absolute;
+  bottom: 40px;
   fill: none;
   stroke: #66627a;
   stroke-width: 3;
@@ -277,14 +239,8 @@ p {
   stroke-linejoin: round; }
 
 [flexr-wrap] {
-  -webkit-padding-inline-start: 18px;
-  padding-inline-start: 18px;
-  -webkit-padding-inline-end: 18px;
-  padding-inline-end: 18px;
-  -webkit-margin-inline-start: auto;
-  margin-inline-start: auto;
-  -webkit-margin-inline-end: auto;
-  margin-inline-end: auto; }
+  padding: 0 18px;
+  margin: 0 auto; }
 
 /**
  * Phone Landscape
@@ -294,58 +250,39 @@ p {
     display: block; }
   .Hero p,
   .Hero h1 {
-    -webkit-inline-size: 25rem;
-    inline-size: 25rem; }
-    [lang=es] .Hero p, [lang=es]
-    .Hero h1 {
-      -webkit-inline-size: 27rem;
-      inline-size: 27rem; } }
+    width: 25rem; }
+    [lang=es] .Hero p, [lang=es] .Hero h1 {
+      width: 27rem; } }
 
 /**
  * Tablet Portrait
  */
 @media (min-width: 768px) {
   [flex-wrap] {
-    -webkit-padding-inline-end: 24px;
-    padding-inline-end: 24px;
-    -webkit-padding-inline-end: 24px;
-    padding-inline-end: 24px; }
+    padding: 0 24px; }
   h1 {
     font-size: 2.6rem; }
   .Nav {
-    -webkit-block-size: 90px;
-    block-size: 90px; }
+    height: 90px; }
     .Nav a:first-child {
       font-size: 1.13rem; }
     .Nav a:nth-child(1n+2) {
-      -webkit-margin-inline-end: 1.6em;
-      margin-inline-end: 1.6em; }
+      margin-right: 1.6em; }
   #lang {
-    -webkit-padding-block-start: 0.6em;
-    padding-block-start: 0.6em;
-    -webkit-padding-block-end: 0.6em;
-    padding-block-end: 0.6em; } }
+    padding: 0.6em 1.6em 0.6em 0.5em; } }
 
 @media (min-width: 810px) and (max-height: 416px) {
   [flex-wrap] {
-    -webkit-padding-inline-end: env(safe-area-inset-right);
-    padding-inline-end: env(safe-area-inset-right);
-    -webkit-padding-inline-start: env(safe-area-inset-left);
-    padding-inline-start: env(safe-area-inset-left); } }
+    padding: 0 env(safe-area-inset-right); } }
 
 /**
  * Desktop
  */
 @media (min-width: 1280px) {
   [flexr-wrap] {
-    -webkit-inline-size: 84%;
-    inline-size: 84%;
-    -webkit-padding-inline-start: 30px;
-    padding-inline-start: 30px;
-    -webkit-padding-inline-end: 30px;
-    padding-inline-end: 30px;
-    -webkit-max-inline-size: 1436px;
-    max-inline-size: 1436px; }
+    width: 84%;
+    max-width: 1436px;
+    padding: 0 30px; }
   html {
     font-size: 1.25em; } }
 
@@ -356,8 +293,7 @@ p {
   html {
     font-size: 1.38em; }
   .Nav {
-    -webkit-block-size: 150px;
-    block-size: 150px; } }
+    height: 150px; } }
 
 /**
  * Dark Theme

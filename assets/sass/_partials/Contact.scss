@@ -9,7 +9,7 @@
   }
   
   address {
-    display: flex;
+    @extend %flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 60px;

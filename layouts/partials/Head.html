@@ -1,7 +1,6 @@
 <!-- 
    Contents:
 
-   - Variables
    - Initial
    - Prebrowsing Hints
    - HTTP Headers
@@ -10,9 +9,6 @@
    - Favicons
    - Summary Cards
    - Critical CSS
-   - Structured Data
-   - Google Analytics
-   - Google Font
    - Main Script
    - Generator
  -->
@@ -33,10 +29,6 @@
   <link rel='preload' as='font' href='/fonts/montserrat-900.woff2' type='font/woff2' crossorigin>
   
   <link rel='preload' as='font' href='/fonts/heebo-400.woff2' type='font/woff2' crossorigin>
-
-  <link rel='preconnect' href='https://www.googletagmanager.com/'>
-
-  <link rel='preconnect' href='https://www.google-analytics.com/'>
 
 
   <!-- HTTP Headers -->
@@ -134,7 +126,6 @@
 
 {{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
 
-
 {{ if eq ( getenv "HUGO_ENV" ) "production" }}
 
   {{ $critical = $critical | minify }}
@@ -149,7 +140,6 @@
 <!-- Main Script -->
 
 {{ $scripts := resources.Get "dist/main.min.js" }}
-
 
 {{ if ne ( getenv "HUGO_ENV" ) "production" }}
 

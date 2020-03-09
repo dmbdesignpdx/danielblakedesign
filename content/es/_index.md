@@ -15,7 +15,7 @@ lang: es
 ## Content ##
 # Hero
 hero:
-  title: <span>Diseño</span> y <span>desarrollo</span> sitios web.
+  title: <span>Desarrollo</span> y <span>diseño</span> sitios web.
   copy: |
     ¡Hola! 👋 Me llamo Daniel Blake y&nbsp;soy un diseñador web front-end que cree que los sitios web deben ser simples, accesibles, receptivos y&nbsp;rápidos.
 

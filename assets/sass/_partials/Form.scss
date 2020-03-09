@@ -1,6 +1,6 @@
 .Form {
   @extend %layout;
-  display: flex;
+  @extend %flex;
   flex-direction: column;
 
   @include tabletPor {

@@ -1,24 +1,24 @@
 #work {
   @extend %content;
-  @include padding-top(90px);
-  @include padding-bottom(180px);
+  padding-top: 90px;
+  padding-bottom: 180px;
   
   // Title
   h2 {
-    @include width(auto);
-    @include margin-bottom(1em);
+    width: auto;
+    margin-bottom: 1em;
     
     @include desktop {
-      @include margin-left(8%);
+      margin-left: 8%;
     }
   }
   
   .Thumb {
-    @include margin-bottom(60px);
+    margin-bottom: 60px;
   }
   
   .cta {
-    display: flex;
+    @extend %flex;
     grid-row: 3;
     align-self: start;
     
@@ -32,13 +32,13 @@
 
 #codepen {
   @extend %layout;
-  @include padding-top(120px);
+  padding-top: 120px;
   text-align: center;
   
   svg {
     @include size(100px);
-    @include margin-left(auto);
-    @include margin-right(auto);
+    margin-left: auto;
+    margin-right: auto;
     stroke-width: 1.6;
     fill: none;
     stroke-linejoin: round;
@@ -51,9 +51,9 @@
   }
   
   p {
-    @include margin-left(auto);
-    @include margin-right(auto);
-    @include margin-bottom(1.2em);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.2em;
     -webkit-max-inline-size: 600px;
     max-inline-size: 600px;
   }

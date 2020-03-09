@@ -5,8 +5,7 @@
   text-align: center;
   font-size: 0.9em;
   border-radius: 3px;
-  cursor: pointer;
-  
+
   @include target(safari) {
     padding-bottom: 0.7em;
   }

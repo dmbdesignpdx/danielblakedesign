@@ -16,7 +16,7 @@ lang: en
 ## Content ##
 # Hero
 hero:
-  title: I <span>design</span> and <span>develop</span> websites.
+  title: I <span>develop</span> and <span>design</span> websites.
   copy: |
     Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
 

@@ -1,34 +1,28 @@
 [flexr-grid] {
-  @include padding-left(18px);
-  @include padding-right(18px);
-  @include margin-left(auto);
-  @include margin-right(auto);
   display: grid;
+  padding: 0 18px;
+  margin: 0 auto;
   grid: auto-flow / repeat(7, 1fr);
-  grid-column-gap: 18px;
-  column-gap: 18px;
+  grid-gap: 0 18px;
+  gap: 0 18px;
 
   @include tabletPor {
-    @include padding-left(24px);
-    @include padding-right(24px);
-    grid-column-gap: 24px;
-    column-gap: 24px;
+    padding: 0 24px;
+    grid-gap: 0 24px;
+    gap: 0 24px;
   }
 
   // iPhone X, XS, XR, XS Max Landscape
   @media (min-width: 810px) and (max-height: 416px) {
-    @include padding-right(env(safe-area-inset-right));
-    @include padding-left(env(safe-area-inset-left));
+    padding: 0 env(safe-area-inset-right);
   }
 
   @include desktop {
-    @include width(84%);
-    @include padding-left(30px);
-    @include padding-right(30px);
-    -webkit-max-inline-size: 1436px;
-    max-inline-size: 1436px;
-    grid-column-gap: 30px;
-    column-gap: 30px;
+    width: 84%;
+    max-width: 1436px;
+    padding: 0 30px;
+    grid-gap: 0 30px;
+    gap: 0 30px;
   }
 
   & > * {

@@ -50,10 +50,6 @@
   outline: 0;
   background: brand(_offwhite);
 
-  @include desktop {
-    cursor: pointer;
-  }
-
   // Hover
   @at-root
   .Radio:hover &:not(:disabled) {

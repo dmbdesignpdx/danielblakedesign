@@ -42,3 +42,15 @@ $brand: (
 %layout {
   contain: layout;
 }
+
+%block {
+  display: block;
+}
+
+%flex {
+  display: flex;
+}
+
+%relative {
+  position: relative;
+}
