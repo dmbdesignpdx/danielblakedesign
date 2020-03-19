@@ -11,11 +11,10 @@ import {
  */
 const scrollIntoView:
 Function = (): void => {
-  const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
   const hasIO: boolean = 'IntersectionObserver' in window;
   const threshold: number = 0.7;
   
-  if (hasIO && !prefersRM) {
+  if (hasIO) {
     const collection: Array<Element> = [
       ...document.querySelectorAll(`.Thumb`),
     ];
