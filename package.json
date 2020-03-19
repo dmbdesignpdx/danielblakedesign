@@ -1,40 +1,37 @@
 {
- "name": "daniel-blake-design",
- "version": "1.0.0",
- "description": "Daniel Blake is a front end web designer living in Portland, OR.",
- "homepage": "https://danielblake.design",
- "repository": "https://github.com/dmbdesignpdx/danielblakedesign.git",
- "author": "Daniel Blake <daniel@danielblake.design>",
- "license": "UNLICENSED",
- "private": true,
- "dependencies": {
-  "@babel/core": "^7.4.3",
-  "@babel/polyfill": "^7.4.3",
-  "@babel/preset-env": "^7.4.3",
-  "babel-loader": "^8.0.5",
-  "turntable-kit": "^0.7.1",
-  "webpack": "^4.29.6",
-  "webpack-cli": "^3.3.0"
- },
- "devDependencies": {
-  "@types/node": "^13.7.4",
-  "eslint": "^5.16.0",
-  "eslint-utils": "^1.4.2",
-  "npm-run-all": "^4.1.5",
-  "ts-loader": "^6.2.1",
-  "typescript": "^3.7.5"
- },
- "scripts": {
-  "web:dev": "webpack --mode development --watch",
-  "web:pro": "webpack --mode production",
-  "hugo:min": "env HUGO_ENV=production hugo --minify",
-  "serve:dev": "hugo server -p 3000",
-  "serve:pro": "env HUGO_ENV=production hugo server -p 9000 --disableLiveReload --minify",
-  "start": "run-p clean web:dev serve:dev",
-  "build": "run-s clean web:pro hugo:min",
-  "preview": "run-s clean web:pro serve:pro",
-  "lint": "eslint src/*.js",
-  "clean": "rm -rf public",
-  "fresh": "rm -rf node_modules .cache && yarn"
- }
+  "name": "daniel-blake-design",
+  "version": "1.0.0",
+  "description": "Daniel Blake is a front end web designer living in Portland, OR.",
+  "homepage": "https://danielblake.design",
+  "repository": "https://github.com/dmbdesignpdx/danielblakedesign.git",
+  "author": "Daniel Blake <daniel@danielblake.design>",
+  "license": "UNLICENSED",
+  "private": true,
+  "scripts": {
+    "web:dev": "webpack --mode development --watch",
+    "web:pro": "webpack --mode production",
+    "hugo:min": "env HUGO_ENV=production hugo --minify",
+    "serve:dev": "hugo server -p 3000",
+    "serve:pro": "env HUGO_ENV=production hugo server -p 9000 --disableLiveReload --minify",
+    "start": "run-p clean web:dev serve:dev",
+    "build": "run-s clean web:pro hugo:min",
+    "preview": "run-s clean web:pro serve:pro",
+    "lint": "eslint src/*.js",
+    "clean": "rm -rf public",
+    "fresh": "rm -rf node_modules .cache && yarn"
+  },
+  "dependencies": {
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^13.7.4",
+    "eslint": "^5.16.0",
+    "eslint-utils": "^1.4.2",
+    "npm-run-all": "^4.1.5",
+    "smooth-scroll": "^16.1.2",
+    "ts-loader": "^6.2.1",
+    "turntable-kit": "^0.7.1",
+    "typescript": "^3.7.5"
+  }
 }
