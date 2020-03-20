@@ -1,0 +1,9 @@
+{
+  "files": [
+    {
+      "path": "./assets/dist/main.min.js",
+      "maxSize": "15 kB",
+      "compression": "none"
+    }
+  ]
+}
