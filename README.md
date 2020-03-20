@@ -24,12 +24,6 @@ Install dependencies:
 yarn
 ```
 
-Initialize the Hugo build:
-
-```bash
-hugo
-```
-
 Then launch:
 
 ```bash
