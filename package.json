@@ -19,7 +19,7 @@
     "lint": "eslint src/*.js",
     "clean": "rm -rf public",
     "fresh": "rm -rf node_modules .cache && yarn",
-    "husky": "yarn bundlesize"
+    "test": "bundlesize"
   },
   "dependencies": {
     "webpack": "^4.29.6",
