@@ -105,6 +105,7 @@ h1,
 }
 
 svg,
+picture,
 h1 span::after {
   display: block;
 }
@@ -167,9 +168,9 @@ h1 {
   }
 
   // Sibling h1
-  .sib & {
+  /* .sib & {
     padding-top: 38vh;
-  }
+  } */
 }
 
 p {

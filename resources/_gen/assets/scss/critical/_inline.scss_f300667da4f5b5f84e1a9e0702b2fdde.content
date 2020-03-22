@@ -74,6 +74,7 @@ h1,
   font: 900 1em / 1.2 Montserrat, sans-serif; }
 
 svg,
+picture,
 h1 span::after {
   display: block; }
 
@@ -95,7 +96,10 @@ h1 {
   font-size: 2.4rem;
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
-  text-rendering: geometricPrecision; }
+  text-rendering: geometricPrecision;
+  /* .sib & {
+    padding-top: 38vh;
+  } */ }
   h1 span {
     display: inline-block; }
     h1 span::after {
@@ -113,8 +117,6 @@ h1 {
         transition: width 0.4s 0.8s; }
       h1 span.__underline::after {
         width: 100%; }
-  .sib h1 {
-    padding-top: 38vh; }
 
 p {
   color: #58536e;
