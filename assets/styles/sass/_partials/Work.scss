@@ -11,6 +11,10 @@
     @include desktop {
       margin-left: 8%;
     }
+
+    @include desktopLG {
+      margin-left: calc((100% - 1436px) / 2);
+    }
   }
   
   .Thumb {
@@ -31,14 +35,13 @@
 
 
 #codepen {
-  @extend %layout;
-  padding-top: 120px;
+  @extend %content;
+  margin-top: 120px;
   text-align: center;
   
   svg {
     @include size(100px);
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
     stroke-width: 1.6;
     fill: none;
     stroke-linejoin: round;
@@ -51,10 +54,11 @@
   }
   
   p {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 1.2em;
-    -webkit-max-inline-size: 600px;
-    max-inline-size: 600px;
+    max-width: 600px;
+    margin: 0.8em auto 0;
+  }
+
+  .Btn {
+    margin: 1em auto;
   }
 }

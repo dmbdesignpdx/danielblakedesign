@@ -57,9 +57,9 @@
 //
 
 @import
-"../sass/_base/Vars",
-"../sass/_base/Mixins",
-"../sass/_vendor/turntable";
+"sass/_base/Vars",
+"sass/_base/Mixins",
+"sass/_vendor/turntable";
 
 
 
@@ -75,7 +75,7 @@
   box-sizing: border-box;
 }
 
-html {
+:root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
 }
 
@@ -166,11 +166,6 @@ h1 {
       }
     }
   }
-
-  // Sibling h1
-  /* .sib & {
-    padding-top: 38vh;
-  } */
 }
 
 p {
@@ -286,7 +281,7 @@ p {
     padding: 0.8em 0.2em;
   }
   
-  a:nth-child(1n+2) {
+  a:nth-child(n+2) {
     margin-right: 0.8em;
   }
 }
@@ -453,14 +448,14 @@ p {
 
 @media (min-width:1280px) {
 
+  :root {
+    font-size: 1.25em;
+  }
+
   [flexr-wrap] {
     width: 84%;
     max-width: 1436px;
     padding: 0 30px;
-  }
-
-  html {
-    font-size: 1.25em;
   }
 
 }
@@ -472,7 +467,7 @@ p {
 
 @media (min-width:1680px) {
 
-  html {
+  :root {
     font-size: 1.38em;
   }
 

@@ -1,5 +1,5 @@
 .Form {
-  @extend %layout;
+  @extend %content;
   @extend %flex;
   flex-direction: column;
 
@@ -35,6 +35,7 @@
   }
 
   button {
+    margin-bottom: 1em;
     align-self: flex-start;
   }
 }

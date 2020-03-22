@@ -5,7 +5,7 @@
 
 <!-- Master -->
 
-{{ $master := resources.Get "css/master.scss" | toCSS | minify }}
+{{ $master := resources.Get "styles/master.scss" | toCSS | minify }}
 <link rel="stylesheet" href="{{ $master.RelPermalink }}">
 
 

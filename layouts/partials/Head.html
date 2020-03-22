@@ -124,15 +124,7 @@
 
 <!-- Critical Styles -->
 
-{{ $critical := resources.Get "critical/_inline.scss" | toCSS }}
-
-{{ if eq ( getenv "HUGO_ENV" ) "production" }}
-
-  {{ $critical = $critical | minify }}
-
-{{ end }}
-
-
+{{ $critical := resources.Get "styles/critical.scss" | toCSS | minify }}
 <style>{{ $critical.Content | safeCSS }}</style>
 
 

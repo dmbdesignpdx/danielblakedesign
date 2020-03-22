@@ -1,4 +1,5 @@
 .Thumb {
+  @extend %layout;
 
   picture {
     @extend %relative;
