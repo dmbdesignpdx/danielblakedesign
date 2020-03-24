@@ -17,9 +17,9 @@
     "build": "run-s clean web:pro hugo:min",
     "preview": "run-s clean web:pro serve:pro",
     "lint": "eslint src/*.ts",
+    "size": "bundlesize",
     "clean": "rm -rf public",
-    "fresh": "rm -rf node_modules .cache && yarn",
-    "test": "bundlesize"
+    "fresh": "rm -rf node_modules .cache && yarn"
   },
   "dependencies": {
     "webpack": "^4.29.6",
