@@ -7,18 +7,18 @@ import scrollIntoView from './scroll';
 /**
  * DOM Loaded
  */
-addEventListener(`DOMContentLoaded`, (): void => {
-  const ICON: SVGSVGElement = document.querySelector(`.Arrow`);
-  const FORM: HTMLFormElement = document.querySelector(`#form`);
-  const LANG: HTMLSelectElement = document.querySelector(`#lang`);
+addEventListener('DOMContentLoaded', (): void => {
+  const ICON: SVGSVGElement = document.querySelector('.Arrow');
+  const FORM: HTMLFormElement = document.querySelector('#form');
+  const LANG: HTMLSelectElement = document.querySelector('#lang');
   const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
 
 
   // Adds the '__sub' class if form exists
   if (FORM) {
-    FORM.send.addEventListener(`click`, (): void => {
-      FORM.classList.add(`__sub`);
-    })
+    FORM.send.addEventListener('click', (): void => {
+      FORM.classList.add('__sub');
+    });
   }
 
   // Updates breakpoint for arrow
@@ -29,26 +29,26 @@ addEventListener(`DOMContentLoaded`, (): void => {
   const arrowFade:
   EventListener = (): void => {
     if (window.scrollY > breakpoint()) {
-      if (!ICON.classList.contains(`__fade`)) {
-        ICON.classList.add(`__fade`);
+      if (!ICON.classList.contains('__fade')) {
+        ICON.classList.add('__fade');
       }
     } else {
-      if (ICON.classList.contains(`__fade`)) {
-        ICON.classList.remove(`__fade`);
+      if (ICON.classList.contains('__fade')) {
+        ICON.classList.remove('__fade');
       }
     }
-  }
+  };
 
   // Changes location based on language selection
-  LANG.addEventListener(`change`, (event: InputEvent) => {
+  LANG.addEventListener('change', (event: InputEvent) => {
     const target = event.target as HTMLSelectElement;
     window.location.href = target.value;
   });
 
   if (!prefersRM) {
     scrollIntoView();
-    smoothScroll(`a[href*='#']`);
+    smoothScroll('a[href*=\'#\']');
   }
 
-  addEventListener(`scroll`, arrowFade, { passive: true });
+  addEventListener('scroll', arrowFade, { passive: true });
 }, { once: true });

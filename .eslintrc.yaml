@@ -1,11 +1,16 @@
+root: true
 env:
   browser: true
+  node: true
   es6: true
   commonjs: true
+parser: '@typescript-eslint/parser'
 parserOptions:
+  ecmaVersion: 2018
   sourceType: module
 extends:
-  - eslint:recommended
+  - 'eslint:recommended'
+  - 'plugin:@typescript-eslint/recommended'
 rules:
 # Fixable
   curly:
@@ -102,10 +107,10 @@ rules:
   quote-props: off
   quotes:
     - error
-    - backtick
+    - single
   semi:
     - error
-    - never
+    - always
   semi-spacing: error
   semi-style: error
   sort-vars: off
@@ -286,3 +291,7 @@ rules:
   sort-keys: off
   symbol-description: error
   vars-on-top: error
+
+  # Plugins
+  '@typescript-eslint/no-var-requires': off
+  '@typescript-eslint/no-explicit-any': off

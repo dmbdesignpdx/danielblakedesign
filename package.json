@@ -16,7 +16,7 @@
     "start": "run-p clean web:dev serve:dev",
     "build": "run-s clean web:pro hugo:min",
     "preview": "run-s clean web:pro serve:pro",
-    "lint": "eslint src/*.js",
+    "lint": "eslint src/*.ts",
     "clean": "rm -rf public",
     "fresh": "rm -rf node_modules .cache && yarn",
     "test": "bundlesize"
@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "@types/node": "^13.7.4",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
     "bundlesize": "^0.18.0",
     "eslint": "^5.16.0",
     "eslint-utils": "^1.4.2",
