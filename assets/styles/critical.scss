@@ -19,35 +19,11 @@
 //
 
 @font-face {
-  font-family: Montserrat;
+  src: url('/fonts/Inter.ttf') format('truetype-variations');
+  font-family: Inter;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 100 900;
   font-display: swap;
-  src:
-    url('/fonts/montserrat-900.woff2') format('woff2'),
-    url('/fonts/montserrat-900.woff') format('woff');
-}
-
-@font-face {
-  font-family: Heebo;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src:
-    local('Heebo Regular'),
-    url('/fonts/heebo-400.woff2') format('woff2'),
-    url('/fonts/heebo-400.woff') format('woff');
-}
-
-@font-face {
-  font-family: Heebo;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src:
-    local('Heebo Bold'),
-    url('/fonts/heebo-700.woff2') format('woff2'),
-    url('/fonts/heebo-700.woff') format('woff');
 }
 
 
@@ -76,7 +52,7 @@
 }
 
 :root {
-  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
+  font: 400 1.1em Inter, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
 }
 
 body {
@@ -101,7 +77,7 @@ p {
 
 h1,
 .Nav a:first-child {
-  font: 900 1em / 1.2 Montserrat, sans-serif;
+  font-weight: 900;
 }
 
 svg,
@@ -124,11 +100,11 @@ h1 span::after {
 a {
   text-decoration: none;
   color: inherit;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.6rem;
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
   text-rendering: geometricPrecision;
@@ -387,10 +363,10 @@ p {
     
     p,
     h1 {
-      width: 25rem;
+      width: 26rem;
 
       [lang=es] & {
-        width: 27rem;
+        width: 28rem;
       }
     }
   }
@@ -409,7 +385,7 @@ p {
   }
   
   h1 {
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
   
   .Nav {
