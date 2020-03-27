@@ -1,5 +1,5 @@
-const NAV: HTMLElement = document.querySelector('#nav');
-const navHeight: number = NAV.clientHeight;
+const NAV: HTMLElement | null = document.querySelector('#nav');
+const navHeight: number = (NAV as HTMLElement).clientHeight;
 
 type State = {
   init: number;
@@ -9,17 +9,18 @@ type State = {
 
 let state: State = {
   init: window.pageYOffset,
-  showing: NAV.classList.contains('__show'),
+  showing: NAV !== null && NAV.classList.contains('__show'),
   get availHeight() {
-    return document.querySelector('html').scrollHeight - window.innerHeight;
+    return document.documentElement.scrollHeight - window.innerHeight;
   },
 };
 
 /**
  * Navbar Behavior
  */
-const toggleNav:
-EventListener = (): void => {
+const toggleNav = (): void => {
+  if (NAV === null) return;
+
   const update: number = window.pageYOffset;
 
   // 1.a. Check scroll position

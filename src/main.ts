@@ -8,9 +8,9 @@ import scrollIntoView from './scroll';
  * DOM Loaded
  */
 addEventListener('DOMContentLoaded', (): void => {
-  const ICON: SVGSVGElement = document.querySelector('.Arrow');
-  const FORM: HTMLFormElement = document.querySelector('#form');
-  const LANG: HTMLSelectElement = document.querySelector('#lang');
+  const ICON: SVGSVGElement | null = document.querySelector('.Arrow');
+  const FORM: HTMLFormElement | null = document.querySelector('#form');
+  const LANG: HTMLSelectElement | null = document.querySelector('#lang');
   const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
 
 
@@ -21,14 +21,13 @@ addEventListener('DOMContentLoaded', (): void => {
     });
   }
 
-  // Updates breakpoint for arrow
-  const breakpoint:
-  Function = (): number => Math.round(window.innerHeight * 0.33);
-
   // Adds or removes the '__fade' class
-  const arrowFade:
-  EventListener = (): void => {
-    if (window.scrollY > breakpoint()) {
+  const arrowFade = (): void => {
+    if (ICON === null) return;
+
+    const breakpoint: number = Math.round(window.innerHeight * 0.33);
+
+    if (window.scrollY > breakpoint) {
       if (!ICON.classList.contains('__fade')) {
         ICON.classList.add('__fade');
       }
@@ -40,9 +39,8 @@ addEventListener('DOMContentLoaded', (): void => {
   };
 
   // Changes location based on language selection
-  LANG.addEventListener('change', (event: InputEvent) => {
-    const target = event.target as HTMLSelectElement;
-    window.location.href = target.value;
+  LANG?.addEventListener('change', ({ target }: Event): void => {
+    window.location.href = (target as HTMLSelectElement).value;
   });
 
   if (!prefersRM) {

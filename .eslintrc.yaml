@@ -16,7 +16,7 @@ rules:
   curly:
     - error
     - multi-line
-  no-extra-parens: error
+  no-extra-parens: off
   dot-location: error
   dot-notation: error
   eqeqeq: error

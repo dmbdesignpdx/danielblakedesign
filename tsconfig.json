@@ -1,10 +1,18 @@
 {
   "compilerOptions": {
-    "outDir": "./assets/dist/",
-    "noImplicitAny": true,
-    "module": "ES2015",
     "target": "ES2015",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable",
+    ],
+    "outDir": "./assets/dist/",
+    "strict": true,
+    "noImplicitAny": true,
+    "module": "ESNext",
     "allowJs": true,
     "removeComments": true
-  }
+  },
+  "exclude": ["node_modules"],
+  "include": ["**/*.ts"]
 }
