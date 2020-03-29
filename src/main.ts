@@ -1,6 +1,6 @@
 const smoothScroll = require('smooth-scroll');
 
-import './nav';
+import navBehavior from './nav';
 import scrollIntoView from './scroll';
 
 
@@ -11,7 +11,12 @@ addEventListener('DOMContentLoaded', (): void => {
   const ICON: SVGSVGElement | null = document.querySelector('.Arrow');
   const FORM: HTMLFormElement | null = document.querySelector('#form');
   const LANG: HTMLSelectElement | null = document.querySelector('#lang');
+  const NAV: HTMLElement | null = document.querySelector('#nav');
   const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
+
+  if (NAV) {
+    navBehavior(NAV);
+  }
 
 
   // Adds the '__sub' class if form exists
@@ -39,9 +44,11 @@ addEventListener('DOMContentLoaded', (): void => {
   };
 
   // Changes location based on language selection
-  LANG?.addEventListener('change', ({ target }: Event): void => {
-    window.location.href = (target as HTMLSelectElement).value;
-  });
+  if (LANG) {
+    LANG.addEventListener('change', ({ target }: Event): void => {
+      window.location.href = (target as HTMLSelectElement).value;
+    });
+  }
 
   if (!prefersRM) {
     scrollIntoView();

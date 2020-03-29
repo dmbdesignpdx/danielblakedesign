@@ -9,7 +9,7 @@ import {
 /**
  * Scroll Into View
  */
-const scrollIntoView = (): void => {
+export default (): void => {
   const hasIO: boolean = 'IntersectionObserver' in window;
   const threshold = 0.7;
   let observer: IO;
@@ -42,6 +42,3 @@ const scrollIntoView = (): void => {
     });
   }
 };
-
-
-export default scrollIntoView;
