@@ -2,7 +2,7 @@
   "files": [
     {
       "path": "./assets/dist/main.min.js",
-      "maxSize": "15 kB",
+      "maxSize": "12 kB",
       "compression": "none"
     }
   ]

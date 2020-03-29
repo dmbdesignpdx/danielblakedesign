@@ -19,9 +19,7 @@
 //
 
 @font-face {
-  src: 
-    url('/fonts/montserrat-900.woff2') format('woff2'),
-    url('/fonts/montserrat-900.woff') format('woff');
+  src: url('/fonts/montserrat-900.woff') format('woff');
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
@@ -29,19 +27,15 @@
 }
 
 @font-face {
-  src: 
-    url('/fonts/heebo-900.woff2') format('woff2'),
-    url('/fonts/heebo-900.woff') format('woff');
+  src: url('/fonts/heebo-700.woff') format('woff');
   font-display: swap;
   font-family: Heebo;
   font-style: normal;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 @font-face {
-  src: 
-    url('/fonts/heebo-400.woff2') format('woff2'),
-    url('/fonts/heebo-400.woff') format('woff');
+  src: url('/fonts/heebo-400.woff') format('woff');
   font-display: swap;
   font-family: Heebo;
   font-style: normal;
@@ -381,6 +375,10 @@ p {
       display: block;
     }
   }
+
+  h1 {
+    font-size: 2.7rem;
+  }
   
   .Hero {
     
@@ -404,10 +402,6 @@ p {
   
   [flex-wrap] {
     padding: 0 24px;
-  }
-  
-  h1 {
-    font-size: 2.7rem;
   }
   
   .Nav {

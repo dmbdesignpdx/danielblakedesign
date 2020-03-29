@@ -4,12 +4,13 @@
    - Initial
    - Prebrowsing Hints
    - HTTP Headers
-   - General
+   - Critical Info
    - Languages
-   - Favicons
-   - Summary Cards
    - Critical CSS
    - Main Script
+   - General
+   - Favicons
+   - Summary Cards
    - Generator
  -->
 
@@ -20,13 +21,19 @@
 
 <meta charset='utf-8'>
 
+<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+
 
 {{ if eq ( getenv "HUGO_ENV" ) "production" }}
 
 
   <!-- Prebrowsing Hints -->
 
-  <link rel='preload' as='font' href='/fonts/Inter-900.ttf' type='font/ttf' crossorigin>
+  <link rel='preload' as='font' href='/fonts/montserrat-900.woff' type='font/woff' crossorigin>
+  
+  <link rel='preload' as='font' href='/fonts/heebo-700.woff' type='font/woff' crossorigin>
+  
+  <link rel='preload' as='font' href='/fonts/heebo-400.woff' type='font/woff' crossorigin>
 
 
   <!-- HTTP Headers -->
@@ -36,21 +43,11 @@
 {{ end }}
 
 
-<!-- General -->
-
-<meta name='viewport' content='width=device-width,initial-scale=1.0,viewport-fit=cover'>
+<!-- Critical Info -->
 
 <title>{{ .Title }}</title>
 
 <meta name='description' content='{{ .Description }}'>
-
-<meta name='author' content='{{ .Site.Author.name }}'>
-
-<link rel='canonical' href='{{ .Site.BaseURL }}'>
-
-<meta name='format-detection' content='telephone=no'>
-
-<meta name='format-detection' content='email=no'>
 
 <meta name='theme-color' content='{{ .Site.Params.theme }}'>
 
@@ -68,6 +65,45 @@
   <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
 
 {{ end }}
+
+
+<!-- Critical Styles -->
+
+{{ $critical := resources.Get "/styles/critical.scss" | toCSS | minify }}
+<style>{{ $critical.Content | safeCSS }}</style>
+
+
+<!-- Main Script -->
+
+{{ $scripts := resources.Get "/dist/main.min.js" }}
+
+{{ if ne ( getenv "HUGO_ENV" ) "production" }}
+
+  <script defer src='{{ $scripts.RelPermalink }}'></script>
+
+{{ else }}
+
+  {{ $scripts = $scripts | fingerprint }}
+
+  <script
+    defer
+    src='{{ $scripts.RelPermalink }}'
+    integrity='{{ $scripts.Data.Integrity }}'
+    crossorigin='anonymous'
+  ></script>
+
+{{ end }}
+
+
+<!-- General -->
+
+<meta name='author' content='{{ .Site.Author.name }}'>
+
+<link rel='canonical' href='{{ .Site.BaseURL }}'>
+
+<meta name='format-detection' content='telephone=no'>
+
+<meta name='format-detection' content='email=no'>
 
 
 <!-- Favicons -->
@@ -118,35 +154,6 @@
 <meta property='og:image:type' content='{{ .Site.Params.type }}'>
 
 <meta property='og:url' content='{{ .Permalink }}'>
-
-
-<!-- Critical Styles -->
-
-{{ $critical := resources.Get "styles/critical.scss" | toCSS | minify }}
-<style>{{ $critical.Content | safeCSS }}</style>
-
-
-
-<!-- Main Script -->
-
-{{ $scripts := resources.Get "dist/main.min.js" }}
-
-{{ if ne ( getenv "HUGO_ENV" ) "production" }}
-
-  <script defer src='{{ $scripts.RelPermalink }}'></script>
-
-{{ else }}
-
-  {{ $scripts = $scripts | fingerprint }}
-
-  <script
-    defer
-    src='{{ $scripts.RelPermalink }}'
-    integrity='{{ $scripts.Data.Integrity }}'
-    crossorigin='anonymous'
-  ></script>
-
-{{ end }}
 
 
 <!-- Generator -->
