@@ -20,17 +20,6 @@
   .Thumb {
     margin-bottom: 60px;
   }
-  
-  .cta {
-    @extend %flex;
-    grid-row: 3;
-    align-self: start;
-    
-    @include phoneLan {
-      grid-column: span 3;
-      grid-row: 2 / 3;
-    }
-  }
 }
 
 
@@ -56,6 +45,10 @@
   p {
     max-width: 600px;
     margin: 0.8em auto 0;
+  }
+
+  h4 {
+    font-size: 1.3rem;
   }
 
   .Btn {

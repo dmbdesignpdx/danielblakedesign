@@ -19,35 +19,27 @@
 //
 
 @font-face {
+  src: url('/fonts/montserrat-900.woff') format('woff');
+  font-display: swap;
   font-family: Montserrat;
   font-style: normal;
   font-weight: 900;
-  font-display: swap;
-  src:
-    url('/fonts/montserrat-900.woff2') format('woff2'),
-    url('/fonts/montserrat-900.woff') format('woff');
 }
 
 @font-face {
-  font-family: Heebo;
-  font-style: normal;
-  font-weight: 400;
+  src: url('/fonts/heebo-700.woff') format('woff');
   font-display: swap;
-  src:
-    local('Heebo Regular'),
-    url('/fonts/heebo-400.woff2') format('woff2'),
-    url('/fonts/heebo-400.woff') format('woff');
-}
-
-@font-face {
   font-family: Heebo;
   font-style: normal;
   font-weight: 700;
+}
+
+@font-face {
+  src: url('/fonts/heebo-400.woff') format('woff');
   font-display: swap;
-  src:
-    local('Heebo Bold'),
-    url('/fonts/heebo-700.woff2') format('woff2'),
-    url('/fonts/heebo-700.woff') format('woff');
+  font-family: Heebo;
+  font-style: normal;
+  font-weight: 400;
 }
 
 
@@ -101,7 +93,8 @@ p {
 
 h1,
 .Nav a:first-child {
-  font: 900 1em / 1.2 Montserrat, sans-serif;
+  font-family: Montserrat, sans-serif;
+  font-weight: 900;
 }
 
 svg,
@@ -128,7 +121,7 @@ a {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 9.2vw;
   letter-spacing: -0.03em;
   word-spacing: 0.1em;
   text-rendering: geometricPrecision;
@@ -382,16 +375,19 @@ p {
       display: block;
     }
   }
+
+  h1 {
+    font-size: 2.7rem;
+  }
   
   .Hero {
     
-    p,
+    p {
+      width: 44ch;
+    }
+    
     h1 {
-      width: 25rem;
-
-      [lang=es] & {
-        width: 27rem;
-      }
+      width: 14ch;
     }
   }
   
@@ -406,10 +402,6 @@ p {
   
   [flex-wrap] {
     padding: 0 24px;
-  }
-  
-  h1 {
-    font-size: 2.6rem;
   }
   
   .Nav {

@@ -14,7 +14,9 @@
   flexr-grid
 >
 
-  <h3 class="fade-Up-2">{{ .title | title | safeHTML }} &mdash; {{ T $file | safeHTML }}</h3>
+  <h3 class="fade-Up-2"> {{ .title | title | safeHTML }} </h3>
+
+  <h5 class="fade-Up-2">{{ T $file | safeHTML }}</h5>
 
   <div class='cta fade-Up-4'>
 
@@ -56,7 +58,7 @@
 
     <source
       type='image/webp'
-      srcset='
+      data-srcset='
         /img/{{ $file }}/{{ $file }}-1-xs.webp 750w,
         /img/{{ $file }}/{{ $file }}-1-sm.webp 1080w,
         /img/{{ $file }}/{{ $file }}-1-md.webp 1280w
@@ -65,7 +67,7 @@
 
     <source
       type='image/jpeg'
-      srcset='
+      data-srcset='
         /img/{{ $file }}/{{ $file }}-1-xs.jpg 750w,
         /img/{{ $file }}/{{ $file }}-1-sm.jpg 1080w,
         /img/{{ $file }}/{{ $file }}-1-md.jpg 1280w
@@ -73,7 +75,7 @@
     />
     
     <img
-      src='/img/work-md.jpg'
+      data-src='/img/{{ $file }}/{{ $file }}-1-md.jpg'
       alt=''
     />
 

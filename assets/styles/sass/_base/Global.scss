@@ -25,16 +25,11 @@ h4,
 h5,
 form,
 label,
-input,
 textarea,
 button {
   padding: 0;
   margin: 0;
   border: 0;
-}
-
-input {
-  -webkit-appearance: none;
 }
 
 li {
@@ -55,11 +50,11 @@ textarea {
   font: inherit;
 }
 
-h2,
-h5 {
+h2 {
   display: inline-block;
   height: 1em;
   width: auto;
+  font-size: 1.8rem;
   
   &::after {
     width: 100%;
@@ -70,10 +65,6 @@ h5 {
     border-radius: 2px;
     background: brand();
   }
-}
-
-h2 {
-  font-size: 2rem;
 }
 
 a:focus,
@@ -108,13 +99,18 @@ h5::after {
 
 h2,
 h3,
-h4,
-h5 {
+h4 {
   font-family: Montserrat, sans-serif;
   font-weight: 900;
   letter-spacing: -0.04em;
   word-spacing: 0.03em;
   text-rendering: geometricPrecision;
+}
+
+h5 {
+  font: inherit;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
 }
 
 section,
@@ -123,7 +119,6 @@ h5::after {
   @extend %relative;
 }
 
-input,
 select,
 button {
   @include user-select(none);
