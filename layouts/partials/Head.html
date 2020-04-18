@@ -86,7 +86,7 @@
   {{ $scripts = $scripts | fingerprint }}
 
   <script
-    defer
+    async
     src='{{ $scripts.RelPermalink }}'
     integrity='{{ $scripts.Data.Integrity }}'
     crossorigin='anonymous'
