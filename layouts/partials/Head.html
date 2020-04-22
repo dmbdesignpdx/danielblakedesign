@@ -16,7 +16,6 @@
 
 
 
-
 <!-- Initial -->
 
 <meta charset='utf-8'>
@@ -45,26 +44,11 @@
 
 <!-- Critical Info -->
 
-<title>{{ .Title }}</title>
-
-<meta name='description' content='{{ .Description }}'>
+<meta name="color-scheme" content="light dark">
 
 <meta name='theme-color' content='{{ .Site.Params.theme }}'>
 
-
-<!-- Languages -->
-
-{{ range .AllTranslations }}
-
-  {{ if eq .Language.Lang "en" }}
-    
-    <link rel='alternate' hreflang='x-default' href='{{ .Permalink }}' >
-  
-  {{ end }}
-
-  <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
-
-{{ end }}
+<title>{{ .Title }}</title>
 
 
 <!-- Critical Styles -->
@@ -95,7 +79,24 @@
 {{ end }}
 
 
+<!-- Languages -->
+
+{{ range .AllTranslations }}
+
+  {{ if eq .Language.Lang "en" }}
+    
+    <link rel='alternate' hreflang='x-default' href='{{ .Permalink }}' >
+  
+  {{ end }}
+
+  <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
+
+{{ end }}
+
+
 <!-- General -->
+
+<meta name='description' content='{{ .Description }}'>
 
 <meta name='author' content='{{ .Site.Author.name }}'>
 

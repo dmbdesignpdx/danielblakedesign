@@ -68,12 +68,14 @@
 }
 
 :root {
-  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"; 
+  font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --bkg: hsl(250,12%,96%);
+  --frg: hsl(250,14%,23%);
 }
 
 body {
-  color: brand(_darkgray);
-  background: brand(_offwhite);
+  color: var(--frg);
+  background: var(--bkg);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-text-size-adjust: 100%;
@@ -162,7 +164,6 @@ h1 {
 }
 
 p {
-  color: brand(_darklight);
   letter-spacing: 0.02em;
   line-height: 1.6;
   text-rendering: optimizeSpeed;
@@ -241,7 +242,7 @@ p {
   top: 0;
   z-index: 99;
   contain: strict;
-  background: brand(_offwhite);
+  background: inherit;
 
   div {
     height: 100%;
@@ -283,7 +284,7 @@ p {
   padding: 0.8em 1.6em 0.8em 0.5em;
   font-size: 0.7rem;
   font-weight: 700;
-  color: inherit;
+  color: brand(_darkgray);
   border: 0;
   border-radius: 3px;
   background:
@@ -476,18 +477,9 @@ p {
 
 @media (prefers-color-scheme:dark) {
 
-  body,
-  .Nav {
-    background: brand(_nearblack);
-  }
-
-  body,
-  p {
-    color: brand(_darkwhite);
-  }
-
-  #lang {
-    color: brand(_darkgray);
+  :root {
+    --frg: hsl(250,12%,96%);
+    --bkg: hsl(250,14%,11%);
   }
 
 }
