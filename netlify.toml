@@ -1,4 +1,13 @@
 [build.environment]
-  NODE_VERSION = "13.11.0"
-  HUGO_VERSION = "0.68.1"
-  YARN_VERSION = "1.22.4"
+NODE_VERSION = "13.11.0"
+HUGO_VERSION = "0.68.1"
+YARN_VERSION = "1.22.4"
+
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+cache-control = '''
+  public,
+  max-age=5256000'''
