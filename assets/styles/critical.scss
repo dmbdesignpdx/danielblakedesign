@@ -48,10 +48,8 @@
 // Imports
 //
 
-@import
-"sass/_base/Vars",
-"sass/_base/Mixins",
-"sass/_vendor/turntable";
+@import "sass/_base/Vars";
+@import "sass/_vendor/turntable";
 
 
 
@@ -124,8 +122,8 @@ a {
 
 h1 {
   font-size: 9.2vw;
-  letter-spacing: -0.03em;
-  word-spacing: 0.1em;
+  letter-spacing: -.03em;
+  word-spacing: .1em;
   text-rendering: geometricPrecision;
 
   // Underlined words
@@ -135,7 +133,7 @@ h1 {
     &::after {
       width: 0;
       height: 6px;
-      margin-top: -0.14em;
+      margin-top: -.14em;
       position: relative;
       z-index: -1;
       content: '';
@@ -145,13 +143,13 @@ h1 {
       // Animation delay for second word
       @at-root
       h1 span:last-child::after {
-        transition: width 0.4s 1.2s;
+        transition: width .4s 1.2s;
       }
       
       // Animation delay override if no second word
       @at-root
       h1 span:first-child::after {
-        transition: width 0.4s 0.8s;
+        transition: width .4s .8s;
       }
       
       // JS animation
@@ -164,7 +162,7 @@ h1 {
 }
 
 p {
-  letter-spacing: 0.02em;
+  letter-spacing: .02em;
   line-height: 1.6;
   text-rendering: optimizeSpeed;
   -ms-hyphens: none;
@@ -250,15 +248,15 @@ p {
   }
 
   a {
-    font-size: 0.8rem;
-    letter-spacing: 0.03em;
+    font-size: .8rem;
+    letter-spacing: .03em;
     font-weight: 700;
   }
 
   a:first-child {
     margin: 0 auto 1px 0;
     align-items: center;
-    letter-spacing: -0.02em;
+    letter-spacing: -.02em;
 
     span {
       display: none;
@@ -267,22 +265,22 @@ p {
     svg {
       width: 2.6em;
       height: 2.6em;
-      margin: 1px 0.4em 0 0;
+      margin: 1px .4em 0 0;
     }
   }
   
   a:not(:first-child) {
-    padding: 0.8em 0.2em;
+    padding: .8em .2em;
   }
   
   a:nth-child(n+2) {
-    margin-right: 0.8em;
+    margin-right: .8em;
   }
 }
 
 #lang {
-  padding: 0.8em 1.6em 0.8em 0.5em;
-  font-size: 0.7rem;
+  padding: .8em 1.6em .8em .5em;
+  font-size: .7rem;
   font-weight: 700;
   color: brand(_darkgray);
   border: 0;
@@ -291,7 +289,7 @@ p {
     brand(_almostwhite)
     url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>")82% center / 12px 12px
     no-repeat;
-  box-shadow: 0 1px 2px ts(0.2);
+  box-shadow: 0 1px 2px ts(.2);
   -webkit-appearance: none;
 }
 
@@ -305,7 +303,7 @@ p {
   contain: layout;
   flex-direction: column;
   justify-content: center;
-  transition: height 0.4s;
+  transition: height .4s;
 }
 
 .Hero.__intro {
@@ -325,13 +323,13 @@ p {
 .Hero p {
   opacity: 1;
   transform: translateX(0);
-  transition: transform 0.4s 0s, opacity 0.4s 0s;
+  transition: transform .4s 0s, opacity .4s 0s;
   transform-style: preserve-3d;
 }
 
 .Hero p {
-  margin-top: 0.8em;
-  transition: transform 0.4s 0.4s, opacity 0.4s 0.4s;
+  margin-top: .8em;
+  transition: transform .4s .4s, opacity .4s .4s;
 }
 
 .Arrow {
@@ -418,7 +416,7 @@ p {
   }
 
   #lang {
-    padding: 0.6em 1.6em 0.6em 0.5em;
+    padding: .6em 1.6em .6em .5em;
   }
 
 }
