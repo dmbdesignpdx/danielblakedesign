@@ -1,8 +1,8 @@
 /**
  * Contents:
  *
- * Font
  * Imports
+ * Font
  * Grid
  * Global Styles and Resets
  * Common Rules
@@ -11,6 +11,15 @@
  * Hero
  * Media Queries
  */
+
+
+
+//
+// Imports
+//
+
+@import "sass/_base/Vars";
+@import "sass/_vendor/turntable";
 
 
 
@@ -41,15 +50,6 @@
   font-style: normal;
   font-weight: 400;
 }
-
-
-
-//
-// Imports
-//
-
-@import "sass/_base/Vars";
-@import "sass/_vendor/turntable";
 
 
 
