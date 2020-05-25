@@ -52,6 +52,17 @@
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
+<!-- Master -->
+
+{{ $master := resources.Get "styles/master.scss" | toCSS | minify }}
+<link
+  rel="stylesheet"
+  href="{{ $master.RelPermalink }}"
+  media="print"
+  onload="this.media='all';this.onload=null"
+>
+
+
 <!-- Main Script -->
 
 {{ $scripts := resources.Get "/dist/main.min.js" }}

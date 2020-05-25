@@ -3,12 +3,6 @@
 <script>!function(){function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(function(e){e.classList.add('__underline')})}'fonts'in document?document.fonts.ready.then(e):addEventListener('DOMContentLoaded',e,{once:true})}()</script>
 
 
-<!-- Master -->
-
-{{ $master := resources.Get "styles/master.scss" | toCSS | minify }}
-<link rel="stylesheet" href="{{ $master.RelPermalink }}">
-
-
 <!-- Structured Data (Schema) -->
 
 {{ $webpage := print .Site.BaseURL "#webpage" }}
