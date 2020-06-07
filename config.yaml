@@ -21,6 +21,10 @@ params:
   image: 'https://danielblake.design/img/daniel-og.png'
   type: image/png
 
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 
 ## Languages ##
 defaultContentLanguage: en
