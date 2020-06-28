@@ -12,18 +12,20 @@
 - key: 2
   type: development
   text:
-    - HTML5
-    - CSS3 / SCSS / CSS-in-JS
+    - HTML
+    - CSS / SCSS / CSS-in-JS
     - JavaScript / TypeScript
-    - React / Vue / Svelte
-    - Gatsby / Next / Hugo
+    - React / Vue
+    - Svelte / Ember
+    - Gatsby / Next
+    - Hugo / Jekyll
     - LitElement / lit-html
     - Git
     - Storybook / Jest / Enzyme
     - GraphQL / PHP
     - Webpack / Rollup / Gulp
     - Node
-    - '<b>Learning</b>: Flutter / Dart / Angular'
+    - Flutter / Dart
 - key: 3
   type: experience
   text:
@@ -32,6 +34,7 @@
       - Semantic Markup and Accessibility
       - UX and GUI Design
       - Content Architecture
+      - Code Review
       - Branding
       - Art and Creative Direction
       - BFA in Communication Design
@@ -40,6 +43,7 @@
       - Marcado Semántico y Accesibilidad
       - Diseño de UX y GUI
       - Arquitectura de Contenido
+      - Revisión de código
       - Marca
       - Arte y Dirección Creativa
       - BFA en Diseño de la Comunicación
