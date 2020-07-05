@@ -20,8 +20,8 @@ link: 'https://turntablelib.com'
 rel: external noreferrer noopener
 ---
 
-### Turntable site info
+### Site info
 
-⚡ Hugo / Sass
+📚 <b>Stack:</b> Hugo / JavaScript / SCSS
 
-☕ Developed / Designed
+✋ <b>Contribution:</b> Developed / Designed

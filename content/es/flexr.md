@@ -20,8 +20,8 @@ link: 'https://flexrgrid.com'
 rel: external noreferrer noopener
 ---
 
-### Flexr información del sitio
+### Información del Sitio Web
 
-⚡ Jekyll / Sass
+📚 <b>Tecnología:</b>  Jekyll / JavaScript / SCSS
 
-☕ Desarrollado / Diseñado
+✋ <b>Contribución:</b> Developed / Designed

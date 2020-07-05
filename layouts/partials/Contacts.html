@@ -18,7 +18,7 @@
 
   <svg
     role='img'
-    aria-label='{{ T .type }}'
+    aria-label='{{ T .type | safeHTML }}'
   >
 
     <use xlink:href='/img/icons.svg#{{ .type }}'/>

@@ -20,8 +20,8 @@ link: 'https://kaskada.com'
 rel: external noreferrer noopener
 ---
 
-### Kaskada información del sitio
+### Información del Sitio Web
 
-⚡ Gatsby / React / Sass / Contentful
+📚 <b>Tecnología:</b>  React / Gatsby / SCSS / Contentful
 
-☕ Desarrollado / Diseñado Conjuntamente
+✋ <b>Contribución:</b> Developed / Co-Designed
