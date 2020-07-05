@@ -20,8 +20,8 @@ link: 'https://theprogrampdx.com'
 rel: external noreferrer noopener
 ---
 
-### The Program site info
+### Información del Sitio Web
 
-⚡ Next / React / Sass / Contentful
+📚 <b>Tecnología:</b>  React (TypeScript) / Next / SCSS / Contentful
 
-☕ Desarrollado Conjuntamente
+✋ <b>Contribución:</b> Developed

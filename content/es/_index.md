@@ -28,4 +28,4 @@ codepen:
 # Main Site Content Below (in About Section)
 ---
 
-Soy un desarrollador front-end con experiencia en diseño gráfico y vivo en Portland, OR y que trabaja como <i>Desarrollador Web</i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a> en Portland,&nbsp;OR. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos siete años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el estándar que me&nbsp;establecido.
+Soy un desarrollador front-end con experiencia en diseño gráfico y vivo en Portland, OR y que trabaja como <i>Desarrollador Web</i> en <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a>. Siempre me han inspirado y entusiasmado el diseño visual y el desarrollo front-end &mdash; ambos han sido mi pasión durante los últimos diez años. Los sitios web deben ser utilizables, accesibles y, lo que es más importante, agradables. Ese es el estándar que me&nbsp;establecido. 🤘
