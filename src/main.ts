@@ -9,21 +9,12 @@ import scrollIntoView from './scroll';
  */
 addEventListener('DOMContentLoaded', (): void => {
   const ICON: SVGSVGElement | null = document.querySelector('.Arrow');
-  const FORM: HTMLFormElement | null = document.querySelector('#form');
   const LANG: HTMLSelectElement | null = document.querySelector('#lang');
   const NAV: HTMLElement | null = document.querySelector('#nav');
   const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
 
   if (NAV) {
     navBehavior(NAV);
-  }
-
-
-  // Adds the '__sub' class if form exists
-  if (FORM) {
-    FORM.send.addEventListener('click', (): void => {
-      FORM.classList.add('__sub');
-    });
   }
 
   // Adds or removes the '__fade' class
