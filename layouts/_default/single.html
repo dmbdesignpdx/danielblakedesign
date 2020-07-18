@@ -72,10 +72,19 @@
         {{ $visit.Set "theme" "primary" }}
         {{ $visit.Set "link" .Params.link }}
         {{ $visit.Set "rel" .Params.rel }}
-        {{ $visit.Set "title" .Params.id }}
-        {{ $visit.Set "text" "visit" }}
+        {{ $visit.Set "text" ( T "visit" ) }}
 
         {{ partial "Btn" $visit }}
+
+        {{ $url :=  printf "%s%s" ( string .Site.BaseURL ) "#work" }}
+
+        {{ $back := newScratch }}
+        {{ $back.Set "type" "link" }}
+        {{ $back.Set "theme" "secondary" }}
+        {{ $back.Set "link" $url }}
+        {{ $back.Set "text" ( T "back" ) }}
+
+        {{ partial "Btn" $back }}
 
       {{ end }}
 
