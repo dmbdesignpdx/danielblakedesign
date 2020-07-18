@@ -23,7 +23,7 @@
 <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
 
 
-{{ if eq ( getenv "HUGO_ENV" ) "production" }}
+{{ if eq hugo.Environment "production" }}
 
 
   <!-- Prebrowsing Hints -->
@@ -49,36 +49,28 @@
 <!-- Critical Styles -->
 
 {{ $critical := resources.Get "/styles/critical.scss" | toCSS | minify }}
+
 <style>{{ $critical.Content | safeCSS }}</style>
 
 
-<!-- Master -->
+<!-- Main CSS & JS (Production) -->
 
-{{ $master := resources.Get "styles/master.scss" | toCSS | minify }}
-<link
-  rel="stylesheet"
-  href="{{ $master.RelPermalink }}"
-  media="print"
-  onload="this.media='all';this.onload=null"
->
+{{ if eq hugo.Environment "production" }}
 
+  {{ $css := resources.Get "styles/main.scss" | toCSS | minify }}
+  {{ $js := resources.Get "/dist/main.min.js" | fingerprint }}
 
-<!-- Main Script -->
-
-{{ $scripts := resources.Get "/dist/main.min.js" }}
-
-{{ if ne ( getenv "HUGO_ENV" ) "production" }}
-
-  <script defer src='{{ $scripts.RelPermalink }}'></script>
-
-{{ else }}
-
-  {{ $scripts = $scripts | fingerprint }}
+  <link
+    rel="stylesheet"
+    href="{{ $css.RelPermalink }}"
+    media="print"
+    onload="this.media='all';this.onload=null"
+  >
 
   <script
     defer
-    src='{{ $scripts.RelPermalink }}'
-    integrity='{{ $scripts.Data.Integrity }}'
+    src='{{ $js.RelPermalink }}'
+    integrity='{{ $js.Data.Integrity }}'
     crossorigin='anonymous'
   ></script>
 

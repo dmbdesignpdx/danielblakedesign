@@ -3,6 +3,23 @@
 <script>!function(){function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(function(e){e.classList.add('__underline')})}'fonts'in document?document.fonts.ready.then(e):addEventListener('DOMContentLoaded',e,{once:true})}()</script>
 
 
+<!-- Main CSS & JS (Dev) -->
+
+{{ if ne hugo.Environment "production" }}
+
+  {{ $css := resources.Get "styles/main.scss" | toCSS }}
+  {{ $js := resources.Get "/dist/main.js" }}
+  
+  <link
+    rel="stylesheet"
+    href="{{ $css.RelPermalink }}"
+  >
+
+  <script src='{{ $js.RelPermalink }}'></script>
+
+{{ end }}
+
+
 <!-- Structured Data (Schema) -->
 
 {{ $webpage := print .Site.BaseURL "#webpage" }}
