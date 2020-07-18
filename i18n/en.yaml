@@ -16,6 +16,8 @@
   translation: Visit
 - id: send
   translation: Send
+- id: back
+  translation: Back
 
 
 ## Work ##

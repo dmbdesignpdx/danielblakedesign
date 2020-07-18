@@ -18,10 +18,10 @@
       target='_blank'
       rel='{{ .Get "rel" }}'
     {{ end }}
-    href='{{ .Get "link" }}'
+    href='{{ .Get "link" | safeURL }}'
   >
 
-    {{ T ( .Get "text" ) | safeHTML }} <span>{{ .Get "title" | title }} website</span>
+    {{ .Get "text" }}{{ if .Get "span" }} <span>{{ .Get "span" }}</span>{{ end }}
 
   </a>
 
