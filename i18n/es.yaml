@@ -16,6 +16,8 @@
   translation: Visita
 - id: send
   translation: Envía
+- id: back
+  translation: Regresa
 
 
 ## About ##

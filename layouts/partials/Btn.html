@@ -18,10 +18,10 @@
       target='_blank'
       rel='{{ .Get "rel" }}'
     {{ end }}
-    href='{{ .Get "link" }}'
+    href='{{ .Get "link" | safeURL }}'
   >
 
-    {{ T ( .Get "text" ) | safeHTML }} <span>{{ .Get "title" | title }} website</span>
+    {{ .Get "text" | title }}{{ if .Get "span" }} <span>{{ .Get "span" }}</span>{{ end }}
 
   </a>
 
@@ -29,14 +29,14 @@
 
   <button
     name='send'
-    class='Btn --{{ .Get "theme" }} graphical'
+    class='Btn --{{ .Get "theme" }}'
     type='{{ .Get "type" }}'
     {{ if .Get "value" }}
       data-value='{{ .Get "value" }}'
     {{ end }}
   >
 
-    {{ T ( .Get "text" ) | safeHTML }}
+    {{ .Get "text" | title }}
 
   </button>
 

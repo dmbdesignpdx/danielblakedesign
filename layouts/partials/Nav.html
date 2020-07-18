@@ -9,7 +9,7 @@
 
     <a
       href='{{ "/" | relLangURL }}'
-      {{ if eq .Params.class "home" }}
+      {{ if .IsHome }}
         aria-current='page'
       {{ end }}
     >
@@ -31,7 +31,6 @@
       aria-label='select a language'
     >
 
-
         {{ range .AllTranslations }}
 
           <option
@@ -46,7 +45,6 @@
           </option>
 
         {{ end }}
-      
 
     </select>
 

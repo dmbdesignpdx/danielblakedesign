@@ -12,6 +12,17 @@
     overflow: hidden;
     border-radius: 4px;
     border: 1px solid #DDD;
+
+    &::before {
+      @extend %block;
+      padding-top: 62.5%;
+      content: '';
+    }
+
+    img {
+      @extend %absolute;
+      top: 0;
+    }
   
     @include theme(dark) {
       border-color: brand(_darkgray);
