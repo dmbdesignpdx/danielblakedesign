@@ -3,6 +3,10 @@
     {
       "path": "./assets/dist/main.min.js",
       "maxSize": "5 kB"
+    },
+    {
+      "path": "./public/styles/main.min.css",
+      "maxSize": "5 kB"
     }
   ]
 }
