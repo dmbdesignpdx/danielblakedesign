@@ -9,7 +9,7 @@
 
     <a
       href='{{ "/" | relLangURL }}'
-      {{ if eq .Params.class "home" }}
+      {{ if .IsHome }}
         aria-current='page'
       {{ end }}
     >

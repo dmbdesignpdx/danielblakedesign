@@ -21,7 +21,7 @@
     href='{{ .Get "link" | safeURL }}'
   >
 
-    {{ .Get "text" }}{{ if .Get "span" }} <span>{{ .Get "span" }}</span>{{ end }}
+    {{ .Get "text" | title }}{{ if .Get "span" }} <span>{{ .Get "span" }}</span>{{ end }}
 
   </a>
 
@@ -29,14 +29,14 @@
 
   <button
     name='send'
-    class='Btn --{{ .Get "theme" }} graphical'
+    class='Btn --{{ .Get "theme" }}'
     type='{{ .Get "type" }}'
     {{ if .Get "value" }}
       data-value='{{ .Get "value" }}'
     {{ end }}
   >
 
-    {{ T ( .Get "text" ) | safeHTML }}
+    {{ .Get "text" | title }}
 
   </button>
 
