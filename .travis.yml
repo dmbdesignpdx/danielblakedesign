@@ -4,4 +4,4 @@ node_js:
 cache:
   directories:
     - node_modules
-script: yarn size
+script: npm run hugo:prod && npm run bundlesize
