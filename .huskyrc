@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "yarn size && yarn lint"
+    "pre-commit": "pnpm size && pnpm lint"
   }
 }
