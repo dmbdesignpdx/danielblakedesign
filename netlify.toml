@@ -1,7 +1,7 @@
 [build.environment]
 NODE_VERSION = "14.4.0"
 HUGO_VERSION = "0.73.0"
-YARN_VERSION = "1.22.4"
+# YARN_VERSION = "1.22.4"
 
 
 [[headers]]
