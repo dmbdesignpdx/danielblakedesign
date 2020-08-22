@@ -18,7 +18,7 @@
   &.--primary {
     box-shadow: 0 1px 2px ts(0.35);
     background: brand();
-    color: hsl(250,12%,98%);
+    color: brand(_almostwhite);
 
     &:focus {
       box-shadow: 0 2px 5px ts(0.35);
@@ -50,7 +50,7 @@
 
   &.--secondary {
     margin-left: 1em;
-    background: brand(_darkwhite);
+    background: brand(_offwhite);
     box-shadow: 0 1px 2px ts(0.2);
 
     @include theme(dark) {
@@ -58,7 +58,7 @@
     }
 
     &:focus {
-      background: value(brand(_darkwhite),1);
+      background: value(brand(_offwhite),1);
       box-shadow: 0 2px 5px ts(0.2);
     }
 
@@ -70,7 +70,7 @@
     &:hover {
       
       @include desktop {
-        background: value(brand(_darkwhite),1);
+        background: value(brand(_offwhite),1);
         box-shadow: 0 2px 5px ts(0.2);
       }
     }

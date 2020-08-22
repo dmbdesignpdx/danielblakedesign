@@ -41,8 +41,8 @@
 
 :root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --bkg: hsl(250,12%,96%);
-  --frg: hsl(250,14%,23%); }
+  --bkg: #FEFEFF;
+  --frg: #353243; }
 
 body {
   color: var(--frg);
@@ -101,7 +101,7 @@ h1 {
       z-index: -1;
       content: '';
       border-radius: 3px;
-      background: #e13364; }
+      background: #dd2c53; }
       h1 span:last-child::after {
         transition: width .4s 1.2s; }
       h1 span:first-child::after {
@@ -188,10 +188,10 @@ p {
   padding: .8em 1.6em .8em .5em;
   font-size: .7rem;
   font-weight: 700;
-  color: #373546;
+  color: #353243;
   border: 0;
   border-radius: 3px;
-  background: #FEFEFF url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center/12px 12px no-repeat;
+  background: #f1f1f4 url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center/12px 12px no-repeat;
   box-shadow: 0 1px 2px rgba(0,0,30,0.2);
   -webkit-appearance: none; }
 
@@ -225,7 +225,7 @@ p {
   height: 34px;
   bottom: 40px;
   fill: none;
-  stroke: #66627a;
+  stroke: #5a5671;
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round; }
@@ -291,5 +291,5 @@ p {
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    --frg: hsl(250,12%,96%);
-    --bkg: hsl(250,14%,11%); } }
+    --frg: #FEFEFF;
+    --bkg: #17161d; } }

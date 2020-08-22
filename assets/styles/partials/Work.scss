@@ -38,7 +38,7 @@
     stroke: brand(_darkgray);
 
     @include theme(dark) {
-      stroke: brand(_darkwhite);
+      stroke: brand(_offwhite);
     }
   }
   

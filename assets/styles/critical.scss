@@ -75,8 +75,8 @@
 
 :root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --bkg: hsl(250,12%,96%);
-  --frg: hsl(250,14%,23%);
+  --bkg: #{brand(_almostwhite)};
+  --frg: #{brand(_darkgray)};
 }
 
 body {
@@ -294,7 +294,7 @@ p {
   border: 0;
   border-radius: 3px;
   background:
-    brand(_almostwhite)
+    brand(_offwhite)
     url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>")82% center / 12px 12px
     no-repeat;
   box-shadow: 0 1px 2px ts(.2);
@@ -345,7 +345,7 @@ p {
   height: 34px;
   bottom: 40px;
   fill: none;
-  stroke: brand(_lightgray);
+  stroke: brand(_gray);
   stroke-width: 3;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -484,8 +484,8 @@ p {
 @media (prefers-color-scheme:dark) {
 
   :root {
-    --frg: hsl(250,12%,96%);
-    --bkg: hsl(250,14%,11%);
+    --frg: #{brand(_almostwhite)};
+    --bkg: #{brand(_nearblack)};
   }
 
 }

@@ -4,16 +4,20 @@
   padding-top: 120px;
   margin-top: 60px;
 
-  h3, li {
-    color: brand(_darklight);
+  li {
+    color: brand(_gray);
 
     @include theme(dark) {
-      color: brand(_darkwhite);
+      color: brand(_offwhite);
     }
   }
 
   a {
-    color: brand();
+    @extend %mainColor;
+
+    @include theme(dark) {
+      stroke: brand(_mainlighter);
+    }
   }
 
   // Title
@@ -56,7 +60,7 @@
   }
 
   // Skills Title
-  h4 {
+  h3 {
     margin-bottom: 0.8em;
     font-size: 1.3rem;
   }
@@ -71,7 +75,7 @@
     stroke: brand(_darkgray);
 
     @include theme(dark) {
-      stroke: brand(_darkwhite);
+      stroke: brand(_offwhite);
     }
   }
   
@@ -85,7 +89,7 @@
 
 
 #design {
-  color: brand(_textmain);
+  @extend %mainColor;
 }
 
 #development {

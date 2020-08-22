@@ -27,7 +27,7 @@
 
   <svg><use xlink:href='/img/icons.svg#{{ .this.type }}'/></svg>
 
-  <h4 id='{{ .this.type }}'>{{ T .this.type | title | safeHTML }}</h4>
+  <h3 id='{{ .this.type }}'>{{ T .this.type | title | safeHTML }}</h3>
 
   <ul aria-labelledby='{{ .this.type }}'>
 

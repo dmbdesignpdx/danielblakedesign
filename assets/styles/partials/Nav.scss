@@ -25,7 +25,7 @@
     
     &:active,
     &:focus {
-      color: brand();
+      @extend %mainColor;
     }
 
     &:hover {
@@ -62,7 +62,7 @@
 #lang {
 
   &:focus {
-    color: brand();
+    @extend %mainColor;
     box-shadow: 0 2px 5px ts(0.2);
   }
 
