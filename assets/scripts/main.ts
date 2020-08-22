@@ -7,15 +7,11 @@ import scrollIntoView from './scroll';
 /**
  * DOM Loaded
  */
-addEventListener('DOMContentLoaded', (): void => {
-  const ICON: SVGSVGElement | null = document.querySelector('.Arrow');
-  const LANG: HTMLSelectElement | null = document.querySelector('#lang');
-  const NAV: HTMLElement | null = document.querySelector('#nav');
+addEventListener('load', (): void => {
+  const ICON = <SVGSVGElement>document.querySelector('.Arrow');
+  const LANG = <HTMLSelectElement>document.querySelector('#lang');
+  const NAV = <HTMLElement>document.querySelector('#nav');
   const prefersRM: boolean = window.matchMedia('(prefers-reduced-motion)').matches;
-
-  if (NAV) {
-    navBehavior(NAV);
-  }
 
   // Adds or removes the '__fade' class
   const arrowFade = (): void => {
@@ -45,6 +41,8 @@ addEventListener('DOMContentLoaded', (): void => {
     scrollIntoView();
     smoothScroll('a[href*=\'#\']');
   }
+
+  navBehavior(NAV);
 
   addEventListener('scroll', arrowFade, { passive: true });
 }, { once: true });

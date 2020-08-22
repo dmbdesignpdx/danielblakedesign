@@ -27,6 +27,9 @@ h2::after,
 h5::after {
   position: relative; }
 
+.Footer, .Contact, .About {
+  content-visibility: auto; }
+
 /**
  * Grid
  */

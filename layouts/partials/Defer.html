@@ -7,9 +7,12 @@
 
 {{ if ne hugo.Environment "production" }}
 
+  {{ $cssOpts := dict "includePaths" ( slice "layouts/partials" ) }}
   {{ $css := resources.Get "styles/main.scss" | toCSS }}
-  {{ $js := resources.Get "/dist/main.js" }}
   
+  {{ $jsOpts := dict "targetPath" "dist/main.js" "target" "es2015" }}
+  {{ $js := resources.Get "scripts/main.ts" | js.Build $jsOpts }}
+
   <link
     rel="stylesheet"
     href="{{ $css.RelPermalink }}"

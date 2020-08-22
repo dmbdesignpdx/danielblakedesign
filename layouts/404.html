@@ -14,9 +14,10 @@
 
     <meta name='description' content='{{ $page.description }}'>
 
-    {{ $snap := resources.Get "styles/sass/_pages/404.scss" | toCSS | minify }}
+    {{ $cssOpts := dict "outputStyle" "compressed" }}
+    {{ $css := resources.Get "styles/pages/404.scss" | toCSS $cssOpts }}
 
-    <style>{{ $snap.Content | safeCSS }}</style>
+    <style>{{ $css.Content | safeCSS }}</style>
 
   </head>
 

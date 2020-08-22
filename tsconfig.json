@@ -11,7 +11,8 @@
     "noImplicitAny": true,
     "module": "ESNext",
     "allowJs": true,
-    "removeComments": true
+    "removeComments": true,
+    "rootDir": "assets/scripts/"
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]

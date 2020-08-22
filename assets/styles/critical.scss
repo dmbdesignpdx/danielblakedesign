@@ -18,8 +18,10 @@
 // Imports
 //
 
-@import "sass/_base/Vars";
-@import "sass/_vendor/turntable";
+@import
+"base/Vars",
+"vendor/turntable"
+;
 
 
 
@@ -28,7 +30,9 @@
 //
 
 @font-face {
-  src: url('/fonts/montserrat-900.woff') format('woff');
+  src: 
+    url('/fonts/montserrat-900.woff2') format('woff2'),
+    url('/fonts/montserrat-900.woff') format('woff');
   font-display: swap;
   font-family: Montserrat;
   font-style: normal;
@@ -36,7 +40,9 @@
 }
 
 @font-face {
-  src: url('/fonts/heebo-700.woff') format('woff');
+  src: 
+    url('/fonts/heebo-700.woff2') format('woff2'),
+    url('/fonts/heebo-700.woff') format('woff');
   font-display: swap;
   font-family: Heebo;
   font-style: normal;
@@ -44,7 +50,9 @@
 }
 
 @font-face {
-  src: url('/fonts/heebo-400.woff') format('woff');
+  src: 
+    url('/fonts/heebo-400.woff2') format('woff2'),
+    url('/fonts/heebo-400.woff') format('woff');
   font-display: swap;
   font-family: Heebo;
   font-style: normal;

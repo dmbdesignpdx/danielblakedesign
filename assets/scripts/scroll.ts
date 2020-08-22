@@ -6,6 +6,16 @@ import {
 } from './types';
 
 
+const addPrefetch = (href: string): void => {
+  const link = document.createElement('link');
+
+  link.setAttribute('rel', 'prefetch');
+  link.setAttribute('href', href);
+  link.setAttribute('as', 'document');
+
+  document.head.appendChild(link);
+};
+
 /**
  * Scroll Into View
  */
@@ -17,23 +27,22 @@ export default (): void => {
   if (hasIO) {
     const collection: Array<Element> = [...document.querySelectorAll('.Thumb')];
 
-    // IO Callback
     const callback:
     IOC = (entries: Array<IOE>): void => {
-      entries.forEach(entry => {
-        if (entry.intersectionRatio > threshold) {
-          entry.target.classList.add('play');
-          observer.unobserve(entry.target);
+      entries.forEach(({ target, intersectionRatio }) => {
+        if (intersectionRatio > threshold) {
+          const preview = <HTMLAnchorElement>target.querySelector('.--primary');
+
+          target.classList.add('play');
+          addPrefetch(preview.href);
+
+          observer.unobserve(target);
         }
       });
     };
 
-    // IO Settings
-    const settings: IOI = {
-      threshold,
-    };
+    const settings: IOI = { threshold };
 
-    // Set
     observer = new IntersectionObserver(callback, settings);
 
     collection.forEach((item: Element): void => {

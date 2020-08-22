@@ -1,27 +1,25 @@
-{{/*
-  * Props
-  *
-  * type: string (Required)
-  * theme: string (Required)
-  * text: string (Required)
-  * link: string
-  * rel: string
-  * value: string
- */}}
+<!-- Props -->
+{{ $type := .Get "type" }} <!-- string -->
+{{ $theme := .Get "theme" }} <!-- string -->
+{{ $text := .Get "text" }} <!-- string -->
+{{ $link := .Get "link" }} <!-- string? -->
+{{ $rel := .Get "rel" }} <!-- string? -->
+{{ $value := .Get "value" }} <!-- string? -->
+{{ $span := .Get "span" }} <!-- string? -->
 
 
-{{ if eq ( .Get "type" ) "link" }}
+{{ if eq $type "link" }}
 
   <a
-    class='Btn --{{ .Get "theme" }} graphical'
-    {{ if .Get "rel" }}
+    class='Btn --{{ $theme }} graphical'
+    {{ if $rel }}
       target='_blank'
-      rel='{{ .Get "rel" }}'
+      rel='{{ $rel }}'
     {{ end }}
-    href='{{ .Get "link" | safeURL }}'
+    href='{{ $link | safeURL }}'
   >
 
-    {{ .Get "text" | title }}{{ if .Get "span" }} <span>{{ .Get "span" }}</span>{{ end }}
+    {{ $text | title }}{{ if $span }} <span>{{ $span }}</span>{{ end }}
 
   </a>
 
@@ -29,14 +27,14 @@
 
   <button
     name='send'
-    class='Btn --{{ .Get "theme" }}'
-    type='{{ .Get "type" }}'
-    {{ if .Get "value" }}
-      data-value='{{ .Get "value" }}'
+    class='Btn --{{ $theme }}'
+    type='{{ $type }}'
+    {{ if $value }}
+      data-value='{{ $value }}'
     {{ end }}
   >
 
-    {{ .Get "text" | title }}
+    {{ $text | title }}
 
   </button>
 

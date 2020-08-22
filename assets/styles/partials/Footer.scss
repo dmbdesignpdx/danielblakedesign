@@ -1,5 +1,6 @@
 .Footer {
   @extend %content;
+  @extend %content-visibility-auto;
   padding-top: 60px;
   padding-bottom: 90px;
   background: brand(_nearblack);
