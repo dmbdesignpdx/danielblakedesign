@@ -14,9 +14,11 @@
   flexr-grid
 >
 
-  <h3 class="fade-Up-2"> {{ .title | title | safeHTML }} </h3>
-
-  <h5 class="fade-Up-2">{{ T $file | safeHTML }}</h5>
+  <hgroup class="fade-Up-2">
+    <h3> {{ .title | title | safeHTML }} </h3>
+  
+    <h4>{{ T $file | safeHTML }}</h4>
+  </hgroup>
 
   <div class='cta fade-Up-4'>
 

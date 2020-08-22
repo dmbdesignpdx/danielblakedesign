@@ -6,7 +6,7 @@
   background: brand(_nearblack);
 
   @include theme(dark) {
-    background: brand(_darkergray);
+    background: #000;
   }
   
   address, aside {
@@ -25,8 +25,9 @@
   }
 
   p,
-  address {
-    color: brand(_darkwhite);
+  address,
+  small {
+    color: brand(_offwhite);
   }
   
   address {
@@ -36,10 +37,6 @@
     @include phoneLan {
       grid-row: 1 / 1;
     }
-  }
-  
-  small {
-    color: hsl(250,11%,70%);
   }
   
   aside {
@@ -61,7 +58,7 @@
   }
   
   a {
-    color: hsl(342,84%,56%);
+    color: brand(_mainlighter);
     
     &:hover {
       text-decoration: underline;

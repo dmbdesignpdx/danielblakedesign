@@ -28,7 +28,7 @@
     color: brand(_darkgray);
 
     @include theme(dark) {
-      color: brand(_darkwhite);
+      color: brand(_offwhite);
     }
 
     &:hover {
@@ -39,7 +39,7 @@
     }
 
     &:focus {
-      color: brand();
+      @extend %mainColor;
     }
 
     &:active {
@@ -57,7 +57,7 @@
     fill: none;
 
     @include theme(dark) {
-      stroke: brand(_darkwhite);
+      stroke: brand(_offwhite);
     }
     
     @at-root
