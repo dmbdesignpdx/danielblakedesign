@@ -8,7 +8,7 @@ This project is built with [Hugo](https://gohugo.io) and hosted on [Netlify](htt
 
 #### For those interested:
 
-(I'm assuming you have [Node](https://nodejs.org) installed.)
+(I'm assuming you have [Node](https://nodejs.org) and [Homebrew](https://brew.sh) installed.)
 
 After cloning this project, `cd` into it.
 

@@ -1,5 +1,6 @@
 .Contact {
   @extend %content;
+  @extend %content-visibility-auto;
   padding-top: 120px;
   margin-top: 60px;
   

@@ -1,4 +1,6 @@
-## Site Variables ##
+## Global Variables ##
+
+# Site
 baseURL: 'https://danielblake.design'
 title: Daniel Blake - Front End Web Designer
 author:
@@ -12,21 +14,22 @@ author:
   linkedin: 'https://www.linkedin.com/in/danielblakepdx'
   codepen: 'https://codepen.io/dmbdesignpdx'
 
-## Params ##
+# Params
 params:
-# Theme
   theme: "#E13364"
-
-  # Open Graph / Twitter
   image: 'https://danielblake.design/img/daniel-og.png'
   type: image/png
 
+
+## Build Info ##
+
+# Markup
 markup:
   goldmark:
     renderer:
       unsafe: true
 
-## Languages ##
+# Languages
 defaultContentLanguage: en
 languages:
   en:
@@ -42,20 +45,19 @@ languages:
     copyright: |
       Copyright 2020 Daniel Blake. Todos los derechos reservados. Todas las demás marcas registradas son propiedad de sus respectivos dueños.
 
-## Sitemap ##
+# Sitemap
 sitemap:
   changefreq: monthly
   filename: sitemap.xml
   priority: 0.9
 
-
-## Build ##
+# Misc
 enableGitInfo: true
+enableRobotsTXT: true
 disableHugoGeneratorInject: true
 disableKinds:
   - taxonomy
   - taxonomyTerm
   - RSS
-  - robotsTXT
 enableEmoji: true
 relativeURLs: true
