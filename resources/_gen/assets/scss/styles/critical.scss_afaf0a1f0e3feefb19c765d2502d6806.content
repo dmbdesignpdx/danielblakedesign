@@ -42,7 +42,7 @@
 :root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --bkg: #FEFEFF;
-  --frg: #353243; }
+  --frg: #333040; }
 
 body {
   color: var(--frg);
@@ -172,9 +172,10 @@ p {
   .Nav a:first-child {
     margin: 0 auto 1px 0;
     align-items: center;
-    letter-spacing: -.02em; }
+    letter-spacing: -.02em;
+    overflow: hidden; }
     .Nav a:first-child span {
-      display: none; }
+      text-indent: -15ch; }
     .Nav a:first-child svg {
       width: 2.6em;
       height: 2.6em;
@@ -188,7 +189,7 @@ p {
   padding: .8em 1.6em .8em .5em;
   font-size: .7rem;
   font-weight: 700;
-  color: #353243;
+  color: #333040;
   border: 0;
   border-radius: 3px;
   background: #f1f1f4 url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path style='fill:none;stroke:%23373445;stroke-width:2' d='M3,7 10,15 17,7'/></svg>") 82% center/12px 12px no-repeat;
@@ -239,7 +240,7 @@ p {
  */
 @media (min-width: 540px) {
   .Nav a:first-child span {
-    display: block; }
+    text-indent: 0; }
   h1 {
     font-size: 2.7rem; }
   .Hero p {

@@ -268,7 +268,7 @@ p a:focus {
     fill: none;
     stroke-linejoin: round;
     stroke-linecap: round;
-    stroke: #353243; }
+    stroke: #333040; }
     @media (prefers-color-scheme: dark) {
       #codepen svg {
         stroke: #f1f1f4; } }
@@ -288,9 +288,11 @@ p a:focus {
     @media (prefers-color-scheme: dark) {
       .About li {
         color: #f1f1f4; } }
-  @media (prefers-color-scheme: dark) {
-    .About a {
-      stroke: #e54366; } }
+  .About a {
+    white-space: nowrap; }
+    @media (prefers-color-scheme: dark) {
+      .About a {
+        stroke: #e64769; } }
   .About h2 {
     justify-self: start; }
     @media (min-width: 540px) {
@@ -325,7 +327,7 @@ p a:focus {
     stroke-width: 1.6;
     stroke-linejoin: round;
     stroke-linecap: round;
-    stroke: #353243; }
+    stroke: #333040; }
     @media (prefers-color-scheme: dark) {
       .About svg {
         stroke: #f1f1f4; } }
@@ -357,7 +359,7 @@ p a:focus {
     display: inline-flex;
     align-items: center;
     margin-bottom: 1em;
-    color: #353243; }
+    color: #333040; }
     @media (prefers-color-scheme: dark) {
       .Contact a {
         color: #f1f1f4; } }
@@ -371,7 +373,7 @@ p a:focus {
     width: 2em;
     height: 2em;
     margin: auto 0.7em auto 0;
-    stroke: #353243;
+    stroke: #333040;
     stroke-width: 2.6;
     fill: none; }
     @media (prefers-color-scheme: dark) {
@@ -399,7 +401,7 @@ p a:focus {
       top: 0; }
     @media (prefers-color-scheme: dark) {
       .Thumb picture {
-        border-color: #353243; } }
+        border-color: #333040; } }
     @media (min-width: 540px) {
       .Thumb picture {
         margin-bottom: 0;
@@ -411,7 +413,7 @@ p a:focus {
       grid-row: span 1; } }
   .Thumb h3 {
     font-size: 1.6rem;
-    color: #353243; }
+    color: #333040; }
     @media (prefers-color-scheme: dark) {
       .Thumb h3 {
         color: #f1f1f4; } }
@@ -477,7 +479,7 @@ p a:focus {
         grid-column: 5 / span 3;
         grid-row: 1 / 2; } }
   .Footer a {
-    color: #e54366; }
+    color: #e64769; }
     .Footer a:hover {
       text-decoration: underline; }
 
@@ -498,7 +500,7 @@ p a:focus {
     color: #FEFEFF; }
     .Btn.--primary:focus {
       box-shadow: 0 2px 5px rgba(0,0,30,0.35);
-      background: #e04265; }
+      background: #e14265; }
     .Btn.--primary:active {
       box-shadow: 0 1px 1px rgba(0,0,30,0.35);
       transform: scale(0.96); }

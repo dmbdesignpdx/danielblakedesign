@@ -265,9 +265,10 @@ p {
     margin: 0 auto 1px 0;
     align-items: center;
     letter-spacing: -.02em;
+    overflow: hidden;
 
     span {
-      display: none;
+      text-indent: -15ch;
     }
 
     svg {
@@ -379,7 +380,7 @@ p {
   .Nav {
     
     a:first-child span {
-      display: block;
+      text-indent: 0;
     }
   }
 
