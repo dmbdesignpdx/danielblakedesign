@@ -6,14 +6,13 @@ $brand: (
   _almostwhite: #FEFEFF,
   _offwhite: hsl(250,12%,95%),
   _gray: hsl(250,14%,39%),
-  _darkgray: hsl(250,14%,23%),
-  _darkergray: hsl(250,14%,16%),
+  _darkgray: hsl(250,14%,22%),
   _nearblack: hsl(250,14%,10%),
-  _main: hsl(347, 72%, 52%),
+  _main: rgb(221, 44, 83),
   _two: hsl(300,62%,42%),
   _three: hsl(320,70%,47%),
   _textmain: hsl(343,70%,49%),
-  _mainlighter: hsl(347, 76%, 58%)
+  _mainlighter: hsl(347, 76%, 59%)
 );
 
 @function brand($arg:_main) {

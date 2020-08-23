@@ -14,6 +14,7 @@
 
   a {
     @extend %mainColor;
+    white-space: nowrap;
 
     @include theme(dark) {
       stroke: brand(_mainlighter);
