@@ -1,51 +1,47 @@
-type State = {
-  init: number;
-  navHeight: number;
-  showing: boolean;
-  availHeight: number;
-}
+import { State } from 'types';
+
 
 /**
  * Navbar Behavior
  */
-export default (NAV: HTMLElement): void => {
-  let state: State = {
-    init: window.pageYOffset,
-    navHeight: NAV.clientHeight,
-    showing: NAV.classList.contains('__show'),
-    get availHeight() {
-      return document.documentElement.scrollHeight - window.innerHeight;
-    },
-  };
+const NAV = <HTMLElement>document.querySelector('#nav');
 
-  const toggleNav = (): void => {
-    const update: number = window.pageYOffset;
+let state: State = {
+  init: window.pageYOffset,
+  navHeight: NAV.clientHeight,
+  showing: NAV.classList.contains('__show'),
+  get availHeight() {
+    return document.documentElement.scrollHeight - window.innerHeight;
+  },
+};
 
-    if (update > state.navHeight) {
-      NAV.classList.add('__fixed');
-      NAV.classList.add('__time');
+const toggleNav = (): void => {
+  const update: number = window.pageYOffset;
 
-      if (state.init > -1 && state.availHeight > update) {
-        if (update > state.init && state.showing) {
-          NAV.classList.remove('__show');
-          state.showing = false;
+  if (update > state.navHeight) {
+    NAV.classList.add('__fixed');
+    NAV.classList.add('__time');
 
-        } else if (update < state.init && !state.showing) {
-          NAV.classList.add('__show');
-          state.showing = true;
-        }
+    if (state.init > -1 && state.availHeight > update) {
+      if (update > state.init && state.showing) {
+        NAV.classList.remove('__show');
+        state.showing = false;
+
+      } else if (update < state.init && !state.showing) {
+        NAV.classList.add('__show');
+        state.showing = true;
       }
-
-    } else if (update === 0) {
-      NAV.classList.remove('__fixed');
-      NAV.classList.remove('__show');
-
-    } else {
-      NAV.classList.remove('__time');
     }
 
-    state.init = update;
-  };
+  } else if (update === 0) {
+    NAV.classList.remove('__fixed');
+    NAV.classList.remove('__show');
 
-  addEventListener('scroll', toggleNav, { passive: true });
+  } else {
+    NAV.classList.remove('__time');
+  }
+
+  state.init = update;
 };
+
+addEventListener('scroll', toggleNav, { passive: true });
