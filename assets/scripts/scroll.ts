@@ -29,7 +29,7 @@ export default (): void => {
 
     const callback:
     IOC = (entries: Array<IOE>): void => {
-      entries.forEach(({ target, intersectionRatio }) => {
+      for (const { target, intersectionRatio } of entries) {
         if (intersectionRatio > threshold) {
           const preview = <HTMLAnchorElement>target.querySelector('.--primary');
 
@@ -38,7 +38,7 @@ export default (): void => {
 
           observer.unobserve(target);
         }
-      });
+      }
     };
 
     const settings: IOI = { threshold };

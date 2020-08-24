@@ -6,13 +6,16 @@
       "DOM",
       "DOM.Iterable",
     ],
-    "outDir": "./assets/dist/",
+    "outDir": "./assets/dist",
     "strict": true,
     "noImplicitAny": true,
     "module": "ESNext",
+    "moduleResolution": "node",
     "allowJs": true,
     "removeComments": true,
-    "rootDir": "assets/scripts/"
+    "rootDir": "./assets/scripts",
+    "baseUrl": "./assets/scripts",
+    "allowSyntheticDefaultImports": true,
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]
