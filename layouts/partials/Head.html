@@ -63,7 +63,7 @@
   {{ $cssOpts = merge $cssOpts ( dict "outputStyle" "compressed" ) }}
   {{ $css := resources.Get "styles/main.scss" | toCSS $cssOpts }}
 
-  {{ $jsOpts := dict "targetPath"  "minify" }}
+  {{ $jsOpts := dict "targetPath" "dist/main.min.js" }}
   {{ $jsOpts = merge $jsOpts ( dict "minify" true ) }}
   {{ $jsOpts = merge $jsOpts ( dict "target" "es2017" ) }}
   {{ $js := resources.Get "scripts/main.ts" | js.Build $jsOpts | fingerprint }}

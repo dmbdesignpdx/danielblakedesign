@@ -16,6 +16,7 @@
     "rootDir": "./assets/scripts",
     "baseUrl": "./assets/scripts",
     "allowSyntheticDefaultImports": true,
+    "downlevelIteration": true
   },
   "exclude": ["node_modules"],
   "include": ["**/*.ts"]
