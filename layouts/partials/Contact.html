@@ -10,12 +10,16 @@
   <address>
 
 
-    {{ range .Site.Data.contact }}
+    {{ range .Site.Data.contact.order }}
 
-      {{ partial "Contacts" . }}
+      {{ $contact := newScratch }}
+      {{ $contact.Set "type" . }}
+      {{ $contact.Set "ctx" $ }}
+
+      {{ partial "ContactLink" $contact }}
 
     {{ end }}
-
+    
 
   </address>
 

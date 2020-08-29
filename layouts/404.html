@@ -1,4 +1,4 @@
-{{ $page := index .Site.Data.error ( .Site.Language.Lang ) }}
+{{ with index .Site.Data.error ( .Site.Language.Lang ) }}
 
 <!doctype html>
 
@@ -10,9 +10,9 @@
 
     <meta name='viewport' content='width=device-width,initial-scale=1.0'>
 
-    <title>{{ $page.title }}</title>
+    <title>{{ .title }}</title>
 
-    <meta name='description' content='{{ $page.description }}'>
+    <meta name='description' content='{{ .description }}'>
 
     {{ $cssOpts := dict "outputStyle" "compressed" }}
     {{ $css := resources.Get "styles/pages/404.scss" | toCSS $cssOpts }}
@@ -29,13 +29,9 @@
 
       <div>
 
-        <p>{{ $page.copy }}</p>
+        <p>{{ .copy }}</p>
 
-        <a href='{{ .Site.BaseURL }}'>
-
-          {{ $page.home }}
-
-        </a>
+        <a href='{{ "/" | relLangURL }}'>{{ .home }}</a>
 
       </div>
 
@@ -44,3 +40,5 @@
   </body>
 
 </html>
+
+{{ end }}

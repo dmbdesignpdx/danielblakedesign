@@ -1,40 +1,15 @@
-{{/*
-  * Props
-  *
-  * this: map (Required):
-  *   key: number
-  *   type: string
-  *   text: map | array
-  * lang: string (Required)
- */}}
+<section aria-labelledby='{{ .type }}'>
+
+  <svg><use xlink:href='/img/icons.svg#{{ .type }}'/></svg>
+
+  <h3 id='{{ .type }}'>{{ T .type | title }}</h3>
+
+  <ul aria-labelledby='{{ .type }}'>
 
 
-{{ $skills := "" }}
+    {{ range .text }}
 
-
-{{ if eq .this.type "experience" }}
-
-  {{ $skills = index .this.text .lang }}
-
-{{ else }}
-
-  {{ $skills = .this.text }}
-
-{{ end }}
-
-
-<section aria-labelledby='{{ .this.type }}'>
-
-  <svg><use xlink:href='/img/icons.svg#{{ .this.type }}'/></svg>
-
-  <h3 id='{{ .this.type }}'>{{ T .this.type | title | safeHTML }}</h3>
-
-  <ul aria-labelledby='{{ .this.type }}'>
-
-
-    {{ range $skills }}
-
-      <li>{{ . | safeHTML }}
+      <li>{{ . }}
 
     {{ end }}
 

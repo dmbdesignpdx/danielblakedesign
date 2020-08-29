@@ -12,9 +12,9 @@
 
       {{ T "made" "&#x1F984;&#x1F308;" | safeHTML }}<br>
 
-      <a href='mailto:daniel@danielblake.design'>
+      <a href='{{ .Site.Data.contact.email.link }}'>
 
-       daniel@danielblake.design
+        {{- .Site.Data.contact.email.text -}}
       
       </a>
 
@@ -26,7 +26,7 @@
     
     </aside>  
 
-    <p><small>{{ .Site.Copyright | safeHTML }}</small></p>
+    <p><small>{{ .Site.Copyright }}</small></p>
 
   </div>
 

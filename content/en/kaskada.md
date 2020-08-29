@@ -2,7 +2,6 @@
 ## Page Variables ##
 title: Kaskada Preview - Daniel Blake
 description: Kaskada is a machine learning studio. Project at The Program.
-date: Decemeber 17, 2019
 
 
 ## Params ##
@@ -17,7 +16,7 @@ two: Machine Learning Studio
 
 # Content
 link: 'https://kaskada.com'
-rel: external noreferrer noopener
+rel: true
 ---
 
 ### Site info

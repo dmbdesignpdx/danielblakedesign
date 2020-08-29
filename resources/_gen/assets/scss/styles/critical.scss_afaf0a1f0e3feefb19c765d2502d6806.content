@@ -185,6 +185,13 @@ p {
   .Nav a:nth-child(n+2) {
     margin-right: .8em; }
 
+.graphical span {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap; }
+
 #lang {
   padding: .8em 1.6em .8em .5em;
   font-size: .7rem;

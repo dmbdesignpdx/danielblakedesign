@@ -15,9 +15,11 @@
 >
 
   <hgroup class="fade-Up-2">
-    <h3> {{ .title | title | safeHTML }} </h3>
-  
-    <h4>{{ T $file | safeHTML }}</h4>
+
+    <h3> {{ .title | title }} </h3>
+
+    <h4>{{ T $file }}</h4>
+
   </hgroup>
 
   <div class='cta fade-Up-4'>
@@ -28,8 +30,7 @@
     {{ $preview := newScratch }}
     {{ $preview.Set "type" "link" }}
     {{ $preview.Set "theme" "primary"}}
-    {{ $preview.Set "text" "preview" }}
-    {{ $preview.Set "title" $file }}
+    {{ $preview.Set "text" ( T "preview") }}
     {{ $preview.Set "link" $file }}
 
     {{ partial "Btn" $preview }}
@@ -42,8 +43,7 @@
       {{ $visit := newScratch }}
       {{ $visit.Set "type" "link" }}
       {{ $visit.Set "theme" "secondary"}}
-      {{ $visit.Set "text" "visit" }}
-      {{ $visit.Set "title" $file }}
+      {{ $visit.Set "text" ( T "visit" ) }}
       {{ $visit.Set "link" .link }}
       {{ $visit.Set "rel" .rel }}
 
@@ -69,7 +69,8 @@
 
     <source
       type='image/jpeg'
-      srcset='/img/{{ $file }}/{{ $file }}-1-xs.jpg 750w,
+      srcset='
+        /img/{{ $file }}/{{ $file }}-1-xs.jpg 750w,
         /img/{{ $file }}/{{ $file }}-1-sm.jpg 1080w,
         /img/{{ $file }}/{{ $file }}-1-md.jpg 1280w
       '

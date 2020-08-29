@@ -2,7 +2,6 @@
 ## Page Variables ##
 title: Daniel Blake - Front End Web Designer
 description: Developer and designer, Daniel Blake, is passionate about building responsive and accessible websites.
-date: January 20, 2020
 sitemap:
   priority: 1.0
 
@@ -20,11 +19,66 @@ hero:
   copy: |
     Hello! 👋 My name is Daniel Blake and&nbsp;I'm a front end web designer who believes that websites should be simple, accessible, responsive, and&nbsp;fast.
 
+work:
+  - title: kaskada
+    link: https://kaskada.com
+    rel: external nofollow noreferrer noopener
+  - title: the program
+    link: https://theprogrampdx.com
+    rel: external nofollow noreferrer noopener
+  - title: turntable
+    link: https://turntablelib.netlify.com/
+    rel: external noreferrer noopener
+  - title: flexr
+    link: https://flexrgrid.com
+    rel: external noreferrer noopener
+  - title: codepen
+    link: https://codepen.io/dmbdesignpdx/
+    rel: external noreferrer noopener
+
 # Codepen
 codepen:
   title: Code Snippets
   copy: |
     Check out my Codepens for some ideas and experiments that I've been working&nbsp;on.
+
+# Skills
+skills:
+  - type: design
+    text:
+      - InVision Studio
+      - Sketch
+      - Figma
+      - XD
+      - InDesign
+      - Illustrator
+      - Photoshop
+  - type: development
+    text:
+      - HTML
+      - CSS / SCSS / CSS-in-JS
+      - JavaScript / TypeScript
+      - React / Vue
+      - Svelte / Ember
+      - Gatsby / Next
+      - Hugo / Jekyll
+      - LitElement / lit-html
+      - Git
+      - Storybook / Jest / Enzyme
+      - GraphQL / PHP
+      - Webpack / Rollup / Gulp
+      - Node
+      - Flutter / Dart
+  - type: experience
+    text:
+      - Responsive Web Design and Development
+      - Semantic Markup and Accessibility
+      - UX and GUI Design
+      - Content Architecture
+      - Code Review
+      - Branding
+      - Art and Creative Direction
+      - BFA in Communication Design
 
 # Main Site Content Below (in About Section)
 ---

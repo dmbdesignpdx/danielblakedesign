@@ -9,14 +9,14 @@
     flexr-wrap
   >
 
-    {{ T "work" | safeHTML }}
+    {{ T "work" }}
 
   </h2>
 
 
   <!-- Thumbs -->
 
-  {{ range first 4 .Site.Data.work }}
+  {{ range ( first 4 .Params.work ) }}
 
     {{ partial "Thumbs" . }}
 
@@ -33,22 +33,21 @@
 
     <svg><use xlink:href='/img/icons.svg#snippet'/></svg>
 
-    <h3 id='cp1'>{{ .Params.codepen.title | safeHTML }}</h3>
+    <h3 id='cp1'>{{ .Params.codepen.title }}</h3>
 
     <p>{{ .Params.codepen.copy | safeHTML }}</p>
 
 
     <!-- Visit -->
 
-    {{ with ( index .Site.Data.work 4 ) }}
+    {{ with ( index .Params.work 4 ) }}
 
       {{ $visit := newScratch }}
       {{ $visit.Set "type" "link" }}
       {{ $visit.Set "theme" "primary" }}
-      {{ $visit.Set "title" .title }}
       {{ $visit.Set "rel" .rel }}
       {{ $visit.Set "link" .link }}
-      {{ $visit.Set "text" "visit" }}
+      {{ $visit.Set "text" ( T "visit" ) }}
     
       {{ partial "Btn" $visit }}
 
