@@ -1,6 +1,3 @@
-{{ $lang := .Params.lang }}
-
-
 <article
   id='about'
   class='About'
@@ -13,11 +10,9 @@
   {{ .Content }}
 
 
-  <!-- Skills -->
+  {{ range .Params.skills }}
 
-  {{ range .Site.Data.skills }}
-
-    {{ partial "Skills" ( dict "this" . "lang" $lang ) }}
+    {{ partial "Skills" . }}
 
   {{ end }}
 

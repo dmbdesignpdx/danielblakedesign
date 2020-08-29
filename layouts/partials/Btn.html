@@ -3,7 +3,7 @@
 {{ $theme := .Get "theme" }} <!-- string -->
 {{ $text := .Get "text" }} <!-- string -->
 {{ $link := .Get "link" }} <!-- string? -->
-{{ $rel := .Get "rel" }} <!-- string? -->
+{{ $rel := .Get "rel" }} <!-- boolean? -->
 {{ $value := .Get "value" }} <!-- string? -->
 {{ $span := .Get "span" }} <!-- string? -->
 
@@ -14,12 +14,12 @@
     class='Btn --{{ $theme }} graphical'
     {{ if $rel }}
       target='_blank'
-      rel='{{ $rel }}'
+      rel='external nofollow noreferrer noopener'
     {{ end }}
     href='{{ $link | safeURL }}'
   >
 
-    {{ $text | title }}{{ if $span }} <span>{{ $span }}</span>{{ end }}
+    {{- $text | title -}}{{- if $span -}} <span>{{ $span }}</span>{{- end -}}
 
   </a>
 
@@ -34,7 +34,7 @@
     {{ end }}
   >
 
-    {{ $text | title }}
+    {{- $text | title -}}
 
   </button>
 

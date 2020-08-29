@@ -1,13 +1,18 @@
 ## Contact ##
-- type: phone
+phone:
   link: tel:+19712317309
   text: 971-231-7309
-- type: cemail
+email:
   link: mailto:daniel@danielblake.design
   text: daniel@danielblake.design
-- type: github
+github:
   link: https://github.com/dmbdesignpdx
   text: dmbdesignpdx
-- type: codepen
+codepen:
   link: https://codepen.io/dmbdesignpdx
   text: dmbdesignpdx
+order:
+  - email
+  - phone
+  - github
+  - codepen

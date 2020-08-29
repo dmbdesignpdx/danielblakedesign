@@ -10,7 +10,7 @@
   {{ $cssOpts := dict "includePaths" ( slice "layouts/partials" ) }}
   {{ $css := resources.Get "styles/main.scss" | toCSS }}
   
-  {{ $jsOpts := dict "targetPath" "dist/main.js" "target" "es2015" }}
+  {{ $jsOpts := dict "targetPath" "dist/main.js" "target" "es2017" }}
   {{ $js := resources.Get "scripts/main.ts" | js.Build $jsOpts }}
 
   <link

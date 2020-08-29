@@ -1,0 +1,28 @@
+{{ $type := .Get "type" }}
+{{ $ctx := .Get "ctx" }}
+
+{{ with ( index $ctx.Site.Data.contact $type ) }}
+
+  <a 
+    class='graphical'
+    href='{{ .link | safeURL }}'
+    {{ if and ( ne $type "email" ) ( ne $type "phone" ) }}
+      target='_blank'
+      rel='external noreferrer noopener nofollow'
+    {{ end }}
+  >
+
+    <svg
+      role='img'
+      aria-label='{{ T $type }}'
+    >
+
+      <use xlink:href='/img/icons.svg#{{ $type }}'/>
+
+    </svg>
+
+    {{- .text -}}
+
+  </a>
+
+{{ end }}

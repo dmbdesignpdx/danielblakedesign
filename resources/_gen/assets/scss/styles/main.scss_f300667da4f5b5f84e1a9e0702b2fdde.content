@@ -30,9 +30,6 @@ h2::after,
 h5::after {
   position: relative; }
 
-.Footer, .Contact, .About {
-  content-visibility: auto; }
-
 /**
  * Grid
  */
@@ -170,13 +167,6 @@ textarea {
 
 p a:focus {
   text-decoration: underline; }
-
-.graphical span {
-  width: 1px;
-  height: 1px;
-  position: absolute;
-  overflow: hidden;
-  white-space: nowrap; }
 
 .animation [class*='fade-Up-'] {
   animation: fadeUp 0.8s ease-out both paused; }
@@ -528,12 +518,14 @@ p a:focus {
       .Btn.--secondary:hover {
         background: #f4f4f6;
         box-shadow: 0 2px 5px rgba(0,0,30,0.2); } }
-.sib h1 span:first-child::after {
-  transition: width 0.4s 0.4s; }
-
-.sib .sib h1 {
-  padding-top: 38vh;
-  line-height: 1.2; }
+.sib h1 {
+  width: auto; }
+  .sib h1 span:first-child::after {
+    transition: width 0.4s 0.4s; }
+  .sib h1 span:last-child {
+    display: block; }
+    .sib h1 span:last-child::after {
+      content: none; }
 
 .sib picture:first-of-type {
   margin-top: 90px; }

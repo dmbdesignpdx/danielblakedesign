@@ -2,7 +2,6 @@
 ## Page Variables ##
 title: The Program Preview - Daniel Blake
 description: The Program is a marketing agency. Project at The Program.
-date: Decemeber 17, 2019
 
 
 ## Params ##
@@ -17,7 +16,7 @@ two: Marketing Agency
 
 # Content
 link: 'https://theprogrampdx.com'
-rel: external noreferrer noopener
+rel: true
 ---
 
 ### Site Info

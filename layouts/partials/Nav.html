@@ -1,5 +1,3 @@
-{{ $lang := .Params.lang }}
-
 <nav
   id='nav'
   class='Nav'
@@ -20,33 +18,13 @@
 
     </a>
 
-    <a href='{{ "/#work" | relLangURL }}'>{{ T "work" | safeHTML }}</a>
+    <a href='{{ "/#work" | relLangURL }}'>{{ T "work" }}</a>
 
-    <a href='{{ "/#about" | relLangURL }}'>{{ T "about" | safeHTML }}</a>
+    <a href='{{ "/#about" | relLangURL }}'>{{ T "about" }}</a>
 
-    <a href='{{ "/#contact" | relLangURL }}'>{{ T "contact" | safeHTML }}</a>
+    <a href='{{ "/#contact" | relLangURL }}'>{{ T "contact" }}</a>
 
-    <select
-      id='lang'
-      aria-label='select a language'
-    >
-
-        {{ range .AllTranslations }}
-
-          <option
-            lang='{{ .Language.Lang }}'
-            value='{{ .Permalink }}'
-            {{ if eq .Language.Lang $lang }}
-              selected
-            {{ end }}
-          >
-            {{ .Language.Lang | upper }}
-
-          </option>
-
-        {{ end }}
-
-    </select>
+    {{ partial "Lang" . }}
 
   </div>
 
