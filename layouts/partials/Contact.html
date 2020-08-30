@@ -1,3 +1,11 @@
+<!--
+  Site:
+    Data:
+      contact:
+        order: []string
+-->
+
+
 <section
   id='contact'
   class='Contact'
@@ -13,10 +21,10 @@
     {{ range .Site.Data.contact.order }}
 
       {{ $contact := newScratch }}
-      {{ $contact.Set "type" . }}
-      {{ $contact.Set "ctx" $ }}
+      {{ $contact.Set "name" . }}
+      {{ $contact.Set "info" $.Site.Data.contact }}
 
-      {{ partial "ContactLink" $contact }}
+      {{ partial "ContactLink" $contact.Values }}
 
     {{ end }}
     

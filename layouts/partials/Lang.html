@@ -1,4 +1,7 @@
-{{ $lang := .Params.lang }}
+<!--
+  AllTranslations: []Page
+-->
+
 
 <label class="graphical">
 
@@ -12,7 +15,7 @@
         lang='{{ .Language.Lang }}'
         value='{{ .Permalink }}'
         aria-label="{{ .Language.LanguageName }}"
-        {{ if eq .Language.Lang $lang }}
+        {{ if eq .Language.Lang $.Site.Language.Lang }}
           selected
         {{ end }}
       >

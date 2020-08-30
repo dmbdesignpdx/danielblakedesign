@@ -1,25 +1,26 @@
-<!-- Props -->
-{{ $type := .Get "type" }} <!-- string -->
-{{ $theme := .Get "theme" }} <!-- string -->
-{{ $text := .Get "text" }} <!-- string -->
-{{ $link := .Get "link" }} <!-- string? -->
-{{ $rel := .Get "rel" }} <!-- boolean? -->
-{{ $value := .Get "value" }} <!-- string? -->
-{{ $span := .Get "span" }} <!-- string? -->
+<!--
+  type: string
+  theme: string
+  text: string
+  link?: string
+  rel?: bool
+  value?: string
+  span?: string
+-->
 
 
-{{ if eq $type "link" }}
+{{ if eq .type "link" }}
 
   <a
-    class='Btn --{{ $theme }} graphical'
-    {{ if $rel }}
+    class='Btn --{{ .theme }} graphical'
+    {{ if .rel }}
       target='_blank'
       rel='external nofollow noreferrer noopener'
     {{ end }}
-    href='{{ $link | safeURL }}'
+    href='{{ .link | safeURL }}'
   >
 
-    {{- $text | title -}}{{- if $span -}} <span>{{ $span }}</span>{{- end -}}
+    {{- .text | title -}}{{- if .span -}} <span>{{ .span }}</span>{{- end -}}
 
   </a>
 
@@ -27,14 +28,14 @@
 
   <button
     name='send'
-    class='Btn --{{ $theme }}'
-    type='{{ $type }}'
-    {{ if $value }}
-      data-value='{{ $value }}'
+    class='Btn --{{ .theme }}'
+    type='{{ .type }}'
+    {{ if .value }}
+      data-value='{{ .value }}'
     {{ end }}
   >
 
-    {{- $text | title -}}
+    {{- .text | title -}}
 
   </button>
 

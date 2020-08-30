@@ -8,7 +8,6 @@ description: Flexr is a CSS Grid Micro Framework. Website designed and developed
 # Meta
 id: flexr
 class: sib
-lang: en
 
 # Hero
 one: Flexr Grid

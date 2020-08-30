@@ -8,7 +8,6 @@ description: Flexr es un micro estructura de CSS. Sitio web diseñado y desarrol
 # Meta
 id: flexr
 class: sib
-lang: es
 
 # Hero
 one: Flexr Grid

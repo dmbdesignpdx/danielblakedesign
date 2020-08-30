@@ -9,7 +9,6 @@ sitemap:
 ## Meta ##
 id: home-es
 class: home
-lang: es
 
 ## Content ##
 # Hero
