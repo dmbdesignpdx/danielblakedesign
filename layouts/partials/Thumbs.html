@@ -1,8 +1,9 @@
-{{/*
-  * Props
-  *
-  * title: string (Required)
- */}}
+<!--
+  title: string
+  link: string
+  rel: bool
+-->
+
 
 {{ $file := replace .title " " "" }}
 
@@ -33,7 +34,7 @@
     {{ $preview.Set "text" ( T "preview") }}
     {{ $preview.Set "link" $file }}
 
-    {{ partial "Btn" $preview }}
+    {{ partial "Btn" $preview.Values }}
 
 
     <!-- Visit -->
@@ -47,7 +48,7 @@
       {{ $visit.Set "link" .link }}
       {{ $visit.Set "rel" .rel }}
 
-      {{ partial "Btn" $visit }}
+      {{ partial "Btn" $visit.Values }}
 
     {{ end }}
 

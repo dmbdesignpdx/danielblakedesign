@@ -8,7 +8,6 @@ description: Turntable is a Sass library. Website designed and developed by Dani
 # Meta
 id: turntable
 class: sib
-lang: en
 
 # Hero
 one: Turntable

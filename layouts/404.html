@@ -2,7 +2,7 @@
 
 <!doctype html>
 
-<html lang='{{ .Language }}'>
+<html lang='{{ .Language.Lang }}'>
 
   <head>
 
@@ -14,10 +14,10 @@
 
     <meta name='description' content='{{ .description }}'>
 
-    {{ $cssOpts := dict "outputStyle" "compressed" }}
-    {{ $css := resources.Get "styles/pages/404.scss" | toCSS $cssOpts }}
+    {{ $css := dict "outputStyle" "compressed" }}
+    {{ $styles := resources.Get "styles/pages/404.scss" | toCSS $css }}
 
-    <style>{{ $css.Content | safeCSS }}</style>
+    <style>{{ $styles.Content | safeCSS }}</style>
 
   </head>
 

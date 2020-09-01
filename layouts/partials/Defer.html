@@ -7,27 +7,26 @@
 
 {{ if ne hugo.Environment "production" }}
 
-  {{ $cssOpts := dict "includePaths" ( slice "layouts/partials" ) }}
-  {{ $css := resources.Get "styles/main.scss" | toCSS }}
+  {{ $styles := resources.Get "styles/main.scss" | toCSS }}
   
-  {{ $jsOpts := dict "targetPath" "dist/main.js" "target" "es2017" }}
-  {{ $js := resources.Get "scripts/main.ts" | js.Build $jsOpts }}
+  {{ $js := newScratch }}
+  {{ $js.Set "targetPath" "dist/main.js" }}
+  {{ $js.Set "target" "es2017" }}
+
+  {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values }}
 
   <link
     rel="stylesheet"
-    href="{{ $css.RelPermalink }}"
+    href="{{ $styles.RelPermalink }}"
   >
 
-  <script src='{{ $js.RelPermalink }}'></script>
+  <script src='{{ $scripts.RelPermalink }}'></script>
 
 {{ end }}
 
 
 <!-- Structured Data (Schema) -->
 
-{{ $webpage := print .Site.BaseURL "#webpage" }}
-{{ $website := print .Site.BaseURL "#website" }}
-{{ $person := print .Site.BaseURL "#person" }}
 {{ $phone := print "+1" .Site.Author.phone }}
 {{ $phone = replace $phone "-" "" }}
 
@@ -36,19 +35,19 @@
   {
     "@context":"http://schema.org",
     "@type":"WebPage",
-    "@id":{{ $webpage }},
+    "@id":{{ print .Site.BaseURL "#webpage" }},
     "name":{{ .Title }},
     "description":{{ .Description }},
     "url":{{ .Permalink | absURL }},
     "isPartOf":{
       "@type":"WebSite",
-      "@id":{{ $website }},
+      "@id":{{ print .Site.BaseURL "#website" }},
       "name":{{ .Site.Title }},
       "url":{{ .Site.BaseURL }}
     },
     "publisher":{
       "@type":"Person",
-      "@id":{{ $person }},
+      "@id":{{ print .Site.BaseURL "#person" }},
       "name":{{ .Site.Author.name }},
       "description":{{ .Site.Author.title }},
       "address":{

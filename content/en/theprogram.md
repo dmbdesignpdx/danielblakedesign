@@ -8,7 +8,6 @@ description: The Program is a marketing agency. Project at The Program.
 # Meta
 id: theprogram
 class: sib
-lang: en
 
 # Hero
 one: The Program

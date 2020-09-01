@@ -1,16 +1,12 @@
 <!doctype html>
 
-<html lang='{{ .Params.lang }}'>
+<html lang='{{ .Language.Lang }}'>
 
-  <head>
-
-    {{ partial "Head" . }}
-
-  </head>
+  {{ partial "Head" . }}
 
   <body class='{{ .Params.class }}'>
 
-    {{ block "SITE" . }}{{ end }}
+    {{ block "PAGE" . }}{{ end }}
 
     {{ partial "Footer" . }}
 

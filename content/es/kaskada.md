@@ -8,7 +8,6 @@ description: Kaskada es un estudio de aprendizaje automático. Proyecto en The P
 # Meta
 id: kaskada
 class: sib
-lang: es
 
 # Hero
 one: Kaskada

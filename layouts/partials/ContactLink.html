@@ -1,12 +1,17 @@
-{{ $type := .Get "type" }}
-{{ $ctx := .Get "ctx" }}
+<!--
+  name: string
+  info:
+    link: string
+    text: string
+-->
 
-{{ with ( index $ctx.Site.Data.contact $type ) }}
+
+{{ with ( index .info .name ) }}
 
   <a 
     class='graphical'
     href='{{ .link | safeURL }}'
-    {{ if and ( ne $type "email" ) ( ne $type "phone" ) }}
+    {{ if and ( ne $.name "email" ) ( ne $.name "phone" ) }}
       target='_blank'
       rel='external noreferrer noopener nofollow'
     {{ end }}
@@ -14,10 +19,10 @@
 
     <svg
       role='img'
-      aria-label='{{ T $type }}'
+      aria-label='{{ T $.name }}'
     >
 
-      <use xlink:href='/img/icons.svg#{{ $type }}'/>
+      <use xlink:href='/img/icons.svg#{{ $.name }}'/>
 
     </svg>
 

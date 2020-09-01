@@ -10,7 +10,6 @@ sitemap:
 ## Meta ##
 id: home
 class: home
-lang: en
 
 ## Content ##
 # Hero

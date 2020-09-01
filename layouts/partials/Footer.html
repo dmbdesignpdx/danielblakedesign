@@ -1,6 +1,18 @@
-{{ $hugo := "<a href='https://gohugo.io/' target='_blank' rel='external noopener noreferrer'>Hugo</a>" }}
-{{ $github := "<a href='https://github.com' target='_blank' rel='external noopener noreferrer'>Github</a>" }}
-{{ $netlify := "<a href='https://www.netlify.com' target='_blank' rel='external noopener noreferrer'>Netlify</a>" }}
+<!--
+  Site:
+    Copyright: string
+    Data:
+      contact:
+        email:
+          link: string
+          text: string
+-->
+
+
+{{ $out := "target='_blank' rel='external noopener noreferrer nofollow'" }}
+{{ $hugo := printf "<a href='https://gohugo.io/' %s>Hugo</a>" $out }}
+{{ $github := printf "<a href='https://github.com' %s>Github</a>" $out }}
+{{ $netlify := printf "<a href='https://www.netlify.com' %s>Netlify</a>" $out }}
 {{ $links := slice $hugo $github $netlify }}
 
 
@@ -12,11 +24,15 @@
 
       {{ T "made" "&#x1F984;&#x1F308;" | safeHTML }}<br>
 
-      <a href='{{ .Site.Data.contact.email.link }}'>
+      {{- with .Site.Data.contact.email -}}
 
-        {{- .Site.Data.contact.email.text -}}
-      
-      </a>
+        <a href='{{ .link }}'>
+
+          {{- .text -}}
+        
+        </a>
+
+      {{- end -}}
 
     </address>
     

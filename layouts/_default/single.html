@@ -1,31 +1,21 @@
-{{ define "SITE" }}
-
-{{ $project := .Params.id }}
+{{ define "PAGE" }}
 
 
-  <!-- Hero -->
+  {{ $project := .Params.id }}
 
   {{ partial "Hero" . }}
 
-
-  <!-- Navigation -->
-
   {{ partial "Nav" . }}
-
-
-  <!-- Main Content -->
 
   <main flexr-wrap>
 
     <section>
 
+
       {{ range $num := seq 3 }}
 
         <picture>
 
-
-          <!-- Presentational image -->
-      
           <source
             type='image/webp'
             srcset='
@@ -62,29 +52,22 @@
 
       {{ .Content }}
 
+      {{ $visit := newScratch }}
+      {{ $visit.Set "type" "link" }}
+      {{ $visit.Set "theme" "primary" }}
+      {{ $visit.Set "link" .Params.link }}
+      {{ $visit.Set "rel" .Params.rel }}
+      {{ $visit.Set "text" ( T "visit" ) }}
 
-      <!-- Visit -->
+      {{ partial "Btn" $visit.Values }}
 
-      {{ if .Params.link }}
+      {{ $back := newScratch }}
+      {{ $back.Set "type" "link" }}
+      {{ $back.Set "theme" "secondary" }}
+      {{ $back.Set "link" ( "/#work" | relLangURL ) }}
+      {{ $back.Set "text" ( T "back" ) }}
 
-        {{ $visit := newScratch }}
-        {{ $visit.Set "type" "link" }}
-        {{ $visit.Set "theme" "primary" }}
-        {{ $visit.Set "link" .Params.link }}
-        {{ $visit.Set "rel" .Params.rel }}
-        {{ $visit.Set "text" ( T "visit" ) }}
-
-        {{ partial "Btn" $visit }}
-
-        {{ $back := newScratch }}
-        {{ $back.Set "type" "link" }}
-        {{ $back.Set "theme" "secondary" }}
-        {{ $back.Set "link" ( "/#work" | relLangURL ) }}
-        {{ $back.Set "text" ( T "back" ) }}
-
-        {{ partial "Btn" $back }}
-
-      {{ end }}
+      {{ partial "Btn" $back.Values }}
 
     </section>
 

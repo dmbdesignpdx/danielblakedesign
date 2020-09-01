@@ -18,161 +18,172 @@
 
 
 
-<!-- Initial -->
-
-<meta charset='utf-8'>
-
-<meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
-
-
-<!-- Resource Hints -->
-
-{{ if eq hugo.Environment "production" }}
-
-  <link rel='preload' as='font' href='/fonts/montserrat-900.woff2' type='font/woff2' crossorigin>
+<head>
   
-  <link rel='preload' as='font' href='/fonts/heebo-700.woff2' type='font/woff2' crossorigin>
+  <!-- Initial -->
   
-  <link rel='preload' as='font' href='/fonts/heebo-400.woff2' type='font/woff2' crossorigin>
-
-{{ end }}
-
-
-<!-- Critical Info -->
-
-<meta name="color-scheme" content="light dark">
-
-<meta name='theme-color' content='{{ .Site.Params.theme }}'>
-
-<title>{{ .Title }}</title>
-
-
-<!-- Critical Styles -->
-
-{{ $critOpts := dict "outputStyle" "compress" }}
-{{ $critical := resources.Get "/styles/critical.scss" | toCSS $critOpts }}
-
-<style>{{ $critical.Content | safeCSS }}</style>
-
-
-<!-- Main CSS & JS (Production) -->
-
-{{ if eq hugo.Environment "production" }}
-
-  {{ $cssOpts := dict "targetPath" "styles/main.min.css" }}
-  {{ $cssOpts = merge $cssOpts ( dict "outputStyle" "compressed" ) }}
-  {{ $css := resources.Get "styles/main.scss" | toCSS $cssOpts }}
-
-  {{ $jsOpts := dict "targetPath" "dist/main.min.js" }}
-  {{ $jsOpts = merge $jsOpts ( dict "minify" true ) }}
-  {{ $jsOpts = merge $jsOpts ( dict "target" "es2017" ) }}
-  {{ $js := resources.Get "scripts/main.ts" | js.Build $jsOpts | fingerprint }}
-
-  <link
-    rel="stylesheet"
-    href="{{ $css.RelPermalink }}"
-    media="print"
-    onload="this.media='all';this.onload=null"
-  >
-
-  <script
-    defer
-    src='{{ $js.RelPermalink }}'
-    integrity='{{ $js.Data.Integrity }}'
-    crossorigin='anonymous'
-  ></script>
-
-{{ end }}
-
-
-<!-- Languages -->
-
-{{ range .AllTranslations }}
-
-  {{ if eq .Language.Lang "en" }}
+  <meta charset='utf-8'>
+  
+  <meta name='viewport' content='width=device-width,initial-scale=1,viewport-fit=cover'>
+  
+  
+  <!-- Resource Hints -->
+  
+  {{ if eq hugo.Environment "production" }}
+  
+    <link rel='preload' as='font' href='/fonts/montserrat-900.woff2' type='font/woff2' crossorigin>
     
-    <link rel='alternate' hreflang='x-default' href='{{ .Permalink }}' >
+    <link rel='preload' as='font' href='/fonts/heebo-700.woff2' type='font/woff2' crossorigin>
+    
+    <link rel='preload' as='font' href='/fonts/heebo-400.woff2' type='font/woff2' crossorigin>
   
   {{ end }}
+  
+  
+  <!-- Critical Info -->
+  
+  <meta name="color-scheme" content="light dark">
+  
+  <meta name='theme-color' content='{{ .Site.Params.theme }}'>
+  
+  <title>{{ .Title }}</title>
+  
+  
+  <!-- Critical Styles -->
+  
+  {{ $critOpts := dict "outputStyle" "compress" }}
+  {{ $critical := resources.Get "/styles/critical.scss" | toCSS $critOpts }}
+  
+  <style>{{ $critical.Content | safeCSS }}</style>
+  
+  
+  <!-- Main CSS & JS (Production) -->
+  
+  {{ if eq hugo.Environment "production" }}
+  
+    {{ $css := newScratch }}
+    {{ $css.Set "targetPath" "styles/main.min.css" }}
+    {{ $css.Set "outputStyle" "compressed" }}
+    
+    {{ $styles := resources.Get "styles/main.scss" | toCSS $css.Values }}
+  
+    <link
+      rel="stylesheet"
+      href="{{ $styles.RelPermalink }}"
+      media="print"
+      onload="this.media='all';this.onload=null"
+    >
+  
+  
+    {{ $js := newScratch }}
+    {{ $js.Set "targetPath" "dist/main.min.js" }}
+    {{ $js.Set "target" "es2017" }}
+    {{ $js.Set "minify" true }}
+    
+    {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values | fingerprint }}
+  
+    <script
+      defer
+      src='{{ $scripts.RelPermalink }}'
+      integrity='{{ $scripts.Data.Integrity }}'
+      crossorigin='anonymous'
+    ></script>
+  
+  {{ end }}
+  
+  
+  <!-- Languages -->
+  
+  {{ range .AllTranslations }}
+  
+    {{ if eq .Language.Lang "en" }}
+      
+      <link rel='alternate' hreflang='x-default' href='{{ .Permalink }}' >
+    
+    {{ end }}
+  
+    <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
+  
+  {{ end }}
+  
+  
+  <!-- General -->
+  
+  <meta name='description' content='{{ .Description }}'>
+  
+  <meta name='author' content='{{ .Site.Author.name }}'>
+  
+  <link rel='canonical' href='{{ .Site.BaseURL }}'>
+  
+  <meta name='format-detection' content='telephone=no, email=no'>
+  
+  
+  <!-- Favicons -->
+  
+  <link rel='apple-touch-icon' href='/apple-touch-icon.png'>
+  
+  <link rel='icon' type='image/png' href='/img/favicon-192x192.png' sizes='192x192'>
+  
+  <link rel='icon' type='image/png' href='/img/favicon-96x96.png' sizes='96x96'>
+  
+  <link rel='icon' type='image/svg+xml' href='/img/favicon.svg'>
+  
+  <link rel='mask-icon' href='/img/pinned-tab.svg' color='{{ .Site.Params.theme }}'>
+  
+  
+  <!-- Manifest -->
+  
+  {{ $getManifest := resources.Get "static/manifest.json" }}
+  
+  {{ $manifest := $getManifest | resources.ExecuteAsTemplate "manifest.json" . }}
+  
+  <link rel='manifest' href='{{ $manifest.RelPermalink }}'>
+  
+  
+  <!-- Browserconfig -->
+  
+  {{ $getBrowser := resources.Get "static/browserconfig.xml" }}
+  
+  {{ $browser :=  $getBrowser | resources.ExecuteAsTemplate "browserconfig.xml" . }}
+  
+  <meta name='msapplication-config' content='{{ $browser.RelPermalink }}'>
+  
+  
+  <!-- Summary Cards -->
+  
+  <meta name='twitter:card' content='summary_large_image'>
+  
+  <meta name='twitter:title' content='{{ .Title }}'>
+  
+  <meta name='twitter:description' content='{{ .Description }}'>
+  
+  <meta name='twitter:image' content='{{ .Site.Params.image }}'>
+  
+  <meta name='twitter:image:alt' content='{{ .Description }}'>
+  
+  <meta name='twitter:url' content='{{ .Permalink }}'>
+  
+  <meta property='og:type' content='website'>
+  
+  <meta property='og:title' content='{{ .Title }}'>
+  
+  <meta property='og:site_name' content='{{ .Site.Title }}'>
+  
+  <meta property='og:description' content='{{ .Description }}'>
+  
+  <meta property='og:image' content='{{ .Site.Params.image }}'>
+  
+  <meta property='og:image:width' content='1200'>
+  
+  <meta property='og:image:height' content='628'>
+  
+  <meta property='og:image:type' content='{{ .Site.Params.type }}'>
+  
+  <meta property='og:url' content='{{ .Permalink }}'>
+  
+  
+  <!-- Generator -->
+  
+  {{ hugo.Generator }}
 
-  <link rel='alternate' hreflang='{{ .Language.Lang }}' href='{{ .Permalink }}' title='{{ .Language.LanguageName }}'>
-
-{{ end }}
-
-
-<!-- General -->
-
-<meta name='description' content='{{ .Description }}'>
-
-<meta name='author' content='{{ .Site.Author.name }}'>
-
-<link rel='canonical' href='{{ .Site.BaseURL }}'>
-
-<meta name='format-detection' content='telephone=no, email=no'>
-
-
-<!-- Favicons -->
-
-<link rel='apple-touch-icon' href='/apple-touch-icon.png'>
-
-<link rel='icon' type='image/png' href='/img/favicon-192x192.png' sizes='192x192'>
-
-<link rel='icon' type='image/png' href='/img/favicon-96x96.png' sizes='96x96'>
-
-<link rel='icon' type='image/svg+xml' href='/img/favicon.svg'>
-
-<link rel='mask-icon' href='/img/pinned-tab.svg' color='{{ .Site.Params.theme }}'>
-
-
-<!-- Manifest -->
-
-{{ $getManifest := resources.Get "static/manifest.json" }}
-{{ $manifest := $getManifest | resources.ExecuteAsTemplate "manifest.json" . }}
-
-<link rel='manifest' href='{{ $manifest.RelPermalink }}'>
-
-
-<!-- Browserconfig -->
-
-{{ $getBrowser := resources.Get "static/browserconfig.xml" }}
-{{ $browser :=  $getBrowser | resources.ExecuteAsTemplate "browserconfig.xml" . }}
-
-<meta name='msapplication-config' content='{{ $browser.RelPermalink }}'>
-
-
-<!-- Summary Cards -->
-
-<meta name='twitter:card' content='summary_large_image'>
-
-<meta name='twitter:title' content='{{ .Title }}'>
-
-<meta name='twitter:description' content='{{ .Description }}'>
-
-<meta name='twitter:image' content='{{ .Site.Params.image }}'>
-
-<meta name='twitter:image:alt' content='{{ .Description }}'>
-
-<meta name='twitter:url' content='{{ .Permalink }}'>
-
-<meta property='og:type' content='website'>
-
-<meta property='og:title' content='{{ .Title }}'>
-
-<meta property='og:site_name' content='{{ .Site.Title }}'>
-
-<meta property='og:description' content='{{ .Description }}'>
-
-<meta property='og:image' content='{{ .Site.Params.image }}'>
-
-<meta property='og:image:width' content='1200'>
-
-<meta property='og:image:height' content='628'>
-
-<meta property='og:image:type' content='{{ .Site.Params.type }}'>
-
-<meta property='og:url' content='{{ .Permalink }}'>
-
-
-<!-- Generator -->
-
-{{ hugo.Generator }}
+</head>

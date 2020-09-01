@@ -8,7 +8,6 @@ description: Kaskada is a machine learning studio. Project at The Program.
 # Meta
 id: kaskada
 class: sib
-lang: en
 
 # Hero
 one: Kaskada
