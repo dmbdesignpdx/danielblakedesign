@@ -75,8 +75,8 @@
 
 :root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --bkg: #{brand(_almostwhite)};
-  --frg: #{brand(_darkgray)};
+  --bkg:#{brand(_almostwhite)};
+  --frg:#{brand(_darkgray)};
 }
 
 body {
@@ -493,8 +493,8 @@ p {
 @media (prefers-color-scheme:dark) {
 
   :root {
-    --frg: #{brand(_almostwhite)};
-    --bkg: #{brand(_nearblack)};
+    --frg:#{brand(_almostwhite)};
+    --bkg:#{brand(_nearblack)};
   }
 
 }

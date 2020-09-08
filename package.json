@@ -8,8 +8,8 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "start": "hugo server -p 3000",
-    "build": "hugo -e production --minify",
+    "start": "hugo serve -p 3000",
+    "build": "hugo --minify",
     "lint": "eslint assets/scripts/**/*.ts",
     "size": "bundlesize",
     "clean": "rm -rf public resources",

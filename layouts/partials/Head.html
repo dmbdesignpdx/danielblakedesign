@@ -1,6 +1,7 @@
 <!-- 
    Contents:
 
+   - Variables
    - Initial
    - Resource Hints
    - HTTP Headers
@@ -18,6 +19,38 @@
 
 
 
+ <!-- Variables -->
+
+{{ $crit := dict "outputStyle" "compress" }}
+{{ $critical := resources.Get "/styles/critical.scss" | toCSS $crit }}
+
+{{ $json := resources.Get "static/manifest.json" }}
+{{ $manifest := $json | resources.ExecuteAsTemplate "manifest.json" . }}
+
+{{ $xml := resources.Get "static/browserconfig.xml" }}  
+{{ $browser := $xml | resources.ExecuteAsTemplate "browserconfig.xml" . }}
+
+{{ $prod := false }}
+
+
+{{ if hugo.IsProduction }}
+
+  {{ $css := newScratch }}
+  {{ $css.Set "targetPath" "styles/main.min.css" }}
+  {{ $css.Set "outputStyle" "compressed" }}
+  {{ $styles := resources.Get "styles/main.scss" | toCSS $css.Values }}
+  
+  {{ $js := newScratch }}
+  {{ $js.Set "targetPath" "dist/main.min.js" }}
+  {{ $js.Set "target" "es2017" }}
+  {{ $js.Set "minify" true }}
+  {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values }}
+
+  {{ $prod = dict "styles" $styles "scripts" $scripts }}
+
+{{ end }}
+
+
 <head>
   
   <!-- Initial -->
@@ -29,7 +62,7 @@
   
   <!-- Resource Hints -->
   
-  {{ if eq hugo.Environment "production" }}
+  {{ if hugo.IsProduction }}
   
     <link rel='preload' as='font' href='/fonts/montserrat-900.woff2' type='font/woff2' crossorigin>
     
@@ -51,42 +84,23 @@
   
   <!-- Critical Styles -->
   
-  {{ $critOpts := dict "outputStyle" "compress" }}
-  {{ $critical := resources.Get "/styles/critical.scss" | toCSS $critOpts }}
-  
   <style>{{ $critical.Content | safeCSS }}</style>
   
   
   <!-- Main CSS & JS (Production) -->
   
-  {{ if eq hugo.Environment "production" }}
-  
-    {{ $css := newScratch }}
-    {{ $css.Set "targetPath" "styles/main.min.css" }}
-    {{ $css.Set "outputStyle" "compressed" }}
-    
-    {{ $styles := resources.Get "styles/main.scss" | toCSS $css.Values }}
+  {{ if hugo.IsProduction }}
   
     <link
       rel="stylesheet"
-      href="{{ $styles.RelPermalink }}"
+      href="{{ $prod.styles.RelPermalink }}"
       media="print"
       onload="this.media='all';this.onload=null"
     >
   
-  
-    {{ $js := newScratch }}
-    {{ $js.Set "targetPath" "dist/main.min.js" }}
-    {{ $js.Set "target" "es2017" }}
-    {{ $js.Set "minify" true }}
-    
-    {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values | fingerprint }}
-  
     <script
       defer
-      src='{{ $scripts.RelPermalink }}'
-      integrity='{{ $scripts.Data.Integrity }}'
-      crossorigin='anonymous'
+      src='{{ $prod.scripts.RelPermalink }}'
     ></script>
   
   {{ end }}
@@ -130,21 +144,7 @@
   
   <link rel='mask-icon' href='/img/pinned-tab.svg' color='{{ .Site.Params.theme }}'>
   
-  
-  <!-- Manifest -->
-  
-  {{ $getManifest := resources.Get "static/manifest.json" }}
-  
-  {{ $manifest := $getManifest | resources.ExecuteAsTemplate "manifest.json" . }}
-  
   <link rel='manifest' href='{{ $manifest.RelPermalink }}'>
-  
-  
-  <!-- Browserconfig -->
-  
-  {{ $getBrowser := resources.Get "static/browserconfig.xml" }}
-  
-  {{ $browser :=  $getBrowser | resources.ExecuteAsTemplate "browserconfig.xml" . }}
   
   <meta name='msapplication-config' content='{{ $browser.RelPermalink }}'>
   

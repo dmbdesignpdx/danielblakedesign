@@ -1,5 +1,5 @@
 {
   "hooks": {
-    "pre-commit": "pnpm size && pnpm lint"
+    "pre-push": "npm run size && npm run lint"
   }
 }
