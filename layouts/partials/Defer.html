@@ -1,35 +1,43 @@
+{{ $phone := print "+1" .Site.Author.phone }}
+{{ $phone = replace $phone "-" "" }}
+  
+{{ $dev := false }}
+
+
+{{ if ne hugo.IsProduction }}
+
+  {{ $js := newScratch }}
+  {{ $js.Set "targetPath" "dist/main.js" }}
+  {{ $js.Set "target" "es2017" }}
+  {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values }}
+  
+  {{ $styles := resources.Get "styles/main.scss" | toCSS }}
+
+  {{ $dev = dict "styles" $styles "scripts" $scripts }}
+
+{{ end }}
+
+
 <!-- Animate Hero Text -->
 
-<script>!function(){function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(function(e){e.classList.add('__underline')})}'fonts'in document?document.fonts.ready.then(e):addEventListener('DOMContentLoaded',e,{once:true})}()</script>
+<script>(()=>{function e(){var e=document.querySelectorAll('h1 span');document.querySelector('body > header').classList.remove('__intro'),e.forEach(e=>{e.classList.add('__underline')})}document.fonts.ready.then(e)})()</script>
 
 
 <!-- Main CSS & JS (Dev) -->
 
-{{ if ne hugo.Environment "production" }}
-
-  {{ $styles := resources.Get "styles/main.scss" | toCSS }}
-  
-  {{ $js := newScratch }}
-  {{ $js.Set "targetPath" "dist/main.js" }}
-  {{ $js.Set "target" "es2017" }}
-
-  {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values }}
+{{ if ne hugo.IsProduction }}
 
   <link
     rel="stylesheet"
-    href="{{ $styles.RelPermalink }}"
+    href="{{ $dev.styles.RelPermalink }}"
   >
 
-  <script src='{{ $scripts.RelPermalink }}'></script>
+  <script src='{{ $dev.scripts.RelPermalink }}'></script>
 
 {{ end }}
 
 
 <!-- Structured Data (Schema) -->
-
-{{ $phone := print "+1" .Site.Author.phone }}
-{{ $phone = replace $phone "-" "" }}
-
 
 <script type='application/ld+json'>
   {

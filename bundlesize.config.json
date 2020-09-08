@@ -1,7 +1,7 @@
 {
   "files": [
     {
-      "path": "./public/dist/main.min.*.js",
+      "path": "./public/dist/main.min.js",
       "maxSize": "14 kB"
     },
     {

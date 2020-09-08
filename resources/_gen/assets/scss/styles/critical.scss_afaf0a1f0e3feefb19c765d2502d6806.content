@@ -41,8 +41,8 @@
 
 :root {
   font: 400 1.1em Heebo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-  --bkg: #FEFEFF;
-  --frg: #333040; }
+  --bkg:#FEFEFF;
+  --frg:#333040; }
 
 body {
   color: var(--frg);
@@ -299,5 +299,5 @@ p {
  */
 @media (prefers-color-scheme: dark) {
   :root {
-    --frg: #FEFEFF;
-    --bkg: #17161d; } }
+    --frg:#FEFEFF;
+    --bkg:#17161d; } }
