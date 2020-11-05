@@ -57,7 +57,7 @@
 
 ## Footer ##
 - id: made
-  translation: Made with {{ .Count }} by Daniel Blake.
+  translation: Made with {{ . }} by Daniel Blake.
 - id: built
   translation: Built with {{ index . 0 }}, sourced on {{ index . 1 }}, and hosted on&nbsp;{{ index . 2 }}.
 

@@ -3,18 +3,18 @@
 -->
 
 
-<label class="graphical">
+<label class='graphical'>
 
-  <span id="l" aria-hidden="true">{{ T "select" }}</span>
+  <span id='l' aria-hidden='true'>{{ T "select" }}</span>
   
-  <select id='lang' aria-labelledby="l">
+  <select id='lang' aria-labelledby='l'>
 
     {{ range .AllTranslations }}
 
       <option
         lang='{{ .Language.Lang }}'
         value='{{ .Permalink }}'
-        aria-label="{{ .Language.LanguageName }}"
+        aria-label='{{ .Language.LanguageName }}'
         {{ if eq .Language.Lang $.Site.Language.Lang }}
           selected
         {{ end }}
