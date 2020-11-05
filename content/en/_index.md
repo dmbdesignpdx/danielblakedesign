@@ -82,4 +82,4 @@ skills:
 # Main Site Content Below (in About Section)
 ---
 
-I am a front end developer with a graphic design background living in Portland, OR and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a>. I've always been inspired by and excited about digital visual design and front end development &mdash; both have been my passion for the past ten years. Websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself. 🤘
+I am a front end developer with a graphic design background living in Portland, OR and working as a <i>Web&nbsp;Developer</i> at <a href='https://theprogrampdx.com' rel='external noreferrer noopener' target='_blank'>The Program</a>. I've always been inspired by and been excited about digital visual design, web development, and user interaction. Being able to craft front end experiences has been my passion for the past ten years. I believe in a user-centric approach to development because websites should be usable, accessible, and, most importantly, enjoyable. That is the bar I set for&nbsp;myself. 🤘
