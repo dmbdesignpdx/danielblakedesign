@@ -11,8 +11,8 @@
     "node": ">=15"
   },
   "scripts": {
-    "start": "hugo server -p 3000",
-    "build": "rm -rf resources && hugo --minify --ignoreCache --gc",
+    "start": "hugo server -p 3000 --gc",
+    "build": "hugo --minify --gc",
     "lint": "eslint assets/scripts/**/*.ts",
     "size": "bundlesize",
     "clean": "rm -rf public resources",

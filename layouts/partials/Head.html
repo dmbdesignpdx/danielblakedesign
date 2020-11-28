@@ -21,7 +21,34 @@
 
  <!-- Variables -->
 
+{{ $crit := dict "outputStyle" "compress" }}
+{{ $critical := resources.Get "/styles/critical.scss" | toCSS $crit }}
 
+{{ $json := resources.Get "static/manifest.json" }}
+{{ $manifest := $json | resources.ExecuteAsTemplate "manifest.json" . }}
+
+{{ $xml := resources.Get "static/browserconfig.xml" }}  
+{{ $browser := $xml | resources.ExecuteAsTemplate "browserconfig.xml" . }}
+
+{{ $prod := false }}
+
+
+{{ if hugo.IsProduction }}
+
+  {{ $css := newScratch }}
+  {{ $css.Set "targetPath" "styles/main.min.css" }}
+  {{ $css.Set "outputStyle" "compressed" }}
+  {{ $styles := resources.Get "styles/main.scss" | toCSS $css.Values }}
+  
+  {{ $js := newScratch }}
+  {{ $js.Set "targetPath" "dist/main.min.js" }}
+  {{ $js.Set "target" "es2017" }}
+  {{ $js.Set "minify" true }}
+  {{ $scripts := resources.Get "scripts/main.ts" | js.Build $js.Values }}
+
+  {{ $prod = dict "styles" $styles "scripts" $scripts }}
+
+{{ end }}
 
 
 <head>
@@ -57,11 +84,26 @@
   
   <!-- Critical Styles -->
   
+  <style>{{ $critical.Content | safeCSS }}</style>
   
   
   <!-- Main CSS & JS (Production) -->
   
-
+  {{ if hugo.IsProduction }}
+  
+    <link
+      rel='stylesheet'
+      href='{{ $prod.styles.RelPermalink }}'
+      media='print'
+      onload='this.media="all";this.onload=null'
+    >
+  
+    <script
+      defer
+      src='{{ $prod.scripts.RelPermalink }}'
+    ></script>
+  
+  {{ end }}
   
   
   <!-- Languages -->
@@ -101,7 +143,10 @@
   <link rel='icon' type='image/svg+xml' href='/img/favicon.svg'>
   
   <link rel='mask-icon' href='/img/pinned-tab.svg' color='{{ .Site.Params.theme }}'>
-
+  
+  <link rel='manifest' href='{{ $manifest.RelPermalink }}'>
+  
+  <meta name='msapplication-config' content='{{ $browser.RelPermalink }}'>
   
   
   <!-- Summary Cards -->
