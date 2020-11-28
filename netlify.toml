@@ -4,8 +4,8 @@ publish = "public/"
 command = "npm run build"
 
 [build.environment]
-NODE_VERSION = "15.1.0"
-HUGO_VERSION = "0.78.1"
+NODE_VERSION = "15.3.0"
+HUGO_VERSION = "0.79.0"
 NODE_ENV = "production"
 
 
