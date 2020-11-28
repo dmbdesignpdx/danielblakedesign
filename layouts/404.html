@@ -14,10 +14,6 @@
 
     <meta name='description' content='{{ .description }}'>
 
-    {{ $css := dict "outputStyle" "compressed" }}
-    {{ $styles := resources.Get "styles/pages/404.scss" | toCSS $css }}
-
-    <style>{{ $styles.Content | safeCSS }}</style>
 
   </head>
 
