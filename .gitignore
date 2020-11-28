@@ -1,1 +1,8 @@
+*.log
+*.css.map
+.DS_Store
+.cache/
+Thumbs.db
+node_modules/
 public/
+resources/
