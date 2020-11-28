@@ -35,7 +35,7 @@ pnpm start
 # or
 yarn start
 # or
-npm run start
+npm start
 ```
 
 Available on **localhost:3000**
