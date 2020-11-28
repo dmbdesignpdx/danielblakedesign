@@ -1,4 +1,4 @@
-@import "../base/Vars";
+@import "../base/Vars", "../base/Mixins";
 
 @function ts($arg) {
   @return unquote("rgba(0,0,30,#{$arg})");
@@ -20,30 +20,26 @@ html {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body,
 h1 {
-  margin: 0;
+  @include m;
 }
 
 main {
+  @include wh(100vw 100vh);
   display: flex;
-  width: 100vw;
-  height: 100vh;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 h1 {
+  @include r(.02em);
   position: relative;
-  right: 0.02em;
-  font-size: 8rem;
   font-size: 30vw;
   color: brand(_nearblack);
   line-height: 1;
@@ -76,27 +72,27 @@ div {
 }
 
 p {
+  @include m(1.6em 0 2em 0);
   color: brand(_gray);
-  margin: 1.6em 0 2em 0;
 }
 
 a {
+  @include h(50px);
+  @include p(0 1.5em);
+  @include m-bottom(1em);
   display: inline-block;
-  text-decoration: none;
-  margin-bottom: 1em;
-  height: 50px;
-  padding: 0 1.5em;
+  font-size: 0.9em;
   font-weight: bold;
   line-height: 50px;
   letter-spacing: 0.02em;
+  text-decoration: none;
   text-align: center;
-  font-size: 0.9em;
-  border-radius: 3px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  box-shadow: 0 1px 2px ts(0.35);
-  background: brand();
   color: lighten(brand(_offwhite),2);
+  border-radius: 3px;
+  background: brand();
+  box-shadow: 0 1px 2px ts(0.35);
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
   
   @supports (-moz-binding:none) {
     line-height: 52px;
@@ -110,8 +106,8 @@ a {
 
 a:focus,
 a:hover {
-  box-shadow: 0 2px 5px ts(0.35);
   background: lighten(brand(), 5);
+  box-shadow: 0 2px 5px ts(0.35);
 }
 
 a:active {

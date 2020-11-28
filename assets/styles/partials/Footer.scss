@@ -1,7 +1,7 @@
 .Footer {
   @extend %content;
-  padding-top: 60px;
-  padding-bottom: 90px;
+  @include p-top(60px);
+  @include p-bottom(90px);
   background: brand(_nearblack);
 
   @include theme(dark) {
@@ -39,7 +39,7 @@
   }
   
   aside {
-    margin-top: 30px;
+    @include m-top(30px);
     
     @include phoneLan {
       grid-row: 2 / 2;
@@ -47,10 +47,10 @@
   }
   
   & div > p {
-    margin-top: 30px;
+    @include m-top(30px);
     
     @include phoneLan {
-      margin-top: 0;
+      @include m-top;
       grid-column: 5 / span 3;
       grid-row: 1 / 2;		
     }

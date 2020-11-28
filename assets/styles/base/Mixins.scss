@@ -70,6 +70,38 @@ $gutter: (
   }
 }
 
+@mixin break($arg:small) {
+  $size: 1024px;
+  
+  // Tablet Portrait
+  @if ($arg == tablet) {
+    $size: 768px;
+  }
+ 
+  // small: tablet portrait / small desktop
+ 
+  // Standard Desktop
+  @if ($arg == desktop) {
+    $size: 1280px;
+  }
+  
+  // Large Desktop
+  @if ($arg == large) {
+    $size: 1680px;
+  }
+
+  @if ($arg != iphone) {
+    @media (min-width:#{$size}) {
+      @content;
+    }
+  } @else {
+    // Yay, Apple
+    @media (min-width:810px) and (max-height:416px) {
+      @content;
+    }
+  }
+}
+
 
 /**
  * Theme
@@ -79,4 +111,137 @@ $gutter: (
   @media (prefers-color-scheme:$arg) {
     @content;
   }
+}
+
+
+/*
+ * Logical Properties
+ */
+
+// Sizing //
+
+@mixin w($arg:auto) {
+  inline-size: $arg;
+}
+
+@mixin h($arg:auto) {
+  block-size: $arg;
+}
+
+@mixin max-w($arg:0) {
+  max-inline-size: $arg;
+}
+
+@mixin max-h($arg:0) {
+  max-block-size: $arg;
+}
+
+@mixin wh($arg:auto) {
+  @if length($arg) > 1 {
+    inline-size: nth($arg, 1);
+    block-size: nth($arg, 2);
+  } @else {
+    inline-size: $arg;
+    block-size: $arg;
+  }
+}
+
+// Padding //
+
+@mixin p($arg:0) {
+  @if length($arg) > 3 {
+    padding-block-start: nth($arg,1);
+    padding-inline-end: nth($arg,2);
+    padding-block-end: nth($arg,3);
+    padding-inline-start: nth($arg,4);
+  } @else if length($arg) > 2 {
+    padding-block-start: nth($arg,1);
+    padding-inline-end: nth($arg,2);
+    padding-block-end: nth($arg,3);
+    padding-inline-start: nth($arg,2);
+  } @else if length($arg) > 1 {
+    padding-block-start: nth($arg,1);
+    padding-inline-end: nth($arg,2);
+    padding-block-end: nth($arg,1);
+    padding-inline-start: nth($arg,2);
+  } @else {
+     padding: $arg;
+  }
+}
+
+@mixin p-top($arg:0) {
+  padding-block-start: $arg;
+}
+
+@mixin p-left($arg:0) {
+  padding-inline-start: $arg;
+}
+
+@mixin p-bottom($arg:0) {
+  padding-block-end: $arg;
+}
+
+@mixin p-right($arg:0) {
+  padding-inline-end: $arg;
+}
+
+// Margin //
+
+@mixin m($arg:0) {
+  @if length($arg) > 3 {
+    margin-block-start: nth($arg,1);
+    margin-inline-end: nth($arg,2);
+    margin-block-end: nth($arg,3);
+    margin-inline-start: nth($arg,4);
+  } @else if length($arg) > 2 {
+    margin-block-start: nth($arg,1);
+    margin-inline-end: nth($arg,2);
+    margin-block-end: nth($arg,3);
+    margin-inline-start: nth($arg,2);
+  } @else if length($arg) > 1 {
+    margin-block-start: nth($arg,1);
+    margin-inline-end: nth($arg,2);
+    margin-block-end: nth($arg,1);
+    margin-inline-start: nth($arg,2);
+  } @else {
+     margin: $arg;
+  }
+}
+
+@mixin m-top($arg:0) {
+  margin-block-start: $arg;
+}
+
+@mixin m-left($arg:0) {
+  margin-inline-start: $arg;
+}
+
+@mixin m-bottom($arg:0) {
+  margin-block-end: $arg;
+}
+
+@mixin m-right($arg:0) {
+  margin-inline-end: $arg;
+}
+
+// Position //
+
+@mixin t($arg:0) {
+  top: $arg;
+  inset-block-start: $arg;
+}
+
+@mixin l($arg:0) {
+  left: $arg;
+  inset-inline-start: $arg;
+}
+
+@mixin b($arg:0) {
+  bottom: $arg;
+  inset-block-end: $arg;
+}
+
+@mixin r($arg:0) {
+  right: $arg;
+  inset-inline-end: $arg;
 }

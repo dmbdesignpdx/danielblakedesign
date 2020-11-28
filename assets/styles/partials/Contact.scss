@@ -1,18 +1,18 @@
 .Contact {
   @extend %content;
-  padding-top: 120px;
-  margin-top: 60px;
+  @include p-top(120px);
+  @include m-top(60px);
   
   h2 {
-    margin-bottom: 1.5em;
+    @include m-bottom(1.5em);
     justify-self: start;
   }
   
   address {
     @extend %flex;
+    @include m-bottom(60px);
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 60px;
+    align-items: start;
     
     @include phoneLan {
       grid-column: 1 / span 3;
@@ -22,8 +22,8 @@
   // Links
   a {
     @include display(inline-flex);
-    @include align-items(center);
-    margin-bottom: 1em;
+    @include m-bottom(1em);
+    align-items: center;
     color: brand(_darkgray);
 
     @include theme(dark) {
@@ -49,8 +49,8 @@
   
   // Icons
   svg {
-    @include size(2em);
-    margin: auto 0.7em auto 0;
+    @include wh(2em);
+    @include m(auto 0.7em auto 0);
     stroke: brand(_darkgray);
     stroke-width: 2.6;
     fill: none;

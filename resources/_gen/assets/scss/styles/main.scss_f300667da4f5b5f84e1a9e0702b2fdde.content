@@ -39,6 +39,9 @@ h5::after {
 /**
  * Theme
  */
+/*
+ * Logical Properties
+ */
 [flexr-grid] {
   display: grid;
   padding: 0 18px;
@@ -81,9 +84,6 @@ h2,
 h3,
 h4,
 h5,
-form,
-label,
-textarea,
 button {
   padding: 0;
   margin: 0;
@@ -212,13 +212,16 @@ p a:focus {
 #nav.__fixed {
   box-shadow: 0 1px 3px rgba(0,0,30,0.3);
   position: fixed;
-  top: -59px; }
+  top: -59px;
+  inset-block-start: -59px; }
   @media (min-width: 766px) {
     #nav.__fixed {
-      top: -93px; } }
+      top: -93px;
+      inset-block-start: -93px; } }
   @media (min-width: 1680px) {
     #nav.__fixed {
-      top: -153px; } }
+      top: -153px;
+      inset-block-start: -153px; } }
 #lang:focus {
   box-shadow: 0 2px 5px rgba(0,0,30,0.2); }
 
@@ -233,22 +236,22 @@ p a:focus {
     opacity: 0; }
 
 #work {
-  padding-top: 120px;
-  margin-top: 60px; }
+  padding-block-start: 120px;
+  margin-block-start: 60px; }
   #work h2 {
-    width: auto;
-    margin-bottom: 1em; }
+    inline-size: auto;
+    margin-block-end: 1em; }
     @media (min-width: 1278px) {
       #work h2 {
-        margin-left: 8%; } }
+        margin-inline-start: 8%; } }
     @media (min-width: 1680px) {
       #work h2 {
-        margin-left: calc((100% - 1436px) / 2); } }
+        margin-inline-start: calc((100% - 1436px) / 2); } }
   #work .Thumb {
-    margin-bottom: 60px; }
+    margin-block-end: 60px; }
 
 #codepen {
-  margin-top: 120px;
+  margin-block-start: 120px;
   text-align: center; }
   #codepen svg {
     width: 100px;
@@ -263,16 +266,22 @@ p a:focus {
       #codepen svg {
         stroke: #f1f1f4; } }
   #codepen p {
-    max-width: 600px;
-    margin: 0.8em auto 0; }
+    max-inline-size: 600px;
+    margin-block-start: 0.8em;
+    margin-inline-end: auto;
+    margin-block-end: 0;
+    margin-inline-start: auto; }
   #codepen h4 {
     font-size: 1.3rem; }
   #codepen .Btn {
-    margin: 1em auto; }
+    margin-block-start: 1em;
+    margin-inline-end: auto;
+    margin-block-end: 1em;
+    margin-inline-start: auto; }
 
 .About {
-  padding-top: 120px;
-  margin-top: 60px; }
+  padding-block-start: 120px;
+  margin-block-start: 60px; }
   .About li {
     color: #5a5671; }
     @media (prefers-color-scheme: dark) {
@@ -290,7 +299,7 @@ p a:focus {
         grid-column: span 2;
         grid-row: 1; } }
   .About p {
-    margin-top: 2em; }
+    margin-block-start: 2em; }
     @media (min-width: 766px) {
       .About p {
         grid-column: span 6;
@@ -299,16 +308,16 @@ p a:focus {
       .About p {
         grid-column: span 4; } }
   .About section {
-    margin-top: 30px; }
+    margin-block-start: 30px; }
     .About section:first-of-type {
-      margin-top: 120px; }
+      margin-block-start: 120px; }
     @media (min-width: 540px) {
       .About section {
-        margin-top: 120px;
+        margin-block-start: 120px;
         grid-column: span 2;
         grid-row: 3; } }
   .About h3 {
-    margin-bottom: 0.8em;
+    margin-block-end: 0.8em;
     font-size: 1.3rem; }
   .About svg {
     width: 100px;
@@ -322,7 +331,7 @@ p a:focus {
       .About svg {
         stroke: #f1f1f4; } }
   .About li {
-    margin-bottom: 0.6em;
+    margin-block-end: 0.6em;
     font-size: 0.9rem;
     line-height: 1.4; }
 
@@ -333,22 +342,22 @@ p a:focus {
   color: #ae29ae; }
 
 .Contact {
-  padding-top: 120px;
-  margin-top: 60px; }
+  padding-block-start: 120px;
+  margin-block-start: 60px; }
   .Contact h2 {
-    margin-bottom: 1.5em;
+    margin-block-end: 1.5em;
     justify-self: start; }
   .Contact address {
+    margin-block-end: 60px;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 60px; }
+    align-items: start; }
     @media (min-width: 540px) {
       .Contact address {
         grid-column: 1 / span 3; } }
   .Contact a {
     display: inline-flex;
+    margin-block-end: 1em;
     align-items: center;
-    margin-bottom: 1em;
     color: #333040; }
     @media (prefers-color-scheme: dark) {
       .Contact a {
@@ -360,9 +369,12 @@ p a:focus {
       transform: scale(0.96);
       transform-origin: 0 50%; }
   .Contact svg {
-    width: 2em;
-    height: 2em;
-    margin: auto 0.7em auto 0;
+    inline-size: 2em;
+    block-size: 2em;
+    margin-block-start: auto;
+    margin-inline-end: 0.7em;
+    margin-block-end: auto;
+    margin-inline-start: 0;
     stroke: #333040;
     stroke-width: 2.6;
     fill: none; }
@@ -385,16 +397,17 @@ p a:focus {
     border-radius: 4px;
     border: 1px solid #DDD; }
     .Thumb picture::before {
-      padding-top: 62.5%;
+      padding-block-start: 62.5%;
       content: ''; }
     .Thumb picture img {
-      top: 0; }
+      top: 0;
+      inset-block-start: 0; }
     @media (prefers-color-scheme: dark) {
       .Thumb picture {
         border-color: #333040; } }
     @media (min-width: 540px) {
       .Thumb picture {
-        margin-bottom: 0;
+        margin-block-end: 0;
         grid-column: span 4;
         grid-row: 1 / 3; } }
   @media (min-width: 540px) {
@@ -431,8 +444,8 @@ p a:focus {
     .Thumb:nth-of-type(even) .cta {
       justify-self: end; } }
 .Footer {
-  padding-top: 60px;
-  padding-bottom: 90px;
+  padding-block-start: 60px;
+  padding-block-end: 90px;
   background: #17161d; }
   @media (prefers-color-scheme: dark) {
     .Footer {
@@ -457,15 +470,15 @@ p a:focus {
       .Footer address {
         grid-row: 1 / 1; } }
   .Footer aside {
-    margin-top: 30px; }
+    margin-block-start: 30px; }
     @media (min-width: 540px) {
       .Footer aside {
         grid-row: 2 / 2; } }
   .Footer div > p {
-    margin-top: 30px; }
+    margin-block-start: 30px; }
     @media (min-width: 540px) {
       .Footer div > p {
-        margin-top: 0;
+        margin-block-start: 0;
         grid-column: 5 / span 3;
         grid-row: 1 / 2; } }
   .Footer a {
@@ -474,8 +487,11 @@ p a:focus {
       text-decoration: underline; }
 
 .Btn {
+  padding-block-start: 0.6em;
+  padding-inline-end: 1.5em;
+  padding-block-end: 0.6em;
+  padding-inline-start: 1.5em;
   display: inline-block;
-  padding: 0.6em 1.5em;
   font-weight: 700;
   letter-spacing: 0.02em;
   text-align: center;
@@ -483,14 +499,14 @@ p a:focus {
   border-radius: 3px; }
   @supports (-webkit-marquee: revert) {
     .Btn {
-      padding-bottom: 0.7em; } }
+      padding-block-end: 0.7em; } }
   .Btn.--primary {
-    box-shadow: 0 1px 2px rgba(0,0,30,0.35);
+    color: #FEFEFF;
     background: #dd2c53;
-    color: #FEFEFF; }
+    box-shadow: 0 1px 2px rgba(0,0,30,0.35); }
     .Btn.--primary:focus {
-      box-shadow: 0 2px 5px rgba(0,0,30,0.35);
-      background: #e14265; }
+      background: #e14265;
+      box-shadow: 0 2px 5px rgba(0,0,30,0.35); }
     .Btn.--primary:active {
       box-shadow: 0 1px 1px rgba(0,0,30,0.35);
       transform: scale(0.96); }
@@ -499,10 +515,10 @@ p a:focus {
       pointer-events: none; }
     @media (min-width: 1278px) {
       .Btn.--primary:hover {
-        box-shadow: 0 2px 5px rgba(0,0,30,0.35);
-        background: #e03e61; } }
+        background: #e03e61;
+        box-shadow: 0 2px 5px rgba(0,0,30,0.35); } }
   .Btn.--secondary {
-    margin-left: 1em;
+    margin-inline-start: 1em;
     background: #f1f1f4;
     box-shadow: 0 1px 2px rgba(0,0,30,0.2); }
     @media (prefers-color-scheme: dark) {
@@ -519,7 +535,7 @@ p a:focus {
         background: #f4f4f6;
         box-shadow: 0 2px 5px rgba(0,0,30,0.2); } }
 .sib h1 {
-  width: auto; }
+  inline-size: auto; }
   .sib h1 span:first-child::after {
     transition: width 0.4s 0.4s; }
   .sib h1 span:last-child {
@@ -528,13 +544,13 @@ p a:focus {
       content: none; }
 
 .sib picture:first-of-type {
-  margin-top: 90px; }
+  margin-block-start: 90px; }
 
 .sib picture:nth-of-type(n+2) {
-  margin-top: 18px; }
+  margin-block-start: 18px; }
   @media (min-width: 766px) {
     .sib picture:nth-of-type(n+2) {
-      margin-top: 60px; } }
+      margin-block-start: 60px; } }
 .sib img {
   border-radius: 4px;
   border: 1px solid #DDD; }
@@ -542,13 +558,14 @@ p a:focus {
     .sib img {
       border-color: #DDD; } }
 .sib section svg {
-  transition: 0.3s;
-  width: 30px;
-  height: 30px;
-  position: absolute;
+  inline-size: 30px;
+  block-size: 30px;
   left: 18px;
+  inset-inline-start: 18px;
   bottom: 18px;
-  display: block;
+  inset-block-end: 18px;
+  transition: 0.3s;
+  position: absolute;
   border-radius: 50%;
   stroke: white;
   stroke-width: 2;
@@ -565,13 +582,13 @@ p a:focus {
         opacity: 0.95; } }
 .sib h3,
 .sib .Btn {
-  margin-top: 60px; }
+  margin-block-start: 60px; }
 
 .sib .Btn {
   display: inline-block; }
 
 .sib main p:first-of-type {
-  margin-top: 50px; }
+  margin-block-start: 50px; }
 
 .sib main p b {
   font-weight: 700; }

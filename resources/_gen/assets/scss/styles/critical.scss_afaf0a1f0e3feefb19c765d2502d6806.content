@@ -12,6 +12,18 @@
  * Media Queries
  */
 /* Mixin' with Turntable v0.2.0 -- by Daniel Blake */
+/**
+ * Grid
+ */
+/**
+ * Breakpoints
+ */
+/**
+ * Theme
+ */
+/*
+ * Logical Properties
+ */
 @font-face {
   src: url("/fonts/montserrat-900.woff2") format("woff2"), url("/fonts/montserrat-900.woff") format("woff");
   font-display: swap;
@@ -49,9 +61,8 @@ body {
   background: var(--bkg);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
   touch-action: manipulation;
   -webkit-overflow-scrolling: touch;
   -webkit-tap-highlight-color: transparent;
@@ -94,20 +105,20 @@ h1 {
   h1 span {
     display: inline-block; }
     h1 span::after {
-      width: 0;
-      height: 6px;
-      margin-top: -.14em;
+      inline-size: 0;
+      block-size: 6px;
+      margin-block-start: -0.14em;
       position: relative;
       z-index: -1;
       content: '';
       border-radius: 3px;
       background: #dd2c53; }
       h1 span:last-child::after {
-        transition: width .4s 1.2s; }
+        transition: inline-size .4s 1.2s; }
       h1 span:first-child::after {
-        transition: width .4s .8s; }
+        transition: inline-size .4s .8s; }
       h1 span.__underline::after {
-        width: 100%; }
+        inline-size: 100%; }
 
 p {
   letter-spacing: .02em;
@@ -156,44 +167,56 @@ p {
   fill: #cf95cd; }
 
 .Nav {
-  width: 100%;
-  height: 56px;
+  inline-size: 100%;
+  block-size: 56px;
   top: 0;
+  inset-block-start: 0;
   z-index: 99;
   contain: strict;
   background: inherit; }
   .Nav div {
-    height: 100%;
+    block-size: 100%;
     align-items: center; }
   .Nav a {
     font-size: .8rem;
-    letter-spacing: .03em;
+    letter-spacing: .05ch;
     font-weight: 700; }
   .Nav a:first-child {
-    margin: 0 auto 1px 0;
+    margin-block-start: 0;
+    margin-inline-end: auto;
+    margin-block-end: 1px;
+    margin-inline-start: 0;
     align-items: center;
-    letter-spacing: -.02em;
+    letter-spacing: -.04ch;
     overflow: hidden; }
     .Nav a:first-child span {
       text-indent: -15ch; }
     .Nav a:first-child svg {
-      width: 2.6em;
-      height: 2.6em;
-      margin: 1px .4em 0 0; }
+      inline-size: 2.6em;
+      block-size: 2.6em;
+      margin-block-start: 1px;
+      margin-inline-end: 0.4em;
+      margin-block-end: 0;
+      margin-inline-start: 0.4em; }
   .Nav a:not(:first-child) {
-    padding: .8em .2em; }
+    padding-block-start: 0.8em;
+    padding-inline-end: 0.2em;
+    padding-block-end: 0.8em;
+    padding-inline-start: 0.2em; }
   .Nav a:nth-child(n+2) {
-    margin-right: .8em; }
+    margin-inline-end: 0.8em; }
 
 .graphical span {
-  width: 1px;
-  height: 1px;
+  inline-size: 1px;
+  block-size: 1px;
   position: absolute;
-  overflow: hidden;
-  white-space: nowrap; }
+  overflow: hidden; }
 
 #lang {
-  padding: .8em 1.6em .8em .5em;
+  padding-block-start: 0.8em;
+  padding-inline-end: 1.6em;
+  padding-block-end: 0.8em;
+  padding-inline-start: 0.5em;
   font-size: .7rem;
   font-weight: 700;
   color: #333040;
@@ -204,11 +227,11 @@ p {
   -webkit-appearance: none; }
 
 .Hero {
-  height: 100vh;
+  block-size: 100vh;
   contain: layout;
   flex-direction: column;
   justify-content: center;
-  transition: height .4s; }
+  transition: block-size .4s; }
 
 .Hero.__intro h1, .Hero.__intro p {
   opacity: 0;
@@ -225,13 +248,14 @@ p {
   transform-style: preserve-3d; }
 
 .Hero p {
-  margin-top: .8em;
+  margin-block-start: 0.8em;
   transition: transform .4s .4s, opacity .4s .4s; }
 
 .Arrow {
-  width: 34px;
-  height: 34px;
+  inline-size: 34px;
+  block-size: 34px;
   bottom: 40px;
+  inset-block-end: 40px;
   fill: none;
   stroke: #5a5671;
   stroke-width: 3;
@@ -239,8 +263,14 @@ p {
   stroke-linejoin: round; }
 
 [flexr-wrap] {
-  padding: 0 18px;
-  margin: 0 auto; }
+  padding-block-start: 0;
+  padding-inline-end: 18px;
+  padding-block-end: 0;
+  padding-inline-start: 18px;
+  margin-block-start: 0;
+  margin-inline-end: auto;
+  margin-block-end: 0;
+  margin-inline-start: auto; }
 
 /**
  * Phone Landscape
@@ -251,28 +281,37 @@ p {
   h1 {
     font-size: 2.7rem; }
   .Hero p {
-    width: 44ch; }
+    inline-size: 44ch; }
   .Hero h1 {
-    width: 14ch; } }
+    inline-size: 14ch; } }
 
 /**
  * Tablet Portrait
  */
 @media (min-width: 768px) {
   [flex-wrap] {
-    padding: 0 24px; }
+    padding-block-start: 0;
+    padding-inline-end: 24px;
+    padding-block-end: 0;
+    padding-inline-start: 24px; }
   .Nav {
-    height: 90px; }
+    block-size: 90px; }
     .Nav a:first-child {
       font-size: 1.13rem; }
     .Nav a:nth-child(1n+2) {
-      margin-right: 1.6em; }
+      margin-inline-end: 1.6em; }
   #lang {
-    padding: .6em 1.6em .6em .5em; } }
+    padding-block-start: 0.6em;
+    padding-inline-end: 1.6em;
+    padding-block-end: 0.6em;
+    padding-inline-start: 0.5em; } }
 
 @media (min-width: 810px) and (max-height: 416px) {
   [flex-wrap] {
-    padding: 0 env(safe-area-inset-right); } }
+    padding-block-start: 0;
+    padding-inline-end: env(safe-area-inset-right);
+    padding-block-end: 0;
+    padding-inline-start: env(safe-area-inset-right); } }
 
 /**
  * Desktop
@@ -281,9 +320,12 @@ p {
   :root {
     font-size: 1.25em; }
   [flexr-wrap] {
-    width: 84%;
-    max-width: 1436px;
-    padding: 0 30px; } }
+    inline-size: 84%;
+    max-inline-size: 1436px;
+    padding-block-start: 0;
+    padding-inline-end: 30px;
+    padding-block-end: 0;
+    padding-inline-start: 30px; } }
 
 /**
  * Desktop Large
@@ -292,7 +334,7 @@ p {
   :root {
     font-size: 1.38em; }
   .Nav {
-    height: 150px; } }
+    block-size: 150px; } }
 
 /**
  * Dark Theme
