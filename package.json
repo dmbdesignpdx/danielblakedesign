@@ -12,7 +12,7 @@
   },
   "scripts": {
     "start": "hugo server -p 3000",
-    "build": "hugo --minify --ignoreCache --gc",
+    "build": "rm -rf resources && hugo --minify --ignoreCache --gc",
     "lint": "eslint assets/scripts/**/*.ts",
     "size": "bundlesize",
     "clean": "rm -rf public resources",
