@@ -24,6 +24,14 @@ export default (): void => {
   const threshold = 0.7;
   let observer: IO;
 
+  const animate = (target: Element): void => {
+    const preview = <HTMLAnchorElement>target.querySelector('.--primary');
+
+    target.classList.add('play');
+    addPrefetch(preview.href);
+    observer.unobserve(target);
+  };
+
   if (hasIO) {
     const collection: Array<Element> = [...document.querySelectorAll('.Thumb')];
 
@@ -31,12 +39,7 @@ export default (): void => {
     IOC = (entries: Array<IOE>): void => {
       for (const { target, intersectionRatio } of entries) {
         if (intersectionRatio > threshold) {
-          const preview = <HTMLAnchorElement>target.querySelector('.--primary');
-
-          target.classList.add('play');
-          addPrefetch(preview.href);
-
-          observer.unobserve(target);
+          requestAnimationFrame((): void => animate(target));
         }
       }
     };

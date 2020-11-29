@@ -1,36 +1,36 @@
 #work {
   @extend %content;
-  padding-top: 120px;
-  margin-top: 60px;
+  @include p-top(120px);
+  @include m-top(60px);
 
   // Title
   h2 {
-    width: auto;
-    margin-bottom: 1em;
+    @include w;
+    @include m-bottom(1em);
     
     @include desktop {
-      margin-left: 8%;
+      @include m-left(8%);
     }
 
     @include desktopLG {
-      margin-left: calc((100% - 1436px) / 2);
+      @include m-left(calc((100% - 1436px) / 2));
     }
   }
   
   .Thumb {
-    margin-bottom: 60px;
+    @include m-bottom(60px);
   }
 }
 
 
 #codepen {
   @extend %content;
-  margin-top: 120px;
+  @include m-top(120px);
   text-align: center;
   
   svg {
     @include size(100px);
-    margin: auto;
+    @include m(auto);
     stroke-width: 1.6;
     fill: none;
     stroke-linejoin: round;
@@ -43,8 +43,8 @@
   }
   
   p {
-    max-width: 600px;
-    margin: 0.8em auto 0;
+    @include max-w(600px);
+    @include m(0.8em auto 0);
   }
 
   h4 {
@@ -52,6 +52,6 @@
   }
 
   .Btn {
-    margin: 1em auto;
+    @include m(1em auto);
   }
 }

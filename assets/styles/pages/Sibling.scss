@@ -1,7 +1,7 @@
 .sib {
   
   h1 {
-    width: auto;
+    @include w;
     
     span {
 
@@ -23,14 +23,14 @@
   }
 
   picture:first-of-type {
-    margin-top: 90px;
+    @include m-top(90px);
   }
   
   picture:nth-of-type(n+2) {
-    margin-top: 18px;
+    @include m-top(18px);
     
     @include tabletPor {
-      margin-top: 60px;
+      @include m-top(60px);
     }
   }
   
@@ -44,12 +44,11 @@
   }
   
   section svg {
+    @include wh(30px);
+    @include l(18px);
+    @include b(18px);
     @include transition(0.3s);
-    @include size(30px);
     position: absolute;
-    left: 18px;
-    bottom: 18px;
-    display: block;
     border-radius: 50%;
     stroke: white;
     stroke-width: 2;
@@ -71,7 +70,7 @@
   
   h3,
   .Btn {
-    margin-top: 60px;
+    @include m-top(60px);
   }
 
   .Btn {
@@ -81,7 +80,7 @@
   main p {
 
     &:first-of-type {
-      margin-top: 50px;
+      @include m-top(50px);
     }
 
     b {

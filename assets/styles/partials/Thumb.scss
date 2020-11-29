@@ -15,13 +15,13 @@
 
     &::before {
       @extend %block;
-      padding-top: 62.5%;
+      @include p-top(62.5%);
       content: '';
     }
 
     img {
       @extend %absolute;
-      top: 0;
+      @include t;
     }
   
     @include theme(dark) {
@@ -29,7 +29,7 @@
     }
     
     @include phoneLan {
-      margin-bottom: 0;
+      @include m-bottom;
       grid-column: span 4;
       grid-row: 1 / 3;
     }

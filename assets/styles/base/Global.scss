@@ -23,12 +23,9 @@ h2,
 h3,
 h4,
 h5,
-form,
-label,
-textarea,
 button {
-  padding: 0;
-  margin: 0;
+  @include p;
+  @include m;
   border: 0;
 }
 

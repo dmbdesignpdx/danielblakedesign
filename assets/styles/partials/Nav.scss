@@ -47,14 +47,14 @@
   &.__fixed {
     @include box-shadow(0 1px 3px ts(0.3));
     position: fixed;
-    top: -59px;
+    @include t(-59px);
     
     @include tabletPor {
-      top: -93px
+      @include t(-93px);
     }
     
     @include desktopLG {
-      top: -153px
+      @include t(-153px);
     }
   }
 }

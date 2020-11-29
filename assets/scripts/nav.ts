@@ -44,4 +44,6 @@ const toggleNav = (): void => {
   state.init = update;
 };
 
-addEventListener('scroll', toggleNav, { passive: true });
+addEventListener('scroll', (): void => {
+  requestAnimationFrame(toggleNav);
+}, { passive: true });
