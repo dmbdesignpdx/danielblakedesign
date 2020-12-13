@@ -20,8 +20,7 @@ const addPrefetch = (href: string): void => {
  * Scroll Into View
  */
 export default (): void => {
-  const hasIO: boolean = 'IntersectionObserver' in window;
-  const threshold = 0.7;
+  const threshold = [0, 0.7];
   let observer: IO;
 
   const animate = (target: Element): void => {
@@ -32,19 +31,36 @@ export default (): void => {
     observer.unobserve(target);
   };
 
-  if (hasIO) {
-    const collection: Array<Element> = [...document.querySelectorAll('.Thumb')];
+  if ('IntersectionObserver' in window) {
+    const collection =
+      <Array<HTMLElement>>[...document.querySelectorAll('.Thumb')];
 
     const callback:
     IOC = (entries: Array<IOE>): void => {
+      const [load, play] = threshold;
+
       for (const { target, intersectionRatio } of entries) {
-        if (intersectionRatio > threshold) {
+        if (intersectionRatio > load) {
+          const image = <HTMLImageElement>target.querySelector('img');
+          const sources =
+            <Array<HTMLSourceElement>>[...target.querySelectorAll('source')];
+
+          if (image.src === '') {
+            image.setAttribute('src', image.dataset.src as string);
+
+            sources.forEach(source => {
+              source.setAttribute('srcset', source.dataset.srcset as string);
+            });
+          }
+        }
+
+        if (intersectionRatio > play) {
           requestAnimationFrame((): void => animate(target));
         }
       }
     };
 
-    const settings: IOI = { threshold };
+    const settings: IOI = { threshold, rootMargin: '200px' };
 
     observer = new IntersectionObserver(callback, settings);
 
