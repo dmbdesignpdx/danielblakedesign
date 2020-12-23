@@ -6,18 +6,23 @@
   rel?: bool
   value?: string
   span?: string
+  prefetch?: bool
 -->
 
 
 {{ if eq .type "link" }}
 
+  {{ $pre := ( cond ( eq .prefetch true ) "lazy-prefetch" "" ) }}
+
   <a
-    class='Btn --{{ .theme }} graphical'
+    class='Btn --{{ .theme }} graphical {{ $pre }}'
     {{ if .rel }}
       target='_blank'
       rel='external nofollow noreferrer noopener'
     {{ end }}
     href='{{ .link | safeURL }}'
+    {{ if .prefetch }}
+    {{ end }}
   >
 
     {{- .text | title -}}{{- if .span -}} <span>{{ .span }}</span>{{- end -}}

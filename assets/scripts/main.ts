@@ -1,5 +1,5 @@
 import 'nav';
-import scrollIntoView from 'scroll';
+import lazyLoad from './lazy';
 import SmoothScroll from 'smooth-scroll';
 
 
@@ -33,7 +33,7 @@ LANG.addEventListener('change', ({ target }: Event): void => {
 if (!prefersRM) {
   const smooth = new SmoothScroll('a[href*=\'#\']');
 
-  scrollIntoView();
+  lazyLoad();
   smooth.init;
 }
 

@@ -1,4 +1,4 @@
-.animation {
+.lazy-animate {
 
   [class*='fade-Up-'] {
     animation: fadeUp 0.8s ease-out both paused;
@@ -10,7 +10,7 @@
     }
   }
 
-  &.play [class*='fade-Up-'] {
+  &.lazy-play [class*='fade-Up-'] {
     animation-play-state: running;
   }
 }

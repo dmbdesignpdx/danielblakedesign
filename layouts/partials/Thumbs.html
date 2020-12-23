@@ -10,7 +10,7 @@
 
 <section
   id='{{ $file }}'
-  class='Thumb'
+  class='Thumb lazy-load'
   aria-label='{{ .title | title }}'
   flexr-grid
 >
@@ -47,6 +47,7 @@
       {{ $visit.Set "text" ( T "visit" ) }}
       {{ $visit.Set "link" .link }}
       {{ $visit.Set "rel" .rel }}
+      {{ $visit.Set "prefetch" true }}
 
       {{ partial "Btn" $visit.Values }}
 
